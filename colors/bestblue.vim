@@ -288,7 +288,7 @@ if has('terminal')
   \ "#f43753",
   \ "#c9d05c",
   \ "#ffc24b",
-  \ "#b3deef",
+  \ "#73cef4",
   \ "#d3b987",
   \ "#73cef4",
   \ "#eeeeee",
@@ -296,7 +296,7 @@ if has('terminal')
   \ "#f43753",
   \ "#c9d05c",
   \ "#ffc24b",
-  \ "#b3deef",
+  \ "#73cef4",
   \ "#d3b987",
   \ "#73cef4",
   \ "#ffffff"
@@ -310,7 +310,7 @@ if has('nvim')
   let g:terminal_color_1 = "#f43753"
   let g:terminal_color_2 = "#c9d05c"
   let g:terminal_color_3 = "#ffc24b"
-  let g:terminal_color_4 = "#b3deef"
+  let g:terminal_color_4 = "#73cef4"
   let g:terminal_color_5 = "#d3b987"
   let g:terminal_color_6 = "#73cef4"
   let g:terminal_color_7 = "#eeeeee"
@@ -318,7 +318,7 @@ if has('nvim')
   let g:terminal_color_9 = "#f43753"
   let g:terminal_color_10 = "#c9d05c"
   let g:terminal_color_11 = "#ffc24b"
-  let g:terminal_color_12 = "#b3deef"
+  let g:terminal_color_12 = "#73cef4"
   let g:terminal_color_13 = "#d3b987"
   let g:terminal_color_14 = "#73cef4"
   let g:terminal_color_15 = "#ffffff"
