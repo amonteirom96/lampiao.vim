@@ -290,7 +290,7 @@ if has('terminal')
   \ "#ffc24b",
   \ "#b3deef",
   \ "#d3b987",
-  \ "#73cef4",
+  \ "#559cba",
   \ "#eeeeee",
   \ "#1d1d1d",
   \ "#f43753",
