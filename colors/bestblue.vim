@@ -1,9 +1,9 @@
 ""
-" tender v0.17.5
+" bestblue v0.0.1
 "
 " A dark and fresh color scheme for vim
-" URL: https://github/com/jacoborus/tender.vim
-" Author: Jacobo Tabernero http://jacoborus.codes
+" URL: https://github/com/amotneirom96/bestblue.vim
+" Author: Arthur Monteiro Mendonça
 " License: MIT
 ""
 
@@ -13,21 +13,21 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name="tender"
+let g:colors_name="bestblue"
 
 
 let Italic = ""
-if exists('g:tender_italic')
+if exists('g:bestblue_italic')
   let Italic = "italic"
 endif
-let g:tender_italic = get(g:, 'tender_italic', 0)
+let g:bestblue_italic = get(g:, 'bestblue_italic', 0)
 
 let Bold = ""
-if exists('g:tender_bold')
+if exists('g:bestblue_bold')
   let Bold = "bold"
 endif
 
-let g:tender_bold = get(g:, '_bold', 0)
+let g:bestblue_bold = get(g:, '_bold', 0)
 
 hi ColorColumn guifg=NONE ctermfg=NONE guibg=#323232 ctermbg=236 gui=NONE cterm=NONE
 hi CursorColumn guifg=NONE ctermfg=NONE guibg=#323232 ctermbg=236 gui=NONE cterm=NONE
