@@ -80,7 +80,7 @@ hi Identifier guifg=#dadada ctermfg=253 guibg=NONE ctermbg=NONE gui=NONE cterm=N
 hi Function guifg=#9fc4e0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Statement guifg=#5eb2e2 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Conditional guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Operator guifg=#1757be ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Operator guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Exception guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi PreProc guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Type guifg=#5eb2e2 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
