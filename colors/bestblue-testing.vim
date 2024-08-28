@@ -43,7 +43,7 @@ hi VertSplit guifg=#1a1a1a ctermfg=235 guibg=#1a1a1a ctermbg=235 gui=NONE cterm=
 hi Folded guifg=#585858 ctermfg=242 guibg=#1a1a1a ctermbg=234 gui=NONE cterm=NONE
 hi FoldColumn guifg=#585858 ctermfg=242 guibg=#1a1a1a ctermbg=234 gui=NONE cterm=NONE
 hi SignColumn guifg=#7f7f7f ctermfg=246 guibg=#1a1a1a ctermbg=235 gui=NONE cterm=NONE
-hi IncSearch guifg=#e5e5e5 ctermfg=15 guibg=#293b44 ctermbg=0 gui=Bold,reverse cterm=Bold,reverse
+hi IncSearch guifg=#e5e5e5 ctermfg=15 guibg=#1757be ctermbg=0 gui=Bold,reverse cterm=Bold,reverse
 hi LineNr guifg=#333333 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi MatchParen guifg=#e12b4d ctermfg=203 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
 hi NonText guifg=#333333 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
