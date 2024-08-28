@@ -47,7 +47,7 @@ hi IncSearch guifg=#e5e5e5 ctermfg=15 guibg=#000000 ctermbg=0 gui=Bold,reverse c
 hi LineNr guifg=#333333 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi MatchParen guifg=#e12b4d ctermfg=203 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
 hi NonText guifg=#333333 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Normal guifg=#dcdcdc ctermfg=255 guibg=#293b44 ctermbg=235 gui=NONE cterm=NONE
+hi Normal guifg=#dcdcdc ctermfg=255 guibg=#092149 ctermbg=235 gui=NONE cterm=NONE
 hi PMenu guifg=#e1e1e1 ctermfg=253 guibg=#191b1d ctermbg=239 gui=NONE cterm=NONE 
 hi PMenuSel guifg=#e1e1e1 ctermfg=239 guibg=#1f5bb5 ctermbg=185 gui=NONE cterm=NONE
 hi PmenuSbar guifg=#2a4a59 ctermfg=239 guibg=#2a4a59 ctermbg=239 gui=NONE cterm=NONE
