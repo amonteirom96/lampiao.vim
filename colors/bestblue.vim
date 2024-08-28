@@ -276,11 +276,18 @@ hi yamlFlowStringDelimiter guifg=#eeeeee ctermfg=255 guibg=NONE ctermbg=NONE gui
 hi yamlKeyValueDelimiter guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
 "DIAGONOSTIC
-hi DiagnosticError cterm=reverse ctermfg=203 gui=reverse guifg=#79313c
-hi DiagnosticWarn cterm=reverse ctermfg=203 gui=reverse guifg=#9e6e40
-hi DiagnosticInfo cterm=reverse ctermfg=203 gui=reverse guifg=#4a90e2
-hi DiagnosticHint cterm=reverse ctermfg=203 gui=reverse guifg=#4a6d6f
-hi DiagnosticOk cterm=reverse ctermfg=203 gui=reverse guifg=#4caf50
+"hi DiagnosticError cterm=reverse ctermfg=203 gui=reverse guifg=#79313c
+"hi DiagnosticWarn cterm=reverse ctermfg=203 gui=reverse guifg=#9e6e40
+"hi DiagnosticInfo cterm=reverse ctermfg=203 gui=reverse guifg=#4a90e2
+"hi DiagnosticHint cterm=reverse ctermfg=203 gui=reverse guifg=#4a6d6f
+"hi DiagnosticOk cterm=reverse ctermfg=203 gui=reverse guifg=#4caf50
+
+hi DiagnosticError ctermfg=197 ctermbg=237 guifg=#ff4c4c guibg=#5c2a2a
+hi DiagnosticWarning ctermfg=208 ctermbg=237 guifg=#ff6f00 guibg=#5a3a1a
+hi DiagnosticHint ctermfg=75 ctermbg=237 guifg=#00aaff guibg=#2a3a5a
+hi DiagnosticOk ctermfg=82 ctermbg=237 guifg=#66bb6a guibg=#2a5a3a
+hi DiagnosticInfo ctermfg=33 ctermbg=237 guifg=#42a5f5 guibg=#1a2a5a
+
 
 if exists(':TSEnable')
   hi @function guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
