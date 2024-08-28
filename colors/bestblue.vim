@@ -276,7 +276,7 @@ hi yamlFlowStringDelimiter guifg=#eeeeee ctermfg=255 guibg=NONE ctermbg=NONE gui
 hi yamlKeyValueDelimiter guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
 "DIAGONOSTIC
-hi DiagnosticError cterm=reverse ctermfg=203 gui=reverse guifg=#421f23
+hi DiagnosticError cterm=reverse ctermfg=203 gui=#f43753 guifg=#421f23
 hi DiagnosticWarn cterm=reverse ctermfg=203 gui=reverse guifg=#ffc24b
 hi DiagnosticInfo cterm=reverse ctermfg=203 gui=reverse guifg=#1757be
 hi DiagnosticHint cterm=reverse ctermfg=203 gui=reverse guifg=#73cef4
