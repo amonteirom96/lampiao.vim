@@ -275,6 +275,13 @@ hi yamlFlowString guifg=#d3b987 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cte
 hi yamlFlowStringDelimiter guifg=#eeeeee ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi yamlKeyValueDelimiter guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
+"DIAGONOSTIC
+hi DiagnosticError ctermfg=203 ctermbg=237 guifg=#f43753 guibg=#79313c
+hi DiagnosticWarn ctermfg=208 ctermbg=237 guifg=#ff8800 guibg=#593e2e
+hi DiagnosticInfo ctermfg=33 ctermbg=237 guifg=#2196f3 guibg=#1e3a59
+hi DiagnosticHint ctermfg=75 ctermbg=237 guifg=#007acc guibg=#2e3a59
+hi DiagnosticOk ctermfg=82 ctermbg=237 guifg=#4caf50 guibg=#2e593a
+
 if exists(':TSEnable')
   hi @function guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
   hi @keyword guifg=#b3deef ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
