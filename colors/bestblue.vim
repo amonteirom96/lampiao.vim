@@ -274,8 +274,10 @@ hi javascriptFuncName guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE
 hi yamlFlowString guifg=#d3b987 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi yamlFlowStringDelimiter guifg=#eeeeee ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi yamlKeyValueDelimiter guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi link DiagnosticError CocErrorSign
-hi link DiagnosticHint CocHintSign
+hi! link DiagnosticError NvimDarkRed
+hi! link DiagnosticHint CocHintSign
+hi! link DiagnosticWarn CocWarningSign
+hi! link DiagnosticInfo CocInfoSign
 
 if exists(':TSEnable')
   hi @function guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
