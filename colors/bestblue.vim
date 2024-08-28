@@ -337,4 +337,3 @@ if has('nvim')
   let g:terminal_color_14 = "#40a0d9"
   let g:terminal_color_15 = "#e5e5e5"
 endif
-ndif
