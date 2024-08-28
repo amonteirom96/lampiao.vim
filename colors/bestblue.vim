@@ -277,10 +277,10 @@ hi yamlKeyValueDelimiter guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=N
 
 "DIAGONOSTIC
 hi DiagnosticError cterm=reverse ctermfg=203 gui=reverse guifg=#f43753
-"hi DiagnosticWarn ctermfg=208 ctermbg=237 guifg=#ff8800 guibg=#593e2e
-"hi DiagnosticInfo ctermfg=33 ctermbg=237 guifg=#2196f3 guibg=#1e3a59
-"hi DiagnosticHint ctermfg=75 ctermbg=237 guifg=#007acc guibg=#2e3a59
-"hi DiagnosticOk ctermfg=82 ctermbg=237 guifg=#4caf50 guibg=#2e593a
+hi DiagnosticWarn cterm=reverse ctermfg=203 gui=reverse guifg=#ffc24b
+hi DiagnosticInfo cterm=reverse ctermfg=203 gui=reverse guifg=#1757be
+hi DiagnosticHint cterm=reverse ctermfg=203 gui=reverse guifg=#73cef4
+hi DiagnosticOk cterm=reverse ctermfg=203 gui=reverse guifg=#c9d05c
 
 if exists(':TSEnable')
   hi @function guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
