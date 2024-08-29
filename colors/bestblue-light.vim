@@ -115,7 +115,7 @@ if has("nvim")
   let g:terminal_color_9 =  "#a31515"
   let g:terminal_color_10 = "#31903b"
   let g:terminal_color_11 = "#0000ff"
-  let g:terminal_color_12 = "#deeaff"
+  let g:terminal_color_12 = "#3463b7"
   let g:terminal_color_13 = "#0000ff"
   let g:terminal_color_14 = "#008080"
   let g:terminal_color_15 = "#6b8bcc"
@@ -139,7 +139,7 @@ elseif has("terminal")
         \ "#a31515",
         \ "#31903b",
         \ "#0000ff",
-        \ "#deeaff",
+        \ "#3463b7",
         \ "#0000ff",
         \ "#008080",
         \ "#6b8bcc",
