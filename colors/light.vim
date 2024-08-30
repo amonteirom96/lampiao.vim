@@ -38,8 +38,8 @@ let s:gui09        = "007200"
 let g:base16_gui09 = "007200"
 let s:gui0A        = "0000ff"
 let g:base16_gui0A = "0000ff"
-let s:gui0B        = "31903b"
-let g:base16_gui0B = "31903b"
+let s:gui0B        = "006600"
+let g:base16_gui0B = "006600"
 let s:gui0C        = "008080"
 let g:base16_gui0C = "008080"
 let s:gui0D        = "3463b7"
@@ -105,7 +105,7 @@ endif
 if has("nvim")
   let g:terminal_color_0 =  "#eff1f5"
   let g:terminal_color_1 =  "#a31515"
-  let g:terminal_color_2 =  "#31903b"
+  let g:terminal_color_2 =  "#006600"
   let g:terminal_color_3 =  "#0000ff"
   let g:terminal_color_4 =  "#deeaff"
   let g:terminal_color_5 =  "#0000ff"
@@ -113,7 +113,7 @@ if has("nvim")
   let g:terminal_color_7 =  "#000000"
   let g:terminal_color_8 =  "#bcc0cc"
   let g:terminal_color_9 =  "#a31515"
-  let g:terminal_color_10 = "#31903b"
+  let g:terminal_color_10 = "#006600"
   let g:terminal_color_11 = "#0000ff"
   let g:terminal_color_12 = "#3463b7"
   let g:terminal_color_13 = "#0000ff"
@@ -129,7 +129,7 @@ elseif has("terminal")
   let g:terminal_ansi_colors = [
         \ "#eff1f5",
         \ "#a31515",
-        \ "#31903b",
+        \ "#006600",
         \ "#0000ff",
         \ "#deeaff",
         \ "#0000ff",
@@ -137,7 +137,7 @@ elseif has("terminal")
         \ "#000000",
         \ "#bcc0cc",
         \ "#a31515",
-        \ "#31903b",
+        \ "#006600",
         \ "#0000ff",
         \ "#3463b7",
         \ "#0000ff",
