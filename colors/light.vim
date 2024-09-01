@@ -260,16 +260,16 @@ hi yamlFlowString guifg=#e1b369 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cte
 hi yamlFlowStringDelimiter guifg=#dcdcdc ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi yamlKeyValueDelimiter guifg=#e12b4d ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
-"DIAGONOSTIC
-hi DiagnosticError ctermfg=197 ctermbg=237 guifg=#ff4c4c guibg=#5c2a2a
+" DIAGNOSTIC
+hi DiagnosticError ctermfg=197 ctermbg=254 guifg=#ff4c4c guibg=#ffffff
 hi! link DiagnosticUnderlineError DiagnosticError
-hi DiagnosticWarn ctermfg=208 ctermbg=237 guifg=#ff6f00 guibg=#5a3a1a
+hi DiagnosticWarn ctermfg=208 ctermbg=254 guifg=#ff6f00 guibg=#ffffff
 hi! link DiagnosticUnderlineWarn DiagnosticWarn
-hi DiagnosticHint ctermfg=75 ctermbg=237 guifg=#00aaff guibg=#2a3a5a
+hi DiagnosticHint ctermfg=75 ctermbg=254 guifg=#00aaff guibg=#ffffff
 hi! link DiagnosticUnderlineHint DiagnosticHint
-hi DiagnosticOk ctermfg=82 ctermbg=237 guifg=#66bb6a guibg=#2a5a3a
+hi DiagnosticOk ctermfg=82 ctermbg=254 guifg=#66bb6a guibg=#ffffff
 hi! link DiagnosticUnderlineOk DiagnosticOk
-hi DiagnosticInfo ctermfg=33 ctermbg=237 guifg=#42a5f5 guibg=#1a2a5a
+hi DiagnosticInfo ctermfg=33 ctermbg=254 guifg=#42a5f5 guibg=#ffffff
 hi! link DiagnosticUnderlineInfo DiagnosticInfo
 
 
