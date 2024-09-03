@@ -25,7 +25,7 @@ hi CursorLine guibg=#f0f0f0 ctermbg=254
 hi CursorLineNr guifg=#2d5375 ctermfg=60 guibg=NONE ctermbg=NONE
 hi Directory guifg=#2d5375 ctermfg=60 guibg=NONE ctermbg=NONE
 hi DiffAdd guibg=#d9ead3 ctermbg=192
-hi DiffChange guibg=#cfe2f3 ctermbg=153
+hi DiffChange guibg=#037c60 ctermbg=153
 hi DiffDelete guifg=#cc0000 ctermfg=124 guibg=#f4cccc ctermbg=224
 hi DiffText guibg=#9fc5e8 ctermbg=110 gui=reverse cterm=reverse
 hi ErrorMsg guifg=#ff0000 ctermfg=160 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
@@ -39,9 +39,9 @@ hi MatchParen guifg=#ff0000 ctermfg=160 guibg=NONE ctermbg=NONE gui=Bold cterm=B
 hi NonText guifg=#b0b0b0 ctermfg=250 guibg=NONE ctermbg=NONE
 hi Normal guifg=#000000 ctermfg=16 guibg=#F8F8F8 ctermbg=255
 hi PMenu guifg=#000000 ctermfg=16 guibg=#e6e6e6 ctermbg=254
-hi PMenuSel guifg=#000000 ctermfg=16 guibg=#cfe2f3 ctermbg=153
+hi PMenuSel guifg=#000000 ctermfg=16 guibg=#037c60 ctermbg=153
 hi PmenuSbar guibg=#e6e6e6 ctermbg=254
-hi PmenuThumb guibg=#cfe2f3 ctermbg=153
+hi PmenuThumb guibg=#037c60 ctermbg=153
 hi Question guifg=#000080 ctermfg=17 guibg=NONE ctermbg=NONE
 hi Search guifg=#000000 ctermfg=16 guibg=#ffff00 ctermbg=226 gui=underline,Bold cterm=underline,Bold
 hi SpecialKey guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
@@ -55,8 +55,8 @@ hi TabLine guifg=#000000 ctermfg=16 guibg=#e6e6e6 ctermbg=254
 hi TabLineFill guibg=#e6e6e6 ctermbg=254
 hi TabLineSel guifg=#607d8b ctermfg=208 guibg=#F8F8F8 ctermbg=255
 hi Title guifg=#3c78d8 ctermfg=69 gui=Bold cterm=Bold
-hi Visual guibg=#cfe2f3 ctermbg=153 gui=NONE cterm=NONE
-hi VisualNOS guibg=#cfe2f3 ctermbg=153 gui=NONE cterm=NONE
+hi Visual guibg=#037c60 ctermbg=153 gui=NONE cterm=NONE
+hi VisualNOS guibg=#037c60 ctermbg=153 gui=NONE cterm=NONE
 hi WarningMsg guifg=#ff0000 ctermfg=160 guibg=NONE ctermbg=NONE
 hi WildMenu guifg=#000000 ctermfg=16 guibg=#607d8b ctermbg=208 gui=Bold cterm=Bold
 hi Comment guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
