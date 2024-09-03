@@ -53,12 +53,12 @@ hi StatusLine guifg=#000000 ctermfg=16 guibg=#d9d9d9 ctermbg=252 gui=Bold cterm=
 hi StatusLineNC guifg=#808080 ctermfg=244 guibg=#d9d9d9 ctermbg=252
 hi TabLine guifg=#000000 ctermfg=16 guibg=#e6e6e6 ctermbg=254
 hi TabLineFill guibg=#e6e6e6 ctermbg=254
-hi TabLineSel guifg=#ff8c00 ctermfg=208 guibg=#F8F8F8 ctermbg=255
+hi TabLineSel guifg=#607d8b ctermfg=208 guibg=#F8F8F8 ctermbg=255
 hi Title guifg=#3c78d8 ctermfg=69 gui=Bold cterm=Bold
 hi Visual guibg=#cfe2f3 ctermbg=153 gui=NONE cterm=NONE
 hi VisualNOS guibg=#cfe2f3 ctermbg=153 gui=NONE cterm=NONE
 hi WarningMsg guifg=#ff0000 ctermfg=160 guibg=NONE ctermbg=NONE
-hi WildMenu guifg=#000000 ctermfg=16 guibg=#ff8c00 ctermbg=208 gui=Bold cterm=Bold
+hi WildMenu guifg=#000000 ctermfg=16 guibg=#607d8b ctermbg=208 gui=Bold cterm=Bold
 hi Comment guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
 hi Constant guifg=#d16969 ctermfg=131 guibg=NONE ctermbg=NONE
 hi String guifg=#6a8759 ctermfg=65 guibg=NONE ctermbg=NONE
@@ -68,11 +68,11 @@ hi Number guifg=#d16969 ctermfg=131 guibg=NONE ctermbg=NONE
 hi Float guifg=#d16969 ctermfg=131 guibg=NONE ctermbg=NONE
 hi Identifier guifg=#d16969 ctermfg=131 guibg=NONE ctermbg=NONE
 hi Function guifg=#3c78d8 ctermfg=69 guibg=NONE ctermbg=NONE
-hi Statement guifg=#ff8c00 ctermfg=208 guibg=NONE ctermbg=NONE
-hi Conditional guifg=#ff8c00 ctermfg=208 guibg=NONE ctermbg=NONE
-hi Operator guifg=#ff8c00 ctermfg=208 guibg=NONE ctermbg=NONE
-hi Exception guifg=#ff8c00 ctermfg=208 guibg=NONE ctermbg=NONE
-hi PreProc guifg=#ff8c00 ctermfg=208 guibg=NONE ctermbg=NONE
+hi Statement guifg=#607d8b ctermfg=208 guibg=NONE ctermbg=NONE
+hi Conditional guifg=#607d8b ctermfg=208 guibg=NONE ctermbg=NONE
+hi Operator guifg=#607d8b ctermfg=208 guibg=NONE ctermbg=NONE
+hi Exception guifg=#607d8b ctermfg=208 guibg=NONE ctermbg=NONE
+hi PreProc guifg=#607d8b ctermfg=208 guibg=NONE ctermbg=NONE
 hi Type guifg=#3c78d8 ctermfg=69 guibg=NONE ctermbg=NONE
 hi Special guifg=#3c78d8 ctermfg=69 guibg=NONE ctermbg=NONE
 hi Underlined gui=underline cterm=underline
@@ -83,7 +83,7 @@ hi CocWarningSign guifg=#b45f06 ctermfg=166
 hi CocHintSign guifg=#3c78d8 ctermfg=69
 hi CocInfoSign guifg=#d16969 ctermfg=131
 hi cssVendor guifg=#5c5cff ctermfg=63
-hi cssTagName guifg=#ff8c00 ctermfg=208
+hi cssTagName guifg=#607d8b ctermfg=208
 hi cssAttrComma guifg=#000000 ctermfg=16
 hi cssBackgroundProp guifg=#3c78d8 ctermfg=69
 hi cssBorderProp guifg=#3c78d8 ctermfg=69
@@ -286,7 +286,7 @@ if has('terminal')
   \ "#000000",
   \ "#e12b4d",
   \ "#7a8e0e",
-  \ "#ff8c00",
+  \ "#607d8b",
   \ "#cfe2ff",
   \ "#b8860b",
   \ "#007acc",
@@ -294,7 +294,7 @@ if has('terminal')
   \ "#1d1d1d",
   \ "#e12b4d",
   \ "#7a8e0e",
-  \ "#ff8c00",
+  \ "#607d8b",
   \ "#cfe2ff",
   \ "#b8860b",
   \ "#007acc",
@@ -308,7 +308,7 @@ if has('nvim')
   let g:terminal_color_0 = "#000000"
   let g:terminal_color_1 = "#e12b4d"
   let g:terminal_color_2 = "#7a8e0e"
-  let g:terminal_color_3 = "#ff8c00"
+  let g:terminal_color_3 = "#607d8b"
   let g:terminal_color_4 = "#cfe2ff"
   let g:terminal_color_5 = "#b8860b"
   let g:terminal_color_6 = "#007acc"
@@ -316,7 +316,7 @@ if has('nvim')
   let g:terminal_color_8 = "#1d1d1d"
   let g:terminal_color_9 = "#e12b4d"
   let g:terminal_color_10 = "#7a8e0e"
-  let g:terminal_color_11 = "#ff8c00"
+  let g:terminal_color_11 = "#607d8b"
   let g:terminal_color_12 = "#cfe2ff"
   let g:terminal_color_13 = "#b8860b"
   let g:terminal_color_14 = "#007acc"
