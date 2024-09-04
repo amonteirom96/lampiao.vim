@@ -32,12 +32,12 @@ hi ErrorMsg guifg=#ff0000 ctermfg=160 guibg=NONE ctermbg=NONE gui=Bold cterm=Bol
 hi VertSplit guifg=#b0b0b0 ctermfg=250 guibg=#e0e0e0 ctermbg=252
 hi Folded guifg=#808080 ctermfg=244 guibg=#e0e0e0 ctermbg=252
 hi FoldColumn guifg=#808080 ctermfg=244 guibg=#e0e0e0 ctermbg=252
-hi SignColumn guifg=#808080 ctermfg=244 guibg=#F8F8F8 ctermbg=255
-hi IncSearch guifg=#F8F8F8 ctermfg=15 guibg=#000000 ctermbg=0 gui=Bold,reverse cterm=Bold,reverse
+hi SignColumn guifg=#808080 ctermfg=244 guibg=#f4f5f7 ctermbg=255
+hi IncSearch guifg=#f4f5f7 ctermfg=15 guibg=#000000 ctermbg=0 gui=Bold,reverse cterm=Bold,reverse
 hi LineNr guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
 hi MatchParen guifg=#ff0000 ctermfg=160 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
 hi NonText guifg=#b0b0b0 ctermfg=250 guibg=NONE ctermbg=NONE
-hi Normal guifg=#000000 ctermfg=16 guibg=#F8F8F8 ctermbg=255
+hi Normal guifg=#000000 ctermfg=16 guibg=#f4f5f7 ctermbg=255
 hi PMenu guifg=#000000 ctermfg=16 guibg=#e6e6e6 ctermbg=254
 hi PMenuSel guifg=#000000 ctermfg=16 guibg=#cfe2f3 ctermbg=153
 hi PmenuSbar guibg=#e6e6e6 ctermbg=254
@@ -53,7 +53,7 @@ hi StatusLine guifg=#000000 ctermfg=16 guibg=#d9d9d9 ctermbg=252 gui=Bold cterm=
 hi StatusLineNC guifg=#808080 ctermfg=244 guibg=#d9d9d9 ctermbg=252
 hi TabLine guifg=#000000 ctermfg=16 guibg=#e6e6e6 ctermbg=254
 hi TabLineFill guibg=#e6e6e6 ctermbg=254
-hi TabLineSel guifg=#607d8b ctermfg=208 guibg=#F8F8F8 ctermbg=255
+hi TabLineSel guifg=#607d8b ctermfg=208 guibg=#f4f5f7 ctermbg=255
 hi Title guifg=#3c78d8 ctermfg=69 gui=Bold cterm=Bold
 hi Visual guibg=#cfe2f3 ctermbg=153 gui=NONE cterm=NONE
 hi VisualNOS guibg=#cfe2f3 ctermbg=153 gui=NONE cterm=NONE
@@ -76,7 +76,7 @@ hi PreProc guifg=#607d8b ctermfg=208 guibg=NONE ctermbg=NONE
 hi Type guifg=#3c78d8 ctermfg=69 guibg=NONE ctermbg=NONE
 hi Special guifg=#3c78d8 ctermfg=69 guibg=NONE ctermbg=NONE
 hi Underlined gui=underline cterm=underline
-hi Error guifg=#F8F8F8 ctermfg=15 guibg=#ff0000 ctermbg=160
+hi Error guifg=#f4f5f7 ctermfg=15 guibg=#ff0000 ctermbg=160
 hi Todo guifg=#ff0000 ctermfg=160 gui=Bold cterm=Bold
 hi CocErrorSign guifg=#ff0000 ctermfg=160
 hi CocWarningSign guifg=#b45f06 ctermfg=166
@@ -261,15 +261,15 @@ hi yamlFlowStringDelimiter guifg=#dcdcdc ctermfg=255 guibg=NONE ctermbg=NONE gui
 hi yamlKeyValueDelimiter guifg=#e12b4d ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
 " DIAGNOSTIC
-hi DiagnosticError ctermfg=197 ctermbg=254 guifg=#ff4c4c guibg=#F8F8F8
+hi DiagnosticError ctermfg=197 ctermbg=254 guifg=#ff4c4c guibg=#f4f5f7
 hi! link DiagnosticUnderlineError DiagnosticError
-hi DiagnosticWarn ctermfg=208 ctermbg=254 guifg=#ff6f00 guibg=#F8F8F8
+hi DiagnosticWarn ctermfg=208 ctermbg=254 guifg=#ff6f00 guibg=#f4f5f7
 hi! link DiagnosticUnderlineWarn DiagnosticWarn
-hi DiagnosticHint ctermfg=75 ctermbg=254 guifg=#00aaff guibg=#F8F8F8
+hi DiagnosticHint ctermfg=75 ctermbg=254 guifg=#00aaff guibg=#f4f5f7
 hi! link DiagnosticUnderlineHint DiagnosticHint
-hi DiagnosticOk ctermfg=82 ctermbg=254 guifg=#66bb6a guibg=#F8F8F8
+hi DiagnosticOk ctermfg=82 ctermbg=254 guifg=#66bb6a guibg=#f4f5f7
 hi! link DiagnosticUnderlineOk DiagnosticOk
-hi DiagnosticInfo ctermfg=33 ctermbg=254 guifg=#42a5f5 guibg=#F8F8F8
+hi DiagnosticInfo ctermfg=33 ctermbg=254 guifg=#42a5f5 guibg=#f4f5f7
 hi! link DiagnosticUnderlineInfo DiagnosticInfo
 
 
@@ -304,7 +304,7 @@ endif
 
 if has('nvim')
   let g:terminal_color_foreground = "#000000"
-  let g:terminal_color_background = "#F8F8F8"
+  let g:terminal_color_background = "#f4f5f7"
   let g:terminal_color_0 = "#000000"
   let g:terminal_color_1 = "#e12b4d"
   let g:terminal_color_2 = "#7a8e0e"
