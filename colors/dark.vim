@@ -39,15 +39,15 @@ hi DiffChange guifg=NONE ctermfg=NONE guibg=#2a4a59 ctermbg=239 gui=NONE cterm=N
 hi DiffDelete guifg=#e12b4d ctermfg=203 guibg=#8e3b4d ctermbg=237 gui=NONE cterm=NONE
 hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
 hi ErrorMsg guifg=#e12b4d ctermfg=203 guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
-hi VertSplit guifg=#1a1a1a ctermfg=235 guibg=#1a1a1a ctermbg=235 gui=NONE cterm=NONE
-hi Folded guifg=#585858 ctermfg=242 guibg=#1a1a1a ctermbg=234 gui=NONE cterm=NONE
-hi FoldColumn guifg=#585858 ctermfg=242 guibg=#1a1a1a ctermbg=234 gui=NONE cterm=NONE
-hi SignColumn guifg=#7f7f7f ctermfg=246 guibg=#1a1a1a ctermbg=235 gui=NONE cterm=NONE
+hi VertSplit guifg=#010f29 ctermfg=235 guibg=#010f29 ctermbg=235 gui=NONE cterm=NONE
+hi Folded guifg=#585858 ctermfg=242 guibg=#010f29 ctermbg=234 gui=NONE cterm=NONE
+hi FoldColumn guifg=#585858 ctermfg=242 guibg=#010f29 ctermbg=234 gui=NONE cterm=NONE
+hi SignColumn guifg=#7f7f7f ctermfg=246 guibg=#010f29 ctermbg=235 gui=NONE cterm=NONE
 hi IncSearch guifg=#e5e5e5 ctermfg=15 guibg=#000000 ctermbg=0 gui=Bold,reverse cterm=Bold,reverse
 hi LineNr guifg=#333333 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi MatchParen guifg=#e12b4d ctermfg=203 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
 hi NonText guifg=#333333 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Normal guifg=#dcdcdc ctermfg=255 guibg=#1a1a1a ctermbg=235 gui=NONE cterm=NONE
+hi Normal guifg=#dcdcdc ctermfg=255 guibg=#010f29 ctermbg=235 gui=NONE cterm=NONE
 hi PMenu guifg=#e1e1e1 ctermfg=253 guibg=#191b1d ctermbg=239 gui=NONE cterm=NONE 
 hi PMenuSel guifg=#e1e1e1 ctermfg=239 guibg=#1f5bb5 ctermbg=185 gui=NONE cterm=NONE
 hi PmenuSbar guifg=#2a4a59 ctermfg=239 guibg=#2a4a59 ctermbg=239 gui=NONE cterm=NONE
@@ -68,7 +68,7 @@ hi Title guifg=#6daed8 ctermfg=153 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
 hi Visual guifg=NONE ctermfg=NONE guibg=#1e2f37 ctermbg=237 gui=Bold cterm=Bold
 hi VisualNOS guifg=NONE ctermfg=NONE guibg=#1e2f37 ctermbg=237 gui=Bold cterm=Bold
 hi WarningMsg guifg=#e12b4d ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi WildMenu guifg=#1a1a1a ctermfg=235 guibg=#bbc035 ctermbg=185 gui=Bold cterm=Bold
+hi WildMenu guifg=#010f29 ctermfg=235 guibg=#bbc035 ctermbg=185 gui=Bold cterm=Bold
 hi Comment guifg=#585858 ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Constant guifg=#ffb72b ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi String guifg=#e1b369 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -298,7 +298,7 @@ endif
 
 if has('terminal')
   let g:terminal_ansi_colors = [
-  \ "#1a1a1a",
+  \ "#010f29",
   \ "#e12b4d",
   \ "#bbc035",
   \ "#ffb72b",
@@ -318,9 +318,9 @@ if has('terminal')
 endif
 
 if has('nvim')
-  let g:terminal_color_foreground = "#1a1a1a"
+  let g:terminal_color_foreground = "#010f29"
   let g:terminal_color_background = "#dcdcdc"
-  let g:terminal_color_0 = "#1a1a1a"
+  let g:terminal_color_0 = "#010f29"
   let g:terminal_color_1 = "#e12b4d"
   let g:terminal_color_2 = "#bbc035"
   let g:terminal_color_3 = "#ffb72b"
