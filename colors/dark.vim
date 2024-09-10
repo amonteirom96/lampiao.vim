@@ -5,8 +5,8 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let s:style = get(g:, 'ayucolor', 'dark')
-let g:colors_name = "ayu"
+let s:style = get(g:, 'lampiaocolor', 'dark')
+let g:colors_name = "lampiao"
 "}}}
 
 " Palettes:"{{{
