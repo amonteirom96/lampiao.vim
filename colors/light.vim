@@ -1,7 +1,7 @@
 " Maintainer:    Greg Sexton <gregsexton@gmail.com>
 " Last Change:   2024-09-11
 " Version:       1.2 (Light Version)
-" URL:           http://www.gregsexton.org/vim-color-schemes/atom-color/
+" URL:           http://www.gregsexton.org/vim-color-schemes/lampiao-color/
 
 set background=light
 if version > 580
@@ -10,7 +10,7 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="atom-light"
+let g:colors_name="lampiao-light"
 
 hi Normal       guifg=#304050     guibg=#e8ecf0
 
