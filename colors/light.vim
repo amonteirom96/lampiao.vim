@@ -1,6 +1,6 @@
 " Maintainer:    Greg Sexton <gregsexton@gmail.com>
 " Last Change:   2024-09-15
-" Version:       1.4 (Light Version - Xcode Theme)
+" Version:       1.3 (Light Version - Xcode Theme)
 " URL:           http://www.gregsexton.org/vim-color-schemes/lampiao-color/
 
 set background=light
@@ -14,7 +14,7 @@ let g:colors_name="lampiao-light-xcode"
 
 " Backgrounds
 hi Normal       guifg=#282828     guibg=#F5F5F5
-hi NonText      guifg=#C7C6C5     guibg=#F5F5F5
+hi NonText      guifg=#D9D7D5     guibg=#F5F5F5
 hi StatusLine   guifg=#282828     guibg=#ECECEC    gui=none
 hi StatusLineNC guifg=#242424     guibg=#ECECEC    gui=none
 hi VertSplit    guifg=#D9D7D5     guibg=#F5F5F5   gui=none
