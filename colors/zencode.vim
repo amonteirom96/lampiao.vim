@@ -1,5 +1,11 @@
+" Maintainer:    Greg Sexton <gregsexton@gmail.com>
+" Last Change:   2024-09-15
+" Version:       1.0
+" URL:           https://example.com/xcode-dark-theme
+
 set background=dark
 if version > 580
+    " No guarantees for version 5.8 and below, but this makes it stop complaining
     hi clear
     if exists("syntax_on")
         syntax reset
@@ -7,61 +13,59 @@ if version > 580
 endif
 let g:colors_name="xcode_dark"
 
-" Fundo principal e texto
-hi Normal       guifg=#d0d0d0     guibg=#1d1f21
+hi Normal       guifg=#e8e8e8     guibg=#2e2e2e
 
-" Efeitos de diferença
-hi DiffDelete   guifg=#f77f7f     guibg=#1d1f21
-hi DiffAdd      guifg=#5fffcf     guibg=#1d1f21
-hi DiffChange   guifg=#ffdf40     guibg=#1d1f21
-hi DiffText     guifg=#ffdf40     guibg=#1d1f21
+hi DiffDelete   guifg=#ff6c6b     guibg=#3d3d3d
+hi DiffAdd      guifg=#98c379     guibg=#2d2d2d
+hi DiffChange   guifg=#c678dd     guibg=#2d2d2d
+hi DiffText     guifg=#e5c07b     guibg=#2d2d2d
 
-hi diffAdded    guifg=#5fffcf     guibg=#1d1f21
-hi diffRemoved  guifg=#f77f7f     guibg=#1d1f21
+hi diffAdded    guifg=#98c379     guibg=#2d2d2d
+hi diffRemoved  guifg=#ff6c6b     guibg=#2d2d2d
 
-" Ajustes do cursor e visual
-hi Cursor       guibg=#ffffff     guifg=#1d1f21
-hi VertSplit    guibg=#2e2e2e     guifg=#2e2e2e
-hi Folded       guifg=#7f8c8d     guibg=#2e2e2e
-hi FoldColumn   guibg=#2e2e2e     guifg=#7f8c8d
-hi IncSearch    guifg=#1d1f21     guibg=#ffdf40
-hi LineNr       guifg=#7f8c8d     guibg=#1d1f21
-hi ModeMsg      guifg=#f77f7f
-hi MoreMsg      guifg=#f77f7f
-hi NonText      guifg=#2e2e2e     guibg=#1d1f21
-hi Question     guifg=#f77f7f
-hi Search       guibg=#2e2e2e     guifg=#d0d0d0
-hi SpecialKey   guifg=#f77f7f
-hi StatusLine   guibg=#2e2e2e     guifg=#d0d0d0   gui=none
-hi StatusLineNC guibg=#2e2e2e     guifg=#7f8c8d   gui=none
-hi Title        guifg=#ffdf40
-hi Visual       gui=none          guifg=NONE      guibg=#2e2e2e
-hi WarningMsg   guifg=#f77f7f
-hi Directory    guifg=#5fffcf
-hi SignColumn   guibg=#1d1f21     guifg=#d0d0d0
+hi Cursor       guifg=#282c34     guibg=#e5c07b
+hi VertSplit    guifg=#3e4451     guibg=#3e4451   gui=none
+hi Folded       guifg=#5c6370     guibg=#2e2e2e
+hi FoldColumn   guifg=#7f8c8d     guibg=#2e2e2e
+hi IncSearch    guifg=#282c34   guibg=#e5c07b
+hi LineNr       guifg=#5c6370     guibg=#2e2e2e
+hi ModeMsg      guifg=#e5c07b
+hi MoreMsg      guifg=#98c379
+hi NonText      guifg=#3e4451     guibg=#2e2e2e
+hi Question     guifg=#98c379
+hi Search       guifg=#282c34     guibg=#e5c07b
+hi SpecialKey   guifg=#61afef
+hi StatusLine   guifg=#e5c07b     guibg=#3e4451    gui=none
+hi StatusLineNC guifg=#5c6370     guibg=#3e4451    gui=none
+hi Title        guifg=#e06c75
+hi Visual       guifg=#ffffff     guibg=#c678dd
+hi WarningMsg   guifg=#e5c07b
+hi Directory    guifg=#61afef
+hi SignColumn   guifg=#61afef     guibg=#2e2e2e
 
-" Vim 7.x specific colors
-if version >= 700
+if version >= 700 " Vim 7.x specific colors
     hi CursorLine   guifg=NONE    guibg=#2e2e2e gui=NONE
     hi CursorColumn guifg=NONE    guibg=#2e2e2e gui=NONE
-    hi MatchParen   guifg=#ffdf40 guibg=#1d1f21 gui=BOLD
-    hi Pmenu        guifg=#d0d0d0 guibg=#2e2e2e gui=NONE
-    hi PmenuSel     guifg=#1d1f21 guibg=#ffdf40 gui=NONE
+    hi MatchParen   guifg=#c678dd guibg=#3e4451 gui=BOLD
+    hi Pmenu        guifg=#e5c07b guibg=#2e2e2e gui=NONE
+    hi PmenuSel     guifg=#282c34 guibg=#e5c07b gui=NONE
 endif
 
-if version >= 703
-    hi ColorColumn  guifg=NONE    guibg=#2e2e2e
+if version >= 703 " Vim 7.x specific colors
+    hi ColorColumn  guifg=#e5c07b guibg=#2e2e2e
 endif
 
-" Grupos de destaque de sintaxe
-hi Comment    guifg=#7f8c8d   gui=italic
-hi Constant   guifg=#ffdf40   gui=none
-hi Identifier guifg=#5fffcf   gui=none
-hi Statement  guifg=#ffdf40   gui=none
-hi PreProc    guifg=#ffdf40   gui=none
-hi Type       guifg=#5fffcf   gui=none
-hi Special    guifg=#ffdf40   gui=none
-hi Delimiter  guifg=#d0d0d0
-hi Number     guifg=#ffdf40
-hi Ignore     guifg=grey40    gui=none
-hi Todo       guifg=#ffdf40   guibg=#1d1f21 gui=none
+" syntax highlighting groups
+hi Comment    guifg=#5c6370   gui=none
+hi Constant   guifg=#e5c07b   gui=none
+hi Identifier guifg=#e06c75   gui=none
+hi Statement  guifg=#61afef   gui=none
+hi PreProc    guifg=#c678dd   gui=none
+hi Type       guifg=#e5c07b   gui=none
+hi Special    guifg=#d19a66   gui=none
+hi Delimiter  guifg=#5c6370
+hi Number     guifg=#d19a66
+hi Ignore     guifg=#3e4451    gui=none
+hi Todo       guifg=#e06c75 guibg=#2e2e2e gui=none
+
+"vim: sw=4
