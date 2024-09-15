@@ -7,7 +7,7 @@ if version > 580
 endif
 let g:colors_name="lampiao_vscode"
 
-" Ajuste de cores principais
+" Ajuste de cores principais para o estilo do VSCode Dark
 hi Normal       guifg=#d4d4d4     guibg=#1e1e1e
 
 " Efeitos de diferença
@@ -21,16 +21,16 @@ hi diffRemoved  guifg=#d16969     guibg=#1e1e1e
 
 " Ajustes do cursor e visual
 hi Cursor       guibg=#ffffff     guifg=#1e1e1e
-hi VertSplit    guibg=#252526     guifg=#3e3e42
+hi VertSplit    guibg=#3e3e42     guifg=#3e3e42
 hi Folded       guifg=#cccccc     guibg=#2d2d30
 hi FoldColumn   guibg=#2d2d30     guifg=#d4d4d4
-hi IncSearch    guifg=#000000     guibg=#ffd700
+hi IncSearch    guifg=#000000     guibg=#ffd70
 hi LineNr       guifg=#858585     guibg=#1e1e1e
 hi ModeMsg      guifg=#569cd6
 hi MoreMsg      guifg=#569cd6
 hi NonText      guifg=#3e3e42     guibg=#1e1e1e
 hi Question     guifg=#569cd6
-hi Search       guibg=#d4d4d4     guifg=#000000
+hi Search       guibg=#515c6a     guifg=#d4d4d4
 hi SpecialKey   guifg=#569cd6
 hi StatusLine   guibg=#007acc     guifg=#d4d4d4   gui=none
 hi StatusLineNC guibg=#2d2d30     guifg=#808080   gui=none
@@ -54,7 +54,7 @@ if version >= 703
 endif
 
 " Grupos de destaque de sintaxe
-hi Comment    guifg=#608b4e   gui=italic
+hi Comment    guifg=#6a9955   gui=italic
 hi Constant   guifg=#dcdcaa   gui=none
 hi Identifier guifg=#9cdcfe   gui=none
 hi Statement  guifg=#569cd6   gui=none
