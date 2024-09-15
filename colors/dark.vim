@@ -1,71 +1,72 @@
-"Maintainer:    Greg Sexton <gregsexton@gmail.com>
-"Last Change:   2011-04-22
-"Version:       1.1
-"URL:           http://www.gregsexton.org/vim-color-schemes/lampiao-color/
-
 set background=dark
 if version > 580
-    "no guarantees for version 5.8 and below, but this makes it stop complaining
+    " No guarantees for version 5.8 and below, but this makes it stop complaining
     hi clear
     if exists("syntax_on")
-	syntax reset
+        syntax reset
     endif
 endif
-let g:colors_name="lampiao"
+let g:colors_name="lampiao_dark"
 
-hi Normal       guifg=#e8ecf0     guibg=#304050
+hi Normal       guifg=#FFFFFF     guibg=#292A30
 
-hi DiffDelete   guifg=#304050     guibg=#203040
-hi DiffAdd      guibg=#002851
-hi DiffChange   guibg=#450303
-hi DiffText     guibg=#990909     gui=none
+hi DiffDelete   guifg=#FF6C6B     guibg=#2D2D2D
+hi DiffAdd      guifg=#98C379     guibg=#2D2D2D
+hi DiffChange   guifg=#E5C07B     guibg=#2D2D2D
+hi DiffText     guifg=#FC5FA3     guibg=#2D2D2D
 
-hi diffAdded    guifg=#00bf00     guibg=#1d2c1b
-hi diffRemoved  guifg=#e00000     guibg=#2d1c20
+hi diffAdded    guifg=#98C379     guibg=#2D2D2D
+hi diffRemoved  guifg=#FF6C6B     guibg=#2D2D2D
 
-hi Cursor       guibg=khaki       guifg=slategrey
-hi VertSplit    guibg=#102030     guifg=#102030   gui=none
-hi Folded       guifg=#cccccc     guibg=#405060
-hi FoldColumn   guibg=grey30      guifg=tan
-hi IncSearch    guifg=slategrey   guibg=khaki
-hi LineNr       guifg=#556575     guibg=#203040
-hi ModeMsg      guifg=goldenrod
-hi MoreMsg      guifg=SeaGreen
-hi NonText      guifg=#304050     guibg=#304050
-hi Question     guifg=springgreen
-hi Search       guibg=#ffff7d     guifg=#000000
-hi SpecialKey   guifg=yellowgreen
-hi StatusLine   guibg=#102030     guifg=grey70    gui=none
-hi StatusLineNC guibg=#203040     guifg=grey50    gui=none
-hi Title        guifg=indianred
-hi Visual       gui=none          guifg=white     guibg=#D04040
-hi WarningMsg   guifg=salmon
-hi Directory    guifg=#A6E22E
-hi SignColumn   guifg=#A6E22E     guibg=#203040
+hi Cursor       guifg=#282C34     guibg=#82ADF3
+hi VertSplit    guifg=#16171A     guibg=#16171A   gui=none
+hi Folded       guifg=#7F8C99     guibg=#292A30
+hi FoldColumn   guifg=#8A8C8D     guibg=#292A30
+hi IncSearch    guifg=#282C34     guibg=#82ADF3
+hi LineNr       guifg=#747478     guibg=#292A30
+hi ModeMsg      guifg=#E5C07B
+hi MoreMsg      guifg=#98C379
+hi NonText      guifg=#747478     guibg=#292A30
+hi Question     guifg=#98C379
+hi Search       guifg=#000000     guibg=#B3D7FF
+hi SpecialKey   guifg=#FFC799
+hi StatusLine   guifg=#E5C07B     guibg=#16171A    gui=none
+hi StatusLineNC guifg=#A6A7A8     guibg=#16171A    gui=none
 
-if version >= 700 " Vim 7.x specific colors
-    hi CursorLine   guifg=NONE    guibg=#203040 gui=NONE
-    hi CursorColumn guifg=NONE    guibg=#203040 gui=NONE
-    hi MatchParen   guifg=red     guibg=#304050 gui=BOLD
-    hi Pmenu        guifg=#f6f3e8 guibg=#152535 gui=NONE
-    hi PmenuSel     guifg=#000000 guibg=#cae682 gui=NONE
-endif
+" Define the syntax highlighting
+hi Comment      guifg=#7F8C99     gui=italic
+hi Statement    guifg=#FF7AB2     gui=bold
+hi Keyword      guifg=#FF7AB2     gui=bold
+hi Function     guifg=#FF816F
+hi Identifier   guifg=#8AD1C3
+hi Type         guifg=#8AD1C3
+hi Number       guifg=#A79DF8
+hi String       guifg=#FC6A5D
+hi Operator     guifg=#FFFFFF
+hi Label        guifg=#8AD1C3
+hi Constant     guifg=#8AD1C3
 
-if version >= 703 " Vim 7.x specific colors
-    hi ColorColumn  guifg=#e8ecf0 guibg=#283848
-endif
+hi Statement    guifg=#FF7AB2     gui=bold
+hi Keyword      guifg=#FF7AB2     gui=bold
+hi Type         guifg=#8AD1C3
+hi Function     guifg=#FF816F
+hi Identifier   guifg=#8AD1C3
+hi Number       guifg=#A79DF8
+hi String       guifg=#FC6A5D
 
-" syntax highlighting groups
-hi Comment    guifg=#8090a0   gui=none
-hi Constant   guifg=#ff6070   gui=none
-hi Identifier guifg=#70d080   gui=none
-hi Statement  guifg=#6699D0   gui=none
-hi PreProc    guifg=indianred gui=none
-hi Type       guifg=#8cd0d3   gui=none
-hi Special    guifg=#ecad2b   gui=none
-hi Delimiter  guifg=#8090a0
-hi Number     guifg=#FFFF80
-hi Ignore     guifg=grey40    gui=none
-hi Todo       guifg=orangered guibg=#304050 gui=none
+hi htmlTagName  guifg=#E5C07B
+hi htmlTagName  guifg=#E5C07B
+hi htmlTag      guifg=#E5C07B
+hi htmlTagName  guifg=#E5C07B
 
-"vim: sw=4
+" Terminal colors
+hi Terminal    guifg=#BFBFBF     guibg=#000000
+hi TerminalBG  guifg=#000000     guibg=#BFBFBF
+hi TerminalBlack       guifg=#000000
+hi TerminalRed         guifg=#990001
+hi TerminalGreen       guifg=#00A600
+hi TerminalYellow      guifg=#999900
+hi TerminalBlue        guifg=#0001B2
+hi TerminalMagenta     guifg=#B301B2
+hi TerminalCyan        guifg=#01A6B2
+hi TerminalWhite       guifg=#BFBFBF
