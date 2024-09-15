@@ -5,63 +5,63 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="zencode"
+let g:colors_name="serenity_code"
 
-" Ajuste de cores principais para conforto visual
-hi Normal       guifg=#d0d0d0     guibg=#1e1e1e
+" Ajuste de cores principais
+hi Normal       guifg=#dcdcdc     guibg=#282a36
 
 " Efeitos de diferença
-hi DiffDelete   guifg=#1e1e1e     guibg=#d16969
-hi DiffAdd      guibg=#a3be8c
-hi DiffChange   guibg=#e0af68
-hi DiffText     guibg=#bf616a
+hi DiffDelete   guifg=#282a36     guibg=#ff5555
+hi DiffAdd      guibg=#50fa7b
+hi DiffChange   guibg=#f1fa8c
+hi DiffText     guibg=#ff79c6
 
-hi diffAdded    guifg=#a3be8c     guibg=#1e1e1e
-hi diffRemoved  guifg=#bf616a     guibg=#1e1e1e
+hi diffAdded    guifg=#50fa7b     guibg=#282a36
+hi diffRemoved  guifg=#ff5555     guibg=#282a36
 
 " Ajustes do cursor e visual
-hi Cursor       guibg=#ffffff     guifg=#1e1e1e
-hi VertSplit    guibg=#3b4048     guifg=#3b4048
-hi Folded       guifg=#d0d0d0     guibg=#2b2e33
-hi FoldColumn   guibg=#2b2e33     guifg=#d0d0d0
-hi IncSearch    guifg=#000000     guibg=#e0af68
-hi LineNr       guifg=#565f66     guibg=#1e1e1e
-hi ModeMsg      guifg=#81a1c1
-hi MoreMsg      guifg=#81a1c1
-hi NonText      guifg=#4b515d     guibg=#1e1e1e
-hi Question     guifg=#81a1c1
-hi Search       guibg=#5e81ac     guifg=#1e1e1e
-hi SpecialKey   guifg=#81a1c1
-hi StatusLine   guibg=#2e3440     guifg=#d0d0d0   gui=none
-hi StatusLineNC guibg=#2e3440     guifg=#4b515d   gui=none
-hi Title        guifg=#d08770
-hi Visual       gui=none          guifg=NONE      guibg=#434c5e
-hi WarningMsg   guifg=#d08770
-hi Directory    guifg=#5e81ac
-hi SignColumn   guibg=#1e1e1e     guifg=#d0d0d0
+hi Cursor       guibg=#ffffff     guifg=#282a36
+hi VertSplit    guibg=#44475a     guifg=#44475a
+hi Folded       guifg=#dcdcdc     guibg=#3b4048
+hi FoldColumn   guibg=#3b4048     guifg=#dcdcdc
+hi IncSearch    guifg=#000000     guibg=#ffb86c
+hi LineNr       guifg=#6272a4     guibg=#282a36
+hi ModeMsg      guifg=#8be9fd
+hi MoreMsg      guifg=#8be9fd
+hi NonText      guifg=#44475a     guibg=#282a36
+hi Question     guifg=#8be9fd
+hi Search       guibg=#44475a     guifg=#f8f8f2
+hi SpecialKey   guifg=#8be9fd
+hi StatusLine   guibg=#44475a     guifg=#dcdcdc   gui=none
+hi StatusLineNC guibg=#44475a     guifg=#6272a4   gui=none
+hi Title        guifg=#ff79c6
+hi Visual       gui=none          guifg=NONE      guibg=#44475a
+hi WarningMsg   guifg=#ff5555
+hi Directory    guifg=#8be9fd
+hi SignColumn   guibg=#282a36     guifg=#dcdcdc
 
 " Vim 7.x specific colors
 if version >= 700
-    hi CursorLine   guifg=NONE    guibg=#2e3440 gui=NONE
-    hi CursorColumn guifg=NONE    guibg=#2e3440 gui=NONE
-    hi MatchParen   guifg=#88c0d0 guibg=#1e1e1e gui=BOLD
-    hi Pmenu        guifg=#d0d0d0 guibg=#3b4048 gui=NONE
-    hi PmenuSel     guifg=#000000 guibg=#88c0d0 gui=NONE
+    hi CursorLine   guifg=NONE    guibg=#44475a gui=NONE
+    hi CursorColumn guifg=NONE    guibg=#44475a gui=NONE
+    hi MatchParen   guifg=#ff79c6 guibg=#282a36 gui=BOLD
+    hi Pmenu        guifg=#f8f8f2 guibg=#44475a gui=NONE
+    hi PmenuSel     guifg=#000000 guibg=#50fa7b gui=NONE
 endif
 
 if version >= 703
-    hi ColorColumn  guifg=NONE    guibg=#3b4048
+    hi ColorColumn  guifg=NONE    guibg=#44475a
 endif
 
 " Grupos de destaque de sintaxe
-hi Comment    guifg=#565f66   gui=italic
-hi Constant   guifg=#b48ead   gui=none
-hi Identifier guifg=#8fbcbb   gui=none
-hi Statement  guifg=#81a1c1   gui=none
-hi PreProc    guifg=#d08770   gui=none
-hi Type       guifg=#a3be8c   gui=none
-hi Special    guifg=#d08770   gui=none
-hi Delimiter  guifg=#d0d0d0
-hi Number     guifg=#ebcb8b
+hi Comment    guifg=#6272a4   gui=italic
+hi Constant   guifg=#bd93f9   gui=none
+hi Identifier guifg=#50fa7b   gui=none
+hi Statement  guifg=#ff79c6   gui=none
+hi PreProc    guifg=#ffb86c   gui=none
+hi Type       guifg=#8be9fd   gui=none
+hi Special    guifg=#ff79c6   gui=none
+hi Delimiter  guifg=#f8f8f2
+hi Number     guifg=#bd93f9
 hi Ignore     guifg=grey40    gui=none
-hi Todo       guifg=#d08770   guibg=#1e1e1e gui=none
+hi Todo       guifg=#ff79c6   guibg=#282a36 gui=none
