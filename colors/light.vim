@@ -1,8 +1,3 @@
-" Maintainer:    Greg Sexton <gregsexton@gmail.com>
-" Last Change:   2024-09-11
-" Version:       1.2 (Light Version)
-" URL:           http://www.gregsexton.org/vim-color-schemes/lampiao-color/
-
 set background=light
 if version > 580
     hi clear
@@ -12,59 +7,62 @@ if version > 580
 endif
 let g:colors_name="lampiao-light"
 
-hi Normal       guifg=#304050     guibg=#e8ecf0
+" Backgrounds
+hi Normal       guifg=#282828     guibg=#F5F5F5
+hi NonText      guifg=#D9D7D5     guibg=#F5F5F5
+hi StatusLine   guifg=#282828     guibg=#ECECEC    gui=none
+hi StatusLineNC guifg=#242424     guibg=#ECECEC    gui=none
+hi VertSplit    guifg=#D9D7D5     guibg=#F5F5F5   gui=none
+hi Cursor       guifg=#282828     guibg=#3C93FD
+hi CursorLine   guifg=NONE        guibg=#EEF5FE  gui=NONE
+hi CursorColumn guifg=NONE        guibg=#EEF5FE  gui=NONE
+hi LineNr       guifg=#A6A6A6     guibg=#F5F5F5
+hi MatchParen   guifg=#000000     guibg=#CECECE   gui=BOLD
+hi Search       guifg=#000000     guibg=#B3D7FF
+hi IncSearch    guifg=#282828     guibg=#3C93FD
+hi Visual       guifg=#000000     guibg=#B3D7FF
 
-hi DiffDelete   guifg=#e8ecf0     guibg=#c0d0e0
-hi DiffAdd      guibg=#d4ebf9
-hi DiffChange   guibg=#f7d2d2
-hi DiffText     guibg=#ffaaaa     gui=none
+" Diff
+hi DiffDelete   guifg=#F5F5F5     guibg=#D9D7D5
+hi DiffAdd      guifg=#000000     guibg=#D9D7D5
+hi DiffChange   guifg=#000000     guibg=#D9D7D5
+hi DiffText     guifg=#000000     guibg=#D9D7D5
 
-hi diffAdded    guifg=#00bf00     guibg=#e0f3e0
-hi diffRemoved  guifg=#e00000     guibg=#f3d2d2
+" Syntax highlighting groups
+hi Comment      guifg=#536579     gui=italic
+hi Constant     guifg=#272AD8
+hi Identifier   guifg=#713DA9
+hi Statement    guifg=#AD3DA4     gui=bold
+hi PreProc      guifg=#643820
+hi Type         guifg=#713DA9
+hi Special      guifg=#AA0D91
+hi Delimiter    guifg=#282828
+hi Number       guifg=#272AD8
+hi Todo         guifg=#C41A16     guibg=#F5F5F5
+hi Strings      guifg=#D12F1B
+hi Functions    guifg=#4B22B0
+hi Keywords     guifg=#AD3DA4     gui=bold
+hi Operators    guifg=#000000
+hi Types        guifg=#713DA9
+hi Variables    guifg=#3F6E74
+hi Property     guifg=#000000
 
-hi Cursor       guibg=khaki       guifg=slategrey
-hi VertSplit    guibg=#d0e0f0     guifg=#d0e0f0   gui=none
-hi Folded       guifg=#405060     guibg=#d0e0f0
-hi FoldColumn   guibg=grey90      guifg=#405060
-hi IncSearch    guifg=slategrey   guibg=khaki
-hi LineNr       guifg=#a0b0c0     guibg=#e8ecf0
-hi ModeMsg      guifg=goldenrod
-hi MoreMsg      guifg=SeaGreen
-hi NonText      guifg=#d0e0f0     guibg=#e8ecf0
-hi Question     guifg=springgreen
-hi Search       guibg=#ffff7d     guifg=#000000
-hi SpecialKey   guifg=yellowgreen
-hi StatusLine   guibg=#d0e0f0     guifg=#405060    gui=none
-hi StatusLineNC guibg=#e8ecf0     guifg=#8090a0    gui=none
-hi Title        guifg=indianred
-hi Visual       gui=none          guifg=#ffffff     guibg=#e4a0a0
-hi WarningMsg   guifg=salmon
-hi Directory    guifg=#006400
-hi SignColumn   guifg=#006400     guibg=#e8ecf0
+" Terminal colors
+hi TermCursor   guifg=#000000     guibg=#3C93FD
+hi TermColor1   guifg=#C41A16
+hi TermColor2   guifg=#007400
+hi TermColor3   guifg=#643820
+hi TermColor4   guifg=#272AD8
+hi TermColor5   guifg=#AA0D91
+hi TermColor6   guifg=#3F6E74
+hi TermColor7   guifg=#000000
+hi TermColor8   guifg=#000000
+hi TermColor9   guifg=#C41A16
+hi TermColor10  guifg=#007400
+hi TermColor11  guifg=#643820
+hi TermColor12  guifg=#272AD8
+hi TermColor13  guifg=#AA0D91
+hi TermColor14  guifg=#3F6E74
+hi TermColor15  guifg=#000000
 
-if version >= 700
-    hi CursorLine   guifg=NONE    guibg=#d0e0f0 gui=NONE
-    hi CursorColumn guifg=NONE    guibg=#d0e0f0 gui=NONE
-    hi MatchParen   guifg=red     guibg=#c0d0e0 gui=BOLD
-    hi Pmenu        guifg=#304050 guibg=#f0f4f8 gui=NONE
-    hi PmenuSel     guifg=#000000 guibg=#cae682 gui=NONE
-endif
-
-if version >= 703
-    hi ColorColumn  guifg=#304050 guibg=#e8f0f8
-endif
-
-" syntax highlighting groups
-hi Comment    guifg=#8090a0   gui=none
-hi Constant   guifg=#d04040   gui=none
-hi Identifier guifg=#408060   gui=none
-hi Statement  guifg=#336699   gui=none
-hi PreProc    guifg=indianred gui=none
-hi Type       guifg=#507c7f   gui=none
-hi Special    guifg=#a06020   gui=none
-hi Delimiter  guifg=#8090a0
-hi Number     guifg=#ff8040
-hi Ignore     guifg=grey70    gui=none
-hi Todo       guifg=orangered guibg=#d0e0f0 gui=none
-
-"vim: sw=4
+" vim: sw=4
