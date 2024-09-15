@@ -13,59 +13,65 @@ if version > 580
 endif
 let g:colors_name="xcode_dark"
 
-hi Normal       guifg=#e8e8e8     guibg=#2e2e2e
+hi Normal       guifg=#FFFFFF     guibg=#292A30
 
-hi DiffDelete   guifg=#ff6c6b     guibg=#3d3d3d
-hi DiffAdd      guifg=#98c379     guibg=#2d2d2d
-hi DiffChange   guifg=#c678dd     guibg=#2d2d2d
-hi DiffText     guifg=#e5c07b     guibg=#2d2d2d
+hi DiffDelete   guifg=#FF6C6B     guibg=#2D2D2D
+hi DiffAdd      guifg=#98C379     guibg=#2D2D2D
+hi DiffChange   guifg=#E5C07B     guibg=#2D2D2D
+hi DiffText     guifg=#FC5FA3     guibg=#2D2D2D
 
-hi diffAdded    guifg=#98c379     guibg=#2d2d2d
-hi diffRemoved  guifg=#ff6c6b     guibg=#2d2d2d
+hi diffAdded    guifg=#98C379     guibg=#2D2D2D
+hi diffRemoved  guifg=#FF6C6B     guibg=#2D2D2D
 
-hi Cursor       guifg=#282c34     guibg=#e5c07b
-hi VertSplit    guifg=#3e4451     guibg=#3e4451   gui=none
-hi Folded       guifg=#5c6370     guibg=#2e2e2e
-hi FoldColumn   guifg=#7f8c8d     guibg=#2e2e2e
-hi IncSearch    guifg=#282c34   guibg=#e5c07b
-hi LineNr       guifg=#5c6370     guibg=#2e2e2e
-hi ModeMsg      guifg=#e5c07b
-hi MoreMsg      guifg=#98c379
-hi NonText      guifg=#3e4451     guibg=#2e2e2e
-hi Question     guifg=#98c379
-hi Search       guifg=#282c34     guibg=#e5c07b
-hi SpecialKey   guifg=#61afef
-hi StatusLine   guifg=#e5c07b     guibg=#3e4451    gui=none
-hi StatusLineNC guifg=#5c6370     guibg=#3e4451    gui=none
-hi Title        guifg=#e06c75
-hi Visual       guifg=#ffffff     guibg=#c678dd
-hi WarningMsg   guifg=#e5c07b
-hi Directory    guifg=#61afef
-hi SignColumn   guifg=#61afef     guibg=#2e2e2e
+hi Cursor       guifg=#282C34     guibg=#82ADF3
+hi VertSplit    guifg=#16171A     guibg=#16171A   gui=none
+hi Folded       guifg=#7F8C99     guibg=#292A30
+hi FoldColumn   guifg=#8A8C8D     guibg=#292A30
+hi IncSearch    guifg=#282C34     guibg=#82ADF3
+hi LineNr       guifg=#747478     guibg=#292A30
+hi ModeMsg      guifg=#E5C07B
+hi MoreMsg      guifg=#98C379
+hi NonText      guifg=#747478     guibg=#292A30
+hi Question     guifg=#98C379
+hi Search       guifg=#000000     guibg=#B3D7FF
+hi SpecialKey   guifg=#FFC799
+hi StatusLine   guifg=#E5C07B     guibg=#16171A    gui=none
+hi StatusLineNC guifg=#A6A7A8     guibg=#16171A    gui=none
 
-if version >= 700 " Vim 7.x specific colors
-    hi CursorLine   guifg=NONE    guibg=#2e2e2e gui=NONE
-    hi CursorColumn guifg=NONE    guibg=#2e2e2e gui=NONE
-    hi MatchParen   guifg=#c678dd guibg=#3e4451 gui=BOLD
-    hi Pmenu        guifg=#e5c07b guibg=#2e2e2e gui=NONE
-    hi PmenuSel     guifg=#282c34 guibg=#e5c07b gui=NONE
-endif
+" Define the syntax highlighting
+hi Comment      guifg=#7F8C99     gui=italic
+hi Statement    guifg=#FF7AB2     gui=bold
+hi Keyword      guifg=#FF7AB2     gui=bold
+hi Function     guifg=#FF816F
+hi Identifier   guifg=#8AD1C3
+hi Type         guifg=#8AD1C3
+hi Number       guifg=#A79DF8
+hi String       guifg=#FC6A5D
+hi Operator     guifg=#FFFFFF
+hi Label        guifg=#8AD1C3
+hi Constant     guifg=#8AD1C3
 
-if version >= 703 " Vim 7.x specific colors
-    hi ColorColumn  guifg=#e5c07b guibg=#2e2e2e
-endif
+hi Statement    guifg=#FF7AB2     gui=bold
+hi Keyword      guifg=#FF7AB2     gui=bold
+hi Type         guifg=#8AD1C3
+hi Function     guifg=#FF816F
+hi Identifier   guifg=#8AD1C3
+hi Number       guifg=#A79DF8
+hi String       guifg=#FC6A5D
 
-" syntax highlighting groups
-hi Comment    guifg=#5c6370   gui=none
-hi Constant   guifg=#e5c07b   gui=none
-hi Identifier guifg=#e06c75   gui=none
-hi Statement  guifg=#61afef   gui=none
-hi PreProc    guifg=#c678dd   gui=none
-hi Type       guifg=#e5c07b   gui=none
-hi Special    guifg=#d19a66   gui=none
-hi Delimiter  guifg=#5c6370
-hi Number     guifg=#d19a66
-hi Ignore     guifg=#3e4451    gui=none
-hi Todo       guifg=#e06c75 guibg=#2e2e2e gui=none
+hi htmlTagName  guifg=#E5C07B
+hi htmlTagName  guifg=#E5C07B
+hi htmlTag      guifg=#E5C07B
+hi htmlTagName  guifg=#E5C07B
 
-"vim: sw=4
+" Terminal colors
+hi Terminal    guifg=#BFBFBF     guibg=#000000
+hi TerminalBG  guifg=#000000     guibg=#BFBFBF
+hi TerminalBlack       guifg=#000000
+hi TerminalRed         guifg=#990001
+hi TerminalGreen       guifg=#00A600
+hi TerminalYellow      guifg=#999900
+hi TerminalBlue        guifg=#0001B2
+hi TerminalMagenta     guifg=#B301B2
+hi TerminalCyan        guifg=#01A6B2
+hi TerminalWhite       guifg=#BFBFBF
