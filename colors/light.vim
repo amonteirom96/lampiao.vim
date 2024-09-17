@@ -19,7 +19,7 @@ hi Cursor       guifg=#FFFFFF     guibg=#c8c8c8
 hi VertSplit    guifg=#CCCCCC     guibg=#CCCCCC   gui=none
 hi Folded       guifg=#6A9955     guibg=#E7E7E7
 hi FoldColumn   guifg=#007ACC     guibg=#E7E7E7
-hi IncSearch    guifg=#FFFFFF     guibg=#569CD6
+hi IncSearch    guifg=#FFFFFF     guibg=#3C93FD
 hi LineNr       guifg=#6A6A6A     guibg=#FFFFFF
 hi ModeMsg      guifg=#D7BA7D
 hi MoreMsg      guifg=#6A9955
