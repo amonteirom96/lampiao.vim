@@ -15,7 +15,9 @@ hi DiffText     guifg=#A626A4     guibg=#FAFAFA
 hi diffAdded    guifg=#50A14F     guibg=#FAFAFA
 hi diffRemoved  guifg=#E45649     guibg=#FAFAFA
 
-hi Cursor       guifg=#FAFAFA     guibg=#4078F2
+hi Cursor       guifg=#282828     guibg=#3C93FD
+hi CursorLine   guifg=NONE        guibg=#EEF5FE  gui=NONE
+hi CursorColumn guifg=NONE        guibg=#EEF5FE  gui=NONE
 hi VertSplit    guifg=#E7E7E8     guibg=#E7E7E8   gui=none
 hi Folded       guifg=#A0A1A7     guibg=#FAFAFA
 hi FoldColumn   guifg=#4078F2     guibg=#FAFAFA
