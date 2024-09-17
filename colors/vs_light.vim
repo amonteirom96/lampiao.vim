@@ -15,12 +15,7 @@ hi DiffText     guifg=#C586C0     guibg=#FFFFFF
 hi diffAdded    guifg=#22863A     guibg=#FFFFFF
 hi diffRemoved  guifg=#D16969     guibg=#FFFFFF
 
-" Cursor individual
-hi Cursor       guifg=#FFFFFF     guibg=#4E4E4E
-
-" Ajuste da linha onde o cursor está localizado
-hi CursorLine   guibg=#F3F3F3    " Fundo mais claro para destacar a linha atual
-
+hi Cursor       guifg=#FFFFFF     guibg=#4E4E4E  
 hi VertSplit    guifg=#CCCCCC     guibg=#CCCCCC   gui=none
 hi Folded       guifg=#6A9955     guibg=#E7E7E7
 hi FoldColumn   guifg=#007ACC     guibg=#E7E7E7
