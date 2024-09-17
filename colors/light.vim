@@ -26,6 +26,7 @@ hi MoreMsg      guifg=#6A9955
 hi NonText      guifg=#BFBFBF     guibg=#FFFFFF
 hi Question     guifg=#6A9955
 hi Search       guifg=#000000     guibg=#B3D7FF
+hi Visual       guifg=#000000     guibg=#B3D7FF
 hi SpecialKey   guifg=#D7BA7D
 hi StatusLine   guifg=#000000     guibg=#E7E7E7    gui=none
 hi StatusLineNC guifg=#A6A6A6     guibg=#E7E7E7    gui=none
