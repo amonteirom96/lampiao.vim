@@ -5,7 +5,7 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="atom_one_dark"
+let g:colors_name="dark"
 
 hi Normal       guifg=#ABB2BF     guibg=#282C34
 hi DiffDelete   guifg=#E06C75     guibg=#282C34
