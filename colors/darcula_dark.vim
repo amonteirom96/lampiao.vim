@@ -26,15 +26,15 @@ hi ModeMsg      guifg=#EBCB8B
 hi MoreMsg      guifg=#6A8759
 hi NonText      guifg=#606366     guibg=#2B2B2B
 hi Question     guifg=#6A8759
-hi Search       guifg=#2B2B2B     guibg=#EBCB8B
+hi Search       guifg=#2B2B2B     guibg=#6897BB
 hi SpecialKey   guifg=#EBCB8B
 hi StatusLine   guifg=#A9B7C6     guibg=#323232  gui=none
 hi StatusLineNC guifg=#808080     guibg=#323232  gui=none
 
 hi Comment      guifg=#808080     gui=italic
-hi Statement    guifg=#EBCB8B     gui=bold  " Amarelo no lugar do azul claro
+hi Statement    guifg=#6897BB     gui=bold
 hi Keyword      guifg=#9876AA     gui=bold
-hi Function     guifg=#EBCB8B     " Amarelo no lugar do azul claro
+hi Function     guifg=#6897BB
 hi Identifier   guifg=#CC7832
 hi Type         guifg=#9876AA
 hi Number       guifg=#D19A66
@@ -44,7 +44,7 @@ hi Label        guifg=#9876AA
 hi Constant     guifg=#9876AA
 
 hi htmlTag      guifg=#CC7832
-hi htmlTagName  guifg=#EBCB8B     " Amarelo no lugar do azul claro
+hi htmlTagName  guifg=#6897BB
 
 hi Terminal     guifg=#A9B7C6     guibg=#2B2B2B
 hi TerminalBG   guifg=#2B2B2B     guibg=#A9B7C6
@@ -52,7 +52,7 @@ hi TerminalBlack       guifg=#2B2B2B
 hi TerminalRed         guifg=#CC7832
 hi TerminalGreen       guifg=#6A8759
 hi TerminalYellow      guifg=#EBCB8B
-hi TerminalBlue        guifg=#EBCB8B     " Amarelo no lugar do azul claro
+hi TerminalBlue        guifg=#6897BB
 hi TerminalMagenta     guifg=#9876AA
 hi TerminalCyan        guifg=#A9B7C6
 hi TerminalWhite       guifg=#A9B7C6
