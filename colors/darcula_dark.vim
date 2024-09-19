@@ -32,8 +32,11 @@ hi StatusLine   guifg=#A9B7C6     guibg=#323232  gui=none
 hi StatusLineNC guifg=#808080     guibg=#323232  gui=none
 
 hi Comment      guifg=#808080     gui=italic
-hi Statement    guifg=#6897BB     gui=bold
-hi Keyword      guifg=#EBCB8B     gui=bold " Ajustado para o amarelo do Darcula
+hi Statement    guifg=#EBCB8B     gui=bold  " Ajustado para amarelo
+hi Keyword      guifg=#EBCB8B     gui=bold  " Ajustado para amarelo
+hi Conditional  guifg=#EBCB8B     gui=bold  " Adicionado para condicional (if, else, etc.)
+hi Repeat       guifg=#EBCB8B     gui=bold  " Adicionado para loops (for, while, etc.)
+hi Exception    guifg=#EBCB8B     gui=bold  " Adicionado para try, catch, throw
 hi Function     guifg=#A9B7C6
 hi Identifier   guifg=#CC7832
 hi Type         guifg=#A9B7C6
