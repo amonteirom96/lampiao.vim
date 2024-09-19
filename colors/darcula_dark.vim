@@ -33,7 +33,7 @@ hi StatusLineNC guifg=#808080     guibg=#323232  gui=none
 
 hi Comment      guifg=#808080     gui=italic
 hi Statement    guifg=#6897BB     gui=bold
-hi Keyword      guifg=#9876AA     gui=bold
+hi Keyword      guifg=#EBCB8B     gui=bold " Ajustado para o amarelo do Darcula
 hi Function     guifg=#A9B7C6
 hi Identifier   guifg=#CC7832
 hi Type         guifg=#A9B7C6
