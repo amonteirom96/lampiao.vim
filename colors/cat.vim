@@ -5,55 +5,55 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="catpuccino_dark"
+let g:colors_name="blue_dream"
 
-" Paleta inspirada no tema Catppuccin (Mocha)
-hi Normal       guifg=#D9E0EE     guibg=#1E1E2E
-hi DiffDelete   guifg=#F28FAD     guibg=#1E1E2E
-hi DiffAdd      guifg=#ABE9B3     guibg=#1E1E2E
-hi DiffChange   guifg=#FAE3B0     guibg=#1E1E2E
-hi DiffText     guifg=#DDB6F2     guibg=#1E1E2E
-hi diffAdded    guifg=#ABE9B3     guibg=#1E1E2E
-hi diffRemoved  guifg=#F28FAD     guibg=#1E1E2E
+" Paleta ajustada com foco no azul
+hi Normal       guifg=#CAD3F5     guibg=#1E2030
+hi DiffDelete   guifg=#F7768E     guibg=#1E2030
+hi DiffAdd      guifg=#B7E3D8     guibg=#1E2030
+hi DiffChange   guifg=#FF9E64     guibg=#1E2030
+hi DiffText     guifg=#7AA2F7     guibg=#1E2030
+hi diffAdded    guifg=#B7E3D8     guibg=#1E2030
+hi diffRemoved  guifg=#F7768E     guibg=#1E2030
 
-hi Cursor       guifg=#1E1E2E     guibg=#96CDFB
-hi CursorLine   guifg=NONE        guibg=#2E2E3E  gui=NONE
-hi VertSplit    guifg=#2E2E3E     guibg=#2E2E3E   gui=none
-hi Folded       guifg=#6E6C7E     guibg=#1E1E2E
-hi FoldColumn   guifg=#96CDFB     guibg=#1E1E2E
-hi IncSearch    guifg=#1E1E2E     guibg=#96CDFB
-hi LineNr       guifg=#575268     guibg=#1E1E2E
-hi ModeMsg      guifg=#FAE3B0
-hi MoreMsg      guifg=#ABE9B3
-hi NonText      guifg=#575268     guibg=#1E1E2E
-hi Question     guifg=#ABE9B3
-hi Search       guifg=#1E1E2E     guibg=#96CDFB
-hi SpecialKey   guifg=#FAE3B0
-hi StatusLine   guifg=#D9E0EE     guibg=#2E2E3E    gui=none
-hi StatusLineNC guifg=#6E6C7E     guibg=#2E2E3E    gui=none
+hi Cursor       guifg=#1E2030     guibg=#7AA2F7
+hi CursorLine   guifg=NONE        guibg=#2B2D3B  gui=NONE
+hi VertSplit    guifg=#2B2D3B     guibg=#2B2D3B   gui=none
+hi Folded       guifg=#4C566A     guibg=#1E2030
+hi FoldColumn   guifg=#7AA2F7     guibg=#1E2030
+hi IncSearch    guifg=#1E2030     guibg=#7AA2F7
+hi LineNr       guifg=#3B4261     guibg=#1E2030
+hi ModeMsg      guifg=#FF9E64
+hi MoreMsg      guifg=#B7E3D8
+hi NonText      guifg=#3B4261     guibg=#1E2030
+hi Question     guifg=#B7E3D8
+hi Search       guifg=#1E2030     guibg=#7AA2F7
+hi SpecialKey   guifg=#FF9E64
+hi StatusLine   guifg=#CAD3F5     guibg=#2B2D3B    gui=none
+hi StatusLineNC guifg=#4C566A     guibg=#2B2D3B    gui=none
 
-hi Comment      guifg=#6E6C7E     gui=italic
-hi Statement    guifg=#96CDFB     gui=bold
-hi Keyword      guifg=#DDB6F2     gui=bold
-hi Function     guifg=#96CDFB
-hi Identifier   guifg=#F28FAD
-hi Type         guifg=#DDB6F2
-hi Number       guifg=#F8BD96
-hi String       guifg=#ABE9B3
-hi Operator     guifg=#D9E0EE
-hi Label        guifg=#DDB6F2
-hi Constant     guifg=#89DCEB
+hi Comment      guifg=#4C566A     gui=italic
+hi Statement    guifg=#7AA2F7     gui=bold
+hi Keyword      guifg=#7DA6FF     gui=bold
+hi Function     guifg=#7AA2F7
+hi Identifier   guifg=#F7768E
+hi Type         guifg=#7DA6FF
+hi Number       guifg=#FF9E64
+hi String       guifg=#B7E3D8
+hi Operator     guifg=#CAD3F5
+hi Label        guifg=#7DA6FF
+hi Constant     guifg=#A3D7FF
 
-hi htmlTag      guifg=#F28FAD
-hi htmlTagName  guifg=#96CDFB
+hi htmlTag      guifg=#F7768E
+hi htmlTagName  guifg=#7AA2F7
 
-hi Terminal     guifg=#D9E0EE     guibg=#1E1E2E
-hi TerminalBG   guifg=#1E1E2E     guibg=#D9E0EE
-hi TerminalBlack       guifg=#1E1E2E
-hi TerminalRed         guifg=#F28FAD
-hi TerminalGreen       guifg=#ABE9B3
-hi TerminalYellow      guifg=#FAE3B0
-hi TerminalBlue        guifg=#96CDFB
-hi TerminalMagenta     guifg=#DDB6F2
-hi TerminalCyan        guifg=#89DCEB
-hi TerminalWhite       guifg=#D9E0EE
+hi Terminal     guifg=#CAD3F5     guibg=#1E2030
+hi TerminalBG   guifg=#1E2030     guibg=#CAD3F5
+hi TerminalBlack       guifg=#1E2030
+hi TerminalRed         guifg=#F7768E
+hi TerminalGreen       guifg=#B7E3D8
+hi TerminalYellow      guifg=#FF9E64
+hi TerminalBlue        guifg=#7AA2F7
+hi TerminalMagenta     guifg=#7DA6FF
+hi TerminalCyan        guifg=#A3D7FF
+hi TerminalWhite       guifg=#CAD3F5
