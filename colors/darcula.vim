@@ -5,54 +5,54 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="modern_dark"
+let g:colors_name="exclusive_dark"
 
-hi Normal       guifg=#D8DEE9     guibg=#2E3440  " Texto principal: neutro e confortável
-hi DiffDelete   guifg=#BF616A     guibg=#2E3440  " Remoção: um vermelho suave para evitar fadiga
-hi DiffAdd      guifg=#A3BE8C     guibg=#2E3440  " Adição: verde calmo e orgânico
-hi DiffChange   guifg=#EBCB8B     guibg=#2E3440  " Mudança: um amarelo suave
-hi DiffText     guifg=#B48EAD     guibg=#2E3440  " Texto modificado: roxo discreto
-hi diffAdded    guifg=#A3BE8C     guibg=#2E3440
-hi diffRemoved  guifg=#BF616A     guibg=#2E3440
+hi Normal       guifg=#D0D0D0     guibg=#1C1C1C  " Cinza claro para o texto, fundo suave e neutro
+hi DiffDelete   guifg=#F08C8C     guibg=#1C1C1C  " Vermelho claro para deletado
+hi DiffAdd      guifg=#A2D9A5     guibg=#1C1C1C  " Verde suave para adicionado
+hi DiffChange   guifg=#E1BC73     guibg=#1C1C1C  " Amarelo sutil para mudanças
+hi DiffText     guifg=#C591D8     guibg=#1C1C1C  " Roxo moderado para texto alterado
+hi diffAdded    guifg=#A2D9A5     guibg=#1C1C1C
+hi diffRemoved  guifg=#F08C8C     guibg=#1C1C1C
 
-hi Cursor       guifg=#2E3440     guibg=#88C0D0  " Cursor: azul-celeste suave
-hi CursorLine   guifg=NONE        guibg=#3B4252  gui=NONE
-hi VertSplit    guifg=#3B4252     guibg=#3B4252  gui=none
-hi Folded       guifg=#4C566A     guibg=#2E3440
-hi FoldColumn   guifg=#88C0D0     guibg=#2E3440
-hi IncSearch    guifg=#2E3440     guibg=#88C0D0
-hi LineNr       guifg=#4C566A     guibg=#2E3440
-hi ModeMsg      guifg=#EBCB8B
-hi MoreMsg      guifg=#A3BE8C
-hi NonText      guifg=#4C566A     guibg=#2E3440
-hi Question     guifg=#A3BE8C
-hi Search       guifg=#2E3440     guibg=#81A1C1  " Realce de busca: azul suave
-hi SpecialKey   guifg=#EBCB8B
-hi StatusLine   guifg=#D8DEE9     guibg=#3B4252  gui=none
-hi StatusLineNC guifg=#4C566A     guibg=#3B4252  gui=none
+hi Cursor       guifg=#1C1C1C     guibg=#9DCEFF  " Azul claro para o cursor
+hi CursorLine   guifg=NONE        guibg=#2A2A2A  gui=NONE  " Destaque de linha discreto
+hi VertSplit    guifg=#2A2A2A     guibg=#2A2A2A  gui=none
+hi Folded       guifg=#5A5A5A     guibg=#1C1C1C  " Cinza para partes dobradas
+hi FoldColumn   guifg=#9DCEFF     guibg=#1C1C1C
+hi IncSearch    guifg=#1C1C1C     guibg=#9DCEFF
+hi LineNr       guifg=#4A4A4A     guibg=#1C1C1C  " Números de linha suaves
+hi ModeMsg      guifg=#E1BC73     " Mensagem de modo em amarelo suave
+hi MoreMsg      guifg=#A2D9A5     " Verde claro para mensagens positivas
+hi NonText      guifg=#4A4A4A     guibg=#1C1C1C
+hi Question     guifg=#A2D9A5
+hi Search       guifg=#1C1C1C     guibg=#89A1D8  " Destaque de busca com azul discreto
+hi SpecialKey   guifg=#E1BC73
+hi StatusLine   guifg=#D0D0D0     guibg=#2A2A2A  gui=none  " Status com contraste balanceado
+hi StatusLineNC guifg=#5A5A5A     guibg=#2A2A2A  gui=none
 
-hi Comment      guifg=#616E88     gui=italic     " Comentários: cinza claro, fácil de ler
-hi Statement    guifg=#81A1C1     gui=bold
-hi Keyword      guifg=#B48EAD     gui=bold
-hi Function     guifg=#81A1C1
-hi Identifier   guifg=#BF616A
-hi Type         guifg=#B48EAD
-hi Number       guifg=#D08770
-hi String       guifg=#A3BE8C
-hi Operator     guifg=#D8DEE9
-hi Label        guifg=#B48EAD
-hi Constant     guifg=#88C0D0
+hi Comment      guifg=#7A7A7A     gui=italic     " Cinza médio para comentários, fácil de ignorar
+hi Statement    guifg=#89A1D8     gui=bold       " Azul para declarações importantes
+hi Keyword      guifg=#C591D8     gui=bold       " Roxo para palavras-chave
+hi Function     guifg=#89A1D8                    " Funções em azul suave
+hi Identifier   guifg=#F08C8C                    " Identificadores em vermelho suave
+hi Type         guifg=#C591D8                    " Tipos em roxo
+hi Number       guifg=#D9A673                    " Números em dourado discreto
+hi String       guifg=#A2D9A5                    " Verde suave para strings
+hi Operator     guifg=#D0D0D0                    " Operadores em cinza claro
+hi Label        guifg=#C591D8
+hi Constant     guifg=#9DCEFF                    " Constantes em azul claro
 
-hi htmlTag      guifg=#BF616A
-hi htmlTagName  guifg=#81A1C1
+hi htmlTag      guifg=#F08C8C
+hi htmlTagName  guifg=#89A1D8
 
-hi Terminal     guifg=#D8DEE9     guibg=#2E3440
-hi TerminalBG   guifg=#2E3440     guibg=#D8DEE9
-hi TerminalBlack       guifg=#2E3440
-hi TerminalRed         guifg=#BF616A
-hi TerminalGreen       guifg=#A3BE8C
-hi TerminalYellow      guifg=#EBCB8B
-hi TerminalBlue        guifg=#81A1C1
-hi TerminalMagenta     guifg=#B48EAD
-hi TerminalCyan        guifg=#88C0D0
-hi TerminalWhite       guifg=#D8DEE9
+hi Terminal     guifg=#D0D0D0     guibg=#1C1C1C
+hi TerminalBG   guifg=#1C1C1C     guibg=#D0D0D0
+hi TerminalBlack       guifg=#1C1C1C
+hi TerminalRed         guifg=#F08C8C
+hi TerminalGreen       guifg=#A2D9A5
+hi TerminalYellow      guifg=#E1BC73
+hi TerminalBlue        guifg=#89A1D8
+hi TerminalMagenta     guifg=#C591D8
+hi TerminalCyan        guifg=#9DCEFF
+hi TerminalWhite       guifg=#D0D0D0
