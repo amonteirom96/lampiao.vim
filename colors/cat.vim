@@ -5,55 +5,59 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="blue_dream"
+let g:colors_name="classic_vim"
 
-" Paleta ajustada com foco no azul
-hi Normal       guifg=#CAD3F5     guibg=#1E2030
-hi DiffDelete   guifg=#F7768E     guibg=#1E2030
-hi DiffAdd      guifg=#B7E3D8     guibg=#1E2030
-hi DiffChange   guifg=#FF9E64     guibg=#1E2030
-hi DiffText     guifg=#7AA2F7     guibg=#1E2030
-hi diffAdded    guifg=#B7E3D8     guibg=#1E2030
-hi diffRemoved  guifg=#F7768E     guibg=#1E2030
+" Definindo cores inspiradas em temas clássicos
+hi Normal       guifg=#D0BF8F     guibg=#3F3F3F
+hi DiffDelete   guifg=#D75F5F     guibg=#3F3F3F
+hi DiffAdd      guifg=#87AF87     guibg=#3F3F3F
+hi DiffChange   guifg=#FFD787     guibg=#3F3F3F
+hi DiffText     guifg=#AF87D7     guibg=#3F3F3F
+hi diffAdded    guifg=#87AF87     guibg=#3F3F3F
+hi diffRemoved  guifg=#D75F5F     guibg=#3F3F3F
 
-hi Cursor       guifg=#1E2030     guibg=#7AA2F7
-hi CursorLine   guifg=NONE        guibg=#2B2D3B  gui=NONE
-hi VertSplit    guifg=#2B2D3B     guibg=#2B2D3B   gui=none
-hi Folded       guifg=#4C566A     guibg=#1E2030
-hi FoldColumn   guifg=#7AA2F7     guibg=#1E2030
-hi IncSearch    guifg=#1E2030     guibg=#7AA2F7
-hi LineNr       guifg=#3B4261     guibg=#1E2030
-hi ModeMsg      guifg=#FF9E64
-hi MoreMsg      guifg=#B7E3D8
-hi NonText      guifg=#3B4261     guibg=#1E2030
-hi Question     guifg=#B7E3D8
-hi Search       guifg=#1E2030     guibg=#7AA2F7
-hi SpecialKey   guifg=#FF9E64
-hi StatusLine   guifg=#CAD3F5     guibg=#2B2D3B    gui=none
-hi StatusLineNC guifg=#4C566A     guibg=#2B2D3B    gui=none
+" Cursor e linhas
+hi Cursor       guifg=#3F3F3F     guibg=#FFAF5F
+hi CursorLine   guifg=NONE        guibg=#4F4F4F  gui=NONE
+hi VertSplit    guifg=#4F4F4F     guibg=#4F4F4F   gui=none
+hi Folded       guifg=#6C6C6C     guibg=#3F3F3F
+hi FoldColumn   guifg=#FFAF5F     guibg=#3F3F3F
+hi IncSearch    guifg=#3F3F3F     guibg=#FFAF5F
+hi LineNr       guifg=#5F5F5F     guibg=#3F3F3F
+hi ModeMsg      guifg=#FFD787
+hi MoreMsg      guifg=#87AF87
+hi NonText      guifg=#5F5F5F     guibg=#3F3F3F
+hi Question     guifg=#87AF87
+hi Search       guifg=#3F3F3F     guibg=#5FAFFF
+hi SpecialKey   guifg=#FFD787
+hi StatusLine   guifg=#D0BF8F     guibg=#4F4F4F    gui=none
+hi StatusLineNC guifg=#6C6C6C     guibg=#4F4F4F    gui=none
 
-hi Comment      guifg=#4C566A     gui=italic
-hi Statement    guifg=#7AA2F7     gui=bold
-hi Keyword      guifg=#7DA6FF     gui=bold
-hi Function     guifg=#7AA2F7
-hi Identifier   guifg=#F7768E
-hi Type         guifg=#7DA6FF
-hi Number       guifg=#FF9E64
-hi String       guifg=#B7E3D8
-hi Operator     guifg=#CAD3F5
-hi Label        guifg=#7DA6FF
-hi Constant     guifg=#A3D7FF
+" Sintaxe básica
+hi Comment      guifg=#8C8C8C     gui=italic
+hi Statement    guifg=#5FAFFF     gui=bold
+hi Keyword      guifg=#AF87D7     gui=bold
+hi Function     guifg=#5FAFFF
+hi Identifier   guifg=#D75F5F
+hi Type         guifg=#AF87D7
+hi Number       guifg=#D7875F
+hi String       guifg=#87AF87
+hi Operator     guifg=#D0BF8F
+hi Label        guifg=#AF87D7
+hi Constant     guifg=#5FAFFF
 
-hi htmlTag      guifg=#F7768E
-hi htmlTagName  guifg=#7AA2F7
+" HTML tags
+hi htmlTag      guifg=#D75F5F
+hi htmlTagName  guifg=#5FAFFF
 
-hi Terminal     guifg=#CAD3F5     guibg=#1E2030
-hi TerminalBG   guifg=#1E2030     guibg=#CAD3F5
-hi TerminalBlack       guifg=#1E2030
-hi TerminalRed         guifg=#F7768E
-hi TerminalGreen       guifg=#B7E3D8
-hi TerminalYellow      guifg=#FF9E64
-hi TerminalBlue        guifg=#7AA2F7
-hi TerminalMagenta     guifg=#7DA6FF
-hi TerminalCyan        guifg=#A3D7FF
-hi TerminalWhite       guifg=#CAD3F5
+" Terminal cores
+hi Terminal     guifg=#D0BF8F     guibg=#3F3F3F
+hi TerminalBG   guifg=#3F3F3F     guibg=#D0BF8F
+hi TerminalBlack       guifg=#3F3F3F
+hi TerminalRed         guifg=#D75F5F
+hi TerminalGreen       guifg=#87AF87
+hi TerminalYellow      guifg=#FFD787
+hi TerminalBlue        guifg=#5FAFFF
+hi TerminalMagenta     guifg=#AF87D7
+hi TerminalCyan        guifg=#5FAFFF
+hi TerminalWhite       guifg=#D0BF8F
