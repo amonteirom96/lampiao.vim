@@ -5,54 +5,54 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="exclusive_dark"
+let g:colors_name="modern_dark"
 
-hi Normal       guifg=#D0D0D0     guibg=#1C1C1C  " Cinza claro para o texto, fundo suave e neutro
-hi DiffDelete   guifg=#F08C8C     guibg=#1C1C1C  " Vermelho claro para deletado
-hi DiffAdd      guifg=#A2D9A5     guibg=#1C1C1C  " Verde suave para adicionado
-hi DiffChange   guifg=#E1BC73     guibg=#1C1C1C  " Amarelo sutil para mudanças
-hi DiffText     guifg=#C591D8     guibg=#1C1C1C  " Roxo moderado para texto alterado
-hi diffAdded    guifg=#A2D9A5     guibg=#1C1C1C
-hi diffRemoved  guifg=#F08C8C     guibg=#1C1C1C
+hi Normal       guifg=#E0E0E0     guibg=#202124  " Texto claro em um fundo escuro mas não muito preto
+hi DiffDelete   guifg=#FF6E6E     guibg=#202124  " Vermelho claro para remoções
+hi DiffAdd      guifg=#81C784     guibg=#202124  " Verde suave para adições
+hi DiffChange   guifg=#FFD54F     guibg=#202124  " Amarelo vibrante para mudanças
+hi DiffText     guifg=#BA68C8     guibg=#202124  " Roxo mais vívido para texto modificado
+hi diffAdded    guifg=#81C784     guibg=#202124
+hi diffRemoved  guifg=#FF6E6E     guibg=#202124
 
-hi Cursor       guifg=#1C1C1C     guibg=#9DCEFF  " Azul claro para o cursor
-hi CursorLine   guifg=NONE        guibg=#2A2A2A  gui=NONE  " Destaque de linha discreto
-hi VertSplit    guifg=#2A2A2A     guibg=#2A2A2A  gui=none
-hi Folded       guifg=#5A5A5A     guibg=#1C1C1C  " Cinza para partes dobradas
-hi FoldColumn   guifg=#9DCEFF     guibg=#1C1C1C
-hi IncSearch    guifg=#1C1C1C     guibg=#9DCEFF
-hi LineNr       guifg=#4A4A4A     guibg=#1C1C1C  " Números de linha suaves
-hi ModeMsg      guifg=#E1BC73     " Mensagem de modo em amarelo suave
-hi MoreMsg      guifg=#A2D9A5     " Verde claro para mensagens positivas
-hi NonText      guifg=#4A4A4A     guibg=#1C1C1C
-hi Question     guifg=#A2D9A5
-hi Search       guifg=#1C1C1C     guibg=#89A1D8  " Destaque de busca com azul discreto
-hi SpecialKey   guifg=#E1BC73
-hi StatusLine   guifg=#D0D0D0     guibg=#2A2A2A  gui=none  " Status com contraste balanceado
-hi StatusLineNC guifg=#5A5A5A     guibg=#2A2A2A  gui=none
+hi Cursor       guifg=#202124     guibg=#42A5F5  " Azul claro para o cursor
+hi CursorLine   guifg=NONE        guibg=#2A2D34  gui=NONE  " Destaque de linha bem discreto
+hi VertSplit    guifg=#2A2D34     guibg=#2A2D34  gui=none
+hi Folded       guifg=#73777F     guibg=#202124  " Dobras em cinza escuro
+hi FoldColumn   guifg=#42A5F5     guibg=#202124
+hi IncSearch    guifg=#202124     guibg=#42A5F5  " Destaque de busca em azul
+hi LineNr       guifg=#51565F     guibg=#202124  " Números de linha discretos
+hi ModeMsg      guifg=#FFD54F     " Mensagem de modo em amarelo
+hi MoreMsg      guifg=#81C784     " Verde para mensagens positivas
+hi NonText      guifg=#51565F     guibg=#202124
+hi Question     guifg=#81C784
+hi Search       guifg=#202124     guibg=#29B6F6  " Busca com azul ciano
+hi SpecialKey   guifg=#FFD54F
+hi StatusLine   guifg=#E0E0E0     guibg=#2A2D34  gui=none  " Linha de status com contraste balanceado
+hi StatusLineNC guifg=#73777F     guibg=#2A2D34  gui=none
 
-hi Comment      guifg=#7A7A7A     gui=italic     " Cinza médio para comentários, fácil de ignorar
-hi Statement    guifg=#89A1D8     gui=bold       " Azul para declarações importantes
-hi Keyword      guifg=#C591D8     gui=bold       " Roxo para palavras-chave
-hi Function     guifg=#89A1D8                    " Funções em azul suave
-hi Identifier   guifg=#F08C8C                    " Identificadores em vermelho suave
-hi Type         guifg=#C591D8                    " Tipos em roxo
-hi Number       guifg=#D9A673                    " Números em dourado discreto
-hi String       guifg=#A2D9A5                    " Verde suave para strings
-hi Operator     guifg=#D0D0D0                    " Operadores em cinza claro
-hi Label        guifg=#C591D8
-hi Constant     guifg=#9DCEFF                    " Constantes em azul claro
+hi Comment      guifg=#70747D     gui=italic     " Comentários em cinza médio
+hi Statement    guifg=#42A5F5     gui=bold       " Azul claro para declarações importantes
+hi Keyword      guifg=#BA68C8     gui=bold       " Roxo forte para palavras-chave
+hi Function     guifg=#42A5F5                    " Funções em azul claro
+hi Identifier   guifg=#FF6E6E                    " Identificadores em vermelho suave
+hi Type         guifg=#BA68C8                    " Tipos em roxo vivo
+hi Number       guifg=#FFD54F                    " Números em amarelo claro
+hi String       guifg=#81C784                    " Verde suave para strings
+hi Operator     guifg=#E0E0E0                    " Operadores em branco suave
+hi Label        guifg=#BA68C8
+hi Constant     guifg=#29B6F6                    " Constantes em azul ciano
 
-hi htmlTag      guifg=#F08C8C
-hi htmlTagName  guifg=#89A1D8
+hi htmlTag      guifg=#FF6E6E
+hi htmlTagName  guifg=#42A5F5
 
-hi Terminal     guifg=#D0D0D0     guibg=#1C1C1C
-hi TerminalBG   guifg=#1C1C1C     guibg=#D0D0D0
-hi TerminalBlack       guifg=#1C1C1C
-hi TerminalRed         guifg=#F08C8C
-hi TerminalGreen       guifg=#A2D9A5
-hi TerminalYellow      guifg=#E1BC73
-hi TerminalBlue        guifg=#89A1D8
-hi TerminalMagenta     guifg=#C591D8
-hi TerminalCyan        guifg=#9DCEFF
-hi TerminalWhite       guifg=#D0D0D0
+hi Terminal     guifg=#E0E0E0     guibg=#202124
+hi TerminalBG   guifg=#202124     guibg=#E0E0E0
+hi TerminalBlack       guifg=#202124
+hi TerminalRed         guifg=#FF6E6E
+hi TerminalGreen       guifg=#81C784
+hi TerminalYellow      guifg=#FFD54F
+hi TerminalBlue        guifg=#42A5F5
+hi TerminalMagenta     guifg=#BA68C8
+hi TerminalCyan        guifg=#29B6F6
+hi TerminalWhite       guifg=#E0E0E0
