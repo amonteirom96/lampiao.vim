@@ -5,54 +5,54 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="darcula"
+let g:colors_name="modern_dark"
 
-hi Normal       guifg=#A9B7C6     guibg=#2B2B2B
-hi DiffDelete   guifg=#CC7832     guibg=#2B2B2B
-hi DiffAdd      guifg=#629755     guibg=#2B2B2B
-hi DiffChange   guifg=#FFD866     guibg=#2B2B2B
-hi DiffText     guifg=#C792EA     guibg=#2B2B2B
-hi diffAdded    guifg=#629755     guibg=#2B2B2B
-hi diffRemoved  guifg=#CC7832     guibg=#2B2B2B
+hi Normal       guifg=#D8DEE9     guibg=#2E3440  " Texto principal: neutro e confortável
+hi DiffDelete   guifg=#BF616A     guibg=#2E3440  " Remoção: um vermelho suave para evitar fadiga
+hi DiffAdd      guifg=#A3BE8C     guibg=#2E3440  " Adição: verde calmo e orgânico
+hi DiffChange   guifg=#EBCB8B     guibg=#2E3440  " Mudança: um amarelo suave
+hi DiffText     guifg=#B48EAD     guibg=#2E3440  " Texto modificado: roxo discreto
+hi diffAdded    guifg=#A3BE8C     guibg=#2E3440
+hi diffRemoved  guifg=#BF616A     guibg=#2E3440
 
-hi Cursor       guifg=#2B2B2B     guibg=#FFCC00  " Substituição do azul claro por amarelo
-hi CursorLine   guifg=NONE        guibg=#323232  gui=NONE
-hi VertSplit    guifg=#3C3F41     guibg=#3C3F41  gui=none
-hi Folded       guifg=#808080     guibg=#2B2B2B
-hi FoldColumn   guifg=#FFCC00     guibg=#2B2B2B  " Substituição do azul claro por amarelo
-hi IncSearch    guifg=#2B2B2B     guibg=#FFCC00
-hi LineNr       guifg=#606366     guibg=#2B2B2B
-hi ModeMsg      guifg=#FFD866
-hi MoreMsg      guifg=#629755
-hi NonText      guifg=#606366     guibg=#2B2B2B
-hi Question     guifg=#629755
-hi Search       guifg=#2B2B2B     guibg=#287BDE
-hi SpecialKey   guifg=#FFD866
-hi StatusLine   guifg=#A9B7C6     guibg=#3C3F41  gui=none
-hi StatusLineNC guifg=#808080     guibg=#3C3F41  gui=none
+hi Cursor       guifg=#2E3440     guibg=#88C0D0  " Cursor: azul-celeste suave
+hi CursorLine   guifg=NONE        guibg=#3B4252  gui=NONE
+hi VertSplit    guifg=#3B4252     guibg=#3B4252  gui=none
+hi Folded       guifg=#4C566A     guibg=#2E3440
+hi FoldColumn   guifg=#88C0D0     guibg=#2E3440
+hi IncSearch    guifg=#2E3440     guibg=#88C0D0
+hi LineNr       guifg=#4C566A     guibg=#2E3440
+hi ModeMsg      guifg=#EBCB8B
+hi MoreMsg      guifg=#A3BE8C
+hi NonText      guifg=#4C566A     guibg=#2E3440
+hi Question     guifg=#A3BE8C
+hi Search       guifg=#2E3440     guibg=#81A1C1  " Realce de busca: azul suave
+hi SpecialKey   guifg=#EBCB8B
+hi StatusLine   guifg=#D8DEE9     guibg=#3B4252  gui=none
+hi StatusLineNC guifg=#4C566A     guibg=#3B4252  gui=none
 
-hi Comment      guifg=#5C6370     gui=italic
-hi Statement    guifg=#287BDE     gui=bold
-hi Keyword      guifg=#C792EA     gui=bold
-hi Function     guifg=#287BDE
-hi Identifier   guifg=#CC7832
-hi Type         guifg=#C792EA
-hi Number       guifg=#6897BB
-hi String       guifg=#629755
-hi Operator     guifg=#A9B7C6
-hi Label        guifg=#C792EA
-hi Constant     guifg=#6897BB
+hi Comment      guifg=#616E88     gui=italic     " Comentários: cinza claro, fácil de ler
+hi Statement    guifg=#81A1C1     gui=bold
+hi Keyword      guifg=#B48EAD     gui=bold
+hi Function     guifg=#81A1C1
+hi Identifier   guifg=#BF616A
+hi Type         guifg=#B48EAD
+hi Number       guifg=#D08770
+hi String       guifg=#A3BE8C
+hi Operator     guifg=#D8DEE9
+hi Label        guifg=#B48EAD
+hi Constant     guifg=#88C0D0
 
-hi htmlTag      guifg=#CC7832
-hi htmlTagName  guifg=#287BDE
+hi htmlTag      guifg=#BF616A
+hi htmlTagName  guifg=#81A1C1
 
-hi Terminal     guifg=#A9B7C6     guibg=#2B2B2B
-hi TerminalBG   guifg=#2B2B2B     guibg=#A9B7C6
-hi TerminalBlack       guifg=#2B2B2B
-hi TerminalRed         guifg=#CC7832
-hi TerminalGreen       guifg=#629755
-hi TerminalYellow      guifg=#FFD866
-hi TerminalBlue        guifg=#287BDE
-hi TerminalMagenta     guifg=#C792EA
-hi TerminalCyan        guifg=#6897BB
-hi TerminalWhite       guifg=#A9B7C6
+hi Terminal     guifg=#D8DEE9     guibg=#2E3440
+hi TerminalBG   guifg=#2E3440     guibg=#D8DEE9
+hi TerminalBlack       guifg=#2E3440
+hi TerminalRed         guifg=#BF616A
+hi TerminalGreen       guifg=#A3BE8C
+hi TerminalYellow      guifg=#EBCB8B
+hi TerminalBlue        guifg=#81A1C1
+hi TerminalMagenta     guifg=#B48EAD
+hi TerminalCyan        guifg=#88C0D0
+hi TerminalWhite       guifg=#D8DEE9
