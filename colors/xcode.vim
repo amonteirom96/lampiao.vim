@@ -5,55 +5,54 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="macOS_dark"
+let g:colors_name="dogrun"
 
-" Tema inspirado no macOS com foco em azul
-hi Normal       guifg=#D1D4DB     guibg=#1E1E1E
-hi DiffDelete   guifg=#FF453A     guibg=#1E1E1E
-hi DiffAdd      guifg=#32D74B     guibg=#1E1E1E
-hi DiffChange   guifg=#FFD60A     guibg=#1E1E1E
-hi DiffText     guifg=#64D2FF     guibg=#1E1E1E
-hi diffAdded    guifg=#32D74B     guibg=#1E1E1E
-hi diffRemoved  guifg=#FF453A     guibg=#1E1E1E
+hi Normal       guifg=#dcdccc     guibg=#1c1c1c
+hi DiffDelete   guifg=#cc9393     guibg=#3a3a3a
+hi DiffAdd      guifg=#7f9f7f     guibg=#3a3a3a
+hi DiffChange   guifg=#f0dfaf     guibg=#3a3a3a
+hi DiffText     guifg=#dc8cc3     guibg=#3a3a3a
+hi diffAdded    guifg=#7f9f7f     guibg=#3a3a3a
+hi diffRemoved  guifg=#cc9393     guibg=#3a3a3a
 
-hi Cursor       guifg=#1E1E1E     guibg=#007AFF
-hi CursorLine   guifg=NONE        guibg=#2C2C2C  gui=NONE
-hi VertSplit    guifg=#2C2C2C     guibg=#2C2C2C  gui=none
-hi Folded       guifg=#8E8E93     guibg=#1E1E1E
-hi FoldColumn   guifg=#007AFF     guibg=#1E1E1E
-hi IncSearch    guifg=#1E1E1E     guibg=#007AFF
-hi LineNr       guifg=#8E8E93     guibg=#1E1E1E
-hi ModeMsg      guifg=#FFD60A
-hi MoreMsg      guifg=#32D74B
-hi NonText      guifg=#8E8E93     guibg=#1E1E1E
-hi Question     guifg=#32D74B
-hi Search       guifg=#1E1E1E     guibg=#007AFF
-hi SpecialKey   guifg=#FFD60A
-hi StatusLine   guifg=#D1D4DB     guibg=#2C2C2C  gui=none
-hi StatusLineNC guifg=#8E8E93     guibg=#2C2C2C  gui=none
+hi Cursor       guifg=#1c1c1c     guibg=#f0dfaf
+hi CursorLine   guifg=NONE        guibg=#303030  gui=NONE
+hi VertSplit    guifg=#3a3a3a     guibg=#3a3a3a   gui=none
+hi Folded       guifg=#9fafaf     guibg=#1c1c1c
+hi FoldColumn   guifg=#f0dfaf     guibg=#1c1c1c
+hi IncSearch    guifg=#1c1c1c     guibg=#f0dfaf
+hi LineNr       guifg=#5f7f5f     guibg=#1c1c1c
+hi ModeMsg      guifg=#f0dfaf
+hi MoreMsg      guifg=#7f9f7f
+hi NonText      guifg=#5f7f5f     guibg=#1c1c1c
+hi Question     guifg=#7f9f7f
+hi Search       guifg=#1c1c1c     guibg=#7cb8bb
+hi SpecialKey   guifg=#f0dfaf
+hi StatusLine   guifg=#dcdccc     guibg=#303030    gui=none
+hi StatusLineNC guifg=#9fafaf     guibg=#303030    gui=none
 
-hi Comment      guifg=#7C7C7C     gui=italic
-hi Statement    guifg=#007AFF     gui=bold
-hi Keyword      guifg=#64D2FF     gui=bold
-hi Function     guifg=#007AFF
-hi Identifier   guifg=#FF453A
-hi Type         guifg=#64D2FF
-hi Number       guifg=#FFD60A
-hi String       guifg=#32D74B
-hi Operator     guifg=#D1D4DB
-hi Label        guifg=#64D2FF
-hi Constant     guifg=#5AC8FA
+hi Comment      guifg=#7f9f7f     gui=italic
+hi Statement    guifg=#7cb8bb     gui=bold
+hi Keyword      guifg=#dc8cc3     gui=bold
+hi Function     guifg=#7cb8bb
+hi Identifier   guifg=#cc9393
+hi Type         guifg=#dc8cc3
+hi Number       guifg=#dca3a3
+hi String       guifg=#7f9f7f
+hi Operator     guifg=#dcdccc
+hi Label        guifg=#dc8cc3
+hi Constant     guifg=#7cb8bb
 
-hi htmlTag      guifg=#FF453A
-hi htmlTagName  guifg=#007AFF
+hi htmlTag      guifg=#cc9393
+hi htmlTagName  guifg=#7cb8bb
 
-hi Terminal     guifg=#D1D4DB     guibg=#1E1E1E
-hi TerminalBG   guifg=#1E1E1E     guibg=#D1D4DB
-hi TerminalBlack       guifg=#1E1E1E
-hi TerminalRed         guifg=#FF453A
-hi TerminalGreen       guifg=#32D74B
-hi TerminalYellow      guifg=#FFD60A
-hi TerminalBlue        guifg=#007AFF
-hi TerminalMagenta     guifg=#64D2FF
-hi TerminalCyan        guifg=#5AC8FA
-hi TerminalWhite       guifg=#D1D4DB
+hi Terminal     guifg=#dcdccc     guibg=#1c1c1c
+hi TerminalBG   guifg=#1c1c1c     guibg=#dcdccc
+hi TerminalBlack       guifg=#1c1c1c
+hi TerminalRed         guifg=#cc9393
+hi TerminalGreen       guifg=#7f9f7f
+hi TerminalYellow      guifg=#f0dfaf
+hi TerminalBlue        guifg=#7cb8bb
+hi TerminalMagenta     guifg=#dc8cc3
+hi TerminalCyan        guifg=#7cb8bb
+hi TerminalWhite       guifg=#dcdccc
