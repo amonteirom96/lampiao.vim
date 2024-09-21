@@ -36,30 +36,29 @@ let s:mantle    = "#292c3c"
 let s:crust     = "#232634"
 
 " Aplicando a paleta de cores
-
 hi Normal       guifg=s:text      guibg=s:base
-hi DiffDelete   guifg=s:red       guibg=s:base
-hi DiffAdd      guifg=s:green     guibg=s:base
-hi DiffChange   guifg=s:yellow    guibg=s:base
-hi DiffText     guifg=s:mauve     guibg=s:base
-hi diffAdded    guifg=s:green     guibg=s:base
-hi diffRemoved  guifg=s:red       guibg=s:base
+hi DiffDelete   guifg=s:red       guibg=s:mantle
+hi DiffAdd      guifg=s:green     guibg=s:mantle
+hi DiffChange   guifg=s:yellow    guibg=s:mantle
+hi DiffText     guifg=s:mauve     guibg=s:mantle
+hi diffAdded    guifg=s:green     guibg=s:mantle
+hi diffRemoved  guifg=s:red       guibg=s:mantle
 
 hi Cursor       guifg=s:base      guibg=s:blue
-hi CursorLine   guifg=NONE        guibg=s:surface0  gui=NONE
-hi VertSplit    guifg=s:surface0  guibg=s:surface0   gui=none
-hi Folded       guifg=s:overlay1  guibg=s:base
-hi FoldColumn   guifg=s:blue      guibg=s:base
-hi IncSearch    guifg=s:base      guibg=s:blue
-hi LineNr       guifg=s:overlay0  guibg=s:base
+hi CursorLine   guibg=s:surface0  gui=NONE
+hi VertSplit    guifg=s:surface0  guibg=s:mantle
+hi Folded       guifg=s:overlay1  guibg=s:surface1
+hi FoldColumn   guifg=s:blue      guibg=s:mantle
+hi IncSearch    guifg=s:crust     guibg=s:blue
+hi LineNr       guifg=s:overlay0  guibg=s:mantle
 hi ModeMsg      guifg=s:yellow
 hi MoreMsg      guifg=s:green
-hi NonText      guifg=s:overlay0  guibg=s:base
+hi NonText      guifg=s:overlay0  guibg=s:mantle
 hi Question     guifg=s:green
-hi Search       guifg=s:base      guibg=s:sapphire
+hi Search       guifg=s:crust     guibg=s:sky
 hi SpecialKey   guifg=s:yellow
-hi StatusLine   guifg=s:text      guibg=s:surface0    gui=none
-hi StatusLineNC guifg=s:overlay0  guibg=s:surface0    gui=none
+hi StatusLine   guifg=s:text      guibg=s:surface0
+hi StatusLineNC guifg=s:overlay0  guibg=s:surface1
 
 hi Comment      guifg=s:overlay1  gui=italic
 hi Statement    guifg=s:sapphire  gui=bold
@@ -77,12 +76,12 @@ hi htmlTag      guifg=s:red
 hi htmlTagName  guifg=s:sapphire
 
 hi Terminal     guifg=s:text      guibg=s:base
-hi TerminalBG   guifg=s:base      guibg=s:text
-hi TerminalBlack       guifg=s:base
+hi TerminalBG   guifg=s:crust     guibg=s:text
+hi TerminalBlack       guifg=s:crust
 hi TerminalRed         guifg=s:red
 hi TerminalGreen       guifg=s:green
 hi TerminalYellow      guifg=s:yellow
-hi TerminalBlue        guifg=s:sapphire
+hi TerminalBlue        guifg=s:blue
 hi TerminalMagenta     guifg=s:mauve
 hi TerminalCyan        guifg=s:teal
 hi TerminalWhite       guifg=s:text
