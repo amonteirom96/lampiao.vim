@@ -7,53 +7,82 @@ if version > 580
 endif
 let g:colors_name="catppuccin_frappe"
 
-" Paleta de cores Catppuccin Frappe
-hi Normal       guifg=#c6d0f5     guibg=#303446
-hi DiffDelete   guifg=#e78284     guibg=#303446
-hi DiffAdd      guifg=#a6d189     guibg=#303446
-hi DiffChange   guifg=#e5c890     guibg=#303446
-hi DiffText     guifg=#ca9ee6     guibg=#303446
-hi diffAdded    guifg=#a6d189     guibg=#303446
-hi diffRemoved  guifg=#e78284     guibg=#303446
+" Definindo a paleta de cores
+let s:rosewater = "#f2d5cf"
+let s:flamingo  = "#eebebe"
+let s:pink      = "#f4b8e4"
+let s:mauve     = "#ca9ee6"
+let s:red       = "#e78284"
+let s:maroon    = "#ea999c"
+let s:peach     = "#ef9f76"
+let s:yellow    = "#e5c890"
+let s:green     = "#a6d189"
+let s:teal      = "#81c8be"
+let s:sky       = "#99d1db"
+let s:sapphire  = "#85c1dc"
+let s:blue      = "#8caaee"
+let s:lavender  = "#babbf1"
+let s:text      = "#c6d0f5"
+let s:subtext1  = "#b5bfe2"
+let s:subtext0  = "#a5adce"
+let s:overlay2  = "#949cbb"
+let s:overlay1  = "#838ba7"
+let s:overlay0  = "#737994"
+let s:surface2  = "#626880"
+let s:surface1  = "#51576d"
+let s:surface0  = "#414559"
+let s:base      = "#303446"
+let s:mantle    = "#292c3c"
+let s:crust     = "#232634"
 
-hi Cursor       guifg=#303446     guibg=#b5bfe2
-hi CursorLine   guifg=NONE        guibg=#414559  gui=NONE
-hi VertSplit    guifg=#414559     guibg=#414559   gui=none
-hi Folded       guifg=#626880     guibg=#303446
-hi FoldColumn   guifg=#b5bfe2     guibg=#303446
-hi IncSearch    guifg=#303446     guibg=#b5bfe2
-hi LineNr       guifg=#737994     guibg=#303446
-hi ModeMsg      guifg=#e5c890
-hi MoreMsg      guifg=#a6d189
-hi NonText      guifg=#737994     guibg=#303446
-hi Question     guifg=#a6d189
-hi Search       guifg=#303446     guibg=#8caaee
-hi SpecialKey   guifg=#e5c890
-hi StatusLine   guifg=#c6d0f5     guibg=#414559    gui=none
-hi StatusLineNC guifg=#626880     guibg=#414559    gui=none
+" Aplicando a paleta de cores
 
-hi Comment      guifg=#626880     gui=italic
-hi Statement    guifg=#8caaee     gui=bold
-hi Keyword      guifg=#ca9ee6     gui=bold
-hi Function     guifg=#8caaee
-hi Identifier   guifg=#e78284
-hi Type         guifg=#ca9ee6
-hi Number       guifg=#ef9f76
-hi String       guifg=#a6d189
-hi Operator     guifg=#c6d0f5
-hi Label        guifg=#ca9ee6
-hi Constant     guifg=#81c8be
+hi Normal       guifg=s:text      guibg=s:base
+hi DiffDelete   guifg=s:red       guibg=s:base
+hi DiffAdd      guifg=s:green     guibg=s:base
+hi DiffChange   guifg=s:yellow    guibg=s:base
+hi DiffText     guifg=s:mauve     guibg=s:base
+hi diffAdded    guifg=s:green     guibg=s:base
+hi diffRemoved  guifg=s:red       guibg=s:base
 
-hi htmlTag      guifg=#e78284
-hi htmlTagName  guifg=#8caaee
+hi Cursor       guifg=s:base      guibg=s:blue
+hi CursorLine   guifg=NONE        guibg=s:surface0  gui=NONE
+hi VertSplit    guifg=s:surface0  guibg=s:surface0   gui=none
+hi Folded       guifg=s:overlay1  guibg=s:base
+hi FoldColumn   guifg=s:blue      guibg=s:base
+hi IncSearch    guifg=s:base      guibg=s:blue
+hi LineNr       guifg=s:overlay0  guibg=s:base
+hi ModeMsg      guifg=s:yellow
+hi MoreMsg      guifg=s:green
+hi NonText      guifg=s:overlay0  guibg=s:base
+hi Question     guifg=s:green
+hi Search       guifg=s:base      guibg=s:sapphire
+hi SpecialKey   guifg=s:yellow
+hi StatusLine   guifg=s:text      guibg=s:surface0    gui=none
+hi StatusLineNC guifg=s:overlay0  guibg=s:surface0    gui=none
 
-hi Terminal     guifg=#c6d0f5     guibg=#303446
-hi TerminalBG   guifg=#303446     guibg=#c6d0f5
-hi TerminalBlack       guifg=#303446
-hi TerminalRed         guifg=#e78284
-hi TerminalGreen       guifg=#a6d189
-hi TerminalYellow      guifg=#e5c890
-hi TerminalBlue        guifg=#8caaee
-hi TerminalMagenta     guifg=#ca9ee6
-hi TerminalCyan        guifg=#81c8be
-hi TerminalWhite       guifg=#c6d0f5
+hi Comment      guifg=s:overlay1  gui=italic
+hi Statement    guifg=s:sapphire  gui=bold
+hi Keyword      guifg=s:mauve     gui=bold
+hi Function     guifg=s:sapphire
+hi Identifier   guifg=s:red
+hi Type         guifg=s:mauve
+hi Number       guifg=s:peach
+hi String       guifg=s:green
+hi Operator     guifg=s:text
+hi Label        guifg=s:mauve
+hi Constant     guifg=s:teal
+
+hi htmlTag      guifg=s:red
+hi htmlTagName  guifg=s:sapphire
+
+hi Terminal     guifg=s:text      guibg=s:base
+hi TerminalBG   guifg=s:base      guibg=s:text
+hi TerminalBlack       guifg=s:base
+hi TerminalRed         guifg=s:red
+hi TerminalGreen       guifg=s:green
+hi TerminalYellow      guifg=s:yellow
+hi TerminalBlue        guifg=s:sapphire
+hi TerminalMagenta     guifg=s:mauve
+hi TerminalCyan        guifg=s:teal
+hi TerminalWhite       guifg=s:text
