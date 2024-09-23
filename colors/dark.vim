@@ -5,7 +5,7 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="vim-code-dark"
+let g:colors_name="dark"
 
 " Geral
 hi Normal       guifg=#D4D4D4     guibg=#1E1E1E
