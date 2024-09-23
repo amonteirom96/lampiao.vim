@@ -7,54 +7,55 @@ if version > 580
 endif
 let g:colors_name="light"
 
-hi Normal       guifg=#383A42     guibg=#FAFAFA
-hi DiffDelete   guifg=#E45649     guibg=#FAFAFA
-hi DiffAdd      guifg=#50A14F     guibg=#FAFAFA
-hi DiffChange   guifg=#C18401     guibg=#FAFAFA
-hi DiffText     guifg=#A626A4     guibg=#FAFAFA
-hi diffAdded    guifg=#50A14F     guibg=#FAFAFA
-hi diffRemoved  guifg=#E45649     guibg=#FAFAFA
+" Geral
+hi Normal       guifg=#3C3C3C     guibg=#FAFAFA
+hi Cursor       guifg=#FAFAFA     guibg=#3C3C3C
+hi CursorLine   guibg=#EAEAEA
+hi VertSplit    guifg=#B0B0B0     guibg=#FAFAFA
+hi Folded       guifg=#7F7F7F     guibg=#F0F0F0
+hi FoldColumn   guifg=#3C3C3C     guibg=#FAFAFA
+hi LineNr       guifg=#8B8B8B     guibg=#FAFAFA
+hi StatusLine   guifg=#3C3C3C     guibg=#E2E2E2
+hi StatusLineNC guifg=#B0B0B0     guibg=#FAFAFA
+hi Search       guifg=#FAFAFA     guibg=#CCB300
 
-hi Cursor       guifg=#282828     guibg=#3C93FD
-hi CursorLine   guifg=NONE        guibg=#EEF5FE  gui=NONE
-hi CursorColumn guifg=NONE        guibg=#EEF5FE  gui=NONE
-hi VertSplit    guifg=#E7E7E8     guibg=#E7E7E8   gui=none
-hi Visual       guifg=NONE        guibg=#EEF5FE  gui=NONE
-hi Folded       guifg=#A0A1A7     guibg=#FAFAFA
-hi FoldColumn   guifg=#4078F2     guibg=#FAFAFA
-hi IncSearch    guifg=#FAFAFA     guibg=#4078F2
-hi LineNr       guifg=#9A9AA1     guibg=#FAFAFA
-hi ModeMsg      guifg=#C18401
-hi MoreMsg      guifg=#50A14F
-hi NonText      guifg=#9A9AA1     guibg=#FAFAFA
-hi Question     guifg=#50A14F
-hi Search       guifg=#FAFAFA     guibg=#4078F2
-hi SpecialKey   guifg=#C18401
-hi StatusLine   guifg=#383A42     guibg=#E7E7E8    gui=none
-hi StatusLineNC guifg=#A0A1A7     guibg=#E7E7E8    gui=none
+" Diferenças
+hi DiffDelete   guifg=#D9544F     guibg=#F0F0F0
+hi DiffAdd      guifg=#609C69     guibg=#F0F0F0
+hi DiffChange   guifg=#D28E5D     guibg=#F0F0F0
+hi DiffText     guifg=#A76AA6     guibg=#F0F0F0
+hi diffAdded    guifg=#609C69     guibg=#F0F0F0
+hi diffRemoved  guifg=#D9544F     guibg=#F0F0F0
 
-hi Comment      guifg=#A0A1A7     gui=italic
-hi Statement    guifg=#4078F2     gui=bold
-hi Keyword      guifg=#A626A4     gui=bold
-hi Function     guifg=#4078F2
-hi Identifier   guifg=#E45649
-hi Type         guifg=#A626A4
-hi Number       guifg=#986801
-hi String       guifg=#50A14F
-hi Operator     guifg=#383A42
-hi Label        guifg=#A626A4
-hi Constant     guifg=#0184BC
+" Realce de mensagens e buscas
+hi IncSearch    guifg=#FAFAFA     guibg=#FFDAA5
+hi MoreMsg      guifg=#609C69
+hi ModeMsg      guifg=#D28E5D
+hi Question     guifg=#609C69
 
-hi htmlTag      guifg=#E45649
-hi htmlTagName  guifg=#4078F2
+" Comentários e código
+hi Comment      guifg=#6A6A6A     gui=italic
+hi Keyword      guifg=#007ACC     gui=bold
+hi Function     guifg=#408040
+hi Identifier   guifg=#DA6805
+hi Constant     guifg=#800080
+hi Type         guifg=#007ACC
+hi String       guifg=#E3782B
+hi Number       guifg=#800080
+hi Statement    guifg=#CC3E3E     gui=bold
+hi Operator     guifg=#3C3C3C
 
-hi Terminal     guifg=#383A42     guibg=#FAFAFA
-hi TerminalBG   guifg=#FAFAFA     guibg=#383A42
-hi TerminalBlack       guifg=#383A42
-hi TerminalRed         guifg=#E45649
-hi TerminalGreen       guifg=#50A14F
-hi TerminalYellow      guifg=#C18401
-hi TerminalBlue        guifg=#4078F2
-hi TerminalMagenta     guifg=#A626A4
-hi TerminalCyan        guifg=#0184BC
-hi TerminalWhite       guifg=#FAFAFA
+" HTML Tags
+hi htmlTag      guifg=#3C3C3C
+hi htmlTagName  guifg=#007ACC
+
+" Terminal
+hi Terminal     guifg=#3C3C3C     guibg=#FAFAFA
+hi TerminalBlack       guifg=#3C3C3C
+hi TerminalRed         guifg=#CC3E3E
+hi TerminalGreen       guifg=#408040
+hi TerminalYellow      guifg=#D28E5D
+hi TerminalBlue        guifg=#007ACC
+hi TerminalMagenta     guifg=#800080
+hi TerminalCyan        guifg=#409CAD
+hi TerminalWhite       guifg=#3C3C3C
