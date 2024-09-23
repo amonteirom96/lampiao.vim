@@ -15,7 +15,7 @@ hi VertSplit    guifg=#515151     guibg=#2D2D2D
 hi Folded       guifg=#757575     guibg=#2D2D2D
 hi FoldColumn   guifg=#E0E0E0     guibg=#2D2D2D
 hi LineNr       guifg=#656565     guibg=#2D2D2D
-hi StatusLine   guifg=#E0E0E0     guibg=#A6E22E
+hi StatusLine   guifg=#2D2D2D     guibg=#A6E22E
 hi StatusLineNC guifg=#656565     guibg=#2D2D2D
 hi Search       guifg=#000000     guibg=#FFD700
 
