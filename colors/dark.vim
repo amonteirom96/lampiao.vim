@@ -5,54 +5,57 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="dark"
+let g:colors_name="vim-code-dark"
 
-hi Normal       guifg=#ABB2BF     guibg=#282C34
-hi DiffDelete   guifg=#E06C75     guibg=#282C34
-hi DiffAdd      guifg=#98C379     guibg=#282C34
-hi DiffChange   guifg=#E5C07B     guibg=#282C34
-hi DiffText     guifg=#C678DD     guibg=#282C34
-hi diffAdded    guifg=#98C379     guibg=#282C34
-hi diffRemoved  guifg=#E06C75     guibg=#282C34
+" Geral
+hi Normal       guifg=#D4D4D4     guibg=#1E1E1E
+hi Cursor       guifg=#1E1E1E     guibg=#D4D4D4
+hi CursorLine   guibg=#2A2D2E
+hi VertSplit    guifg=#3E3E3E     guibg=#1E1E1E
+hi Folded       guifg=#808080     guibg=#1E1E1E
+hi FoldColumn   guifg=#D4D4D4     guibg=#1E1E1E
+hi LineNr       guifg=#858585     guibg=#1E1E1E
+hi StatusLine   guifg=#D4D4D4     guibg=#007ACC
+hi StatusLineNC guifg=#858585     guibg=#1E1E1E
+hi Search       guifg=#000000     guibg=#D7BA7D
 
-hi Cursor       guifg=#282C34     guibg=#528BFF
-hi CursorLine   guifg=NONE        guibg=#3E4451  gui=NONE
-hi VertSplit    guifg=#3E4451     guibg=#3E4451   gui=none
-hi Folded       guifg=#565C64     guibg=#282C34
-hi FoldColumn   guifg=#528BFF     guibg=#282C34
-hi IncSearch    guifg=#282C34     guibg=#528BFF
-hi LineNr       guifg=#4B5263     guibg=#282C34
-hi ModeMsg      guifg=#E5C07B
-hi MoreMsg      guifg=#98C379
-hi NonText      guifg=#4B5263     guibg=#282C34
-hi Question     guifg=#98C379
-hi Search       guifg=#282C34     guibg=#61AFEF
-hi SpecialKey   guifg=#E5C07B
-hi StatusLine   guifg=#ABB2BF     guibg=#3E4451    gui=none
-hi StatusLineNC guifg=#565C64     guibg=#3E4451    gui=none
+" Diferenças
+hi DiffDelete   guifg=#F44747     guibg=#1E1E1E
+hi DiffAdd      guifg=#608B4E     guibg=#1E1E1E
+hi DiffChange   guifg=#D7BA7D     guibg=#1E1E1E
+hi DiffText     guifg=#C586C0     guibg=#1E1E1E
+hi diffAdded    guifg=#608B4E     guibg=#1E1E1E
+hi diffRemoved  guifg=#F44747     guibg=#1E1E1E
 
-hi Comment      guifg=#5C6370     gui=italic
-hi Statement    guifg=#61AFEF     gui=bold
-hi Keyword      guifg=#C678DD     gui=bold
-hi Function     guifg=#61AFEF
-hi Identifier   guifg=#E06C75
-hi Type         guifg=#C678DD
-hi Number       guifg=#D19A66
-hi String       guifg=#98C379
-hi Operator     guifg=#ABB2BF
-hi Label        guifg=#C678DD
-hi Constant     guifg=#56B6C2
+" Realce de mensagens e buscas
+hi IncSearch    guifg=#000000     guibg=#FFCC00
+hi MoreMsg      guifg=#608B4E
+hi ModeMsg      guifg=#D7BA7D
+hi Question     guifg=#608B4E
 
-hi htmlTag      guifg=#E06C75
-hi htmlTagName  guifg=#61AFEF
+" Comentários e código
+hi Comment      guifg=#608B4E     gui=italic
+hi Keyword      guifg=#569CD6     gui=bold
+hi Function     guifg=#DCDCAA
+hi Identifier   guifg=#9CDCFE
+hi Constant     guifg=#4FC1FF
+hi Type         guifg=#4EC9B0
+hi String       guifg=#CE9178
+hi Number       guifg=#B5CEA8
+hi Statement    guifg=#C586C0     gui=bold
+hi Operator     guifg=#D4D4D4
 
-hi Terminal     guifg=#ABB2BF     guibg=#282C34
-hi TerminalBG   guifg=#282C34     guibg=#ABB2BF
-hi TerminalBlack       guifg=#282C34
-hi TerminalRed         guifg=#E06C75
-hi TerminalGreen       guifg=#98C379
-hi TerminalYellow      guifg=#E5C07B
-hi TerminalBlue        guifg=#61AFEF
-hi TerminalMagenta     guifg=#C678DD
-hi TerminalCyan        guifg=#56B6C2
-hi TerminalWhite       guifg=#ABB2BF
+" HTML Tags
+hi htmlTag      guifg=#D4D4D4
+hi htmlTagName  guifg=#569CD6
+
+" Terminal
+hi Terminal     guifg=#D4D4D4     guibg=#1E1E1E
+hi TerminalBlack       guifg=#1E1E1E
+hi TerminalRed         guifg=#D16969
+hi TerminalGreen       guifg=#608B4E
+hi TerminalYellow      guifg=#D7BA7D
+hi TerminalBlue        guifg=#569CD6
+hi TerminalMagenta     guifg=#C586C0
+hi TerminalCyan        guifg=#4EC9B0
+hi TerminalWhite       guifg=#D4D4D4
