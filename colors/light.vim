@@ -28,7 +28,7 @@ hi diffAdded    guifg=#609C69     guibg=#F0F0F0
 hi diffRemoved  guifg=#D9544F     guibg=#F0F0F0
 
 " Realce de mensagens e buscas
-hi IncSearch    guifg=#FAFAFA     guibg=#FFDAA5
+hi IncSearch    guifg=#3C3C3C     guibg=#FFDAA5
 hi MoreMsg      guifg=#609C69
 hi ModeMsg      guifg=#D28E5D
 hi Question     guifg=#609C69
