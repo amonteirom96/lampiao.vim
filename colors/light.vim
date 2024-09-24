@@ -17,7 +17,7 @@ hi FoldColumn   guifg=#3C3C3C     guibg=#FAFAFA
 hi LineNr       guifg=#8B8B8B     guibg=#FAFAFA
 hi StatusLine   guifg=#FAFAFA     guibg=#609C69
 hi StatusLineNC guifg=#B0B0B0     guibg=#FAFAFA
-hi Search       guifg=#FAFAFA     guibg=#CCB300
+hi Search       guifg=#3C3C3C     guibg=#CCB300
 
 " Diferenças
 hi DiffDelete   guifg=#D9544F     guibg=#F0F0F0
