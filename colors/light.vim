@@ -10,6 +10,7 @@ let g:colors_name="light"
 " Geral
 hi Normal       guifg=#3C3C3C     guibg=#FAFAFA
 hi Cursor       guifg=#FAFAFA     guibg=#3C3C3C
+hi Visual       guibg=#D0D0D0     guifg=#3C3C3C
 hi CursorLine   guibg=#EAEAEA
 hi VertSplit    guifg=#B0B0B0     guibg=#FAFAFA
 hi Folded       guifg=#7F7F7F     guibg=#F0F0F0
@@ -50,7 +51,7 @@ hi htmlTag      guifg=#3C3C3C
 hi htmlTagName  guifg=#007ACC
 
 " Terminal
-hi Terminal     guifg=#3C3C3C     guibg=#FAFAFA
+hi Terminal            guifg=#3C3C3C     guibg=#FAFAFA
 hi TerminalBlack       guifg=#3C3C3C
 hi TerminalRed         guifg=#CC3E3E
 hi TerminalGreen       guifg=#408040
