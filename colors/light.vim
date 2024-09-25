@@ -10,7 +10,7 @@ let g:colors_name="light"
 " Geral
 hi Normal       guifg=#3C3C3C     guibg=#FAFAFA
 hi Cursor       guifg=#FAFAFA     guibg=#3C3C3C
-hi Visual       guibg=#D0D0D0     guifg=#3C3C3C
+hi Visual       guibg=#D0D0D0
 hi CursorLine   guibg=#EAEAEA
 hi VertSplit    guifg=#B0B0B0     guibg=#FAFAFA
 hi Folded       guifg=#7F7F7F     guibg=#F0F0F0
