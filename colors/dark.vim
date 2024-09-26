@@ -60,8 +60,15 @@ hi TerminalMagenta     guifg=#AE81FF
 hi TerminalCyan        guifg=#A1EFE4
 hi TerminalWhite       guifg=#E0E0E0
 
-" Configurações do popupmenu
+" Popup menu (sugestões de autocomplete)
 hi Pmenu        guibg=#2D2D2D     guifg=#E0E0E0
 hi PmenuSel     guibg=#005f87     guifg=#ffffff
 hi PmenuSbar    guibg=#555555
 hi PmenuThumb   guibg=#999999
+
+" Para adicionar uma borda no popupmenu em Neovim (caso use plugins como nvim-cmp)
+" Borda ao usar plugins como 'nvim-cmp'
+hi PmenuBorder  guifg=#005f87
+
+" Definir a transparência no Neovim (opcional)
+set pumblend=10
