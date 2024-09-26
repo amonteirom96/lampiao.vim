@@ -62,4 +62,4 @@ hi TerminalCyan        guifg=#409CAD
 hi TerminalWhite       guifg=#3C3C3C
 
 " Popup
-set pumblend=10
+set pumblend=20
