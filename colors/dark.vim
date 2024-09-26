@@ -59,3 +59,11 @@ hi TerminalBlue        guifg=#66D9EF
 hi TerminalMagenta     guifg=#AE81FF
 hi TerminalCyan        guifg=#A1EFE4
 hi TerminalWhite       guifg=#E0E0E0
+
+" Popup menu (sugestões de autocomplete)
+hi Pmenu        guibg=#2D2D2D     guifg=#E0E0E0
+hi PmenuSel     guibg=#005f87     guifg=#ffffff
+hi PmenuBorder  guifg=#005f87
+
+" Definir a transparência no Neovim (opcional)
+set pumblend=10
