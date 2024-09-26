@@ -71,4 +71,4 @@ hi PmenuThumb   guibg=#999999
 hi PmenuBorder  guifg=#005f87
 
 " Definir a transparência no Neovim (opcional)
-set pumblend=10
+set pumblend=20
