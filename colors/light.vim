@@ -61,5 +61,6 @@ hi TerminalMagenta     guifg=#800080
 hi TerminalCyan        guifg=#409CAD
 hi TerminalWhite       guifg=#3C3C3C
 
-" Popup
+" Window and popup
 set pumblend=20
+set winblend=20
