@@ -59,7 +59,3 @@ hi TerminalBlue        guifg=#66D9EF
 hi TerminalMagenta     guifg=#AE81FF
 hi TerminalCyan        guifg=#A1EFE4
 hi TerminalWhite       guifg=#E0E0E0
-
-" Window and popup
-set pumblend=20
-set winblend=20
