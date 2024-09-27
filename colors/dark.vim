@@ -50,7 +50,7 @@ hi htmlTag      guifg=#E0E0E0
 hi htmlTagName  guifg=#66D9EF
 
 " Terminal
-hi Terminal     guifg=#E0E0E0     guibg=#2D2D2D
+hi Terminal            guifg=#E0E0E0
 hi TerminalBlack       guifg=#2D2D2D
 hi TerminalRed         guifg=#F92672
 hi TerminalGreen       guifg=#A6E22E
