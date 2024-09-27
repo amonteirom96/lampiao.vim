@@ -18,6 +18,7 @@ hi LineNr       guifg=#656565     guibg=#2D2D2D
 hi StatusLine   guifg=#2D2D2D     guibg=#A6E22E
 hi StatusLineNC guifg=#656565     guibg=#2D2D2D
 hi Search       guifg=#000000     guibg=#FFD700
+hi NormalFloat  guifg=#E0E0E0     guibg=#2D2D2D
 
 " Diagnostico
 hi DiagnosticError   guifg=#D9544F     guibg=#4C2D2D
@@ -25,7 +26,7 @@ hi DiagnosticWarn  guifg=#D28E5D     guibg=#4C3E2D
 hi DiagnosticInfo     guifg=#609C69     guibg=#2D4C39
 hi DiagnosticHint     guifg=#A76AA6     guibg=#3E2D4C
 
-hi DiagnosticFloatingError   guifg=#D9544F     guibg=#4C2D2D
+hi DiagnosticFloating   guifg=#D9544F     guibg=#4C2D2D
 hi DiagnosticFloatingWarning  guifg=#D28E5D     guibg=#4C3E2D
 hi DiagnosticFloatingInfo     guifg=#609C69     guibg=#2D4C39
 hi DiagnosticFloatingHint     guifg=#A76AA6     guibg=#3E2D4C
