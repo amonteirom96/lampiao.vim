@@ -51,7 +51,7 @@ hi htmlTag      guifg=#3C3C3C
 hi htmlTagName  guifg=#007ACC
 
 " Terminal
-hi Terminal            guifg=#3C3C3C     guibg=#FAFAFA
+hi Terminal            guifg=#3C3C3C
 hi TerminalBlack       guifg=#3C3C3C
 hi TerminalRed         guifg=#CC3E3E
 hi TerminalGreen       guifg=#408040
