@@ -9,6 +9,7 @@ let g:colors_name="light"
 
 " Geral
 hi Normal       guifg=#3C3C3C     guibg=#FAFAFA
+hi NormalFloat  guifg=#3C3C3C     guibg=#FAFAFA
 hi Cursor       guifg=#FAFAFA     guibg=#3C3C3C
 hi Visual       guibg=#D0D0D0
 hi CursorLine   guibg=#EAEAEA
