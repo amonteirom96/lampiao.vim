@@ -61,10 +61,10 @@ hi TerminalMagenta     guifg=#800080
 hi TerminalCyan        guifg=#409CAD
 hi TerminalWhite       guifg=#3C3C3C
 
-" LazyGit 
-hi LazyGitAdd      guifg=#609C69     guibg=#FAFAFA  " Adição de arquivos (verde suave)
-hi LazyGitRemove   guifg=#D9544F     guibg=#FAFAFA  " Remoção de arquivos (vermelho)
-hi LazyGitChange   guifg=#D28E5D     guibg=#FAFAFA  " Modificação de arquivos (laranja suave)
-hi LazyGitConflict guifg=#A76AA6     guibg=#FAFAFA  " Conflitos de merge (roxo claro)
-hi LazyGitCursor   guifg=#FAFAFA     guibg=#3C3C3C  " Cor do cursor no LazyGit
-hi LazyGitTitle    guifg=#007ACC     guibg=#FAFAFA  " Título (azul suave)
+" LazyGit
+hi LazyGitAdd      guifg=#407F40     guibg=#FAFAFA  " Verde escuro para adições
+hi LazyGitRemove   guifg=#D9544F     guibg=#FAFAFA  " Vermelho suave para remoções
+hi LazyGitChange   guifg=#D28E5D     guibg=#FAFAFA  " Laranja suave para mudanças
+hi LazyGitConflict guifg=#A76AA6     guibg=#FAFAFA  " Roxo claro para conflitos
+hi LazyGitCursor   guifg=#FAFAFA     guibg=#3C3C3C  " Cor do cursor
+hi LazyGitTitle    guifg=#007ACC     guibg=#FAFAFA  " Título em azul
