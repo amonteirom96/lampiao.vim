@@ -21,7 +21,7 @@ hi StatusLineNC guifg=#B0B0B0     guibg=#FAFAFA
 hi Search       guifg=#3C3C3C     guibg=#CCB300
 
 hi DiagnosticError       guifg=#D9544F     guibg=#F5D6D5
-hi DiagnosticWar     guifg=#D28E5D     guibg=#F7E1D7
+hi DiagnosticWarn        guifg=#D28E5D     guibg=#F7E1D7
 hi DiagnosticInfo        guifg=#609C69     guibg=#D3E7D4
 hi DiagnosticHint        guifg=#A76AA6     guibg=#E6D1E6
 
