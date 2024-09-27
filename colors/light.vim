@@ -20,6 +20,7 @@ hi StatusLine   guifg=#FAFAFA     guibg=#609C69
 hi StatusLineNC guifg=#B0B0B0     guibg=#FAFAFA
 hi Search       guifg=#3C3C3C     guibg=#CCB300
 
+" Diagnostico
 hi DiagnosticError       guifg=#D9544F     guibg=#F5D6D5
 hi DiagnosticWarn        guifg=#D28E5D     guibg=#F7E1D7
 hi DiagnosticInfo        guifg=#609C69     guibg=#D3E7D4
