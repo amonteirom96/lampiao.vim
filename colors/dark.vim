@@ -25,6 +25,12 @@ hi DiagnosticWarn  guifg=#D28E5D     guibg=#4C3E2D
 hi DiagnosticInfo     guifg=#609C69     guibg=#2D4C39
 hi DiagnosticHint     guifg=#A76AA6     guibg=#3E2D4C
 
+hi DiagnosticFloatingError   guifg=#D9544F     guibg=#4C2D2D
+hi DiagnosticFloatingWarning  guifg=#D28E5D     guibg=#4C3E2D
+hi DiagnosticFloatingInfo     guifg=#609C69     guibg=#2D4C39
+hi DiagnosticFloatingHint     guifg=#A76AA6     guibg=#3E2D4C
+
+
 " Realce de mensagens e buscas
 hi IncSearch    guifg=#000000     guibg=#FFEE99
 hi MoreMsg      guifg=#99CC99
