@@ -20,13 +20,11 @@ hi StatusLine   guifg=#FAFAFA     guibg=#609C69
 hi StatusLineNC guifg=#B0B0B0     guibg=#FAFAFA
 hi Search       guifg=#3C3C3C     guibg=#CCB300
 
-" Diferenças
-hi DiffDelete   guifg=#D9544F     guibg=#FAD5D4  " vermelho claro
-hi DiffAdd      guifg=#609C69     guibg=#D1E5D3  " verde claro
-hi DiffChange   guifg=#D28E5D     guibg=#F6E2D2  " laranja claro
-hi DiffText     guifg=#A76AA6     guibg=#EAD4EA  " roxo claro
-hi diffAdded    guifg=#609C69     guibg=#D1E5D3  " verde claro
-hi diffRemoved  guifg=#D9544F     guibg=#FAD5D4  " vermelho claro
+" Cores de diagnóstico com fundo mais claro (tom sobre tom)
+hi DiagnosticError   guifg=#D9544F     guibg=#FAD5D4
+hi DiagnosticWarning  guifg=#D28E5D     guibg=#F6E2D2
+hi DiagnosticInfo     guifg=#609C69     guibg=#D1E5D3
+hi DiagnosticHint     guifg=#A76AA6     guibg=#EAD4EA
 
 " Realce de mensagens e buscas
 hi IncSearch    guifg=#3C3C3C     guibg=#FFDAA5
