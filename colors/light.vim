@@ -21,12 +21,12 @@ hi StatusLineNC guifg=#B0B0B0     guibg=#FAFAFA
 hi Search       guifg=#3C3C3C     guibg=#CCB300
 
 " Diferenças
-hi DiffDelete   guifg=#D9544F     guibg=#F0F0F0
-hi DiffAdd      guifg=#609C69     guibg=#F0F0F0
-hi DiffChange   guifg=#D28E5D     guibg=#F0F0F0
-hi DiffText     guifg=#A76AA6     guibg=#F0F0F0
-hi diffAdded    guifg=#609C69     guibg=#F0F0F0
-hi diffRemoved  guifg=#D9544F     guibg=#F0F0F0
+hi DiffDelete   guifg=#D9544F     guibg=#FAD5D4  " vermelho claro
+hi DiffAdd      guifg=#609C69     guibg=#D1E5D3  " verde claro
+hi DiffChange   guifg=#D28E5D     guibg=#F6E2D2  " laranja claro
+hi DiffText     guifg=#A76AA6     guibg=#EAD4EA  " roxo claro
+hi diffAdded    guifg=#609C69     guibg=#D1E5D3  " verde claro
+hi diffRemoved  guifg=#D9544F     guibg=#FAD5D4  " vermelho claro
 
 " Realce de mensagens e buscas
 hi IncSearch    guifg=#3C3C3C     guibg=#FFDAA5
@@ -60,11 +60,3 @@ hi TerminalBlue        guifg=#7db9e8
 hi TerminalMagenta     guifg=#800080
 hi TerminalCyan        guifg=#409CAD
 hi TerminalWhite       guifg=#3C3C3C
-
-" LazyGit
-hi LazyGitAdd      guifg=#407F40     guibg=#FAFAFA  " Verde escuro para adições
-hi LazyGitRemove   guifg=#D9544F     guibg=#FAFAFA  " Vermelho suave para remoções
-hi LazyGitChange   guifg=#D28E5D     guibg=#FAFAFA  " Laranja suave para mudanças
-hi LazyGitConflict guifg=#A76AA6     guibg=#FAFAFA  " Roxo claro para conflitos
-hi LazyGitCursor   guifg=#FAFAFA     guibg=#3C3C3C  " Cor do cursor
-hi LazyGitTitle    guifg=#007ACC     guibg=#FAFAFA  " Título em azul
