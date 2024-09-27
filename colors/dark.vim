@@ -19,10 +19,10 @@ hi StatusLine   guifg=#2D2D2D     guibg=#A6E22E
 hi StatusLineNC guifg=#656565     guibg=#2D2D2D
 hi Search       guifg=#000000     guibg=#FFD700
 
-hi DiagnosticError       guifg=#D9544F     guibg=#F5D6D5
-hi DiagnosticWarn        guifg=#D28E5D     guibg=#F7E1D7
-hi DiagnosticInfo        guifg=#609C69     guibg=#D3E7D4
-hi DiagnosticHint        guifg=#A76AA6     guibg=#E6D1E6
+hi DiagnosticError   guifg=#FF6F61     guibg=#3E3E3E
+hi DiagnosticWarn  guifg=#FFA500     guibg=#3E3E3E
+hi DiagnosticInfo     guifg=#76C7C0     guibg=#3E3E3E
+hi DiagnosticHint     guifg=#C77DFF     guibg=#3E3E3E
 
 " Realce de mensagens e buscas
 hi IncSearch    guifg=#000000     guibg=#FFEE99
