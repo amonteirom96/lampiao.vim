@@ -9,6 +9,8 @@ let g:colors_name="dark"
 
 " Geral
 hi Normal       guifg=#E0E0E0     guibg=#2D2D2D
+hi NormalFloat  guifg=#E0E0E0     guibg=#2D2D2D
+hi FloatBorder  guifg=#A6E22E     guibg=#2D2D2D
 hi Cursor       guifg=#2D2D2D     guibg=#E0E0E0
 hi CursorLine   guibg=#393939
 hi VertSplit    guifg=#515151     guibg=#2D2D2D
@@ -18,7 +20,7 @@ hi LineNr       guifg=#656565     guibg=#2D2D2D
 hi StatusLine   guifg=#2D2D2D     guibg=#A6E22E
 hi StatusLineNC guifg=#656565     guibg=#2D2D2D
 hi Search       guifg=#000000     guibg=#FFD700
-hi NormalFloat  guifg=#E0E0E0     guibg=#2D2D2D
+
 
 " Diagnostico
 hi DiagnosticError   guifg=#D9544F     guibg=#4C2D2D
