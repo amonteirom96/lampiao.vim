@@ -19,13 +19,10 @@ hi StatusLine   guifg=#2D2D2D     guibg=#A6E22E
 hi StatusLineNC guifg=#656565     guibg=#2D2D2D
 hi Search       guifg=#000000     guibg=#FFD700
 
-" Diferenças
-hi DiffDelete   guifg=#F2777A     guibg=#2D2D2D
-hi DiffAdd      guifg=#99CC99     guibg=#2D2D2D
-hi DiffChange   guifg=#FFCC66     guibg=#2D2D2D
-hi DiffText     guifg=#CC99CC     guibg=#2D2D2D
-hi diffAdded    guifg=#99CC99     guibg=#2D2D2D
-hi diffRemoved  guifg=#F2777A     guibg=#2D2D2D
+hi DiagnosticError       guifg=#D9544F     guibg=#F5D6D5
+hi DiagnosticWarn        guifg=#D28E5D     guibg=#F7E1D7
+hi DiagnosticInfo        guifg=#609C69     guibg=#D3E7D4
+hi DiagnosticHint        guifg=#A76AA6     guibg=#E6D1E6
 
 " Realce de mensagens e buscas
 hi IncSearch    guifg=#000000     guibg=#FFEE99
