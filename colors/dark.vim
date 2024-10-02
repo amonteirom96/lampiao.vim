@@ -33,6 +33,9 @@ hi DiagnosticFloatingWarning guifg=#A9B7C6     guibg=#4C3E2D
 hi DiagnosticFloatingInfo    guifg=#609C69     guibg=#294436
 hi DiagnosticFloatingHint    guifg=#A76AA6     guibg=#3E2D4C
 
+" Telescope
+hi link TelescopeSelection CursorLine
+
 " Realce de mensagens e buscas
 hi IncSearch    guifg=#000000     guibg=#155221
 hi MoreMsg      guifg=#A9B7C6
