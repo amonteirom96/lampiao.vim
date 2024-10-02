@@ -44,7 +44,7 @@ hi Function     guifg=#FFC66D
 hi Identifier   guifg=#FD971F
 hi Constant     guifg=#9876AA
 hi Type         guifg=#CC7832
-hi String       guifg=#6A8759
+hi String       guifg=#6A8759     " Ajuste aqui para verde escuro
 hi Number       guifg=#6897BB
 hi Statement    guifg=#F92672     gui=bold
 hi Operator     guifg=#A9B7C6
