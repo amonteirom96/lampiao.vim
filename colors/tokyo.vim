@@ -21,7 +21,7 @@ hi StatusLineNC guifg=#787878     guibg=#2B2B2B
 hi Search       guifg=#000000     guibg=#32593D
 hi Directory    guifg=#5394EC
 hi Special      guifg=#9876AA
-hi Statement    guifg=#CC7832
+hi Statement    cterm=bold gui=bold  guifg=#cc7832
 
 " Diagnóstico
 hi DiagnosticError   guifg=#BC3F3C     guibg=#532B2E
