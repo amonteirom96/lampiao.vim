@@ -26,12 +26,12 @@ hi Special      guifg=#4A90E2
 hi DiagnosticError   guifg=#FF5F56     guibg=#FFE6E6
 hi DiagnosticWarn    guifg=#FFA500     guibg=#FFF5E6
 hi DiagnosticInfo    guifg=#4CAF50     guibg=#E6F5E6
-hi DiagnosticHint    guifg=#673AB7     guibg=#EDE7F6 " Roxo mais escuro
+hi DiagnosticHint    guifg=#673AB7     guibg=#EDE7F6
 
 hi DiagnosticFloating        guifg=#FF5F56     guibg=#FFE6E6
 hi DiagnosticFloatingWarning guifg=#FFA500     guibg=#FFF5E6
 hi DiagnosticFloatingInfo    guifg=#4CAF50     guibg=#E6F5E6
-hi DiagnosticFloatingHint    guifg=#673AB7     guibg=#EDE7F6 " Roxo mais escuro
+hi DiagnosticFloatingHint    guifg=#673AB7     guibg=#EDE7F6
 
 " Realce de mensagens e buscas
 hi IncSearch    guifg=#FFFFFF     guibg=#FFCC00
@@ -42,10 +42,10 @@ hi Question     guifg=#2B2B2B
 " Comentários e código
 hi Comment      guifg=#999999     gui=italic
 hi Keyword      guifg=#0000FF     gui=bold
-hi Function     guifg=#673AB7     " Roxo mais escuro para funções
+hi Function     guifg=#673AB7
 hi Identifier   guifg=#007ACC
 hi Constant     guifg=#36A3D9
-hi Type         guifg=#673AB7     " Roxo mais escuro para tipos
+hi Type         guifg=#673AB7
 hi String       guifg=#008000
 hi Number       guifg=#0987CA
 hi Statement    cterm=bold gui=bold  guifg=#0000FF
@@ -62,5 +62,6 @@ hi TerminalRed         guifg=#FF5F56
 hi TerminalGreen       guifg=#4CAF50
 hi TerminalYellow      guifg=#FFA500
 hi TerminalBlue        guifg=#4A90E2
-hi TerminalMagenta     guifg=#673AB7     " Roxo mais escuro
-hi Terminal
+hi TerminalMagenta     guifg=#673AB7
+hi TerminalCyan        guifg=#36A3D9
+hi TerminalWhite       guifg=#2B2B2B
