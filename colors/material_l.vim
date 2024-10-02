@@ -8,17 +8,17 @@ endif
 let g:colors_name="light"
 
 " Geral
-hi Normal       guifg=#263238     guibg=#FAFAFA
-hi NormalFloat  guifg=#263238     guibg=#FAFAFA
-hi Cursor       guifg=#FAFAFA     guibg=#263238
+hi Normal       guifg=#272822     guibg=#F8F8F2
+hi NormalFloat  guifg=#272822     guibg=#F8F8F2
+hi Cursor       guifg=#F8F8F2     guibg=#272822
 hi CursorLine   guibg=#E0E0E0
-hi VertSplit    guifg=#B0BEC5     guibg=#FAFAFA
-hi Folded       guifg=#263238     guibg=#E0E0E0
-hi FoldColumn   guifg=#263238     guibg=#FAFAFA
-hi LineNr       guifg=#B0BEC5     guibg=#FAFAFA
-hi StatusLine   guifg=#FAFAFA     guibg=#90A4AE
-hi StatusLineNC guifg=#B0BEC5     guibg=#FAFAFA
-hi Search       guifg=#263238     guibg=#FFD54F
+hi VertSplit    guifg=#B0BEC5     guibg=#F8F8F2
+hi Folded       guifg=#272822     guibg=#E0E0E0
+hi FoldColumn   guifg=#272822     guibg=#F8F8F2
+hi LineNr       guifg=#B0BEC5     guibg=#F8F8F2
+hi StatusLine   guifg=#F8F8F2     guibg=#90A4AE
+hi StatusLineNC guifg=#B0BEC5     guibg=#F8F8F2
+hi Search       guifg=#272822     guibg=#FFD54F
 hi Directory    guifg=#0288D1
 hi Special      guifg=#FFB300
 
@@ -37,34 +37,34 @@ hi DiagnosticFloatingHint    guifg=#1976D2     guibg=#E3F2FD
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi IncSearch    guifg=#263238     guibg=#FFD54F
-hi MoreMsg      guifg=#263238
-hi ModeMsg      guifg=#263238
-hi Question     guifg=#263238
+hi IncSearch    guifg=#272822     guibg=#FFD54F
+hi MoreMsg      guifg=#272822
+hi ModeMsg      guifg=#272822
+hi Question     guifg=#272822
 
 " Comentários e código
 hi Comment      guifg=#B0BEC5     gui=italic
 hi Keyword      guifg=#FFB300     gui=bold
-hi Function     guifg=#263238
+hi Function     guifg=#272822
 hi Identifier   guifg=#D32F2F
 hi Constant     guifg=#8E24AA
 hi Type         guifg=#FFB300
 hi String       guifg=#388E3C
 hi Number       guifg=#0277BD
 hi Statement    cterm=bold gui=bold  guifg=#FFB300
-hi Operator     guifg=#263238
+hi Operator     guifg=#272822
 
 " HTML Tags
-hi htmlTag      guifg=#263238
+hi htmlTag      guifg=#272822
 hi htmlTagName  guifg=#FFB300
 
 " Terminal
-hi Terminal            guifg=#263238
-hi TerminalBlack       guifg=#FAFAFA
+hi Terminal            guifg=#272822
+hi TerminalBlack       guifg=#F8F8F2
 hi TerminalRed         guifg=#C62828
 hi TerminalGreen       guifg=#388E3C
 hi TerminalYellow      guifg=#FFB300
 hi TerminalBlue        guifg=#0288D1
 hi TerminalMagenta     guifg=#8E24AA
 hi TerminalCyan        guifg=#26A69A
-hi TerminalWhite       guifg=#263238
+hi TerminalWhite       guifg=#272822
