@@ -59,3 +59,6 @@ hi TerminalBlue        guifg=#7db9e8
 hi TerminalMagenta     guifg=#800080
 hi TerminalCyan        guifg=#409CAD
 hi TerminalWhite       guifg=#3C3C3C
+
+" Todo
+hi TodoBgTODO gui=bold guifg=#fafafa guibg=#609c69
