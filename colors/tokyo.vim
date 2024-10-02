@@ -19,6 +19,8 @@ hi LineNr       guifg=#606366     guibg=#2B2B2B
 hi StatusLine   guifg=#BBBBBB     guibg=#3C3F41
 hi StatusLineNC guifg=#787878     guibg=#2B2B2B
 hi Search       guifg=#000000     guibg=#32593D
+hi Directory  guifg=#5394EC
+hi Special    guifg=#9876AA
 
 " Diagnóstico
 hi DiagnosticError   guifg=#BC3F3C     guibg=#532B2E
