@@ -21,7 +21,6 @@ hi StatusLineNC guifg=#787878     guibg=#2B2B2B
 hi Search       guifg=#000000     guibg=#32593D
 hi Directory    guifg=#5394EC
 hi Special      guifg=#9876AA
-hi Statement    cterm=bold gui=bold  guifg=#cc7832
 
 " Diagnóstico
 hi DiagnosticError   guifg=#BC3F3C     guibg=#532B2E
@@ -49,7 +48,7 @@ hi Constant     guifg=#9876AA
 hi Type         guifg=#CC7832
 hi String       guifg=#6A8759     " Ajuste aqui para verde escuro
 hi Number       guifg=#6897BB
-hi Statement    guifg=#F92672     gui=bold
+hi Statement    cterm=bold gui=bold  guifg=#cc7832
 hi Operator     guifg=#A9B7C6
 
 " HTML Tags
