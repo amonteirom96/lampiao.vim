@@ -23,7 +23,7 @@ hi Search       guifg=#1a1b26     guibg=#9ece6a
 hi Directory    guifg=#7aa2f7
 hi Special      guifg=#9ece6a
 hi Visual       ctermfg=0 ctermbg=15 guibg=#2c2d3e
-hi PmenuSel     cterm=underline,reverse guifg=#9ece6a guifg=#1a1b26 blend=0
+hi PmenuSel     cterm=underline,reverse guifg=#9ece6a guibg=#1a1b26 blend=0
 
 " TODO
 hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4caf50
