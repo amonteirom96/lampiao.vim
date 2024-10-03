@@ -44,7 +44,7 @@ hi DiagnosticFloatingHint    guifg=#673AB7     guibg=#EDE7F6
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi IncSearch    guifg=#FFFFFF     guibg=#FFCC00
+hi IncSearch    guibg=#FFCC00
 hi MoreMsg      guifg=#2B2B2B
 hi ModeMsg      guifg=#FF8C00
 hi Question     guifg=#2B2B2B
