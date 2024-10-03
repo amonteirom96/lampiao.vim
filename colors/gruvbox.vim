@@ -4,64 +4,64 @@ if exists("syntax_on")
   syntax reset
 endif
 
-set background=dark
-let g:colors_name="vs_theme"
+set background=light
+let g:colors_name="vs_light_theme"
 
 " Geral
-hi Normal       guifg=#dcdcdc     guibg=#1e1e1e
-hi NormalFloat  guifg=#dcdcdc     guibg=#1e1e1e
-hi Cursor       guifg=#1e1e1e     guibg=#dcdcdc
-hi CursorLine   guibg=#2d2d2d
-hi VertSplit    guifg=#3e3e42    guibg=#1e1e1e
-hi Folded       guifg=#9b9b9b     guibg=#2d2d30
-hi FoldColumn   guifg=#dcdcdc     guibg=#1e1e1e
-hi LineNr       guifg=#858585     guibg=#1e1e1e
-hi StatusLine   guifg=#dcdcdc     guibg=#2d2d30
-hi StatusLineNC guifg=#3e3e42    guibg=#1e1e1e
-hi IncSearch    guifg=#1e1e1e     guibg=#569cd6
-hi Search       guifg=#1e1e1e     guibg=#569cd6
-hi Directory    guifg=#d7ba7d
-hi Special      guifg=#d7ba7d
-hi Visual       ctermfg=0 ctermbg=15 guibg=#264f78
-hi PmenuSel     cterm=underline,reverse guifg=#569cd6 guibg=#1e1e1e blend=0
+hi Normal       guifg=#000000     guibg=#ffffff
+hi NormalFloat  guifg=#000000     guibg=#ffffff
+hi Cursor       guifg=#ffffff     guibg=#000000
+hi CursorLine   guibg=#f3f3f3
+hi VertSplit    guifg=#d4d4d4    guibg=#ffffff
+hi Folded       guifg=#666666     guibg=#e7e7e7
+hi FoldColumn   guifg=#000000     guibg=#ffffff
+hi LineNr       guifg=#098658     guibg=#ffffff
+hi StatusLine   guifg=#000000     guibg=#e7e7e7
+hi StatusLineNC guifg=#d4d4d4    guibg=#ffffff
+hi IncSearch    guifg=#ffffff     guibg=#d16969
+hi Search       guifg=#ffffff     guibg=#d16969
+hi Directory    guifg=#007acc
+hi Special      guifg=#007acc
+hi Visual       ctermfg=0 ctermbg=15 guibg=#add6ff
+hi PmenuSel     cterm=underline,reverse guifg=#007acc guibg=#ffffff blend=0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#6a9955
-hi TodoBgWARN   gui=bold guifg=#FFFFFF     guibg=#dcdcaa
-hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d16969
+hi TodoBgTODO   gui=bold guifg=#000000     guibg=#d7ba7d
+hi TodoBgWARN   gui=bold guifg=#000000     guibg=#ffcc00
+hi TodoBgFIX    gui=bold guifg=#000000     guibg=#f44747
 
 " Diagnóstico
-hi DiagnosticError   guifg=#f44747     guibg=#511d1d
-hi DiagnosticWarn    guifg=#dcdcaa     guibg=#554025
-hi DiagnosticInfo    guifg=#569cd6     guibg=#1e1e1e
-hi DiagnosticHint    guifg=#9cdcfe     guibg=#1e1e1e
+hi DiagnosticError   guifg=#f44747     guibg=#ffebe8
+hi DiagnosticWarn    guifg=#ffcc00     guibg=#fff4cc
+hi DiagnosticInfo    guifg=#007acc     guibg=#e7f3fe
+hi DiagnosticHint    guifg=#569cd6     guibg=#e7f3fe
 
-hi DiagnosticFloating        guifg=#f44747     guibg=#511d1d
-hi DiagnosticFloatingWarning guifg=#dcdcaa     guibg=#554025
-hi DiagnosticFloatingInfo    guifg=#569cd6     guibg=#1e1e1e
-hi DiagnosticFloatingHint    guifg=#9cdcfe     guibg=#1e1e1e
+hi DiagnosticFloating        guifg=#f44747     guibg=#ffebe8
+hi DiagnosticFloatingWarning guifg=#ffcc00     guibg=#fff4cc
+hi DiagnosticFloatingInfo    guifg=#007acc     guibg=#e7f3fe
+hi DiagnosticFloatingHint    guifg=#569cd6     guibg=#e7f3fe
 
 " Telescope
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi MoreMsg      guifg=#dcdcdc
-hi ModeMsg      guifg=#dcdcdc
-hi Question     guifg=#dcdcdc
+hi MoreMsg      guifg=#000000
+hi ModeMsg      guifg=#000000
+hi Question     guifg=#000000
 
 " Comentários e código
-hi Statement    cterm=NONE gui=NONE guifg=#569cd6
-hi Comment      guifg=#608b4e     gui=italic
+hi Statement    cterm=NONE gui=NONE guifg=#0000ff
+hi Comment      guifg=#008000     gui=italic
 hi link Keyword Statement
-hi Function     guifg=#dcdcaa
-hi Identifier   guifg=#d7ba7d
-hi Constant     guifg=#9cdcfe
-hi Type         guifg=#4ec9b0
-hi String       guifg=#ce9178
-hi Number       guifg=#b5cea8
+hi Function     guifg=#795e26
+hi Identifier   guifg=#000000
+hi Constant     guifg=#007acc
+hi Type         guifg=#267f99
+hi String       guifg=#a31515
+hi Number       guifg=#098658
 
-hi Operator     guifg=#dcdcdc
+hi Operator     guifg=#000000
 
 " HTML Tags
-hi htmlTag      guifg=#dcdcaa
-hi htmlTagName  guifg=#569cd6
+hi htmlTag      guifg=#0000ff
+hi htmlTagName  guifg=#0000ff
