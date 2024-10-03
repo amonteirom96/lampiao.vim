@@ -66,13 +66,13 @@ hi Operator     guifg=#F8F8F2
 hi htmlTag      guifg=#F8F8F2
 hi htmlTagName  guifg=#F92672
 
-" Terminal
-hi Terminal            guifg=#F8F8F2
-hi TerminalBlack       guifg=#2A2A2A
-hi TerminalRed         guifg=#F92672
-hi TerminalGreen       guifg=#A6E22E
-hi TerminalYellow      guifg=#E6DB74
-hi TerminalBlue        guifg=#66D9EF
-hi TerminalMagenta     guifg=#AE81FF
-hi TerminalCyan        guifg=#A1EFE4
-hi TerminalWhite       guifg=#F8F8F2
+" Telescope
+hi TelescopeSelection guibg=#1f1c2a
+hi TelescopePromptPrefix guifg=#fc735d
+hi TelescopeBorder guifg=#030707 guibg=#030707
+hi TelescopeMatching guifg=#fc735d
+hi TelescopePromptTitle guibg=#1f1c2a
+hi TelescopeSelectionCaret guifg=#b194fa guibg=#984695
+hi TelescopePromptBorder guifg=#1f1c2a guibg=#1f1c2a
+hi TelescopePromptNormal guibg=#1f1c2a
+hi TelescopeNormal guibg=#030707
