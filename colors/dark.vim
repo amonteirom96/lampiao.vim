@@ -25,20 +25,20 @@ hi Special      guifg=#9ece6a
 hi Visual       ctermfg=0 ctermbg=15 guibg=#3e4451
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#ffffff     guibg=#3e4451
-hi TodoBgWARN   gui=bold guifg=#ffffff     guibg=#ff8800
-hi TodoBgFIX    gui=bold guifg=#ffffff     guibg=#ff5555
+hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4caf50
+hi TodoBgWARN   gui=bold guifg=#FFFFFF     guibg=#ffa500
+hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#ff5f56
 
 " Diagnóstico
-hi DiagnosticError   guifg=#ff5555     guibg=#ff8080
-hi DiagnosticWarn    guifg=#e0af68     guibg=#e0af68
-hi DiagnosticInfo    guifg=#9ece6a     guibg=#a6e3a1
-hi DiagnosticHint    guifg=#7aa2f7     guibg=#7aa2f7
+hi DiagnosticError   guifg=#F92672     guibg=#4B4B4B
+hi DiagnosticWarn    guifg=#F8F8F2     guibg=#4B4B4B
+hi DiagnosticInfo    guifg=#A6E22E     guibg=#2A2A2A
+hi DiagnosticHint    guifg=#66D9EF     guibg=#4B4B4B
 
-hi DiagnosticFloating        guifg=#ff5555     guibg=#ff8080
-hi DiagnosticFloatingWarning guifg=#e0af68     guibg=#e0af68
-hi DiagnosticFloatingInfo    guifg=#9ece6a     guibg=#a6e3a1
-hi DiagnosticFloatingHint    guifg=#7aa2f7     guibg=#7aa2f7
+hi DiagnosticFloating        guifg=#F92672     guibg=#4B4B4B
+hi DiagnosticFloatingWarning guifg=#F8F8F2     guibg=#4B4B4B
+hi DiagnosticFloatingInfo    guifg=#A6E22E     guibg=#2A2A2A
+hi DiagnosticFloatingHint    guifg=#66D9EF     guibg=#4B4B4B
 
 " Telescope
 hi link TelescopeSelection CursorLine
