@@ -18,8 +18,8 @@ hi FoldColumn   guifg=#F8F8F2     guibg=#2A2A2A
 hi LineNr       guifg=#B0BEC5     guibg=#2A2A2A
 hi StatusLine   guifg=#F8F8F2     guibg=#49483E
 hi StatusLineNC guifg=#B0BEC5     guibg=#2A2A2A
-hi Search       guifg=#F8F8F2     guibg=#A6E22E
 hi IncSearch    guifg=#F8F8F2     guibg=#A6E22E
+hi link Search IncSearch
 hi Directory    guifg=#66D9EF
 hi Special      guifg=#A6E22E
 hi Visual       ctermfg=0 ctermbg=15 guibg=NvimDarkGrey4
