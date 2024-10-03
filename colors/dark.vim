@@ -57,7 +57,7 @@ hi Function     guifg=#c0caf5
 hi Identifier   guifg=#ffcb6b
 hi Constant     guifg=#bb9af7
 hi Type         guifg=#9ece6a
-hi String       guifg=#a9b1d6
+hi String       guifg=#7aa2f7
 hi Number       guifg=#f7768e
 
 hi Operator     guifg=#c0caf5
