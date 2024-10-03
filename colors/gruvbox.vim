@@ -5,24 +5,24 @@ if exists("syntax_on")
 endif
 
 set background=light
-let g:colors_name="tokyonight_light"
+let g:colors_name="netbeans_light"
 
 " Geral
-hi Normal       guifg=#2d2d2d     guibg=#e0e7ff
-hi NormalFloat  guifg=#2d2d2d     guibg=#e0e7ff
-hi Cursor       guifg=#ffffff     guibg=#2d2d2d
-hi CursorLine   guibg=#d3d3e0
-hi VertSplit    guifg=#d3d3e0    guibg=#e0e7ff
-hi Folded       guifg=#4e4e78     guibg=#f5f5ff
-hi FoldColumn   guifg=#2d2d2d     guibg=#e0e7ff
-hi LineNr       guifg=#4e4e78     guibg=#e0e7ff
-hi StatusLine   guifg=#2d2d2d     guibg=#f5f5ff
-hi StatusLineNC guifg=#b0b0c2     guibg=#e0e7ff
-hi IncSearch    guifg=#2d2d2d     guibg=#9be5b2
-hi Search       guifg=#2d2d2d     guibg=#9be5b2
-hi Directory    guifg=#7aa2f7
-hi Special      guifg=#9ece6a
-hi Visual       ctermfg=0 ctermbg=15 guibg=#d3d3e0
+hi Normal       guifg=#333333     guibg=#f8f8f8
+hi NormalFloat  guifg=#333333     guibg=#f8f8f8
+hi Cursor       guifg=#f8f8f8     guibg=#333333
+hi CursorLine   guibg=#e0e0e0
+hi VertSplit    guifg=#b0b0b0    guibg=#f8f8f8
+hi Folded       guifg=#555555     guibg=#f0f0f0
+hi FoldColumn   guifg=#333333     guibg=#f8f8f8
+hi LineNr       guifg=#777777     guibg=#f8f8f8
+hi StatusLine   guifg=#333333     guibg=#e0e0e0
+hi StatusLineNC guifg=#b0b0b0     guibg=#f8f8f8
+hi IncSearch    guifg=#333333     guibg=#98c379
+hi Search       guifg=#333333     guibg=#98c379
+hi Directory    guifg=#007c92
+hi Special      guifg=#c678dd
+hi Visual       ctermfg=0 ctermbg=15 guibg=#e0e0e0
 
 " TODO
 hi TodoBgTODO   gui=bold guifg=#ffffff     guibg=#5ca45e
@@ -44,23 +44,23 @@ hi DiagnosticFloatingHint    guifg=#7aa2f7     guibg=#d5e0f5
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi MoreMsg      guifg=#2d2d2d
-hi ModeMsg      guifg=#2d2d2d
-hi Question     guifg=#2d2d2d
+hi MoreMsg      guifg=#333333
+hi ModeMsg      guifg=#333333
+hi Question     guifg=#333333
 
 " Comentários e código
 hi Statement    cterm=NONE gui=NONE guifg=#ff6f6f
-hi Comment      guifg=#676e95     gui=italic
+hi Comment      guifg=#666666     gui=italic
 hi link Keyword Statement
-hi Function     guifg=#2d2d2d
-hi Identifier   guifg=#ffcb6b
-hi Constant     guifg=#bb9af7
-hi Type         guifg=#9ece6a
-hi String       guifg=#7aa2f7
-hi Number       guifg=#f7768e
+hi Function     guifg=#333333
+hi Identifier   guifg=#d19a66
+hi Constant     guifg=#61afef
+hi Type         guifg=#98c379
+hi String       guifg=#e06c75
+hi Number       guifg=#d19a66
 
-hi Operator     guifg=#2d2d2d
+hi Operator     guifg=#333333
 
 " HTML Tags
-hi htmlTag      guifg=#2d2d2d
+hi htmlTag      guifg=#333333
 hi htmlTagName  guifg=#ff6f6f
