@@ -23,6 +23,11 @@ hi Directory    guifg=#4A90E2
 hi Special      guifg=#4A90E2
 hi Visual       guifg=#FFFFFF     guibg=#4A90E2
 
+" TODO
+hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4caf50
+hi TodoBgWARN   gui=bold guifg=#FFFFFF     guibg=#ffa500
+hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#ff5f56
+
 " Diagnóstico
 hi DiagnosticError   guifg=#FF5F56     guibg=#FFE6E6
 hi DiagnosticWarn    guifg=#FFA500     guibg=#FFF5E6
