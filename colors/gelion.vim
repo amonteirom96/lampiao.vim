@@ -238,4 +238,3 @@ hi TelescopePromptBorder guifg=#1f1c2a guibg=#1f1c2a
 hi gitcommitDiscardedFile guifg=#fb3475
 hi TelescopePromptNormal guibg=#1f1c2a
 hi TelescopeNormal guibg=#030707
-
