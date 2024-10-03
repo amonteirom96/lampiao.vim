@@ -5,62 +5,62 @@ if exists("syntax_on")
 endif
 
 set background=light
-let g:colors_name="netbeans_light_dark"
+let g:colors_name="netbeans_light_darker"
 
 " Geral
-hi Normal       guifg=#2e2e2e     guibg=#f8f8f8
-hi NormalFloat  guifg=#2e2e2e     guibg=#f8f8f8
-hi Cursor       guifg=#f8f8f8     guibg=#2e2e2e
-hi CursorLine   guibg=#d0d0d0
-hi VertSplit    guifg=#a0a0a0     guibg=#f8f8f8
-hi Folded       guifg=#444444     guibg=#f0f0f0
-hi FoldColumn   guifg=#2e2e2e     guibg=#f8f8f8
-hi LineNr       guifg=#666666     guibg=#f8f8f8
-hi StatusLine   guifg=#2e2e2e     guibg=#d0d0d0
-hi StatusLineNC guifg=#a0a0a0     guibg=#f8f8f8
-hi IncSearch    guifg=#2e2e2e     guibg=#7fbb63
-hi Search       guifg=#2e2e2e     guibg=#7fbb63
+hi Normal       guifg=#2a2a2a     guibg=#f8f8f8
+hi NormalFloat  guifg=#2a2a2a     guibg=#f8f8f8
+hi Cursor       guifg=#f8f8f8     guibg=#2a2a2a
+hi CursorLine   guibg=#c0c0c0
+hi VertSplit    guifg=#989898     guibg=#f8f8f8
+hi Folded       guifg=#383838     guibg=#f0f0f0
+hi FoldColumn   guifg=#2a2a2a     guibg=#f8f8f8
+hi LineNr       guifg=#595959     guibg=#f8f8f8
+hi StatusLine   guifg=#2a2a2a     guibg=#c0c0c0
+hi StatusLineNC guifg=#989898     guibg=#f8f8f8
+hi IncSearch    guifg=#2a2a2a     guibg=#6b9c54
+hi Search       guifg=#2a2a2a     guibg=#6b9c54
 hi Directory    guifg=#007c92
-hi Special      guifg=#a26eab
-hi Visual       ctermfg=0 ctermbg=15 guibg=#d0d0d0
+hi Special      guifg=#8b5e8b
+hi Visual       ctermfg=0 ctermbg=15 guibg=#c0c0c0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#ffffff     guibg=#4e874e
-hi TodoBgWARN   gui=bold guifg=#ffffff     guibg=#d68a2f
-hi TodoBgFIX    gui=bold guifg=#ffffff     guibg=#d10000
+hi TodoBgTODO   gui=bold guifg=#ffffff     guibg=#468c46
+hi TodoBgWARN   gui=bold guifg=#ffffff     guibg=#ca7e2e
+hi TodoBgFIX    gui=bold guifg=#ffffff     guibg=#c70000
 
 " Diagnóstico
-hi DiagnosticError   guifg=#d65f5f     guibg=#f2b2b2
-hi DiagnosticWarn    guifg=#c7a95a     guibg=#f2e2b2
-hi DiagnosticInfo    guifg=#88b05b     guibg=#d5f5d5
-hi DiagnosticHint    guifg=#6aa6db     guibg=#d5e0f5
+hi DiagnosticError   guifg=#c64d4d     guibg=#f2b2b2
+hi DiagnosticWarn    guifg=#b18a4a     guibg=#f2e2b2
+hi DiagnosticInfo    guifg=#76b43d     guibg=#d5f5d5
+hi DiagnosticHint    guifg=#5692b0     guibg=#d5e0f5
 
-hi DiagnosticFloating        guifg=#d65f5f     guibg=#f2b2b2
-hi DiagnosticFloatingWarning guifg=#c7a95a     guibg=#f2e2b2
-hi DiagnosticFloatingInfo    guifg=#88b05b     guibg=#d5f5d5
-hi DiagnosticFloatingHint    guifg=#6aa6db     guibg=#d5e0f5
+hi DiagnosticFloating        guifg=#c64d4d     guibg=#f2b2b2
+hi DiagnosticFloatingWarning guifg=#b18a4a     guibg=#f2e2b2
+hi DiagnosticFloatingInfo    guifg=#76b43d     guibg=#d5f5d5
+hi DiagnosticFloatingHint    guifg=#5692b0     guibg=#d5e0f5
 
 " Telescope
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi MoreMsg      guifg=#2e2e2e
-hi ModeMsg      guifg=#2e2e2e
-hi Question     guifg=#2e2e2e
+hi MoreMsg      guifg=#2a2a2a
+hi ModeMsg      guifg=#2a2a2a
+hi Question     guifg=#2a2a2a
 
 " Comentários e código
-hi Statement    cterm=NONE gui=NONE guifg=#d65f5f
-hi Comment      guifg=#555555     gui=italic
+hi Statement    cterm=NONE gui=NONE guifg=#c64d4d
+hi Comment      guifg=#444444     gui=italic
 hi link Keyword Statement
-hi Function     guifg=#2e2e2e
+hi Function     guifg=#2a2a2a
 hi Identifier   guifg=#d19a66
-hi Constant     guifg=#51a0e1
-hi Type         guifg=#88b05b
-hi String       guifg=#c95b5b
+hi Constant     guifg=#4990d0
+hi Type         guifg=#76b43d
+hi String       guifg=#b94f4f
 hi Number       guifg=#d19a66
 
-hi Operator     guifg=#2e2e2e
+hi Operator     guifg=#2a2a2a
 
 " HTML Tags
-hi htmlTag      guifg=#2e2e2e
-hi htmlTagName  guifg=#d65f5f
+hi htmlTag      guifg=#2a2a2a
+hi htmlTagName  guifg=#c64d4d
