@@ -50,15 +50,15 @@ hi ModeMsg      guifg=#FF8C00
 hi Question     guifg=#2B2B2B
 
 " Comentários e código
+hi Statement    cterm=NONE gui=NONE guifg=#0000FF
+hi link Keyword Statement
 hi Comment      guifg=#999999     gui=italic
-hi Keyword      guifg=#0000FF
 hi Function     guifg=#A54D1A
 hi Identifier   guifg=#007ACC
 hi Constant     guifg=#36A3D9
 hi Type         guifg=#A54D1A
 hi String       guifg=#008000
 hi Number       guifg=#0987CA
-hi Statement    guifg=#0000FF
 hi Operator     guifg=#2B2B2B
 
 " HTML Tags
