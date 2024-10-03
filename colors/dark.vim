@@ -50,7 +50,7 @@ hi ModeMsg      guifg=#F8F8F2
 hi Question     guifg=#F8F8F2
 
 " Comentários e código
-hi Statement    cterm=normal gui=normal guifg=#F92672
+hi Statement    cterm=NONE gui=NONE guifg=#F92672
 hi Comment      guifg=#B0BEC5     gui=italic
 hi link Keyword Statement
 hi Function     guifg=#F8F8F2
