@@ -30,15 +30,15 @@ hi TodoBgWARN   gui=bold guifg=#ffffff     guibg=#ff8800
 hi TodoBgFIX    gui=bold guifg=#ffffff     guibg=#ff5555
 
 " Diagnóstico
-hi DiagnosticError   guifg=#ff5555     guibg=#3e4451
-hi DiagnosticWarn    guifg=#e0af68     guibg=#3e4451
-hi DiagnosticInfo    guifg=#9ece6a     guibg=#1a1b26
-hi DiagnosticHint    guifg=#7aa2f7     guibg=#3e4451
+hi DiagnosticError   guifg=#ff5555     guibg=#ff8080
+hi DiagnosticWarn    guifg=#e0af68     guibg=#e0af68
+hi DiagnosticInfo    guifg=#9ece6a     guibg=#a6e3a1
+hi DiagnosticHint    guifg=#7aa2f7     guibg=#7aa2f7
 
-hi DiagnosticFloating        guifg=#ff5555     guibg=#3e4451
-hi DiagnosticFloatingWarning guifg=#e0af68     guibg=#3e4451
-hi DiagnosticFloatingInfo    guifg=#9ece6a     guibg=#1a1b26
-hi DiagnosticFloatingHint    guifg=#7aa2f7     guibg=#3e4451
+hi DiagnosticFloating        guifg=#ff5555     guibg=#ff8080
+hi DiagnosticFloatingWarning guifg=#e0af68     guibg=#e0af68
+hi DiagnosticFloatingInfo    guifg=#9ece6a     guibg=#a6e3a1
+hi DiagnosticFloatingHint    guifg=#7aa2f7     guibg=#7aa2f7
 
 " Telescope
 hi link TelescopeSelection CursorLine
