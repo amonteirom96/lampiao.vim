@@ -21,7 +21,7 @@ hi StatusLineNC guifg=#A6A6A6     guibg=#E6E6E6
 hi Search       guifg=#FFFFFF     guibg=#4A90E2
 hi Directory    guifg=#4A90E2
 hi Special      guifg=#4A90E2
-hi link Visual Search
+hi Visual       guifg=#FFFFFF     guibg=#4A90E2
 
 " Diagnóstico
 hi DiagnosticError   guifg=#FF5F56     guibg=#FFE6E6
