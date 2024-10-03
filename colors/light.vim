@@ -8,59 +8,60 @@ set background=light
 let g:colors_name="light"
 
 " Geral
-hi Normal       guifg=#2B2B2B     guibg=#FFFFFF
-hi NormalFloat  guifg=#2B2B2B     guibg=#FFFFFF
-hi Cursor       guifg=#FFFFFF     guibg=#2B2B2B
-hi CursorLine   guibg=#F5F5F5
-hi VertSplit    guifg=#A6A6A6     guibg=#FFFFFF
-hi Folded       guifg=#808080     guibg=#E6E6E6
-hi FoldColumn   guifg=#2B2B2B     guibg=#FFFFFF
-hi LineNr       guifg=#A6A6A6     guibg=#FFFFFF
-hi StatusLine   guifg=#2B2B2B     guibg=#D6D6D6
-hi StatusLineNC guifg=#A6A6A6     guibg=#E6E6E6
-hi IncSearch    guifg=#FFFFFF     guibg=#4A90E2
-hi Search       guifg=#FFFFFF     guibg=#4A90E2
-hi Directory    guifg=#4A90E2
-hi Special      guifg=#4A90E2
-hi Visual       ctermfg=0 ctermbg=15 guibg=NvimLightGrey1
+hi Normal       guifg=#000000     guibg=#ffffff
+hi NormalFloat  guifg=#000000     guibg=#ffffff
+hi Cursor       guifg=#ffffff     guibg=#000000
+hi CursorLine   guibg=#f3f3f3
+hi VertSplit    guifg=#d4d4d4    guibg=#ffffff
+hi Folded       guifg=#666666     guibg=#e7e7e7
+hi FoldColumn   guifg=#000000     guibg=#ffffff
+hi LineNr       guifg=#098658     guibg=#ffffff
+hi StatusLine   guifg=#000000     guibg=#e7e7e7
+hi StatusLineNC guifg=#d4d4d4    guibg=#ffffff
+hi IncSearch    guifg=#ffffff     guibg=#d16969
+hi Search       guifg=#ffffff     guibg=#d16969
+hi Directory    guifg=#007acc
+hi Special      guifg=#007acc
+hi Visual       ctermfg=0 ctermbg=15 guibg=#add6ff
+hi PmenuSel     cterm=underline,reverse guifg=#007acc guibg=#ffffff blend=0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4caf50
-hi TodoBgWARN   gui=bold guifg=#FFFFFF     guibg=#ffa500
-hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#ff5f56
+hi TodoBgTODO   gui=bold guifg=#000000     guibg=#d7ba7d
+hi TodoBgWARN   gui=bold guifg=#000000     guibg=#ffcc00
+hi TodoBgFIX    gui=bold guifg=#000000     guibg=#f44747
 
 " Diagnóstico
-hi DiagnosticError   guifg=#FF5F56     guibg=#FFE6E6
-hi DiagnosticWarn    guifg=#FFA500     guibg=#FFF5E6
-hi DiagnosticInfo    guifg=#4CAF50     guibg=#E6F5E6
-hi DiagnosticHint    guifg=#673AB7     guibg=#EDE7F6
+hi DiagnosticError   guifg=#f44747     guibg=#ffebe8
+hi DiagnosticWarn    guifg=#ffcc00     guibg=#fff4cc
+hi DiagnosticInfo    guifg=#007acc     guibg=#e7f3fe
+hi DiagnosticHint    guifg=#569cd6     guibg=#e7f3fe
 
-hi DiagnosticFloating        guifg=#FF5F56     guibg=#FFE6E6
-hi DiagnosticFloatingWarning guifg=#FFA500     guibg=#FFF5E6
-hi DiagnosticFloatingInfo    guifg=#4CAF50     guibg=#E6F5E6
-hi DiagnosticFloatingHint    guifg=#673AB7     guibg=#EDE7F6
+hi DiagnosticFloating        guifg=#f44747     guibg=#ffebe8
+hi DiagnosticFloatingWarning guifg=#ffcc00     guibg=#fff4cc
+hi DiagnosticFloatingInfo    guifg=#007acc     guibg=#e7f3fe
+hi DiagnosticFloatingHint    guifg=#569cd6     guibg=#e7f3fe
 
 " Telescope
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi IncSearch    gui=bold guifg=#FFFFFF     guibg=#4caf50
-hi MoreMsg      guifg=#2B2B2B
-hi ModeMsg      guifg=#FF8C00
-hi Question     guifg=#2B2B2B
+hi MoreMsg      guifg=#000000
+hi ModeMsg      guifg=#000000
+hi Question     guifg=#000000
 
 " Comentários e código
-hi Statement    cterm=NONE gui=NONE guifg=#0000FF
+hi Statement    cterm=NONE gui=NONE guifg=#0000ff
+hi Comment      guifg=#008000     gui=italic
 hi link Keyword Statement
-hi Comment      guifg=#999999     gui=italic
-hi Function     guifg=#A54D1A
-hi Identifier   guifg=#007ACC
-hi Constant     guifg=#36A3D9
-hi Type         guifg=#A54D1A
-hi String       guifg=#008000
-hi Number       guifg=#0987CA
-hi Operator     guifg=#2B2B2B
+hi Function     guifg=#795e26
+hi Identifier   guifg=#000000
+hi Constant     guifg=#007acc
+hi Type         guifg=#267f99
+hi String       guifg=#a31515
+hi Number       guifg=#098658
+
+hi Operator     guifg=#000000
 
 " HTML Tags
-hi htmlTag      guifg=#2B2B2B
-hi htmlTagName  guifg=#0000FF
+hi htmlTag      guifg=#0000ff
+hi htmlTagName  guifg=#0000ff
