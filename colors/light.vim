@@ -22,7 +22,7 @@ hi Search       guifg=#FFFFFF     guibg=#4A90E2
 hi IncSearch       guifg=#FFFFFF     guibg=#4A90E2
 hi Directory    guifg=#4A90E2
 hi Special      guifg=#4A90E2
-hi Visual       guifg=#FFFFFF     guibg=#4A90E2
+hi Visual       ctermfg=0 ctermbg=15 guibg=NvimDarkGrey4
 
 " TODO
 hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4caf50
