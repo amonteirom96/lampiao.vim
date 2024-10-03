@@ -1,10 +1,10 @@
-set background=light
-if version > 580
-    hi clear
-    if exists("syntax_on")
-        syntax reset
-    endif
+hi clear
+
+if exists("syntax_on")
+  syntax reset
 endif
+
+set background=light
 let g:colors_name="light"
 
 " Geral
