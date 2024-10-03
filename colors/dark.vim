@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
 
 set background=dark
-let g:colors_name="vs_theme"
+let g:colors_name="dark"
 
 " Geral
 hi Normal       guifg=#dcdcdc     guibg=#1e1e1e
