@@ -27,7 +27,7 @@ hi PmenuSel     cterm=underline,reverse guifg=#569cd6 guibg=#1e1e1e blend=0
 
 " TODO
 hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#6a9955
-hi TodoBgWARN   gui=bold guifg=#FFFFFF     guibg=#dcdcaa
+hi TodoBgWARN   gui=bold guifg=#1e1e1e     guibg=#dcdcaa
 hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d16969
 
 " Diagnóstico
