@@ -64,14 +64,3 @@ hi Operator     guifg=#2B2B2B
 " HTML Tags
 hi htmlTag      guifg=#2B2B2B
 hi htmlTagName  guifg=#0000FF
-
-" Terminal
-hi Terminal            guifg=#2B2B2B
-hi TerminalBlack       guifg=#FFFFFF
-hi TerminalRed         guifg=#FF5F56
-hi TerminalGreen       guifg=#4CAF50
-hi TerminalYellow      guifg=#FFA500
-hi TerminalBlue        guifg=#4A90E2
-hi TerminalMagenta     guifg=#673AB7
-hi TerminalCyan        guifg=#36A3D9
-hi TerminalWhite       guifg=#2B2B2B
