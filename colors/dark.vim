@@ -19,7 +19,7 @@ hi LineNr       guifg=#a9b1d6     guibg=#1a1b26
 hi StatusLine   guifg=#c0caf5     guibg=#2e3440
 hi StatusLineNC guifg=#3e4451    guibg=#1a1b26
 hi IncSearch    guifg=#1f1f28     guibg=#9ece6a
-hi Search       guifg=#c0caf5     guibg=#9ece6a
+hi Search       guifg=#1a1b26     guibg=#9ece6a
 hi Directory    guifg=#7aa2f7
 hi Special      guifg=#9ece6a
 hi Visual       ctermfg=0 ctermbg=15 guibg=#3e4451
