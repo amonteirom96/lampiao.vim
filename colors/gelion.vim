@@ -4,112 +4,53 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "nvimgelion"
+let g:colors_name = "Darcula"
 
-" nvim-dap-ui.
-hi DapUIDecoration guifg=#B24CFF
-hi DapUIValue guifg=#A6A6A6
-hi DapUIModifiedValue guifg=#C0B0FF
-hi DapUIScope guifg=#D1D800
-hi DapUIStoppedThread guifg=#D1D800
-hi DapUIBreakpointsPath guifg=#D7A3FF
-
-" treesitter stuff.
-hi @tag.delimiter guifg=#A0A4A6
-hi @text.literal guifg=#A0A4A6
-hi @text.reference guifg=#F4B752
-hi @text.uri cterm=underline gui=underline guifg=#D7B3FF
-hi @text.strong cterm=bold gui=bold
-hi @text.emphasis cterm=italic gui=italic
-hi @constructor.python guifg=#78C6C8
-hi @field.python guifg=#C7C9D4
-hi @variable.builtin.python guifg=#78C6C8
-hi link @attribute.python Special
-
-" Lazy.nvim.
-hi LazyButton guibg=#661D9D
-hi LazyButtonActive guibg=#E82535
-hi LazyDimmed guifg=#B2B2A2
-hi LazyProp guifg=#B2B2A2
-hi LazyCommit guifg=#CCCCCC
-hi LazyCommitType guifg=#C8B0D6
-
-" fzf-lua.
-hi FzfLuaTitle guifg=#B7E700
-hi FzfLuaPreviewBorder guifg=#3A3F52
-hi FzfLuaBorder guifg=#3A3F52
-
-" debug Error for noice.nvim.
-hi NoiceMini guibg=#1C1C1C
-hi NoiceCmdlinePopup guibg=#2B2B2B
-hi NoiceCmdlineItems guibg=#2B2B2B
-hi NoiceScrollbarThumb guibg=#FF2B6A
-hi NoiceScrollbar guibg=#2A3644
-hi NoiceFormatEvent guifg=#7E7C7A
-hi NoiceFormatKind guifg=#C0BEB6
-hi NoiceFormatDate guifg=#CCCCCC
-hi Macro guifg=#B7E700
-hi Error guifg=#FF5C8A guibg=bg
-hi ErrorMsg guifg=#FF5C8A guibg=bg
-hi NvimInternalError guifg=#FF5C8A guibg=bg
-hi LspDiagnosticsVirtualTextError guifg=#FF5C8A guibg=bg
-hi DiagnosticError guifg=#FF5C8A guibg=bg
-hi DiagnosticUnderlineError cterm=undercurl gui=undercurl guisp=#FF5C8A
-
-" indentblankline.
-hi IndentBlanklineChar gui=nocombine guifg=#666D75
-hi IndentBlanklineSpaceChar cterm=nocombine ctermfg=NONE gui=nocombine guifg=#757B7C
-hi IndentBlanklineContextChar gui=nocombine guifg=#E26C3A
-hi IndentBlanklineContextStart gui=underline guisp=#E26C3A
-hi IblIndent gui=nocombine guifg=#666D75
-hi IblScope gui=nocombine guifg=#E26C3A
-
-" main.
-hi Normal guifg=#D7D1E2 guibg=#1E1E24
+hi Normal guifg=#D5C6E0 guibg=#16161D
 hi NormalFloat ctermbg=NONE guibg=NONE
-hi Identifier guifg=#D7D1E2
+hi Identifier guifg=#D5C6E0
 hi TermCursor cterm=reverse gui=reverse
 hi Cursor guifg=bg guibg=fg
 hi lCursor guifg=bg guibg=fg
 hi CursorLine guibg=#373E40
-hi CursorColumn guibg=#1C1C1C
-hi CursorLineLir guibg=#A03CBB
-hi CursorLineNr guifg=#A0A4A6
-hi LineNr guifg=#B2B2A2
-hi Directory guifg=#FBB4A7
-hi EndOfBuffer guifg=#505050
-hi IncSearch guibg=#A03CBB
-hi Search guibg=#A03CBB
-hi MatchParen guibg=NONE guifg=#B7E700
-hi MoreMsg guifg=#A2C1A0
+hi CursorColumn guibg=#030707
+hi CursorLineLir guibg=#984695
+hi CursorLineNr guifg=#75797A
+hi LineNr guifg=#686858
+hi Directory guifg=#FC735D
+hi EndOfBuffer guifg=#403D39
+hi IncSearch guibg=#984695
+hi Search guibg=#984695
+hi MatchParen guibg=NONE guifg=#9EF01A
+hi MoreMsg guifg=#7CB375
 hi ModeMsg cterm=bold gui=bold
-hi Question guifg=#A2C1A0
-hi StatusLine guifg=#A0A4A6
-hi StatusLineNC guifg=#A0A4A6
+hi Question guifg=#7CB375
+hi StatusLine guifg=#75797A
+hi StatusLineNC guifg=#75797A
 hi SignColumn guibg=NONE
-hi VertSplit guifg=#A03CBB guibg=bg
-hi Title guifg=#A2C1A0
-hi Visual guibg=#5E4A7A
-hi WarningMsg guifg=#FBB4A7
+hi VertSplit guifg=#984695 guibg=bg
+hi Title guifg=#7CB375
+hi Visual guibg=#703871
+hi WarningMsg guifg=#FC735D
 hi WildMenu ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
-hi Folded guibg=#1C1C1C
-hi DiffAdd gui=NONE guibg=#2D3B3D
-hi DiffChange gui=NONE guibg=#2D3B3D
+hi Folded guibg=#030707
+hi DiffAdd gui=NONE guibg=#182822
+hi DiffChange gui=NONE guibg=#182822
 hi DiffDelete gui=NONE guibg=bg
-hi DiffText gui=NONE guibg=#3D4C4D
-hi Conceal guifg=#8D5B6D
-hi SpellBad cterm=undercurl gui=undercurl guisp=#C61AF9
-hi SpellCap cterm=undercurl gui=undercurl guisp=#FBB4A7
-hi SpellRare cterm=undercurl gui=undercurl guisp=#FF5C8A
-hi SpellLocal cterm=undercurl gui=undercurl guisp=#D4B8FB
-hi Pmenu guibg=#1C1C1C
-hi PmenuSel guifg=#B7E700  guibg=#505050
-hi PmenuSbar guibg=#1C1C1C
-hi TabLine guifg=#A0A4A6
-hi TabLineSel guifg=#A0A4A6 guibg=bg
-hi TabLineFill guifg=#A0A4A6
-hi ColorColumn guibg=#1C1C1C
-hi FloatBorder guifg=#A0A4A6
+hi DiffText gui=NONE guibg=#304936
+hi Conceal guifg=#7B3F58
+hi SpellBad cterm=undercurl gui=undercurl guisp=#C51AF9
+hi SpellCap cterm=undercurl gui=undercurl guisp=#FC735D
+hi SpellRare cterm=undercurl gui=undercurl guisp=#FB3475
+hi SpellLocal cterm=undercurl gui=undercurl guisp=#D694FA
+hi Pmenu guibg=#030707
+hi PmenuSel guifg=#9EF01A guibg=#403D39
+hi PmenuSbar guibg=#030707
+hi TabLine guifg=#75797A
+hi TabLineSel guifg=#75797A guibg=bg
+hi TabLineFill guifg=#75797A
+hi ColorColumn guibg=#030707
+hi FloatBorder guifg=#75797A
 
 " MIDDLE FILE
 
