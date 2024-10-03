@@ -11,7 +11,7 @@ let g:colors_name="dark"
 hi Normal       guifg=#c0caf5     guibg=#1a1b26
 hi NormalFloat  guifg=#c0caf5     guibg=#1a1b26
 hi Cursor       guifg=#1a1b26     guibg=#c0caf5
-hi CursorLine   guibg=#3e4451
+hi CursorLine   guibg=#171820
 hi VertSplit    guifg=#3e4451    guibg=#1a1b26
 hi Folded       guifg=#a9b1d6     guibg=#2e3440
 hi FoldColumn   guifg=#c0caf5     guibg=#1a1b26
