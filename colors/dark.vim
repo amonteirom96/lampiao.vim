@@ -51,14 +51,14 @@ hi Question     guifg=#F8F8F2
 
 " Comentários e código
 hi Comment      guifg=#B0BEC5     gui=italic
-hi Keyword      guifg=#F92672     gui=bold
+hi Keyword      guifg=#F92672
 hi Function     guifg=#F8F8F2
 hi Identifier   guifg=#FD971F
 hi Constant     guifg=#AE81FF
 hi Type         guifg=#A6E22E
 hi String       guifg=#A6E22E
 hi Number       guifg=#6897BB
-hi Statement    cterm=bold gui=bold  guifg=#F92672
+hi Statement    guifg=#F92672
 hi Operator     guifg=#F8F8F2
 
 " HTML Tags
