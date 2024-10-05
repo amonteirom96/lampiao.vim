@@ -32,7 +32,7 @@ hi TodoBgFIX    gui=bold guifg=#000000     guibg=#f44747
 
 " Diagnóstico
 hi DiagnosticError   guifg=#f44747     guibg=#ffebe8
-hi DiagnosticWarn    guifg=#ffcc00     guibg=#333300
+hi DiagnosticWarn    guifg=#ffcc00     guibg=#fff0b3
 hi DiagnosticInfo    guifg=#007acc     guibg=#e7f3fe
 hi DiagnosticHint    guifg=#569cd6     guibg=#e7f3fe
 
