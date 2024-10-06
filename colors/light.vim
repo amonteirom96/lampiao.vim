@@ -27,6 +27,8 @@ hi PmenuSel     cterm=underline,reverse guifg=#007acc guibg=#ffffff blend=0
 
 " TODO
 hi TodoBgTODO   gui=bold guifg=#000000     guibg=#008000
+hi link TodoFgTODO TodoBgTODO
+hi link TelescopeSelection CursorLine
 hi TodoBgWARN   gui=bold guifg=#000000     guibg=#ffcc00
 hi TodoBgFIX    gui=bold guifg=#000000     guibg=#f44747
 
