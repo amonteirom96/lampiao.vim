@@ -26,11 +26,14 @@ hi Visual       ctermfg=0 ctermbg=15 guibg=#add6ff
 hi PmenuSel     cterm=underline,reverse guifg=#007acc guibg=#ffffff blend=0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#000000     guibg=#008000
+hi TodoBgTODO   gui=bold guifg=#ffffff     guibg=#008000
 hi link TodoFgTODO TodoBgTODO
-hi link TelescopeSelection CursorLine
 hi TodoBgWARN   gui=bold guifg=#000000     guibg=#ffcc00
+hi link TodoFgWARN TodoBgWARN
 hi TodoBgFIX    gui=bold guifg=#000000     guibg=#f44747
+hi link TodoFgFIX TodoBgFIX
+hi TodoBgNOTE    gui=bold guifg=#000000     guibg=#569cd6
+hi link TodoFgNOTE TodoBgNOTE
 
 " Diagnóstico
 hi DiagnosticError   guifg=#f44747     guibg=#ffebe8
