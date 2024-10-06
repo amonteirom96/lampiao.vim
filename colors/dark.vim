@@ -27,13 +27,13 @@ hi PmenuSel     cterm=underline,reverse guifg=#569cd6 guibg=#1e1e1e blend=0
 
 " TODO
 hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#6a9955
-hi link TodoFgTODO TodoBgTODO
+hi TodoBgTODO   gui=bold guifg=#6a9955     guibg=NONE
 hi TodoBgWARN   gui=bold guifg=#1e1e1e     guibg=#dcdcaa
-hi link TodoFgWARN TodoBgWARN
+hi TodoBgWARN   gui=bold guifg=#dcdcaa     guibg=NONE
 hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d16969
-hi link TodoFgFIX TodoBgFIX
+hi TodoBgFIX    gui=bold guifg=#d16969     guibg=NONE
 hi TodoBgNOTE    gui=bold guifg=#000000     guibg=#569cd6
-hi link TodoFgNOTE TodoBgNOTE
+hi TodoBgNOTE    gui=bold guifg=#569cd6     guibg=NONE
 
 " Diagnóstico
 hi DiagnosticError   guifg=#f44747     guibg=#511d1d
