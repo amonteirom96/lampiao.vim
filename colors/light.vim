@@ -26,7 +26,7 @@ hi Visual       ctermfg=0 ctermbg=15 guibg=#add6ff
 hi PmenuSel     cterm=underline,reverse guifg=#007acc guibg=#ffffff blend=0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#000000     guibg=#d7ba7d
+hi TodoBgTODO   gui=bold guifg=#000000     guibg=#008000
 hi TodoBgWARN   gui=bold guifg=#000000     guibg=#ffcc00
 hi TodoBgFIX    gui=bold guifg=#000000     guibg=#f44747
 
