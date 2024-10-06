@@ -32,6 +32,8 @@ hi TodoBgWARN   gui=bold guifg=#1e1e1e     guibg=#dcdcaa
 hi link TodoFgWARN TodoBgWARN
 hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d16969
 hi link TodoFgFIX TodoBgFIX
+hi TodoBgNOTE    gui=bold guifg=#000000     guibg=#569cd6
+hi link TodoFgNOTE TodoBgNOTE
 
 " Diagnóstico
 hi DiagnosticError   guifg=#f44747     guibg=#511d1d
