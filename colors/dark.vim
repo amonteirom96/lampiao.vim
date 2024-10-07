@@ -64,7 +64,7 @@ hi Constant     guifg=#9cdcfe
 hi Type         guifg=#4ec9b0
 hi String       guifg=#ce9178
 hi Number       guifg=#b5cea8
-hi Operator     guifg=#9cdcfe
+hi Operator     guifg=#DCDCDC
 
 " HTML Tags
 hi htmlTag      guifg=#dcdcaa
