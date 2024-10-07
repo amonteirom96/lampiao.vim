@@ -32,8 +32,8 @@ hi TodoBgWARN   gui=bold guifg=#1e1e1e     guibg=#dcdcaa
 hi TodoFgWARN   gui=bold guifg=#dcdcaa     guibg=NONE
 hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d16969
 hi TodoFgFIX    gui=bold guifg=#d16969     guibg=NONE
-hi TodoBgNOTE    gui=bold guifg=#000000     guibg=#569cd6
-hi TodoFgNOTE    gui=bold guifg=#569cd6     guibg=NONE
+hi TodoBgNOTE   gui=bold guifg=#000000     guibg=#569cd6
+hi TodoFgNOTE   gui=bold guifg=#569cd6     guibg=NONE
 
 " Diagnóstico
 hi DiagnosticError   guifg=#f44747     guibg=#511d1d
@@ -59,13 +59,25 @@ hi Statement    cterm=NONE gui=NONE guifg=#569cd6
 hi Comment      guifg=#608b4e     gui=italic
 hi link Keyword Statement
 hi Function     guifg=#dcdcaa
-hi Identifier   guifg=#d7ba7d
-hi Constant     guifg=#9cdcfe
+hi Identifier   guifg=#9cdcfe " Alterado com base no JSON
+hi Constant     guifg=#4FC1FF " Cor para constantes e enums
 hi Type         guifg=#4ec9b0
 hi String       guifg=#ce9178
 hi Number       guifg=#b5cea8
-hi Operator     guifg=#DCDCDC
+hi Operator     guifg=#C586C0 " Cor para palavras-chave especiais e operadores
 
 " HTML Tags
 hi htmlTag      guifg=#dcdcaa
 hi htmlTagName  guifg=#569cd6
+
+" Expressões regulares
+hi SpecialChar  guifg=#CE9178
+hi Delimiter    guifg=#CE9178
+
+" Escapes
+hi SpecialKey   guifg=#D7BA7D
+
+" Números e literais
+hi Number       guifg=#B5CEA8
+hi Label        guifg=#C8C8C8
+hi Character    guifg=#569CD6
