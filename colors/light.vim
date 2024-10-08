@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
 
 set background=light
-let g:colors_name="light"
+let g:colors_name="light_modern"
 
 " Cores principais
 hi Normal          guifg=#3B3B3B     guibg=#FFFFFF
@@ -95,5 +95,3 @@ hi EditorIndentGuide guifg=#D3D3D3
 hi EditorSuggestWidgetBackground guibg=#F8F8F8
 hi EditorWidgetBackground guibg=#F8F8F8
 hi FocusBorder      guifg=#005FB8
-
-" Outras cores para ajuste fino podem ser adicionadas aqui conforme necessário.
