@@ -3,7 +3,7 @@ if exists("syntax_on")
 endif
 
 set background=dark
-let g:colors_name="dark"
+let g:colors_name="one_dark_pro_custom"
 
 " Geral
 hi Normal       guifg=#abb2bf     guibg=#282c34
@@ -56,7 +56,7 @@ hi Question     guifg=#abb2bf
 hi Statement    cterm=NONE gui=NONE guifg=#61afef
 hi Comment      guifg=#5c6370     gui=italic
 hi link Keyword Statement
-hi Function     guifg=#528bff     " Nova cor para funções
+hi Function     guifg=#61afef     " Ajuste na cor da função
 hi Identifier   guifg=#56b6c2
 hi Constant     guifg=#61afef
 hi Type         guifg=#e5c07b
