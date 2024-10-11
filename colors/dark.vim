@@ -3,7 +3,7 @@ if exists("syntax_on")
 endif
 
 set background=dark
-let g:colors_name="one_dark_pro_custom"
+let g:colors_name="dark"
 
 " Geral
 hi Normal       guifg=#abb2bf     guibg=#282c34
@@ -21,7 +21,7 @@ hi Search       guifg=#282c34     guibg=#d19a66
 hi Directory    guifg=#61afef     " Nova cor para diretórios
 hi Special      guifg=#98c379     " Nova cor para especial
 hi Visual       ctermfg=0 ctermbg=15 guibg=#4e5570
-hi PmenuSel     cterm=underline,reverse guifg=#528bff guibg=#282c34 blend=0
+hi PmenuSel     cterm=underline,reverse guifg=#61afef guibg=#282c34 blend=0
 
 " TODO
 hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4fc1ff  " Tom sobre tom para TODO
