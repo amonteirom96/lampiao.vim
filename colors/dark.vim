@@ -82,6 +82,3 @@ hi SpecialKey   guifg=#87ceeb
 hi Number       guifg=#5f9ea0
 hi Label        guifg=#c8c8c8
 hi Character    guifg=#4682b4
-```
-
-As cores foram baseadas em diferentes tons de azul, com uma paleta que varia do claro ao escuro. Caso queira algum ajuste específico nas tonalidades ou seções, é só avisar!
