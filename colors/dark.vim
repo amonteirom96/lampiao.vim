@@ -53,7 +53,7 @@ hi ModeMsg      guifg=#abb2bf
 hi Question     guifg=#abb2bf
 
 " Comentários e código
-hi Statement    cterm=NONE gui=NONE guifg=#61afef
+hi Statement    cterm=NONE gui=NONE guifg=#e06c75
 hi Comment      guifg=#5c6370     gui=italic
 hi link Keyword Statement
 hi Function     guifg=#61afef
