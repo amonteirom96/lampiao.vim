@@ -6,90 +6,90 @@ set background=light
 let g:colors_name="light_modern"
 
 " Cores principais
-hi Normal          guifg=#3B3B3B     guibg=#FFFFFF
-hi NormalFloat     guifg=#3B3B3B     guibg=#FFFFFF
-hi Cursor          guifg=#FFFFFF     guibg=#005FB8
-hi CursorLine      guibg=#E8E8E8
-hi VertSplit       guifg=#E5E5E5     guibg=#F8F8F8
-hi Folded          guifg=#3B3B3B     guibg=#F8F8F8
-hi FoldColumn      guifg=#3B3B3B     guibg=#FFFFFF
-hi LineNr          guifg=#6E7681     guibg=#FFFFFF
-hi StatusLine      guifg=#3B3B3B     guibg=#F8F8F8
-hi StatusLineNC    guifg=#8B949E     guibg=#F8F8F8
-hi IncSearch       guifg=#FFFFFF     guibg=#005FB8
-hi Search          guifg=#FFFFFF     guibg=#005FB8
-hi Directory       guifg=#005FB8
-hi Special         guifg=#005FB8
-hi Visual          guibg=#F2F2F2
-hi PmenuSel        guifg=#FFFFFF     guibg=#005FB8
-hi Pmenu           guifg=#3B3B3B     guibg=#F8F8F8
+hi Normal          guifg=#4d4d4c     guibg=#ffffff
+hi NormalFloat     guifg=#4d4d4c     guibg=#ffffff
+hi Cursor          guifg=#ffffff     guibg=#3465a4
+hi CursorLine      guibg=#dedede
+hi VertSplit       guifg=#bcbcbc     guibg=#ffffff
+hi Folded          guifg=#4d4d4c     guibg=#dedede
+hi FoldColumn      guifg=#4d4d4c     guibg=#ffffff
+hi LineNr          guifg=#8e908c     guibg=#ffffff
+hi StatusLine      guifg=#4d4d4c     guibg=#dedede
+hi StatusLineNC    guifg=#8e908c     guibg=#dedede
+hi IncSearch       guifg=#ffffff     guibg=#f57900
+hi Search          guifg=#ffffff     guibg=#f57900
+hi Directory       guifg=#3465a4
+hi Special         guifg=#3465a4
+hi Visual          guibg=#e4e4e4
+hi PmenuSel        guifg=#ffffff     guibg=#3465a4
+hi Pmenu           guifg=#4d4d4c     guibg=#dedede
 
 " Diagnóstico
-hi DiagnosticError  guifg=#F85149     guibg=NONE
-hi DiagnosticWarn   guifg=#BB8009     guibg=NONE
-hi DiagnosticInfo   guifg=#005FB8     guibg=NONE
-hi DiagnosticHint   guifg=#3B3B3B     guibg=NONE
+hi DiagnosticError  guifg=#cc0000     guibg=NONE
+hi DiagnosticWarn   guifg=#ff9f00     guibg=NONE
+hi DiagnosticInfo   guifg=#3465a4     guibg=NONE
+hi DiagnosticHint   guifg=#4d4d4c     guibg=NONE
 
 " Barras e separadores
-hi VertSplit       guifg=#E5E5E5     guibg=#F8F8F8
-hi TabLineFill     guibg=#F8F8F8
-hi TabLine         guifg=#868686     guibg=#F8F8F8
-hi TabLineSel      guifg=#3B3B3B     guibg=#FFFFFF
-hi TabLineSel      guibg=#FFFFFF     guifg=#005FB8
+hi VertSplit       guifg=#bcbcbc     guibg=#ffffff
+hi TabLineFill     guibg=#ffffff
+hi TabLine         guifg=#8e908c     guibg=#ffffff
+hi TabLineSel      guifg=#4d4d4c     guibg=#ffffff
+hi TabLineSel      guibg=#ffffff     guifg=#3465a4
 
 " Linhas do editor
-hi CursorLineNr    guifg=#171184
-hi SignColumn      guibg=#FFFFFF
-hi GitSignsAdd     guifg=#2EA043
-hi GitSignsChange  guifg=#005FB8
-hi GitSignsDelete  guifg=#F85149
+hi CursorLineNr    guifg=#204a87
+hi SignColumn      guibg=#ffffff
+hi GitSignsAdd     guifg=#73d216
+hi GitSignsChange  guifg=#3465a4
+hi GitSignsDelete  guifg=#cc0000
 
 " Cores do terminal
-hi Terminal        guifg=#3B3B3B     guibg=#FFFFFF
-hi TerminalCursor  guifg=#FFFFFF     guibg=#005FB8
+hi Terminal        guifg=#4d4d4c     guibg=#ffffff
+hi TerminalCursor  guifg=#ffffff     guibg=#3465a4
 
 " Código e identificadores
-hi Comment         guifg=#8B949E     gui=italic
-hi Keyword         guifg=#005FB8
-hi String          guifg=#895503
-hi Function        guifg=#005FB8
-hi Identifier      guifg=#3B3B3B
-hi Constant        guifg=#3B3B3B
-hi Type            guifg=#005FB8
-hi Number          guifg=#3B3B3B
-hi Boolean         guifg=#3B3B3B
-hi Operator        guifg=#005FB8
+hi Comment         guifg=#8e908c     gui=italic
+hi Keyword         guifg=#3465a4
+hi String          guifg=#c4a000
+hi Function        guifg=#3465a4
+hi Identifier      guifg=#4d4d4c
+hi Constant        guifg=#4d4d4c
+hi Type            guifg=#3465a4
+hi Number          guifg=#4d4d4c
+hi Boolean         guifg=#4d4d4c
+hi Operator        guifg=#3465a4
 
 " Itens de interface
-hi Button          guifg=#FFFFFF     guibg=#005FB8
-hi ButtonHover     guifg=#FFFFFF     guibg=#0258A8
-hi Checkbox        guibg=#F8F8F8     guifg=#3B3B3B
-hi Input           guifg=#3B3B3B     guibg=#FFFFFF
-hi InputBorder     guifg=#CECECE
-hi Dropdown        guifg=#3B3B3B     guibg=#FFFFFF
-hi DropdownBorder  guifg=#CECECE
+hi Button          guifg=#ffffff     guibg=#3465a4
+hi ButtonHover     guifg=#ffffff     guibg=#204a87
+hi Checkbox        guibg=#ffffff     guifg=#4d4d4c
+hi Input           guifg=#4d4d4c     guibg=#ffffff
+hi InputBorder     guifg=#bcbcbc
+hi Dropdown        guifg=#4d4d4c     guibg=#ffffff
+hi DropdownBorder  guifg=#bcbcbc
 
 " Notificações
-hi Notification       guifg=#3B3B3B     guibg=#FFFFFF
-hi NotificationError  guifg=#F85149
-hi NotificationWarning guifg=#BB8009
-hi NotificationInfo    guifg=#005FB8
+hi Notification       guifg=#4d4d4c     guibg=#ffffff
+hi NotificationError  guifg=#cc0000
+hi NotificationWarning guifg=#ff9f00
+hi NotificationInfo    guifg=#3465a4
 
 " Cores adicionais
-hi ProgressBar     guibg=#005FB8
-hi Selection       guibg=#E5EBF1
-hi PanelBackground  guibg=#F8F8F8
-hi PanelBorder      guifg=#E5E5E5
-hi PanelTitle       guifg=#3B3B3B
-hi Title            guifg=#1E1E1E
-hi TextLink         guifg=#005FB8
-hi TextLinkActive   guifg=#005FB8
-hi Link             guifg=#005FB8
+hi ProgressBar     guibg=#3465a4
+hi Selection       guibg=#dedede
+hi PanelBackground  guibg=#ffffff
+hi PanelBorder      guifg=#bcbcbc
+hi PanelTitle       guifg=#4d4d4c
+hi Title            guifg=#1e1e1e
+hi TextLink         guifg=#3465a4
+hi TextLinkActive   guifg=#3465a4
+hi Link             guifg=#3465a4
 
 " Adicionando mais elementos conforme necessário
-hi widget.border    guifg=#E5E5E5
-hi EditorLineNumber guifg=#6E7681
-hi EditorIndentGuide guifg=#D3D3D3
-hi EditorSuggestWidgetBackground guibg=#F8F8F8
-hi EditorWidgetBackground guibg=#F8F8F8
-hi FocusBorder      guifg=#005FB8
+hi widget.border    guifg=#bcbcbc
+hi EditorLineNumber guifg=#8e908c
+hi EditorIndentGuide guifg=#d3d7cf
+hi EditorSuggestWidgetBackground guibg=#ffffff
+hi EditorWidgetBackground guibg=#ffffff
+hi FocusBorder      guifg=#3465a4
