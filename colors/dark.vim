@@ -3,7 +3,7 @@ if exists("syntax_on")
 endif
 
 set background=dark
-let g:colors_name="one_dark_pro_custom"
+let g:colors_name="dark"
 
 " Geral
 hi Normal       guifg=#abb2bf     guibg=#282c34
@@ -18,8 +18,8 @@ hi StatusLine   guifg=#abb2bf     guibg=#3e4451
 hi StatusLineNC guifg=#5c6370     guibg=#282c34
 hi IncSearch    guifg=#282c34     guibg=#d19a66
 hi Search       guifg=#282c34     guibg=#d19a66
-hi Directory    guifg=#61afef     " Nova cor para diretórios
-hi Special      guifg=#98c379     " Nova cor para especial
+hi Directory    guifg=#61afef     " Cor para diretórios
+hi Special      guifg=#98c379     " Cor especial
 hi Visual       ctermfg=0 ctermbg=15 guibg=#4e5570
 hi PmenuSel     cterm=underline,reverse guifg=#528bff guibg=#282c34 blend=0
 
@@ -56,7 +56,7 @@ hi Question     guifg=#abb2bf
 hi Statement    cterm=NONE gui=NONE guifg=#61afef
 hi Comment      guifg=#5c6370     gui=italic
 hi link Keyword Statement
-hi Function     guifg=#e06c75
+hi Function     guifg=#528bff     " Nova cor para funções
 hi Identifier   guifg=#56b6c2
 hi Constant     guifg=#61afef
 hi Type         guifg=#e5c07b
