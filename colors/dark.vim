@@ -3,79 +3,79 @@ if exists("syntax_on")
 endif
 
 set background=dark
-let g:colors_name="hacker_green"
+let g:colors_name="apple_inspired_blue"
 
 " Geral
-hi Normal       guifg=#00FF33     guibg=#0A0A0A
-hi NormalFloat  guifg=#00FF33     guibg=#0A0A0A
-hi Cursor       guifg=#0A0A0A     guibg=#00FF33
-hi CursorLine   guibg=#1A1A1A
-hi VertSplit    guifg=#1F1F1F     guibg=#0A0A0A
-hi Folded       guifg=#7F7F7F     guibg=#1A1A1A
-hi FoldColumn   guifg=#00FF33     guibg=#0A0A0A
-hi LineNr       guifg=#4D4D4D     guibg=#0A0A0A
-hi StatusLine   guifg=#00FF33     guibg=#1A1A1A
-hi StatusLineNC guifg=#1F1F1F     guibg=#0A0A0A
-hi IncSearch    guifg=#0A0A0A     guibg=#33FF66
-hi Search       guifg=#0A0A0A     guibg=#33FF66
-hi Directory    guifg=#66FF99
-hi Special      guifg=#66FF99
-hi Visual       ctermfg=0 ctermbg=15 guibg=#005500
-hi PmenuSel     cterm=underline,reverse guifg=#33FF66 guibg=#0A0A0A blend=0
+hi Normal       guifg=#c7d0d9     guibg=#1e2428  " Suave no fundo escuro
+hi NormalFloat  guifg=#c7d0d9     guibg=#1e2428
+hi Cursor       guifg=#1e2428     guibg=#a0c4ff  " Azul suave para o cursor
+hi CursorLine   guibg=#2d343a     " Linha de cursor discreta
+hi VertSplit    guifg=#404a52     guibg=#1e2428
+hi Folded       guifg=#a0aec0     guibg=#2d343a
+hi FoldColumn   guifg=#c7d0d9     guibg=#1e2428
+hi LineNr       guifg=#5f6a76     guibg=#1e2428
+hi StatusLine   guifg=#c7d0d9     guibg=#2d343a
+hi StatusLineNC guifg=#404a52     guibg=#1e2428
+hi IncSearch    guifg=#1e2428     guibg=#5e81ac  " Azul para destaque de busca
+hi Search       guifg=#1e2428     guibg=#5e81ac
+hi Directory    guifg=#82aaff
+hi Special      guifg=#82aaff
+hi Visual       ctermfg=0 ctermbg=15 guibg=#3b4252 " Destaque sutil
+hi PmenuSel     cterm=underline,reverse guifg=#5e81ac guibg=#1e2428 blend=0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#00FF33     guibg=#005500
-hi TodoFgTODO   gui=bold guifg=#33FF66     guibg=NONE
-hi TodoBgWARN   gui=bold guifg=#0A0A0A     guibg=#FFFF00
-hi TodoFgWARN   gui=bold guifg=#FFFF00     guibg=NONE
-hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#FF3333
-hi TodoFgFIX    gui=bold guifg=#FF3333     guibg=NONE
-hi TodoBgNOTE   gui=bold guifg=#000000     guibg=#33FF66
-hi TodoFgNOTE   gui=bold guifg=#33FF66     guibg=NONE
+hi TodoBgTODO   gui=bold guifg=#ffffff     guibg=#8a9ba8
+hi TodoFgTODO   gui=bold guifg=#8a9ba8     guibg=NONE
+hi TodoBgWARN   gui=bold guifg=#1e2428     guibg=#e0af68
+hi TodoFgWARN   gui=bold guifg=#e0af68     guibg=NONE
+hi TodoBgFIX    gui=bold guifg=#ffffff     guibg=#bf616a
+hi TodoFgFIX    gui=bold guifg=#bf616a     guibg=NONE
+hi TodoBgNOTE   gui=bold guifg=#000000     guibg=#5e81ac
+hi TodoFgNOTE   gui=bold guifg=#5e81ac     guibg=NONE
 
 " Diagnóstico
-hi DiagnosticError   guifg=#FF3333     guibg=#330000
-hi DiagnosticWarn    guifg=#FFFF00     guibg=#333300
-hi DiagnosticInfo    guifg=#33FF66     guibg=#0A0A0A
-hi DiagnosticHint    guifg=#99FFCC     guibg=#0A0A0A
+hi DiagnosticError   guifg=#bf616a     guibg=#4c566a
+hi DiagnosticWarn    guifg=#e0af68     guibg=#4c566a
+hi DiagnosticInfo    guifg=#5e81ac     guibg=#1e2428
+hi DiagnosticHint    guifg=#a3be8c     guibg=#1e2428
 
-hi DiagnosticFloating        guifg=#FF3333     guibg=#330000
-hi DiagnosticFloatingWarning guifg=#FFFF00     guibg=#333300
-hi DiagnosticFloatingInfo    guifg=#33FF66     guibg=#0A0A0A
-hi DiagnosticFloatingHint    guifg=#99FFCC     guibg=#0A0A0A
+hi DiagnosticFloating        guifg=#bf616a     guibg=#4c566a
+hi DiagnosticFloatingWarning guifg=#e0af68     guibg=#4c566a
+hi DiagnosticFloatingInfo    guifg=#5e81ac     guibg=#1e2428
+hi DiagnosticFloatingHint    guifg=#a3be8c     guibg=#1e2428
 
 " Telescope
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi MoreMsg      guifg=#00FF33
-hi ModeMsg      guifg=#00FF33
-hi Question     guifg=#00FF33
+hi MoreMsg      guifg=#c7d0d9
+hi ModeMsg      guifg=#c7d0d9
+hi Question     guifg=#c7d0d9
 
 " Comentários e código
-hi Statement    cterm=NONE gui=NONE guifg=#33FF66
-hi Comment      guifg=#339966     gui=italic
+hi Statement    cterm=NONE gui=NONE guifg=#5e81ac
+hi Comment      guifg=#6c7683     gui=italic
 hi link Keyword Statement
-hi Function     guifg=#99FF66
-hi Identifier   guifg=#66FFCC
-hi Constant     guifg=#4DFF66
-hi Type         guifg=#66FF99
-hi String       guifg=#33FF66
-hi Number       guifg=#66FF99
-hi Operator     guifg=#33FF99
+hi Function     guifg=#a3be8c
+hi Identifier   guifg=#81a1c1
+hi Constant     guifg=#88c0d0
+hi Type         guifg=#8fbcbb
+hi String       guifg=#a3be8c
+hi Number       guifg=#b48ead
+hi Operator     guifg=#c586c0
 
 " HTML Tags
-hi htmlTag      guifg=#99FF66
-hi htmlTagName  guifg=#33FF66
+hi htmlTag      guifg=#a3be8c
+hi htmlTagName  guifg=#5e81ac
 
 " Expressões regulares
-hi SpecialChar  guifg=#66FF99
-hi Delimiter    guifg=#66FF99
+hi SpecialChar  guifg=#d08770
+hi Delimiter    guifg=#d08770
 
 " Escapes
-hi SpecialKey   guifg=#66FF99
+hi SpecialKey   guifg=#e0af68
 
 " Números e literais
-hi Number       guifg=#66FF99
-hi Label        guifg=#00FF33
-hi Character    guifg=#33FF66
+hi Number       guifg=#b48ead
+hi Label        guifg=#c7d0d9
+hi Character    guifg=#5e81ac
