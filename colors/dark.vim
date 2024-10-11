@@ -24,25 +24,25 @@ hi Visual       ctermfg=0 ctermbg=15 guibg=#5f5f87
 hi PmenuSel     cterm=underline,reverse guifg=#87afdf guibg=#1c1c1c blend=0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#afd787  " Tom sobre tom para TODO
-hi TodoFgTODO   gui=bold guifg=#afd787     guibg=NONE
-hi TodoBgWARN   gui=bold guifg=#1c1c1c     guibg=#ffaf87  " Tom sobre tom para WARN
-hi TodoFgWARN   gui=bold guifg=#ffaf87     guibg=NONE
-hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d7875f  " Tom sobre tom para FIX
-hi TodoFgFIX    gui=bold guifg=#d7875f     guibg=NONE
-hi TodoBgNOTE   gui=bold guifg=#1c1c1c     guibg=#afd787  " Tom sobre tom para NOTE
-hi TodoFgNOTE   gui=bold guifg=#afd787     guibg=NONE
+hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4fc1ff  " Tom sobre tom para TODO
+hi TodoFgTODO   gui=bold guifg=#4fc1ff     guibg=NONE
+hi TodoBgWARN   gui=bold guifg=#282c34     guibg=#d8c96b  " Tom sobre tom para WARN
+hi TodoFgWARN   gui=bold guifg=#d8c96b     guibg=NONE
+hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d49f55  " Tom sobre tom para FIX
+hi TodoFgFIX    gui=bold guifg=#d49f55     guibg=NONE
+hi TodoBgNOTE   gui=bold guifg=#282c34     guibg=#4fc1ff  " Tom sobre tom para NOTE
+hi TodoFgNOTE   gui=bold guifg=#4fc1ff     guibg=NONE
 
 " Diagnóstico
-hi DiagnosticError   guifg=#ff5f5f     guibg=#5a4243  " Tom sobre tom para Error
-hi DiagnosticWarn    guifg=#ffaf5f     guibg=#5b4f3d  " Tom sobre tom para Warn
-hi DiagnosticInfo    guifg=#87afdf     guibg=#283e48  " Tom sobre tom para Info
-hi DiagnosticHint    guifg=#87d7d7     guibg=#2b383f  " Tom sobre tom para Hint
+hi DiagnosticError   guifg=#e06c75     guibg=#5a4243  " Tom sobre tom para Error
+hi DiagnosticWarn    guifg=#e5c07b     guibg=#5b4f3d  " Tom sobre tom para Warn
+hi DiagnosticInfo    guifg=#61afef     guibg=#283e48  " Tom sobre tom para Info
+hi DiagnosticHint    guifg=#56b6c2     guibg=#2b383f  " Tom sobre tom para Hint
 
-hi DiagnosticFloating        guifg=#ff5f5f     guibg=#5a4243
-hi DiagnosticFloatingWarning guifg=#ffaf5f     guibg=#5b4f3d
-hi DiagnosticFloatingInfo    guifg=#87afdf     guibg=#283e48
-hi DiagnosticFloatingHint    guifg=#87d7d7     guibg=#2b383f
+hi DiagnosticFloating        guifg=#e06c75     guibg=#5a4243
+hi DiagnosticFloatingWarning guifg=#e5c07b     guibg=#5b4f3d
+hi DiagnosticFloatingInfo    guifg=#61afef     guibg=#283e48
+hi DiagnosticFloatingHint    guifg=#56b6c2     guibg=#2b383f
 
 " Telescope
 hi link TelescopeSelection CursorLine
