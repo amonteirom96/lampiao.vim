@@ -24,25 +24,25 @@ hi Visual       ctermfg=0 ctermbg=15 guibg=#4169e1
 hi PmenuSel     cterm=underline,reverse guifg=#4682b4 guibg=#1e1e2e blend=0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4682b4
-hi TodoFgTODO   gui=bold guifg=#4682b4     guibg=NONE
-hi TodoBgWARN   gui=bold guifg=#1e1e2e     guibg=#87cefa
-hi TodoFgWARN   gui=bold guifg=#87cefa     guibg=NONE
-hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#1e90ff
-hi TodoFgFIX    gui=bold guifg=#1e90ff     guibg=NONE
-hi TodoBgNOTE   gui=bold guifg=#000000     guibg=#4682b4
-hi TodoFgNOTE   gui=bold guifg=#4682b4     guibg=NONE
+hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#6a9955
+hi TodoFgTODO   gui=bold guifg=#6a9955     guibg=NONE
+hi TodoBgWARN   gui=bold guifg=#1e1e1e     guibg=#dcdcaa
+hi TodoFgWARN   gui=bold guifg=#dcdcaa     guibg=NONE
+hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d16969
+hi TodoFgFIX    gui=bold guifg=#d16969     guibg=NONE
+hi TodoBgNOTE   gui=bold guifg=#000000     guibg=#569cd6
+hi TodoFgNOTE   gui=bold guifg=#569cd6     guibg=NONE
 
 " Diagnóstico
-hi DiagnosticError   guifg=#4682b4     guibg=#1b3c59
-hi DiagnosticWarn    guifg=#87cefa     guibg=#2e4c6b
-hi DiagnosticInfo    guifg=#4682b4     guibg=#1e1e2e
-hi DiagnosticHint    guifg=#87ceeb     guibg=#1e1e2e
+hi DiagnosticError   guifg=#f44747     guibg=#511d1d
+hi DiagnosticWarn    guifg=#dcdcaa     guibg=#554025
+hi DiagnosticInfo    guifg=#569cd6     guibg=#1e1e1e
+hi DiagnosticHint    guifg=#9cdcfe     guibg=#1e1e1e
 
-hi DiagnosticFloating        guifg=#4682b4     guibg=#1b3c59
-hi DiagnosticFloatingWarning guifg=#87cefa     guibg=#2e4c6b
-hi DiagnosticFloatingInfo    guifg=#4682b4     guibg=#1e1e2e
-hi DiagnosticFloatingHint    guifg=#87ceeb     guibg=#1e1e2e
+hi DiagnosticFloating        guifg=#f44747     guibg=#511d1d
+hi DiagnosticFloatingWarning guifg=#dcdcaa     guibg=#554025
+hi DiagnosticFloatingInfo    guifg=#569cd6     guibg=#1e1e1e
+hi DiagnosticFloatingHint    guifg=#9cdcfe     guibg=#1e1e1e
 
 " Telescope
 hi link TelescopeSelection CursorLine
