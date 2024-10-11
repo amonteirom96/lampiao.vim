@@ -1,6 +1,3 @@
-Aqui está a versão do seu tema "dark.vim" adaptada para um tema predominantemente azul. As cores foram ajustadas para diferentes tonalidades de azul:
-
-```vim
 if exists("syntax_on")
   syntax reset
 endif
