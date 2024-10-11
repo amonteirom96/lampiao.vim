@@ -1,81 +1,87 @@
+Aqui está a versão do seu tema "dark.vim" adaptada para um tema predominantemente azul. As cores foram ajustadas para diferentes tonalidades de azul:
+
+```vim
 if exists("syntax_on")
   syntax reset
 endif
 
 set background=dark
-let g:colors_name="dark"
+let g:colors_name="blue_theme"
 
 " Geral
-hi Normal       guifg=#dcdcdc     guibg=#1e1e1e
-hi NormalFloat  guifg=#dcdcdc     guibg=#1e1e1e
-hi Cursor       guifg=#1e1e1e     guibg=#dcdcdc
-hi CursorLine   guibg=#2d2d2d
-hi VertSplit    guifg=#3e3e42    guibg=#1e1e1e
-hi Folded       guifg=#9b9b9b     guibg=#2d2d30
-hi FoldColumn   guifg=#dcdcdc     guibg=#1e1e1e
-hi LineNr       guifg=#858585     guibg=#1e1e1e
-hi StatusLine   guifg=#dcdcdc     guibg=#2d2d30
-hi StatusLineNC guifg=#3e3e42    guibg=#1e1e1e
-hi IncSearch    guifg=#1e1e1e     guibg=#569cd6
-hi Search       guifg=#1e1e1e     guibg=#569cd6
-hi Directory    guifg=#d7ba7d
-hi Special      guifg=#d7ba7d
-hi Visual       ctermfg=0 ctermbg=15 guibg=#264f78
-hi PmenuSel     cterm=underline,reverse guifg=#569cd6 guibg=#1e1e1e blend=0
+hi Normal       guifg=#b0c4de     guibg=#1e1e2e
+hi NormalFloat  guifg=#b0c4de     guibg=#1e1e2e
+hi Cursor       guifg=#1e1e2e     guibg=#b0c4de
+hi CursorLine   guibg=#2a2a40
+hi VertSplit    guifg=#4b5a7a    guibg=#1e1e2e
+hi Folded       guifg=#9bb0d9     guibg=#2a2a40
+hi FoldColumn   guifg=#b0c4de     guibg=#1e1e2e
+hi LineNr       guifg=#708090     guibg=#1e1e2e
+hi StatusLine   guifg=#b0c4de     guibg=#2a2a40
+hi StatusLineNC guifg=#4b5a7a    guibg=#1e1e2e
+hi IncSearch    guifg=#1e1e2e     guibg=#4682b4
+hi Search       guifg=#1e1e2e     guibg=#4682b4
+hi Directory    guifg=#87ceeb
+hi Special      guifg=#87ceeb
+hi Visual       ctermfg=0 ctermbg=15 guibg=#4169e1
+hi PmenuSel     cterm=underline,reverse guifg=#4682b4 guibg=#1e1e2e blend=0
 
 " TODO
-hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#6a9955
-hi TodoFgTODO   gui=bold guifg=#6a9955     guibg=NONE
-hi TodoBgWARN   gui=bold guifg=#1e1e1e     guibg=#dcdcaa
-hi TodoFgWARN   gui=bold guifg=#dcdcaa     guibg=NONE
-hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#d16969
-hi TodoFgFIX    gui=bold guifg=#d16969     guibg=NONE
-hi TodoBgNOTE   gui=bold guifg=#000000     guibg=#569cd6
-hi TodoFgNOTE   gui=bold guifg=#569cd6     guibg=NONE
+hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#4682b4
+hi TodoFgTODO   gui=bold guifg=#4682b4     guibg=NONE
+hi TodoBgWARN   gui=bold guifg=#1e1e2e     guibg=#87cefa
+hi TodoFgWARN   gui=bold guifg=#87cefa     guibg=NONE
+hi TodoBgFIX    gui=bold guifg=#FFFFFF     guibg=#1e90ff
+hi TodoFgFIX    gui=bold guifg=#1e90ff     guibg=NONE
+hi TodoBgNOTE   gui=bold guifg=#000000     guibg=#4682b4
+hi TodoFgNOTE   gui=bold guifg=#4682b4     guibg=NONE
 
 " Diagnóstico
-hi DiagnosticError   guifg=#f44747     guibg=#511d1d
-hi DiagnosticWarn    guifg=#dcdcaa     guibg=#554025
-hi DiagnosticInfo    guifg=#569cd6     guibg=#1e1e1e
-hi DiagnosticHint    guifg=#9cdcfe     guibg=#1e1e1e
+hi DiagnosticError   guifg=#4682b4     guibg=#1b3c59
+hi DiagnosticWarn    guifg=#87cefa     guibg=#2e4c6b
+hi DiagnosticInfo    guifg=#4682b4     guibg=#1e1e2e
+hi DiagnosticHint    guifg=#87ceeb     guibg=#1e1e2e
 
-hi DiagnosticFloating        guifg=#f44747     guibg=#511d1d
-hi DiagnosticFloatingWarning guifg=#dcdcaa     guibg=#554025
-hi DiagnosticFloatingInfo    guifg=#569cd6     guibg=#1e1e1e
-hi DiagnosticFloatingHint    guifg=#9cdcfe     guibg=#1e1e1e
+hi DiagnosticFloating        guifg=#4682b4     guibg=#1b3c59
+hi DiagnosticFloatingWarning guifg=#87cefa     guibg=#2e4c6b
+hi DiagnosticFloatingInfo    guifg=#4682b4     guibg=#1e1e2e
+hi DiagnosticFloatingHint    guifg=#87ceeb     guibg=#1e1e2e
 
 " Telescope
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi MoreMsg      guifg=#dcdcdc
-hi ModeMsg      guifg=#dcdcdc
-hi Question     guifg=#dcdcdc
+hi MoreMsg      guifg=#b0c4de
+hi ModeMsg      guifg=#b0c4de
+hi Question     guifg=#b0c4de
 
 " Comentários e código
-hi Statement    cterm=NONE gui=NONE guifg=#569cd6
-hi Comment      guifg=#608b4e     gui=italic
+hi Statement    cterm=NONE gui=NONE guifg=#4682b4
+hi Comment      guifg=#87cefa     gui=italic
 hi link Keyword Statement
-hi Function     guifg=#dcdcaa
-hi Identifier   guifg=#9cdcfe " Alterado com base no JSON
-hi Constant     guifg=#4FC1FF " Cor para constantes e enums
-hi Type         guifg=#4ec9b0
-hi String       guifg=#ce9178
-hi Number       guifg=#b5cea8
-hi Operator     guifg=#C586C0 " Cor para palavras-chave especiais e operadores
+hi Function     guifg=#add8e6
+hi Identifier   guifg=#00bfff
+hi Constant     guifg=#4169e1
+hi Type         guifg=#5f9ea0
+hi String       guifg=#6495ed
+hi Number       guifg=#4682b4
+hi Operator     guifg=#4169e1
 
 " HTML Tags
-hi htmlTag      guifg=#dcdcaa
-hi htmlTagName  guifg=#569cd6
+hi htmlTag      guifg=#add8e6
+hi htmlTagName  guifg=#4682b4
 
 " Expressões regulares
-hi SpecialChar  guifg=#CE9178
-hi Delimiter    guifg=#CE9178
+hi SpecialChar  guifg=#6495ed
+hi Delimiter    guifg=#6495ed
 
 " Escapes
-hi SpecialKey   guifg=#D7BA7D
+hi SpecialKey   guifg=#87ceeb
 
 " Números e literais
-hi Number       guifg=#B5CEA8
-hi Label        guifg=#C8C8C8
-hi Character    guifg=#569CD6
+hi Number       guifg=#5f9ea0
+hi Label        guifg=#c8c8c8
+hi Character    guifg=#4682b4
+```
+
+As cores foram baseadas em diferentes tons de azul, com uma paleta que varia do claro ao escuro. Caso queira algum ajuste específico nas tonalidades ou seções, é só avisar!
