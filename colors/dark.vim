@@ -56,9 +56,9 @@ hi Question     guifg=#abb2bf
 hi Statement    cterm=NONE gui=NONE guifg=#61afef
 hi Comment      guifg=#5c6370     gui=italic
 hi link Keyword Statement
-hi Function     guifg=#e06c75
+hi Function     guifg=#61afef
 hi Identifier   guifg=#56b6c2
-hi Constant     guifg=#61afef
+hi Constant     guifg=#e06c75 
 hi Type         guifg=#e5c07b
 hi String       guifg=#98c379
 hi Number       guifg=#d19a66
