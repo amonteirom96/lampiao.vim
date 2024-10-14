@@ -1,372 +1,333 @@
-"
-"
-"        ┌─┐┌─┐┌─┐┌┐ ┌─┐┬  ┬
-"        ├┤ │ ││ ┬├┴┐├┤ │  │
-"        └  └─┘└─┘└─┘└─┘┴─┘┴─┘
-"
-"
-" by Jared Gorski
-" https://github.com/jaredgorski/fogbell
+"AUTHOR: Alessandro Yorba
+"SCRIPT: https://github.com/AlessandroYorba/Alduin
 
-scriptencoding utf-8
+"UPDATED: Nov 21, 2020
+"CHANGES: Revised ANSI Colors
 
+"Arch Linux Package: George Angelopoulos https://github.com/lathan
+"Design Inspiration: Karolis Koncevičius https://github.com/KKPMW
+"Design Inspiration: Romain Lafourcade https://github.com/romainl
+"UI Contributions: jiyyti https://github.com/jiyyt
+"UI Contributions: Aramis Razzaghipour arzg https://github.com/arzg
+"
+"SUPPORT:
+"256 color terminals, Gui versions of vim, and Termguicolors
+"
+"INSTALL LOCATION:
+"Unix users, place alduin.vim in ~/.vim/colors
+"Windows users, place alduin.vim in ~\vimfiles\colors
+
+"From your .vimrc add one of the following options
+"colorscheme alduin
+"
 set background=dark
-hi clear
 
+highlight clear
 if exists("syntax_on")
-  syntax reset
+	syntax reset
 endif
 
-let g:colors_name="fogbell"
+let g:colors_name="alduin"
 
-" ==========================
-" Highlighting Function
-" ==========================
-"  >> (inspired by https://github.com/tomasiser/vim-code-dark and https://github.com/chriskempson/base16-vim)
-fun! <sid>hi(group, fg, bg, attr)
-  if !empty(a:fg)
-    exec "hi " . a:group . " guifg=" . a:fg.gui . " ctermfg=" .  a:fg.cterm256
-  endif
-  if !empty(a:bg)
-    exec "hi " . a:group . " guibg=" . a:bg.gui . " ctermbg=" .  a:bg.cterm256
-  endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
-  endif
-endfun
-
-" ==========================
-" Color Variables
-" ==========================
-let s:voidBlack = {'gui': '#121212', 'cterm256': '233'}
-let s:voidBlack2 = {'gui': '#262626', 'cterm256': '235'}
-let s:voidGray1 = {'gui': '#3E3D32', 'cterm256': '237'}
-let s:voidGray2 = {'gui': '#49483E', 'cterm256': '239'}
-let s:voidGray3 = {'gui': '#6B6B6B', 'cterm256': '242'}
-let s:voidGray4 = {'gui': '#B0B0B0', 'cterm256': '249'}
-let s:voidSteel = {'gui': '#D0D0D0', 'cterm256': '252'}
-let s:voidBlue = {'gui': '#699B9B', 'cterm256': '109'}
-let s:voidGreen = {'gui': '#569F7A', 'cterm256': '72'}
-let s:voidGold = {'gui': '#8E700B', 'cterm256': '136'}
-let s:voidRed = {'gui': '#821A1A', 'cterm256': '1'}
-let s:voidRed2 = {'gui': '#FF0000', 'cterm256': '196'}
-let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
-
-" ==========================
-" Definitions
-" ==========================
-"    <sid>hi(GROUP, FOREGROUND, BACKGROUND, ATTRIBUTE)
-
-" Editor
-call <sid>hi('ColorColumn', s:none, s:voidGray1, 'none')
-call <sid>hi('Cursor', s:voidBlack, s:voidSteel, 'none')
-call <sid>hi('CursorColumn', s:none, s:voidGray1, 'none')
-call <sid>hi('CursorLine', s:none, s:voidGray1, 'none')
-call <sid>hi('CursorLineNr', s:voidSteel, s:voidGray1, 'none')
-call <sid>hi('Directory', s:voidSteel, s:voidBlack, 'none')
-call <sid>hi('FoldColumn', s:none, s:voidBlack2, 'none')
-call <sid>hi('Folded', s:voidGray3, s:none, 'none')
-call <sid>hi('IncSearch', s:voidBlack, s:voidGold, 'none')
-call <sid>hi('LineNr', s:voidGray3, s:voidBlack2, 'none')
-call <sid>hi('MatchParen', s:voidSteel, s:voidGray3, 'none')
-call <sid>hi('Normal', s:voidSteel, s:voidBlack, 'none')
-call <sid>hi('Pmenu', s:none, s:voidBlack2, 'none')
-call <sid>hi('PmenuSel', s:none, s:voidGray2, 'none')
-call <sid>hi('Search', s:voidBlack, s:voidGold, 'none')
-call <sid>hi('SignColumn', s:none, s:voidBlack2, 'none')
-call <sid>hi('StatusLine', s:voidBlack, s:voidSteel, 'none')
-call <sid>hi('StatusLineNC', s:voidGray3, s:voidBlack2, 'none')
-call <sid>hi('VertSplit', s:voidBlack, s:voidGray3, 'none')
-call <sid>hi('Visual', s:none, s:voidGray2, 'none')
-
-" General
-call <sid>hi('Boolean', s:voidSteel, s:none, 'none')
-call <sid>hi('Character', s:voidSteel, s:none, 'none')
-call <sid>hi('Comment', s:voidGray3, s:none, 'none')
-call <sid>hi('Conditional', s:voidSteel, s:none, 'none')
-call <sid>hi('Constant', s:voidSteel, s:none, 'none')
-call <sid>hi('Define', s:voidSteel, s:none, 'none')
-call <sid>hi('DiffAdd', s:voidBlack, s:voidGreen, 'none')
-call <sid>hi('DiffChange', s:voidBlack, s:voidGold, 'none')
-call <sid>hi('DiffDelete', s:voidSteel, s:voidRed, 'none')
-call <sid>hi('DiffText', s:voidGray1, s:voidBlue, 'none')
-call <sid>hi('ErrorMsg', s:voidSteel, s:voidRed, 'none')
-call <sid>hi('Float', s:voidSteel, s:none, 'none')
-call <sid>hi('Function', s:voidSteel, s:none, 'none')
-call <sid>hi('Identifier', s:voidSteel, s:none, 'none')
-call <sid>hi('Keyword', s:voidSteel, s:none, 'none')
-call <sid>hi('Label', s:voidSteel, s:none, 'none')
-call <sid>hi('NonText', s:voidGray3, s:none, 'none')
-call <sid>hi('Number', s:voidSteel, s:none, 'none')
-call <sid>hi('Operator', s:voidSteel, s:none, 'none')
-call <sid>hi('PreProc', s:voidSteel, s:none, 'none')
-call <sid>hi('Special', s:voidSteel, s:none, 'none')
-call <sid>hi('SpecialKey', s:voidSteel, s:none, 'none')
-call <sid>hi('SpellBad', s:voidRed2, s:none, 'italic,undercurl')
-call <sid>hi('SpellCap', s:voidSteel, s:none, 'italic,undercurl')
-call <sid>hi('SpellLocal', s:voidSteel, s:none, 'undercurl')
-call <sid>hi('Statement', s:voidSteel, s:none, 'none')
-call <sid>hi('StorageClass', s:voidSteel, s:none, 'none')
-call <sid>hi('String', s:voidSteel, s:none, 'none')
-call <sid>hi('Tag', s:voidSteel, s:none, 'none')
-call <sid>hi('Title', s:none, s:none, 'bold')
-call <sid>hi('Todo', s:voidGray3, s:none, 'inverse,bold')
-call <sid>hi('Type', s:none, s:none, 'none')
-call <sid>hi('Underlined', s:none, s:none, 'underline')
-call <sid>hi('WarningMsg', s:voidSteel, s:voidRed, 'none')
-
-" Diff Mode
-if &diff
-  call <sid>hi('DiffAdd', s:voidBlack, s:voidGreen, 'none')
-  call <sid>hi('DiffChange', s:voidBlack, s:voidGold, 'none')
-  call <sid>hi('DiffDelete', s:voidRed2, s:voidRed, 'none')
-  call <sid>hi('DiffText', s:voidGray1, s:voidBlue, 'none')
-else
-  call <sid>hi('DiffAdd', s:voidGreen, s:none, 'none')
-  call <sid>hi('DiffChange', s:voidGold, s:none, 'none')
-  call <sid>hi('DiffDelete', s:voidRed2, s:none, 'none')
-  call <sid>hi('DiffText', s:voidSteel, s:voidBlue, 'none')
+"REMOVES BLOCK MATCHPARENS ADDS UNDERLINE
+if !exists( "g:alduin_Shout_Aura_Whisper")
+	let g:alduin_Shout_Aura_Whisper = 0
 endif
 
-" ------------
-" Languages
-" ------------
+"ADDS DEEP RED COLOR FOR SPECIAL HIGHLIGHT GROUPS
+if !exists( "g:alduin_Shout_Fire_Breath" )
+	let g:alduin_Shout_Fire_Breath = 0
+endif
 
-" C
-call <sid>hi('cConstant', s:voidSteel, s:none, 'none')
-call <sid>hi('cFormat', s:voidSteel, s:none, 'none')
-call <sid>hi('cMulti', s:voidSteel, s:none, 'none')
-call <sid>hi('cNumbers', s:voidSteel, s:none, 'none')
-call <sid>hi('cOperator', s:voidSteel, s:none, 'none')
-call <sid>hi('cSpecial', s:voidSteel, s:none, 'none')
-call <sid>hi('cSpecialCharacter', s:voidSteel, s:none, 'none')
-call <sid>hi('cStatement', s:voidSteel, s:none, 'none')
-call <sid>hi('cStorageClass', s:voidSteel, s:none, 'none')
-call <sid>hi('cString', s:voidSteel, s:none, 'none')
-call <sid>hi('cStructure', s:voidSteel, s:none, 'none')
-call <sid>hi('cType', s:voidSteel, s:none, 'none')
+"REMOVE SUBTLE BACKGROUND HIGHLIGHTING FROM STRINGS
+if !exists("g:alduin_Shout_Animal_Allegiance")
+	let g:alduin_Shout_Animal_Allegiance = 0
+endif
 
-" C++
-call <sid>hi('cppConstant', s:voidSteel, s:none, 'none')
-call <sid>hi('cppFormat', s:voidSteel, s:none, 'none')
-call <sid>hi('cppMulti', s:voidSteel, s:none, 'none')
-call <sid>hi('cppNumbers', s:voidSteel, s:none, 'none')
-call <sid>hi('cppOperator', s:voidSteel, s:none, 'none')
-call <sid>hi('cppSpecial', s:voidSteel, s:none, 'none')
-call <sid>hi('cppSpecialCharacter', s:voidSteel, s:none, 'none')
-call <sid>hi('cppStatement', s:voidSteel, s:none, 'none')
-call <sid>hi('cppStorageClass', s:voidSteel, s:none, 'none')
-call <sid>hi('cppString', s:voidSteel, s:none, 'none')
-call <sid>hi('cppStructure', s:voidSteel, s:none, 'none')
-call <sid>hi('cppType', s:voidSteel, s:none, 'none')
+"ALMOST BLACK BACKGROUND
+if !exists("g:alduin_Shout_Dragon_Aspect" )
+	let g:alduin_Shout_Dragon_Aspect = 0
+endif
 
-" CSS
-call <sid>hi('cssAttr', s:voidSteel, s:none, 'none')
-call <sid>hi('cssAttrRegion', s:voidSteel, s:none, 'none')
-call <sid>hi('cssBraces', s:voidSteel, s:none, 'none')
-call <sid>hi('cssBrowserPrefix', s:voidSteel, s:none, 'none')
-call <sid>hi('cssClassName', s:voidSteel, s:none, 'none')
-call <sid>hi('cssClassNameDot', s:voidSteel, s:none, 'none')
-call <sid>hi('cssClassSelectorDot', s:voidSteel, s:none, 'none')
-call <sid>hi('cssColor', s:voidSteel, s:none, 'none')
-call <sid>hi('cssCommonAttr', s:voidSteel, s:none, 'none')
-call <sid>hi('cssCustomProperty', s:voidSteel, s:none, 'none')
-call <sid>hi('cssDefinition', s:voidSteel, s:none, 'none')
-call <sid>hi('cssFunction', s:voidSteel, s:none, 'none')
-call <sid>hi('cssFunctionName', s:voidSteel, s:none, 'none')
-call <sid>hi('cssIdentifier', s:voidSteel, s:none, 'none')
-call <sid>hi('cssImportant', s:voidSteel, s:none, 'none')
-call <sid>hi('cssInclude', s:voidSteel, s:none, 'none')
-call <sid>hi('cssMedia', s:voidSteel, s:none, 'none')
-call <sid>hi('cssMediaBlock', s:voidSteel, s:none, 'none')
-call <sid>hi('cssProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssGeneratedContentProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssTextProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssAnimationProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssUIProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssTransformProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssTransitionProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssPrintProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssPositioningProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssBoxProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssFontDescriptorProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssFlexibleBoxProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssBorderOutlineProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssBackgroundProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssMarginProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssListProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssTableProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssFontProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssPaddingProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssDimensionProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssRenderProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssColorProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssGeneratedContentProp', s:voidSteel, s:none, 'none')
-call <sid>hi('cssPropDefinition', s:voidSteel, s:none, 'none')
-call <sid>hi('cssPseudoClass', s:voidSteel, s:none, 'none')
-call <sid>hi('cssPseudoClassId', s:voidSteel, s:none, 'none')
-call <sid>hi('cssPseudoClassLang', s:voidSteel, s:none, 'none')
-call <sid>hi('cssSelectorOperator', s:voidSteel, s:none, 'none')
-call <sid>hi('cssTagName', s:voidSteel, s:none, 'none')
-call <sid>hi('cssURL', s:voidSteel, s:none, 'none')
-call <sid>hi('cssUnitDecorators', s:voidSteel, s:none, 'none')
-call <sid>hi('cssUnits', s:voidSteel, s:none, 'none')
-call <sid>hi('cssValueLength', s:voidSteel, s:none, 'none')
-call <sid>hi('cssValueNumber', s:voidSteel, s:none, 'none')
-call <sid>hi('cssValueKeyword', s:voidSteel, s:none, 'none')
-call <sid>hi('cssVendor', s:voidSteel, s:none, 'none')
+"BLACK BACKGROUND
+if !exists( "g:alduin_Shout_Become_Ethereal" )
+	let g:alduin_Shout_Become_Ethereal = 0
+endif
 
-" HTML
-call <sid>hi('htmlArg', s:voidSteel, s:none, 'none')
-call <sid>hi('htmlEndTag', s:voidSteel, s:none, 'none')
-call <sid>hi('htmlSpecialChar', s:voidSteel, s:none, 'none')
-call <sid>hi('htmlSpecialTagName', s:voidSteel, s:none, 'none')
-call <sid>hi('htmlTag', s:voidSteel, s:none, 'none')
-call <sid>hi('htmlTagName', s:voidSteel, s:none, 'none')
+"TERMINAL COLORS
+let g:terminal_ansi_colors = [
+	\ '#1c1c1c',
+	\ '#af5f5f',
+	\ '#87875f',
+	\ '#dfaf87',
+	\ '#878787',
+	\ '#875f5f',
+	\ '#87afaf',
+	\ '#dfdfaf',
+	\ '#878787',
+	\ '#af5f5f',
+	\ '#87875f',
+	\ '#dfaf87',
+	\ '#878787',
+	\ '#875f5f',
+	\ '#87afaf',
+	\ '#dfdfaf',]
 
-" JavaScript
-call <sid>hi('javaScript', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptFunction', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptIdentifier', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptMember', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptNull', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptNumber', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptNumber', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptParens', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptSpecial', s:voidSteel, s:none, 'none')
-call <sid>hi('javaScriptStringS', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptArrayMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptArrayStaticMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptArrowFunc', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptAsyncFuncKeyword', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptAwaitFuncKeyword', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptBraces', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptBrackets', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptCacheMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptClassExtends', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptClassKeyword', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptClassName', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptClassSuperName', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptDOMElemAttrs', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptDOMEventMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptDOMNodeMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptDOMStorageMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptDateMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptDefault', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptDocNamedParamType', s:voidGray4, s:none, 'none')
-call <sid>hi('javascriptDocNotation', s:voidGray4, s:none, 'none')
-call <sid>hi('javascriptDocParamName', s:voidGray4, s:none, 'none')
-call <sid>hi('javascriptDocParamType', s:voidGray4, s:none, 'none')
-call <sid>hi('javascriptDocTags', s:voidGray4, s:none, 'none')
-call <sid>hi('javascriptEndColons', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptExport', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptHeadersMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptIdentifierName', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptImport', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptLabel', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptLogicSymbols', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptMathStaticMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptObjectLabel', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptOperator', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptPropertyName', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptStringMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptVariable', s:voidSteel, s:none, 'none')
-call <sid>hi('javascriptYield', s:voidSteel, s:none, 'none')
-call <sid>hi('jsArrowFunction', s:voidSteel, s:none, 'none')
-call <sid>hi('jsClassDefinition', s:voidSteel, s:none, 'none')
-call <sid>hi('jsClassKeyword', s:voidSteel, s:none, 'none')
-call <sid>hi('jsDecorator', s:voidSteel, s:none, 'none')
-call <sid>hi('jsDestructuringBlock', s:voidSteel, s:none, 'none')
-call <sid>hi('jsExportDefault', s:voidSteel, s:none, 'none')
-call <sid>hi('jsExtendsKeyword', s:voidSteel, s:none, 'none')
-call <sid>hi('jsFuncArgs', s:voidSteel, s:none, 'none')
-call <sid>hi('jsFuncCall', s:voidSteel, s:none, 'none')
-call <sid>hi('jsFunction', s:voidSteel, s:none, 'none')
-call <sid>hi('jsGlobalObjects', s:voidSteel, s:none, 'none')
-call <sid>hi('jsModuleKeyword', s:voidSteel, s:none, 'none')
-call <sid>hi('jsNull', s:voidSteel, s:none, 'none')
-call <sid>hi('jsObjectBraces', s:voidSteel, s:none, 'none')
-call <sid>hi('jsObjectKey', s:voidSteel, s:none, 'none')
-call <sid>hi('jsObjectStringKey', s:voidSteel, s:none, 'none')
-call <sid>hi('jsRegexpString', s:voidSteel, s:none, 'none')
-call <sid>hi('jsReturn', s:voidSteel, s:none, 'none')
-call <sid>hi('jsSpecial', s:voidSteel, s:none, 'none')
-call <sid>hi('jsSuper', s:voidSteel, s:none, 'none')
-call <sid>hi('jsTemplateBraces', s:voidSteel, s:none, 'none')
-call <sid>hi('jsTemplateString', s:voidSteel, s:none, 'none')
-call <sid>hi('jsThis', s:voidSteel, s:none, 'none')
-call <sid>hi('jsVariableDef', s:voidSteel, s:none, 'none')
+"COLORS
+highlight! Orange guifg=#af875f guibg=NONE gui=NONE ctermfg=137 ctermbg=NONE cterm=NONE
+highlight! Soft_Orange guifg=#dfaf87 guibg=NONE gui=NONE ctermfg=180 ctermbg=NONE cterm=NONE
+highlight! Dark_Orange guifg=#af5f00 guibg=NONE gui=NONE ctermfg=130 ctermbg=NONE cterm=NONE
+highlight! Dark_Orange_Reverse guifg=#af5f00 guibg=NONE gui=reverse ctermfg=130 ctermbg=NONE cterm=reverse
+highlight! Soft_Red guifg=#af8787 guibg=NONE gui=NONE ctermfg=138 ctermbg=NONE cterm=NONE
+highlight! Red guifg=#af5f5f guibg=NONE gui=NONE ctermfg=131 ctermbg=NONE cterm=NONE
+highlight! Dark_Red guifg=#875f5f guibg=NONE gui=NONE ctermfg=95 ctermbg=NONE cterm=NONE
+highlight! Red_Reverse guifg=#af5f5f guibg=#121212 gui=reverse ctermfg=131 ctermbg=233 cterm=reverse
+highlight! Dark_Red_Reverse guifg=#dfdfaf guibg=#875f5f gui=NONE ctermfg=187 ctermbg=95 cterm=NONE
+highlight! Cyan guifg=#87afaf guibg=NONE gui=NONE ctermfg=109 ctermbg=NONE cterm=NONE
+highlight! Dark_Cyan_Reverse guifg=#005f5f guibg=NONE gui=reverse ctermfg=23 ctermbg=NONE cterm=reverse
+highlight! Grey guifg=#878787 guibg=NONE gui=NONE ctermfg=102 ctermbg=NONE cterm=NONE
+highlight! Green guifg=#87875f guibg=NONE gui=NONE ctermfg=101 ctermbg=NONE cterm=NONE
+highlight! Green_Reverse guifg=#87875f guibg=NONE gui=reverse ctermfg=101 ctermbg=NONE cterm=reverse
+highlight! Dark_Green_Reverse guifg=#008787 guibg=NONE gui=reverse ctermfg=30 ctermbg=NONE cterm=reverse
+highlight! Soft_Yellow guifg=#dfdfaf guibg=NONE gui=NONE ctermfg=187 ctermbg=NONE cterm=NONE
 
-" JSX
-call <sid>hi('jsxAttrib', s:voidSteel, s:none, 'none')
-call <sid>hi('jsxAttributeBraces', s:voidSteel, s:none, 'none')
-call <sid>hi('jsxCloseString', s:voidSteel, s:none, 'none')
-call <sid>hi('jsxCloseTag', s:voidSteel, s:none, 'none')
-call <sid>hi('jsxString', s:voidSteel, s:none, 'none')
-call <sid>hi('jsxTag', s:voidSteel, s:none, 'none')
-call <sid>hi('jsxTagName', s:voidSteel, s:none, 'none')
+highlight! link Type Orange
+highlight! link vimAutoCmdSfxList Orange
 
-" Ruby
-call <sid>hi('rubyBlockParameter', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyClass', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyClassVariable', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyConstant', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyControl', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyEscape', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyException', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyFunction', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyGlobalVariable', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyInclude', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyInstanceVariable', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyInterpolationDelimiter', s:none, s:none, 'none')
-call <sid>hi('rubyOperator', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyPseudoVariable', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyRegexp', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyRegexpDelimiter', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyStringDelimiter', s:voidSteel, s:none, 'none')
-call <sid>hi('rubySymbol', s:voidSteel, s:none, 'none')
+highlight! link MoreMsg Soft_Orange
+highlight! link Macro Soft_Orange
+highlight! link PreCondit Soft_Orange
+highlight! link PreProc Soft_Orange
+highlight! link Title Soft_Orange
+highlight! link htmlItalic Soft_Orange
+highlight! link cssIdentifier Soft_Orange
+highlight! link cssClassName Soft_Orange
+highlight! link Include Soft_Orange
+highlight! link Define Soft_Orange
 
-" Ruby (Embedded)
-call <sid>hi('erubyComment', s:voidGray3, s:none, 'none')
-call <sid>hi('erubyDelimiter', s:none, s:none, 'none')
-call <sid>hi('erubyRailsMethod', s:voidSteel, s:none, 'none')
+highlight! link Number Dark_Orange
+highlight! link diffIndexLine Dark_Orange
+highlight! link Character Dark_Orange
+highlight! link Boolean Dark_Orange
+highlight! link Float Dark_Orange
 
-" Ruby on Rails
-call <sid>hi('rubyRailsARAssociationMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyRailsARMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyRailsMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyRailsRenderMethod', s:voidSteel, s:none, 'none')
-call <sid>hi('rubyRailsUserClass', s:voidSteel, s:none, 'none')
+highlight! link Special Red
+highlight! link vimCmdSep Red
+highlight! link Underlined Red
+highlight! link ErrorMsg Red
+highlight! link Directory Red
+highlight! link diffFile Red
+highlight! link WarningMsg Red
+highlight! link diffIsA Red
+highlight! link diffBDiffer Red
+highlight! link diffCommon Red
+highlight! link diffDiffer Red
+highlight! link diffIdentical Red
+highlight! link diffNoEOL Red
+highlight! link diffOnly Red
 
-" XML
-call <sid>hi('xmlAttrib', s:voidSteel, s:none, 'none')
-call <sid>hi('xmlEndTag', s:voidSteel, s:none, 'none')
-call <sid>hi('xmlTag', s:voidSteel, s:none, 'none')
-call <sid>hi('xmlTagName', s:voidSteel, s:none, 'none')
+highlight! link Constant Soft_Red
 
-" YAML
-call <sid>hi('yamlAlias', s:voidSteel, s:none, 'none')
-call <sid>hi('yamlAnchor', s:voidSteel, s:none, 'none')
-call <sid>hi('yamlDocumentHeader', s:voidSteel, s:none, 'none')
-call <sid>hi('yamlKey', s:voidSteel, s:none, 'none')
+highlight! link  Function Dark_Red
+highlight! link vimFunction Dark_Red
+highlight! link vimUserFunc Dark_Red
+highlight! link StorageClass Dark_Red
+highlight! link htmlArg Dark_Red
+highlight! link Structure Dark_Red
+highlight! link Typedef Dark_Red
+highlight! link Question Dark_Red
 
+highlight! link Error Red_Reverse
+highlight! link IncSearch Red_Reverse
+highlight! link DiffDelete Red_Reverse
+highlight! link diffRemoved Red_Reverse
 
+highlight! link Visual Dark_Red_Reverse
+highlight! link Search Dark_Red_Reverse
+highlight! link PmenuSel Dark_Red_Reverse
+highlight! link MatchParen Dark_Red_Reverse
+highlight! link WildMenu Dark_Red_Reverse
 
-" ------------
-" Plugins
-" ------------
+highlight! link Identifier Cyan
+highlight! link vimAutoEventList Cyan
 
-" todo.txt
-call <sid>hi('TodoContext', s:voidSteel, s:none, 'none')
-call <sid>hi('TodoDate', s:voidSteel, s:none, 'none')
-call <sid>hi('TodoDone', s:voidGray3, s:none, 'none')
-call <sid>hi('TodoPriorityA', s:voidSteel, s:none, 'none')
-call <sid>hi('TodoPriorityB', s:voidSteel, s:none, 'none')
-call <sid>hi('TodoPriorityC', s:voidSteel, s:none, 'none')
-call <sid>hi('TodoProject', s:voidSteel, s:none, 'none')
+highlight! link DiffChange Dark_Cyan_Reverse
+highlight! link diffChanged Dark_Cyan_Reverse
 
-" Buftabline
-call <sid>hi('BufTabLineActive', s:voidSteel, s:voidGray2, 'none')
-call <sid>hi('BufTabLineCurrent', s:voidBlack, s:voidGray4, 'none')
-call <sid>hi('BufTabLineFill', s:voidBlack, s:voidBlack, 'none')
-call <sid>hi('BufTabLineHidden', s:voidGray3, s:voidBlack2, 'none')
+highlight! link Statement Grey
+highlight! link Label Grey
+highlight! link Operator Grey
+highlight! link Conditional Grey
+highlight! link htmlStatement Grey
+highlight! link Repeat Grey
+highlight! link Keyword Grey
+highlight! link Exception Grey
+highlight! link netrwExe Grey
+
+highlight! link Comment Green
+
+highlight! link SpecialComment Green_Reverse
+highlight! link vimCommentTitle Green_Reverse
+
+highlight! link DiffAdd Dark_Green_Reverse
+highlight! link diffAdded Dark_Green_Reverse
+highlight! link DiffText Dark_Green_Reverse
+highlight! link Todo Dark_Orange_Reverse
+
+highlight! link ModeMsg Soft_Yellow
+
+"DEFAULT
+if 1
+	highlight Normal guifg=#dfdfaf guibg=#1c1c1c gui=NONE ctermfg=187 ctermbg=234 cterm=NONE
+	highlight String guifg=#ffdf87 guibg=#262626 gui=NONE ctermfg=222 ctermbg=235 cterm=NONE
+
+	highlight CursorLineNR guifg=#9e9e9e guibg=NONE gui=NONE ctermfg=247 ctermbg=NONE cterm=NONE
+	highlight StatusLine guifg=#9e9e9e guibg=#121212 gui=NONE ctermfg=247 ctermbg=233 cterm=NONE
+	highlight StatusLineNC guifg=#6c6c6c guibg=#121212 gui=NONE ctermfg=242 ctermbg=233 cterm=NONE
+	highlight StatusLineTerm guifg=#9e9e9e guibg=#121212 gui=NONE ctermfg=247 ctermbg=233 cterm=NONE
+	highlight StatusLineTermNC guifg=#6c6c6c guibg=#121212 gui=NONE ctermfg=242 ctermbg=233 cterm=NONE
+
+	highlight Pmenu guifg=#626262 guibg=#262626 gui=NONE ctermfg=241 ctermbg=235 cterm=NONE
+	highlight PmenuSbar guifg=#262626 guibg=#262626 gui=NONE ctermfg=235 ctermbg=235 cterm=NONE
+	highlight PmenuThumb guifg=#262626 guibg=#262626 gui=NONE ctermfg=235 ctermbg=235 cterm=NONE
+	highlight TabLineSel guifg=#9e9e9e guibg=#121212 gui=NONE ctermfg=247 ctermbg=233 cterm=NONE
+	highlight TabLine guifg=#6c6c6c guibg=#121212 gui=NONE ctermfg=242 ctermbg=233 cterm=NONE
+	highlight TabLineFill guifg=#6c6c6c guibg=#121212 gui=NONE ctermfg=242 ctermbg=233 cterm=NONE
+
+	highlight CursorLine guifg=NONE guibg=#262626 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
+
+	highlight CursorColumn guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=233 cterm=NONE
+	highlight ColorColumn guifg=NONE guibg=#262626 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
+	highlight Folded guifg=#444444 guibg=#121212 gui=NONE ctermfg=238 ctermbg=233 cterm=NONE
+	highlight VertSplit guifg=#444444 guibg=#1c1c1c gui=NONE ctermfg=238 ctermbg=234 cterm=NONE
+	highlight LineNr guifg=#4e4e4e guibg=#121212 gui=NONE ctermfg=239 ctermbg=233 cterm=NONE
+	highlight FoldColumn guifg=#87afaf guibg=#1c1c1c gui=NONE ctermfg=109 ctermbg=234 cterm=NONE
+	highlight SignColumn guifg=#87875f guibg=#080808 gui=NONE ctermfg=101 ctermbg=233 cterm=NONE
+	highlight NonText guifg=#444444 guibg=NONE gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
+	highlight SpecialKey guifg=#303030 guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE
+	highlight Terminal guifg=#dfdfaf guibg=#1c1c1c gui=NONE ctermfg=187 ctermbg=234 cterm=NONE
+
+	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
+	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
+	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
+	highlight SpellRare guifg=#d75f00 guibg=NONE gui=undercurl ctermfg=166 ctermbg=NONE cterm=undercurl
+
+	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
+	highlight Cursor guifg=#000000 guibg=#dfdfaf gui=NONE ctermfg=16 ctermbg=187 cterm=NONE
+endif
+
+"ALMOST BLACK BACKGROUND
+if g:alduin_Shout_Dragon_Aspect
+	highlight Normal guifg=#dfdfaf guibg=#121212 gui=NONE ctermfg=187 ctermbg=233 cterm=NONE
+	highlight String guifg=#ffdf87 guibg=#1c1c1c gui=NONE ctermfg=222 ctermbg=234 cterm=NONE
+
+	highlight StatusLine guifg=#949494 guibg=#080808 gui=NONE ctermfg=246 ctermbg=232 cterm=NONE
+	highlight StatusLineNC guifg=#626262 guibg=#080808 gui=NONE ctermfg=241 ctermbg=232 cterm=NONE
+	highlight StatusLineTerm guifg=#949494 guibg=#080808 gui=NONE ctermfg=246 ctermbg=232 cterm=NONE
+	highlight StatusLineTermNC guifg=#626262 guibg=#080808 gui=NONE ctermfg=241 ctermbg=232 cterm=NONE
+
+	highlight Pmenu guifg=#626262 guibg=#1c1c1c gui=NONE ctermfg=241 ctermbg=234 cterm=NONE
+	highlight PmenuSbar guifg=#1c1c1c guibg=#1c1c1c gui=NONE ctermfg=234 ctermbg=234 cterm=NONE
+	highlight PmenuThumb guifg=#1c1c1c guibg=#1c1c1c gui=NONE ctermfg=234 ctermbg=234 cterm=NONE
+	highlight TabLine guifg=#626262 guibg=#080808 gui=NONE ctermfg=241 ctermbg=232 cterm=NONE
+	highlight TabLineSel guifg=#949494 guibg=#080808 gui=NONE ctermfg=246 ctermbg=232 cterm=NONE
+	highlight TabLineFill guifg=#262626 guibg=#080808 gui=NONE ctermfg=241 ctermbg=232 cterm=NONE
+
+	highlight CursorLine guifg=NONE guibg=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
+
+	highlight CursorColumn guifg=NONE guibg=#080808 gui=NONE ctermfg=NONE ctermbg=232 cterm=NONE
+	highlight ColorColumn guifg=NONE guibg=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
+	highlight Folded guifg=#444444 guibg=#080808 gui=NONE ctermfg=238 ctermbg=232 cterm=NONE
+	highlight VertSplit guifg=#444444 guibg=#121212 gui=NONE ctermfg=238 ctermbg=233 cterm=NONE
+	highlight LineNr guifg=#444444 guibg=#080808 gui=NONE ctermfg=238 ctermbg=232 cterm=NONE
+	highlight FoldColumn guifg=#87afaf guibg=#121212 gui=NONE ctermfg=109 ctermbg=233 cterm=NONE
+	highlight SignColumn guifg=#87875f guibg=#080808 gui=NONE ctermfg=101 ctermbg=232 cterm=NONE
+	highlight NonText guifg=#3a3a3a guibg=NONE gui=NONE ctermfg=237 ctermbg=NONE cterm=NONE
+	highlight SpecialKey guifg=#262626 guibg=NONE gui=NONE ctermfg=235 ctermbg=NONE cterm=NONE
+	highlight Terminal guifg=#dfdfaf guibg=#121212 gui=NONE ctermfg=187 ctermbg=233 cterm=NONE
+
+	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
+	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
+	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
+	highlight SpellRare guifg=#d75f00 guibg=NONE gui=undercurl ctermfg=166 ctermbg=NONE cterm=undercurl
+
+	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
+	highlight Cursor guifg=#000000 guibg=#dfdfaf gui=NONE ctermfg=16 ctermbg=187 cterm=NONE
+endif
+
+"BLACK
+if g:alduin_Shout_Become_Ethereal
+	highlight Normal guifg=#dfdfaf guibg=#080808 gui=NONE ctermfg=187 ctermbg=232 cterm=NONE
+	highlight String guifg=#ffdf87 guibg=#121212 gui=NONE ctermfg=222 ctermbg=233 cterm=NONE
+
+	highlight StatusLine guifg=#8a8a8a guibg=#000000 gui=NONE ctermfg=245 ctermbg=16 cterm=NONE
+	highlight StatusLineNC guifg=#585858 guibg=#000000 gui=NONE ctermfg=240 ctermbg=16 cterm=NONE
+	highlight StatusLineTerm guifg=#8a8a8a guibg=#000000 gui=NONE ctermfg=245 ctermbg=16 cterm=NONE
+	highlight StatusLineTermNC guifg=#585858 guibg=#000000 gui=NONE ctermfg=240 ctermbg=16 cterm=NONE
+
+	highlight Pmenu guifg=#585858 guibg=#121212 gui=NONE ctermfg=240 ctermbg=233 cterm=NONE
+	highlight PmenuSbar guifg=#121212 guibg=#121212 gui=NONE ctermfg=233 ctermbg=233 cterm=NONE
+	highlight PmenuThumb guifg=#121212 guibg=#121212 gui=NONE ctermfg=233 ctermbg=233 cterm=NONE
+	highlight TabLine guifg=#585858 guibg=#000000 gui=NONE ctermfg=240 ctermbg=16 cterm=NONE
+	highlight TabLineSel guifg=#8a8a8a guibg=#000000 gui=NONE ctermfg=245 ctermbg=16 cterm=NONE
+	highlight TabLineFill guifg=#585858 guibg=#000000 gui=NONE ctermfg=240 ctermbg=16 cterm=NONE
+
+	highlight CursorLine guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=233 cterm=NONE
+
+	highlight CursorColumn guifg=NONE guibg=#000000 gui=NONE ctermfg=NONE ctermbg=16 cterm=NONE
+	highlight ColorColumn guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=233 cterm=NONE
+	highlight Folded guifg=#444444 guibg=#000000 gui=NONE ctermfg=238 ctermbg=16 cterm=NONE
+	highlight VertSplit guifg=#444444 guibg=#080808 gui=NONE ctermfg=238 ctermbg=232 cterm=NONE
+	highlight LineNr guifg=#444444 guibg=#000000 gui=NONE ctermfg=238 ctermbg=16 cterm=NONE
+	highlight FoldColumn guifg=#87afaf guibg=#080808 gui=NONE ctermfg=109 ctermbg=232 cterm=NONE
+	highlight SignColumn guifg=#87875f guibg=#000000 gui=NONE ctermfg=101 ctermbg=16 cterm=NONE
+	highlight NonText guifg=#303030 guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE
+	highlight SpecialKey guifg=#1c1c1c guibg=NONE gui=NONE ctermfg=234 ctermbg=NONE cterm=NONE
+	highlight Terminal guifg=#dfdfaf guibg=#080808 gui=NONE ctermfg=187 ctermbg=232 cterm=NONE
+
+	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
+	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
+	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
+	highlight SpellRare guifg=#d75f00 guibg=NONE gui=undercurl ctermfg=166 ctermbg=NONE cterm=undercurl
+
+	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
+	highlight Cursor guifg=#000000 guibg=#dfdfaf gui=NONE ctermfg=16 ctermbg=187 cterm=NONE
+endif
+
+"REMOVE BACKGROUND FROM STRINGS
+if g:alduin_Shout_Animal_Allegiance
+	highlight String guifg=#ffdf87 guibg=NONE ctermfg=222 ctermbg=NONE cterm=NONE gui=NONE
+endif
+
+"REMOVE BLOCK MATCHPARENS - ADDS UNDERLINE
+if g:alduin_Shout_Aura_Whisper
+	highlight MatchParen guifg=#eeeeee guibg=#1c1c1c gui=underline ctermfg=255 ctermbg=234 cterm=underline
+endif
+
+"DEEP RED COLOR
+if g:alduin_Shout_Fire_Breath
+	highlight Title guifg=#af5f5f guibg=NONE gui=NONE ctermfg=131 ctermbg=NONE cterm=NONE
+	highlight Special guifg=#af0000 guibg=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
+	highlight Search guifg=#dfdfaf guibg=#5f0000 gui=NONE ctermfg=187 ctermbg=52 cterm=NONE
+endif
+
+"LICENSE
+"Copyright (c) 2020 Alessandro Yorba
+"
+"Permission is hereby granted, free of charge, to any person obtaining a copy
+"of this software and associated documentation files (the "Software"), to deal
+"in the Software without restriction, including without limitation the rights
+"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+"copies of the Software, and to permit persons to whom the Software is
+"furnished to do so, subject to the following conditions:
+"
+"The above copyright notice and this permission notice shall be included in
+"all copies or substantial portions of the Software.
+"
+"THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+"THE SOFTWARE.
