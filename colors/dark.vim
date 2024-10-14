@@ -1,287 +1,243 @@
+" carbonized-dark, a vim colourscheme by nightsense
+"
+" generated with a theme template adapted from
+" base16-vim (https://github.com/chriskempson/base16-vim)
+" by Chris Kempson (http://chriskempson.com)
+
+
+"=== SET COLOUR VARIABLES =====================================================
+
+" GUI colours
+let s:g0 = '2b2b2b'
+let s:g1 = '3b3b37'
+let s:g2 = '75756e'
+let s:g3 = '8a8a81'
+let s:g4 = '9e9e95'
+let s:g5 = 'b5b5aa'
+let s:g6 = 'f0f0e1'
+let s:g7 = 'fffff0'
+let s:g8 = 'bf5858'
+let s:g9 = 'b56f45'
+let s:gA = 'ab8e38'
+let s:gB = '508a50'
+let s:gC = '458a8a'
+let s:gD = '557b9e'
+let s:gE = '8b6a9e'
+let s:gF = 'ab6a7a'
+
+" terminal colours
+let s:t0 = '00'
+let s:t3 = '08'
+let s:t5 = '07'
+let s:t7 = '15'
+let s:t8 = '01'
+let s:tA = '03'
+let s:tB = '02'
+let s:tC = '06'
+let s:tD = '04'
+let s:tE = '05'
+let s:t1 = '10'
+let s:t2 = '11'
+let s:t4 = '12'
+let s:t6 = '13'
+let s:t9 = '09'
+let s:tF = '14'
+
+" neovim colours
+if has('nvim')
+  let g:terminal_color_0 =  '#2b2b2b'
+  let g:terminal_color_1 =  '#bf5858'
+  let g:terminal_color_2 =  '#508a50'
+  let g:terminal_color_3 =  '#ab8e38'
+  let g:terminal_color_4 =  '#557b9e'
+  let g:terminal_color_5 =  '#8b6a9e'
+  let g:terminal_color_6 =  '#458a8a'
+  let g:terminal_color_7 =  '#b5b5aa'
+  let g:terminal_color_8 =  '#8a8a81'
+  let g:terminal_color_9 =  '#b56f45'
+  let g:terminal_color_10 = '#3b3b37'
+  let g:terminal_color_11 = '#75756e'
+  let g:terminal_color_12 = '#9e9e95'
+  let g:terminal_color_13 = '#f0f0e1'
+  let g:terminal_color_14 = '#ab6a7a'
+  let g:terminal_color_15 = '#fffff0'
+endif
+
+
+"=== OTHER PREPARATION ========================================================
+
+" run theme-setting script if using terminal vim
+if filereadable(expand('~/.nightshell/carbonized-dark'))
+  if !has('gui_running')
+    execute 'silent !/bin/sh $HOME/.nightshell/carbonized-dark'
+  endif
+endif
+
+" clear old theme
+hi clear
+syntax reset
+
+" set new theme
 set background=dark
+augroup NightsenseThemeSet
+   autocmd!
+   autocmd CursorMoved * execute 'if !exists("colors_name") |
+         \ colorscheme carbonized-dark | endif'
+augroup END
+let colors_name = 'carbonized-dark'
 
-highlight clear
-if exists("syntax_on")
-	syntax reset
+" highlighting function
+fun! <sid>h(x, gf, gb, cf, cb, a, s)
+  if a:gf != '' | exe 'hi ' . a:x . ' guifg=#'  . a:gf                  | endif
+  if a:gb != '' | exe 'hi ' . a:x . ' guibg=#'  . a:gb                  | endif
+  if a:cf != '' | exe 'hi ' . a:x . ' ctermfg=' . a:cf                  | endif
+  if a:cb != '' | exe 'hi ' . a:x . ' ctermbg=' . a:cb                  | endif
+  if a:a  != '' | exe 'hi ' . a:x . ' gui='     . a:a . ' cterm=' . a:a | endif
+  if a:s  != '' | exe 'hi ' . a:x . ' guisp=#'  . a:s                   | endif
+endfun
+
+
+"=== BASIC HIGHLIGHTING =======================================================
+
+" cursor + status line + selected tab
+cal <sid>h('Cursor'           , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
+cal <sid>h('StatusLine'       , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
+cal <sid>h('StatusLineTerm'   , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
+cal <sid>h('TabLineSel'       , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
+cal <sid>h('TermCursor'       , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
+
+" line numbers
+cal <sid>h('CursorLineNr'     , s:g0 , s:g3 , s:t0 , s:t3 , 'none'      , ''  )
+cal <sid>h('LineNr'           , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+
+" basic text
+cal <sid>h('Bold'             , ''   , ''   , ''   , ''   , 'bold'      , ''  )
+cal <sid>h('Directory'        , s:g5 , ''   , s:t5 , ''   , 'bold'      , ''  )
+cal <sid>h('Italic'           , ''   , ''   , ''   , ''   , 'italic'    , ''  )
+cal <sid>h('Normal'           , s:g5 , s:g0 , s:t5 , s:t0 , 'none'      , ''  )
+cal <sid>h('Underlined'       , s:g5 , ''   , s:t5 , ''   , 'underline' , ''  )
+
+" commented-out text
+cal <sid>h('Comment'          , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
+cal <sid>h('Conceal'          , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
+cal <sid>h('EndOfBuffer'      , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
+cal <sid>h('Ignore'           , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
+cal <sid>h('NonText'          , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
+
+" highlighted background
+cal <sid>h('ColorColumn'      , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
+cal <sid>h('CursorColumn'     , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
+cal <sid>h('CursorLine'       , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
+cal <sid>h('QuickFixLine'     , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
+cal <sid>h('StatusLineNC'     , s:g5 , s:g1 , s:t5 , s:t1 , 'none'      , ''  )
+cal <sid>h('StatusLineTermNC' , s:g5 , s:g1 , s:t5 , s:t1 , 'none'      , ''  )
+cal <sid>h('TabLineFill'      , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
+cal <sid>h('TermCursorNC'     , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
+
+" muted text on highlighted background
+cal <sid>h('DiffChange'       , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+cal <sid>h('FoldColumn'       , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+cal <sid>h('Folded'           , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+cal <sid>h('SignColumn'       , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+cal <sid>h('TabLine'          , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+cal <sid>h('VisualNOS'        , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+
+" strongly highlighted background
+cal <sid>h('MatchParen'       , s:g6 , s:g2 , s:t6 , s:t2 , 'none'      , ''  )
+cal <sid>h('Pmenu'            , s:g6 , s:g2 , s:t6 , s:t2 , 'none'      , ''  )
+cal <sid>h('Visual'           , s:g6 , s:g2 , s:t6 , s:t2 , 'none'      , ''  )
+
+" selected menu item
+cal <sid>h('PmenuSel'         , s:g0 , s:g5 , s:t0 , s:t5 , 'none'      , ''  )
+cal <sid>h('WildMenu'         , s:g0 , s:g6 , s:t0 , s:t6 , 'none'      , ''  )
+
+" solid lines
+cal <sid>h('PmenuSbar'        , s:g1 , s:g1 , s:t1 , s:t1 , 'none'      , ''  )
+cal <sid>h('PmenuThumb'       , s:g4 , s:g4 , s:t4 , s:t4 , 'none'      , ''  )
+cal <sid>h('VertSplit'        , s:g2 , s:g2 , s:t2 , s:t2 , 'none'      , ''  )
+
+
+"=== ALERT/SYNTAX HIGHLIGHTING ================================================
+
+" RED for warning elements
+cal <sid>h('DiffDelete'       , s:g8 , s:g0 , s:t8 , s:t0 , 'reverse'   , ''  )
+cal <sid>h('Error'            , s:g8 , s:g0 , s:t8 , s:t0 , 'reverse'   , ''  )
+cal <sid>h('ErrorMsg'         , s:g8 , s:g0 , s:t8 , s:t0 , 'none'      , ''  )
+cal <sid>h('SpellBad'         , ''   , ''   , s:t0 , s:t8 , 'undercurl' , s:g8)
+cal <sid>h('TooLong'          , s:g8 , ''   , s:t8 , ''   , 'none'      , ''  )
+cal <sid>h('WarningMsg'       , s:g8 , s:g0 , s:t8 , s:t0 , 'none'      , ''  )
+
+" ORANGE for preliminary elements
+cal <sid>h('Define'           , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
+cal <sid>h('IncSearch'        , s:g9 , s:g0 , s:t9 , s:t0 , 'reverse'   , ''  )
+cal <sid>h('Include'          , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
+cal <sid>h('Macro'            , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
+cal <sid>h('PreCondit'        , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
+cal <sid>h('PreProc'          , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
+cal <sid>h('SpellCap'         , ''   , ''   , s:t0 , s:t9 , 'undercurl' , s:g9)
+cal <sid>h('Title'            , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
+
+" YELLOW for highlighted elements
+cal <sid>h('DiffText'         , s:gA , s:g0 , s:tA , s:t0 , 'reverse'   , ''  )
+cal <sid>h('Search'           , s:gA , s:g0 , s:tA , s:t0 , 'reverse'   , ''  )
+cal <sid>h('Todo'             , s:gA , s:g0 , s:tA , s:t0 , 'reverse'   , ''  )
+
+" GREEN for action elements
+cal <sid>h('Conditional'      , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('DiffAdd'          , s:gB , s:g0 , s:tB , s:t0 , 'reverse'   , ''  )
+cal <sid>h('Exception'        , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('Keyword'          , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('Label'            , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('ModeMsg'          , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('MoreMsg'          , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('Operator'         , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('Question'         , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('Repeat'           , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+cal <sid>h('Statement'        , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+
+" TEAL for object types
+cal <sid>h('SpellLocal'       , ''   , ''   , s:t0 , s:tC , 'undercurl' , s:gC)
+cal <sid>h('StorageClass'     , s:gC , ''   , s:tC , ''   , 'none'      , ''  )
+cal <sid>h('Structure'        , s:gC , ''   , s:tC , ''   , 'none'      , ''  )
+cal <sid>h('Type'             , s:gC , ''   , s:tC , ''   , 'none'      , ''  )
+cal <sid>h('Typedef'          , s:gC , ''   , s:tC , ''   , 'none'      , ''  )
+
+" BLUE for constants
+cal <sid>h('Boolean'          , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
+cal <sid>h('Character'        , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
+cal <sid>h('Constant'         , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
+cal <sid>h('Float'            , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
+cal <sid>h('Number'           , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
+cal <sid>h('String'           , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
+
+" PURPLE for special text
+cal <sid>h('Debug'            , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
+cal <sid>h('Delimiter'        , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
+cal <sid>h('Special'          , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
+cal <sid>h('SpecialChar'      , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
+cal <sid>h('SpecialComment'   , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
+cal <sid>h('SpecialKey'       , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
+cal <sid>h('SpellRare'        , ''   , ''   , s:t0 , s:tE , 'undercurl' , s:gE)
+cal <sid>h('Tag'              , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
+
+" PINK for object names
+cal <sid>h('Function'         , s:gF , ''   , s:tF , ''   , 'none'      , ''  )
+cal <sid>h('Identifier'       , s:gF , ''   , s:tF , ''   , 'none'      , ''  )
+
+
+"=== OPTIONS ==================================================================
+
+" disable highlighted CursorLineNr
+if exists('g:carbonized_dark_CursorLineNr')
+if g:carbonized_dark_CursorLineNr == 'off'
+cal <sid>h('CursorLineNr'     , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+endif
 endif
 
-let g:colors_name="alduin"
-
-"REMOVES BLOCK MATCHPARENS ADDS UNDERLINE
-if !exists( "g:alduin_Shout_Aura_Whisper")
-	let g:alduin_Shout_Aura_Whisper = 0
+" disable LineNr background altogether
+if exists('g:carbonized_dark_LineNr')
+if g:carbonized_dark_LineNr == 'off'
+cal <sid>h('CursorLineNr'     , s:g4 , s:g0 , s:t4 , s:t0 , 'none'      , ''  )
+cal <sid>h('LineNr'           , s:g4 , s:g0 , s:t4 , s:t0 , 'none'      , ''  )
 endif
-
-"ADDS DEEP RED COLOR FOR SPECIAL HIGHLIGHT GROUPS
-if !exists( "g:alduin_Shout_Fire_Breath" )
-	let g:alduin_Shout_Fire_Breath = 0
-endif
-
-"REMOVE SUBTLE BACKGROUND HIGHLIGHTING FROM STRINGS
-if !exists("g:alduin_Shout_Animal_Allegiance")
-	let g:alduin_Shout_Animal_Allegiance = 0
-endif
-
-"ALMOST BLACK BACKGROUND
-if !exists("g:alduin_Shout_Dragon_Aspect" )
-	let g:alduin_Shout_Dragon_Aspect = 0
-endif
-
-"BLACK BACKGROUND
-if !exists( "g:alduin_Shout_Become_Ethereal" )
-	let g:alduin_Shout_Become_Ethereal = 0
-endif
-
-"TERMINAL COLORS
-let g:terminal_ansi_colors = [
-	\ '#1c1c1c',
-	\ '#af5f5f',
-	\ '#87875f',
-	\ '#dfaf87',
-	\ '#878787',
-	\ '#875f5f',
-	\ '#87afaf',
-	\ '#dfdfaf',
-	\ '#878787',
-	\ '#af5f5f',
-	\ '#87875f',
-	\ '#dfaf87',
-	\ '#878787',
-	\ '#875f5f',
-	\ '#87afaf',
-	\ '#dfdfaf',]
-
-"COLORS
-highlight! Orange guifg=#af875f guibg=NONE gui=NONE ctermfg=137 ctermbg=NONE cterm=NONE
-highlight! Soft_Orange guifg=#dfaf87 guibg=NONE gui=NONE ctermfg=180 ctermbg=NONE cterm=NONE
-highlight! Dark_Orange guifg=#af5f00 guibg=NONE gui=NONE ctermfg=130 ctermbg=NONE cterm=NONE
-highlight! Dark_Orange_Reverse guifg=#af5f00 guibg=NONE gui=reverse ctermfg=130 ctermbg=NONE cterm=reverse
-highlight! Soft_Red guifg=#af8787 guibg=NONE gui=NONE ctermfg=138 ctermbg=NONE cterm=NONE
-highlight! Red guifg=#af5f5f guibg=NONE gui=NONE ctermfg=131 ctermbg=NONE cterm=NONE
-highlight! Dark_Red guifg=#875f5f guibg=NONE gui=NONE ctermfg=95 ctermbg=NONE cterm=NONE
-highlight! Red_Reverse guifg=#af5f5f guibg=#121212 gui=reverse ctermfg=131 ctermbg=233 cterm=reverse
-highlight! Dark_Red_Reverse guifg=#dfdfaf guibg=#875f5f gui=NONE ctermfg=187 ctermbg=95 cterm=NONE
-highlight! Cyan guifg=#87afaf guibg=NONE gui=NONE ctermfg=109 ctermbg=NONE cterm=NONE
-highlight! Dark_Cyan_Reverse guifg=#005f5f guibg=NONE gui=reverse ctermfg=23 ctermbg=NONE cterm=reverse
-highlight! Grey guifg=#878787 guibg=NONE gui=NONE ctermfg=102 ctermbg=NONE cterm=NONE
-highlight! Green guifg=#87875f guibg=NONE gui=NONE ctermfg=101 ctermbg=NONE cterm=NONE
-highlight! Green_Reverse guifg=#87875f guibg=NONE gui=reverse ctermfg=101 ctermbg=NONE cterm=reverse
-highlight! Dark_Green_Reverse guifg=#008787 guibg=NONE gui=reverse ctermfg=30 ctermbg=NONE cterm=reverse
-highlight! Soft_Yellow guifg=#dfdfaf guibg=NONE gui=NONE ctermfg=187 ctermbg=NONE cterm=NONE
-
-highlight! link Type Orange
-highlight! link vimAutoCmdSfxList Orange
-
-highlight! link MoreMsg Soft_Orange
-highlight! link Macro Soft_Orange
-highlight! link PreCondit Soft_Orange
-highlight! link PreProc Soft_Orange
-highlight! link Title Soft_Orange
-highlight! link htmlItalic Soft_Orange
-highlight! link cssIdentifier Soft_Orange
-highlight! link cssClassName Soft_Orange
-highlight! link Include Soft_Orange
-highlight! link Define Soft_Orange
-
-highlight! link Number Dark_Orange
-highlight! link diffIndexLine Dark_Orange
-highlight! link Character Dark_Orange
-highlight! link Boolean Dark_Orange
-highlight! link Float Dark_Orange
-
-highlight! link Special Red
-highlight! link vimCmdSep Red
-highlight! link Underlined Red
-highlight! link ErrorMsg Red
-highlight! link Directory Red
-highlight! link diffFile Red
-highlight! link WarningMsg Red
-highlight! link diffIsA Red
-highlight! link diffBDiffer Red
-highlight! link diffCommon Red
-highlight! link diffDiffer Red
-highlight! link diffIdentical Red
-highlight! link diffNoEOL Red
-highlight! link diffOnly Red
-
-highlight! link Constant Soft_Red
-
-highlight! link  Function Dark_Red
-highlight! link vimFunction Dark_Red
-highlight! link vimUserFunc Dark_Red
-highlight! link StorageClass Dark_Red
-highlight! link htmlArg Dark_Red
-highlight! link Structure Dark_Red
-highlight! link Typedef Dark_Red
-highlight! link Question Dark_Red
-
-highlight! link Error Red_Reverse
-highlight! link IncSearch Red_Reverse
-highlight! link DiffDelete Red_Reverse
-highlight! link diffRemoved Red_Reverse
-
-highlight! link Visual Dark_Red_Reverse
-highlight! link Search Dark_Red_Reverse
-highlight! link PmenuSel Dark_Red_Reverse
-highlight! link MatchParen Dark_Red_Reverse
-highlight! link WildMenu Dark_Red_Reverse
-
-highlight! link Identifier Cyan
-highlight! link vimAutoEventList Cyan
-
-highlight! link DiffChange Dark_Cyan_Reverse
-highlight! link diffChanged Dark_Cyan_Reverse
-
-highlight! link Statement Grey
-highlight! link Label Grey
-highlight! link Operator Grey
-highlight! link Conditional Grey
-highlight! link htmlStatement Grey
-highlight! link Repeat Grey
-highlight! link Keyword Grey
-highlight! link Exception Grey
-highlight! link netrwExe Grey
-
-highlight! link Comment Green
-
-highlight! link SpecialComment Green_Reverse
-highlight! link vimCommentTitle Green_Reverse
-
-highlight! link DiffAdd Dark_Green_Reverse
-highlight! link diffAdded Dark_Green_Reverse
-highlight! link DiffText Dark_Green_Reverse
-highlight! link Todo Dark_Orange_Reverse
-
-highlight! link ModeMsg Soft_Yellow
-
-highlight Normal guifg=#dfdfaf guibg=#1c1c1c gui=NONE ctermfg=187 ctermbg=234 cterm=NONE
-highlight String guifg=#ffdf87 guibg=#262626 gui=NONE ctermfg=222 ctermbg=235 cterm=NONE
-
-highlight CursorLineNR guifg=#9e9e9e guibg=NONE gui=NONE ctermfg=247 ctermbg=NONE cterm=NONE
-highlight StatusLine guifg=#9e9e9e guibg=#121212 gui=NONE ctermfg=247 ctermbg=233 cterm=NONE
-highlight StatusLineNC guifg=#6c6c6c guibg=#121212 gui=NONE ctermfg=242 ctermbg=233 cterm=NONE
-highlight StatusLineTerm guifg=#9e9e9e guibg=#121212 gui=NONE ctermfg=247 ctermbg=233 cterm=NONE
-highlight StatusLineTermNC guifg=#6c6c6c guibg=#121212 gui=NONE ctermfg=242 ctermbg=233 cterm=NONE
-
-highlight Pmenu guifg=#626262 guibg=#262626 gui=NONE ctermfg=241 ctermbg=235 cterm=NONE
-highlight PmenuSbar guifg=#262626 guibg=#262626 gui=NONE ctermfg=235 ctermbg=235 cterm=NONE
-highlight PmenuThumb guifg=#262626 guibg=#262626 gui=NONE ctermfg=235 ctermbg=235 cterm=NONE
-highlight TabLineSel guifg=#9e9e9e guibg=#121212 gui=NONE ctermfg=247 ctermbg=233 cterm=NONE
-highlight TabLine guifg=#6c6c6c guibg=#121212 gui=NONE ctermfg=242 ctermbg=233 cterm=NONE
-highlight TabLineFill guifg=#6c6c6c guibg=#121212 gui=NONE ctermfg=242 ctermbg=233 cterm=NONE
-
-highlight CursorLine guifg=NONE guibg=#262626 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-
-highlight CursorColumn guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=233 cterm=NONE
-highlight ColorColumn guifg=NONE guibg=#262626 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-highlight Folded guifg=#444444 guibg=#121212 gui=NONE ctermfg=238 ctermbg=233 cterm=NONE
-highlight VertSplit guifg=#444444 guibg=#1c1c1c gui=NONE ctermfg=238 ctermbg=234 cterm=NONE
-highlight LineNr guifg=#4e4e4e guibg=#121212 gui=NONE ctermfg=239 ctermbg=233 cterm=NONE
-highlight FoldColumn guifg=#87afaf guibg=#1c1c1c gui=NONE ctermfg=109 ctermbg=234 cterm=NONE
-highlight SignColumn guifg=#87875f guibg=#080808 gui=NONE ctermfg=101 ctermbg=233 cterm=NONE
-highlight NonText guifg=#444444 guibg=NONE gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
-highlight SpecialKey guifg=#303030 guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE
-highlight Terminal guifg=#dfdfaf guibg=#1c1c1c gui=NONE ctermfg=187 ctermbg=234 cterm=NONE
-
-highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
-highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
-highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
-highlight SpellRare guifg=#d75f00 guibg=NONE gui=undercurl ctermfg=166 ctermbg=NONE cterm=undercurl
-
-highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-highlight Cursor guifg=#000000 guibg=#dfdfaf gui=NONE ctermfg=16 ctermbg=187 cterm=NONE
-
-"ALMOST BLACK BACKGROUND
-if g:alduin_Shout_Dragon_Aspect
-	highlight Normal guifg=#dfdfaf guibg=#121212 gui=NONE ctermfg=187 ctermbg=233 cterm=NONE
-	highlight String guifg=#ffdf87 guibg=#1c1c1c gui=NONE ctermfg=222 ctermbg=234 cterm=NONE
-
-	highlight StatusLine guifg=#949494 guibg=#080808 gui=NONE ctermfg=246 ctermbg=232 cterm=NONE
-	highlight StatusLineNC guifg=#626262 guibg=#080808 gui=NONE ctermfg=241 ctermbg=232 cterm=NONE
-	highlight StatusLineTerm guifg=#949494 guibg=#080808 gui=NONE ctermfg=246 ctermbg=232 cterm=NONE
-	highlight StatusLineTermNC guifg=#626262 guibg=#080808 gui=NONE ctermfg=241 ctermbg=232 cterm=NONE
-
-	highlight Pmenu guifg=#626262 guibg=#1c1c1c gui=NONE ctermfg=241 ctermbg=234 cterm=NONE
-	highlight PmenuSbar guifg=#1c1c1c guibg=#1c1c1c gui=NONE ctermfg=234 ctermbg=234 cterm=NONE
-	highlight PmenuThumb guifg=#1c1c1c guibg=#1c1c1c gui=NONE ctermfg=234 ctermbg=234 cterm=NONE
-	highlight TabLine guifg=#626262 guibg=#080808 gui=NONE ctermfg=241 ctermbg=232 cterm=NONE
-	highlight TabLineSel guifg=#949494 guibg=#080808 gui=NONE ctermfg=246 ctermbg=232 cterm=NONE
-	highlight TabLineFill guifg=#262626 guibg=#080808 gui=NONE ctermfg=241 ctermbg=232 cterm=NONE
-
-	highlight CursorLine guifg=NONE guibg=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
-
-	highlight CursorColumn guifg=NONE guibg=#080808 gui=NONE ctermfg=NONE ctermbg=232 cterm=NONE
-	highlight ColorColumn guifg=NONE guibg=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
-	highlight Folded guifg=#444444 guibg=#080808 gui=NONE ctermfg=238 ctermbg=232 cterm=NONE
-	highlight VertSplit guifg=#444444 guibg=#121212 gui=NONE ctermfg=238 ctermbg=233 cterm=NONE
-	highlight LineNr guifg=#444444 guibg=#080808 gui=NONE ctermfg=238 ctermbg=232 cterm=NONE
-	highlight FoldColumn guifg=#87afaf guibg=#121212 gui=NONE ctermfg=109 ctermbg=233 cterm=NONE
-	highlight SignColumn guifg=#87875f guibg=#080808 gui=NONE ctermfg=101 ctermbg=232 cterm=NONE
-	highlight NonText guifg=#3a3a3a guibg=NONE gui=NONE ctermfg=237 ctermbg=NONE cterm=NONE
-	highlight SpecialKey guifg=#262626 guibg=NONE gui=NONE ctermfg=235 ctermbg=NONE cterm=NONE
-	highlight Terminal guifg=#dfdfaf guibg=#121212 gui=NONE ctermfg=187 ctermbg=233 cterm=NONE
-
-	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
-	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
-	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
-	highlight SpellRare guifg=#d75f00 guibg=NONE gui=undercurl ctermfg=166 ctermbg=NONE cterm=undercurl
-
-	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-	highlight Cursor guifg=#000000 guibg=#dfdfaf gui=NONE ctermfg=16 ctermbg=187 cterm=NONE
-endif
-
-"BLACK
-if g:alduin_Shout_Become_Ethereal
-	highlight Normal guifg=#dfdfaf guibg=#080808 gui=NONE ctermfg=187 ctermbg=232 cterm=NONE
-	highlight String guifg=#ffdf87 guibg=#121212 gui=NONE ctermfg=222 ctermbg=233 cterm=NONE
-
-	highlight StatusLine guifg=#8a8a8a guibg=#000000 gui=NONE ctermfg=245 ctermbg=16 cterm=NONE
-	highlight StatusLineNC guifg=#585858 guibg=#000000 gui=NONE ctermfg=240 ctermbg=16 cterm=NONE
-	highlight StatusLineTerm guifg=#8a8a8a guibg=#000000 gui=NONE ctermfg=245 ctermbg=16 cterm=NONE
-	highlight StatusLineTermNC guifg=#585858 guibg=#000000 gui=NONE ctermfg=240 ctermbg=16 cterm=NONE
-
-	highlight Pmenu guifg=#585858 guibg=#121212 gui=NONE ctermfg=240 ctermbg=233 cterm=NONE
-	highlight PmenuSbar guifg=#121212 guibg=#121212 gui=NONE ctermfg=233 ctermbg=233 cterm=NONE
-	highlight PmenuThumb guifg=#121212 guibg=#121212 gui=NONE ctermfg=233 ctermbg=233 cterm=NONE
-	highlight TabLine guifg=#585858 guibg=#000000 gui=NONE ctermfg=240 ctermbg=16 cterm=NONE
-	highlight TabLineSel guifg=#8a8a8a guibg=#000000 gui=NONE ctermfg=245 ctermbg=16 cterm=NONE
-	highlight TabLineFill guifg=#585858 guibg=#000000 gui=NONE ctermfg=240 ctermbg=16 cterm=NONE
-
-	highlight CursorLine guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=233 cterm=NONE
-
-	highlight CursorColumn guifg=NONE guibg=#000000 gui=NONE ctermfg=NONE ctermbg=16 cterm=NONE
-	highlight ColorColumn guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=233 cterm=NONE
-	highlight Folded guifg=#444444 guibg=#000000 gui=NONE ctermfg=238 ctermbg=16 cterm=NONE
-	highlight VertSplit guifg=#444444 guibg=#080808 gui=NONE ctermfg=238 ctermbg=232 cterm=NONE
-	highlight LineNr guifg=#444444 guibg=#000000 gui=NONE ctermfg=238 ctermbg=16 cterm=NONE
-	highlight FoldColumn guifg=#87afaf guibg=#080808 gui=NONE ctermfg=109 ctermbg=232 cterm=NONE
-	highlight SignColumn guifg=#87875f guibg=#000000 gui=NONE ctermfg=101 ctermbg=16 cterm=NONE
-	highlight NonText guifg=#303030 guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE
-	highlight SpecialKey guifg=#1c1c1c guibg=NONE gui=NONE ctermfg=234 ctermbg=NONE cterm=NONE
-	highlight Terminal guifg=#dfdfaf guibg=#080808 gui=NONE ctermfg=187 ctermbg=232 cterm=NONE
-
-	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
-	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
-	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
-	highlight SpellRare guifg=#d75f00 guibg=NONE gui=undercurl ctermfg=166 ctermbg=NONE cterm=undercurl
-
-	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-	highlight Cursor guifg=#000000 guibg=#dfdfaf gui=NONE ctermfg=16 ctermbg=187 cterm=NONE
-endif
-
-"REMOVE BACKGROUND FROM STRINGS
-if g:alduin_Shout_Animal_Allegiance
-	highlight String guifg=#ffdf87 guibg=NONE ctermfg=222 ctermbg=NONE cterm=NONE gui=NONE
-endif
-
-"REMOVE BLOCK MATCHPARENS - ADDS UNDERLINE
-if g:alduin_Shout_Aura_Whisper
-	highlight MatchParen guifg=#eeeeee guibg=#1c1c1c gui=underline ctermfg=255 ctermbg=234 cterm=underline
-endif
-
-"DEEP RED COLOR
-if g:alduin_Shout_Fire_Breath
-	highlight Title guifg=#af5f5f guibg=NONE gui=NONE ctermfg=131 ctermbg=NONE cterm=NONE
-	highlight Special guifg=#af0000 guibg=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
-	highlight Search guifg=#dfdfaf guibg=#5f0000 gui=NONE ctermfg=187 ctermbg=52 cterm=NONE
 endif
