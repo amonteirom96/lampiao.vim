@@ -1,224 +1,241 @@
-" Name:       paramount.vim
-" Version:    0.1.0
-" Maintainer: github.com/owickstrom
-" License:    The MIT License (MIT)
-"
-" A minimal colorscheme for Vim that only puts emphasis on the paramount.
-"
-" Based on the pencil and off colorschemes:
-"
-" https://github.com/reedes/vim-colors-pencil
-" https://github.com/reedes/vim-colors-off
-"
-"""
+" orbital.vim -- Vim color scheme.
+" Author:      fcpg (n/a)
+" Webpage:     https://github.com/fcpg
+" Description: Dark blue base16 theme for 256-color terminals
+
 hi clear
 
-if exists('syntax on')
-    syntax reset
+if exists("syntax_on")
+  syntax reset
 endif
 
-let g:colors_name='paramount'
+let colors_name = "orbital"
 
-let s:black           = { "gui": "#000000", "cterm": "232" }
-let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
-let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
-let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
-let s:subtle_black    = { "gui": "#303030", "cterm": "236" }
-let s:light_black     = { "gui": "#262626", "cterm": "235" }
-let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
-let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
-let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
-let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
-let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
-let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
-let s:light_red       = { "gui": "#E32791", "cterm": "1"   }
-let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
-let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
-let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"   }
-let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
-let s:light_blue      = { "gui": "#b6d6fd", "cterm": "153" }
-let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
-let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
-let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
-let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
-let s:dark_purple     = { "gui": "#5f5fd7", "cterm": "134" }
-let s:light_purple    = { "gui": "#a790d5", "cterm": "140" }
-let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
-let s:light_yellow    = { "gui": "#ffff87", "cterm": "228"   }
-let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
-
-let s:background = &background
-
-if &background == "dark"
-  let s:bg              = s:black
-  let s:bg_subtle       = s:lighter_black
-  let s:bg_very_subtle  = s:subtle_black
-  let s:norm            = s:lighter_gray
-  let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:light_purple
-  let s:cyan            = s:light_cyan
-  let s:green           = s:light_green
-  let s:red             = s:light_red
-  let s:visual          = s:light_purple
-  let s:yellow          = s:light_yellow
-else
-  let s:bg              = s:actual_white
-  let s:bg_subtle       = s:light_gray
-  let s:bg_very_subtle  = s:lightest_gray
-  let s:norm            = s:light_black
-  let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:dark_purple
-  let s:cyan            = s:dark_cyan
-  let s:green           = s:dark_green
-  let s:red             = s:dark_red
-  let s:visual          = s:dark_purple
-  let s:yellow          = s:dark_yellow
+if &t_Co >= 256 || has("gui_running")
+    hi Normal ctermbg=16 ctermfg=75 cterm=NONE guibg=#f6f8fa guifg=#5fafff gui=NONE
+    set background=light
+    hi NonText ctermbg=bg ctermfg=20 cterm=NONE guibg=bg guifg=#0000d7 gui=NONE
+    hi Comment ctermbg=bg ctermfg=59 cterm=NONE guibg=bg guifg=#5f5f5f gui=NONE
+    hi Constant ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi Error ctermbg=20 ctermfg=223 cterm=NONE guibg=#0000d7 guifg=#ffd7af gui=NONE
+    hi Identifier ctermbg=bg ctermfg=246 cterm=NONE guibg=bg guifg=#949494 gui=NONE
+    hi Ignore ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi PreProc ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi Special ctermbg=bg ctermfg=180 cterm=NONE guibg=bg guifg=#d7af87 gui=NONE
+    hi Statement ctermbg=bg ctermfg=32 cterm=NONE guibg=bg guifg=#0087d7 gui=NONE
+    hi String ctermbg=235 ctermfg=110 cterm=NONE guibg=#262626 guifg=#87afd7 gui=NONE
+    hi Number ctermbg=bg ctermfg=67 cterm=NONE guibg=bg guifg=#5f87af gui=NONE
+    hi Todo ctermbg=bg ctermfg=254 cterm=bold guibg=bg guifg=#e4e4e4 gui=bold
+    hi Type ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi! link Character Constant
+    hi! link Float Number
+    hi! link Conditional Statement
+    hi! link Repeat Statement
+    hi! link Label Statement
+    hi! link Keyword Statement
+    hi! link Exception Statement
+    hi! link Include PreProc
+    hi! link Define PreProc
+    hi! link Macro PreProc
+    hi! link PreCondit PreProc
+    hi! link StorageClass Type
+    hi! link Structure Type
+    hi! link Typedef Type
+    hi! link Tag Special
+    hi! link SpecialChar Special
+    hi! link SpecialComment Special
+    hi! link Debug Special
+    hi Underlined ctermbg=235 ctermfg=137 cterm=NONE guibg=#262626 guifg=#af875f gui=NONE
+    hi StatusLine ctermbg=bg ctermfg=110 cterm=NONE guibg=bg guifg=#87afd7 gui=NONE
+    hi StatusLineNC ctermbg=bg ctermfg=235 cterm=NONE guibg=bg guifg=#262626 gui=NONE
+    hi! link StatusLineTerm StatusLine
+    hi! link StatusLineTermNC StatusLineNC
+    hi VertSplit ctermbg=bg ctermfg=235 cterm=NONE guibg=bg guifg=#262626 gui=NONE
+    hi TabLine ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi TabLineFill ctermbg=235 ctermfg=254 cterm=NONE guibg=#262626 guifg=#e4e4e4 gui=NONE
+    hi TabLineSel ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi Title ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi CursorLine ctermbg=235 ctermfg=NONE cterm=NONE guibg=#262626 guifg=NONE gui=NONE
+    hi LineNr ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi CursorLineNr ctermbg=bg ctermfg=110 cterm=NONE guibg=bg guifg=#87afd7 gui=NONE
+    hi qfLineNr ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi helpLeadBlank ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi helpNormal ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi Visual ctermbg=110 ctermfg=16 cterm=NONE guibg=#87afd7 guifg=#000000 gui=NONE
+    hi VisualNOS ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi Pmenu ctermbg=235 ctermfg=246 cterm=NONE guibg=#262626 guifg=#949494 gui=NONE
+    hi PmenuSbar ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi PmenuSel ctermbg=235 ctermfg=223 cterm=NONE guibg=#262626 guifg=#ffd7af gui=NONE
+    hi PmenuThumb ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi FoldColumn ctermbg=bg ctermfg=235 cterm=NONE guibg=bg guifg=#262626 gui=NONE
+    hi Folded ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi WildMenu ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi SpecialKey ctermbg=bg ctermfg=67 cterm=NONE guibg=bg guifg=#5f87af gui=NONE
+    hi DiffAdd ctermbg=235 ctermfg=223 cterm=NONE guibg=#262626 guifg=#ffd7af gui=NONE
+    hi DiffChange ctermbg=235 ctermfg=246 cterm=NONE guibg=#262626 guifg=#949494 gui=NONE
+    hi DiffDelete ctermbg=bg ctermfg=20 cterm=NONE guibg=bg guifg=#0000d7 gui=NONE
+    hi DiffText ctermbg=235 ctermfg=110 cterm=NONE guibg=#262626 guifg=#87afd7 gui=NONE
+    hi IncSearch ctermbg=68 ctermfg=16 cterm=NONE guibg=#5f87d7 guifg=#000000 gui=NONE
+    hi Search ctermbg=20 ctermfg=250 cterm=NONE guibg=#0000d7 guifg=#bcbcbc gui=NONE
+    hi Directory ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi MatchParen ctermbg=25 ctermfg=223 cterm=bold guibg=#005faf guifg=#ffd7af gui=bold
+    hi SpellBad ctermbg=NONE ctermfg=20 cterm=NONE guibg=NONE guifg=#0000d7 gui=NONE guisp=#0000d7
+    hi SpellCap ctermbg=NONE ctermfg=223 cterm=NONE guibg=NONE guifg=#ffd7af gui=NONE guisp=#ffd7af
+    hi SpellLocal ctermbg=NONE ctermfg=20 cterm=NONE guibg=NONE guifg=#0000d7 gui=NONE guisp=#0000d7
+    hi SpellRare ctermbg=NONE ctermfg=25 cterm=NONE guibg=NONE guifg=#005faf gui=NONE guisp=#005faf
+    hi ColorColumn ctermbg=bg ctermfg=235 cterm=NONE guibg=bg guifg=#262626 gui=NONE
+    hi signColumn ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi ErrorMsg ctermbg=20 ctermfg=254 cterm=NONE guibg=#0000d7 guifg=#e4e4e4 gui=NONE
+    hi ModeMsg ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi MoreMsg ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi Question ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi WarningMsg ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi Cursor ctermbg=68 ctermfg=16 cterm=NONE guibg=#5f87d7 guifg=#000000 gui=NONE
+    hi CursorColumn ctermbg=235 ctermfg=NONE cterm=NONE guibg=#262626 guifg=NONE gui=NONE
+    hi Function ctermbg=bg ctermfg=250 cterm=NONE guibg=bg guifg=#bcbcbc gui=NONE
+    hi Operator ctermbg=bg ctermfg=137 cterm=NONE guibg=bg guifg=#af875f gui=NONE
+    hi Delimiter ctermbg=bg ctermfg=137 cterm=NONE guibg=bg guifg=#af875f gui=NONE
+    hi Boolean ctermbg=bg ctermfg=67 cterm=NONE guibg=bg guifg=#5f87af gui=NONE
+    hi VimIsCommand ctermbg=235 ctermfg=254 cterm=NONE guibg=#262626 guifg=#e4e4e4 gui=NONE
+    hi VimFunction ctermbg=bg ctermfg=254 cterm=bold guibg=bg guifg=#e4e4e4 gui=bold
+    hi! link VimFuncKey VimCommand
+    hi! link VimSubstPat VimString
+    hi VimSubstRep4 ctermbg=235 ctermfg=25 cterm=NONE guibg=#262626 guifg=#005faf gui=NONE
+    hi VimMapLhs ctermbg=235 ctermfg=254 cterm=NONE guibg=#262626 guifg=#e4e4e4 gui=NONE
+    hi javaScriptObjectKey ctermbg=bg ctermfg=110 cterm=NONE guibg=bg guifg=#87afd7 gui=NONE
+    hi javaScriptFunctionKey ctermbg=235 ctermfg=180 cterm=NONE guibg=#262626 guifg=#d7af87 gui=NONE
+    hi htmlItalic ctermbg=bg ctermfg=110 cterm=NONE guibg=bg guifg=#87afd7 gui=NONE
+    hi markdownLinkTextDelimiter ctermbg=bg ctermfg=110 cterm=NONE guibg=bg guifg=#87afd7 gui=NONE
+    hi markdownLinkDelimiter ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi markdownUrl ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi markdownCodeBlock ctermbg=bg ctermfg=137 cterm=NONE guibg=bg guifg=#af875f gui=NONE
+    hi markdownCode ctermbg=bg ctermfg=137 cterm=NONE guibg=bg guifg=#af875f gui=NONE
+    hi helpExample ctermbg=bg ctermfg=137 cterm=NONE guibg=bg guifg=#af875f gui=NONE
+    hi manSectionHeading ctermbg=bg ctermfg=137 cterm=NONE guibg=bg guifg=#af875f gui=NONE
+    hi manOptionDesc ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi manLongOptionDesc ctermbg=bg ctermfg=110 cterm=NONE guibg=bg guifg=#87afd7 gui=NONE
+    hi CtrlPNoEntries ctermbg=bg ctermfg=20 cterm=NONE guibg=bg guifg=#0000d7 gui=NONE
+    hi CtrlPMatch ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi CtrlPLinePre ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi CtrlPPrtBase ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
+    hi CtrlPPrtText ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
+    hi CtrlPPtrCursor ctermbg=bg ctermfg=68 cterm=NONE guibg=bg guifg=#5f87d7 gui=NONE
+    hi CtrlPBufferInd ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
+    hi CtrlPBufferVis ctermbg=bg ctermfg=110 cterm=NONE guibg=bg guifg=#87afd7 gui=NONE
+    hi CtrlPBufferNr ctermbg=bg ctermfg=67 cterm=NONE guibg=bg guifg=#5f87af gui=NONE
+elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
+    set t_Co=16
+    hi Normal ctermbg=black ctermfg=blue cterm=NONE
+    set background=dark
+    hi NonText ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi Comment ctermbg=bg ctermfg=grey cterm=NONE
+    hi Constant ctermbg=bg ctermfg=white cterm=NONE
+    hi Error ctermbg=darkblue ctermfg=white cterm=NONE
+    hi Identifier ctermbg=bg ctermfg=grey cterm=NONE
+    hi Ignore ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi PreProc ctermbg=bg ctermfg=white cterm=NONE
+    hi Special ctermbg=bg ctermfg=darkyellow cterm=NONE
+    hi Statement ctermbg=bg ctermfg=blue cterm=NONE
+    hi String ctermbg=grey ctermfg=blue cterm=NONE
+    hi Number ctermbg=bg ctermfg=blue cterm=NONE
+    hi Todo ctermbg=bg ctermfg=white cterm=bold
+    hi Type ctermbg=bg ctermfg=white cterm=NONE
+    hi link Character Constant
+    hi link Float Number
+    hi link Conditional Statement
+    hi link Repeat Statement
+    hi link Label Statement
+    hi link Keyword Statement
+    hi link Exception Statement
+    hi link Include PreProc
+    hi link Define PreProc
+    hi link Macro PreProc
+    hi link PreCondit PreProc
+    hi link StorageClass Type
+    hi link Structure Type
+    hi link Typedef Type
+    hi link Tag Special
+    hi link SpecialChar Special
+    hi link SpecialComment Special
+    hi link Debug Special
+    hi Underlined ctermbg=grey ctermfg=yellow cterm=NONE
+    hi StatusLine ctermbg=bg ctermfg=blue cterm=NONE
+    hi StatusLineNC ctermbg=bg ctermfg=grey cterm=NONE
+    hi link StatusLineTerm StatusLine
+    hi link StatusLineTermNC StatusLineNC
+    hi VertSplit ctermbg=bg ctermfg=grey cterm=NONE
+    hi TabLine ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi TabLineFill ctermbg=grey ctermfg=white cterm=NONE
+    hi TabLineSel ctermbg=bg ctermfg=white cterm=NONE
+    hi Title ctermbg=bg ctermfg=white cterm=NONE
+    hi CursorLine ctermbg=grey ctermfg=NONE cterm=NONE
+    hi LineNr ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi CursorLineNr ctermbg=bg ctermfg=blue cterm=NONE
+    hi qfLineNr ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi helpLeadBlank ctermbg=bg ctermfg=white cterm=NONE
+    hi helpNormal ctermbg=bg ctermfg=white cterm=NONE
+    hi Visual ctermbg=blue ctermfg=black cterm=NONE
+    hi VisualNOS ctermbg=bg ctermfg=white cterm=NONE
+    hi Pmenu ctermbg=grey ctermfg=grey cterm=NONE
+    hi PmenuSbar ctermbg=bg ctermfg=white cterm=NONE
+    hi PmenuSel ctermbg=grey ctermfg=white cterm=NONE
+    hi PmenuThumb ctermbg=bg ctermfg=white cterm=NONE
+    hi FoldColumn ctermbg=bg ctermfg=grey cterm=NONE
+    hi Folded ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi WildMenu ctermbg=bg ctermfg=white cterm=NONE
+    hi SpecialKey ctermbg=bg ctermfg=blue cterm=NONE
+    hi DiffAdd ctermbg=grey ctermfg=white cterm=NONE
+    hi DiffChange ctermbg=grey ctermfg=grey cterm=NONE
+    hi DiffDelete ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi DiffText ctermbg=grey ctermfg=blue cterm=NONE
+    hi IncSearch ctermbg=blue ctermfg=black cterm=NONE
+    hi Search ctermbg=darkblue ctermfg=grey cterm=NONE
+    hi Directory ctermbg=bg ctermfg=white cterm=NONE
+    hi MatchParen ctermbg=darkblue ctermfg=white cterm=bold
+    hi SpellBad ctermbg=NONE ctermfg=darkblue cterm=NONE
+    hi SpellCap ctermbg=NONE ctermfg=white cterm=NONE
+    hi SpellLocal ctermbg=NONE ctermfg=darkblue cterm=NONE
+    hi SpellRare ctermbg=NONE ctermfg=darkblue cterm=NONE
+    hi ColorColumn ctermbg=bg ctermfg=grey cterm=NONE
+    hi signColumn ctermbg=bg ctermfg=white cterm=NONE
+    hi ErrorMsg ctermbg=darkblue ctermfg=white cterm=NONE
+    hi ModeMsg ctermbg=bg ctermfg=white cterm=NONE
+    hi MoreMsg ctermbg=bg ctermfg=white cterm=NONE
+    hi Question ctermbg=bg ctermfg=white cterm=NONE
+    hi WarningMsg ctermbg=bg ctermfg=white cterm=NONE
+    hi Cursor ctermbg=blue ctermfg=black cterm=NONE
+    hi CursorColumn ctermbg=grey ctermfg=NONE cterm=NONE
+    hi Function ctermbg=bg ctermfg=grey cterm=NONE
+    hi Operator ctermbg=bg ctermfg=yellow cterm=NONE
+    hi Delimiter ctermbg=bg ctermfg=yellow cterm=NONE
+    hi Boolean ctermbg=bg ctermfg=blue cterm=NONE
+    hi VimIsCommand ctermbg=grey ctermfg=white cterm=NONE
+    hi VimFunction ctermbg=bg ctermfg=white cterm=bold
+    hi link VimFuncKey VimCommand
+    hi link VimSubstPat VimString
+    hi VimSubstRep4 ctermbg=grey ctermfg=darkblue cterm=NONE
+    hi VimMapLhs ctermbg=grey ctermfg=white cterm=NONE
+    hi javaScriptObjectKey ctermbg=bg ctermfg=blue cterm=NONE
+    hi javaScriptFunctionKey ctermbg=grey ctermfg=darkyellow cterm=NONE
+    hi htmlItalic ctermbg=bg ctermfg=blue cterm=NONE
+    hi markdownLinkTextDelimiter ctermbg=bg ctermfg=blue cterm=NONE
+    hi markdownLinkDelimiter ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi markdownUrl ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi markdownCodeBlock ctermbg=bg ctermfg=yellow cterm=NONE
+    hi markdownCode ctermbg=bg ctermfg=yellow cterm=NONE
+    hi helpExample ctermbg=bg ctermfg=yellow cterm=NONE
+    hi manSectionHeading ctermbg=bg ctermfg=yellow cterm=NONE
+    hi manOptionDesc ctermbg=bg ctermfg=white cterm=NONE
+    hi manLongOptionDesc ctermbg=bg ctermfg=blue cterm=NONE
+    hi CtrlPNoEntries ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi CtrlPMatch ctermbg=bg ctermfg=white cterm=NONE
+    hi CtrlPLinePre ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi CtrlPPrtBase ctermbg=bg ctermfg=darkblue cterm=NONE
+    hi CtrlPPrtText ctermbg=bg ctermfg=white cterm=NONE
+    hi CtrlPPtrCursor ctermbg=bg ctermfg=blue cterm=NONE
+    hi CtrlPBufferInd ctermbg=bg ctermfg=white cterm=NONE
+    hi CtrlPBufferVis ctermbg=bg ctermfg=blue cterm=NONE
+    hi CtrlPBufferNr ctermbg=bg ctermfg=blue cterm=NONE
 endif
 
-" https://github.com/noahfrederick/vim-hemisu/
-function! s:h(group, style)
-  execute "highlight" a:group
-    \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
-    \ "guibg="   (has_key(a:style, "bg")    ? a:style.bg.gui   : "NONE")
-    \ "guisp="   (has_key(a:style, "sp")    ? a:style.sp.gui   : "NONE")
-    \ "gui="     (has_key(a:style, "gui")   ? a:style.gui      : "NONE")
-    \ "ctermfg=" (has_key(a:style, "fg")    ? a:style.fg.cterm : "NONE")
-    \ "ctermbg=" (has_key(a:style, "bg")    ? a:style.bg.cterm : "NONE")
-    \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
-endfunction
-
-call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
-
-" restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
-if &background != s:background
-   execute "set background=" . s:background
-endif
-
-call s:h("Cursor",        {"bg": s:purple, "fg": s:norm })
-call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
-
-call s:h("Constant",      {"fg": s:purple})
-hi! link Character        Constant
-hi! link Number           Constant
-hi! link Boolean          Constant
-hi! link Float            Constant
-hi! link String           Constant
-
-"call s:h("Identifier",    {"fg": s:dark_blue})
-hi! link Identifier       Normal
-hi! link Function         Identifier
-
-call s:h("Statement",     {"fg": s:norm_subtle})
-hi! link Conditonal       Statement
-hi! link Repeat           Statement
-hi! link Label            Statement
-hi! link Keyword          Statement
-hi! link Exception        Statement
-
-call s:h("Operator",      {"fg": s:norm, "cterm": "bold", "gui": "bold"})
-
-call s:h("PreProc",     {"fg": s:norm_subtle})
-hi! link Include          PreProc
-hi! link Define           PreProc
-hi! link Macro            PreProc
-hi! link PreCondit        PreProc
-
-call s:h("Type",          {"fg": s:norm})
-hi! link StorageClass     Type
-hi! link Structure        Type
-hi! link Typedef          Type
-
-call s:h("Special",       {"fg": s:norm_subtle, "gui": "italic"})
-hi! link SpecialChar      Special
-hi! link Tag              Special
-hi! link Delimiter        Special
-hi! link SpecialComment   Special
-hi! link Debug            Special
-
-call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
-call s:h("Ignore",        {"fg": s:bg})
-call s:h("Error",         {"fg": s:actual_white, "bg": s:red, "cterm": "bold"})
-call s:h("Todo",          {"fg": s:purple, "gui": "underline", "cterm": "underline"})
-call s:h("SpecialKey",    {"fg": s:light_green})
-call s:h("NonText",       {"fg": s:medium_gray})
-call s:h("Directory",     {"fg": s:dark_blue})
-call s:h("ErrorMsg",      {"fg": s:red})
-call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
-call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
-call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
-hi! link ModeMsg MoreMsg
-call s:h("LineNr",        {"fg": s:bg_subtle})
-call s:h("CursorLineNr",  {"fg": s:purple, "bg": s:bg_very_subtle})
-call s:h("Question",      {"fg": s:red})
-call s:h("StatusLine",    {"bg": s:bg_very_subtle})
-call s:h("StatusLineNC",  {"bg": s:bg_very_subtle, "fg": s:medium_gray})
-call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
-call s:h("Title",         {"fg": s:dark_blue})
-call s:h("Visual",        {"fg": s:norm, "bg": s:visual})
-call s:h("VisualNOS",     {"bg": s:bg_subtle})
-call s:h("WarningMsg",    {"fg": s:yellow})
-call s:h("WildMenu",      {"fg": s:bg, "bg": s:norm})
-call s:h("Folded",        {"fg": s:medium_gray})
-call s:h("FoldColumn",    {"fg": s:bg_subtle})
-call s:h("DiffAdd",       {"fg": s:green})
-call s:h("DiffDelete",    {"fg": s:red})
-call s:h("DiffChange",    {"fg": s:dark_yellow})
-call s:h("DiffText",      {"fg": s:dark_blue})
-call s:h("SignColumn",    {"fg": s:light_green})
-
-
-if has("gui_running")
-  call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
-  call s:h("SpellCap",    {"gui": "underline", "sp": s:light_green})
-  call s:h("SpellRare",   {"gui": "underline", "sp": s:pink})
-  call s:h("SpellLocal",  {"gui": "underline", "sp": s:dark_green})
-else
-  call s:h("SpellBad",    {"cterm": "underline", "fg": s:red})
-  call s:h("SpellCap",    {"cterm": "underline", "fg": s:light_green})
-  call s:h("SpellRare",   {"cterm": "underline", "fg": s:pink})
-  call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
-endif
-
-call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:purple})
-call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
-call s:h("TabLineSel",    {"fg": s:purple, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
-call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
-call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
-call s:h("CursorLine",    {"bg": s:bg_very_subtle})
-call s:h("ColorColumn",   {"bg": s:bg_subtle})
-
-call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
-call s:h("qfLineNr",      {"fg": s:medium_gray})
-
-call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH2",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH3",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
-
-" Synatastic
-call s:h("SyntasticWarningSign",    {"fg": s:yellow})
-call s:h("SyntasticWarning",        {"bg": s:yellow, "fg": s:black, "gui": "bold", "cterm": "bold"})
-call s:h("SyntasticErrorSign",      {"fg": s:red})
-call s:h("SyntasticError",          {"bg": s:red, "fg": s:white, "gui": "bold", "cterm": "bold"})
-
-" Neomake
-hi link NeomakeWarningSign	SyntasticWarningSign
-hi link NeomakeErrorSign	SyntasticErrorSign
-
-" ALE
-hi link ALEWarningSign	SyntasticWarningSign
-hi link ALEErrorSign	SyntasticErrorSign
-
-" Signify, git-gutter
-hi link SignifySignAdd              LineNr
-hi link SignifySignDelete           LineNr
-hi link SignifySignChange           LineNr
-hi link GitGutterAdd                LineNr
-hi link GitGutterDelete             LineNr
-hi link GitGutterChange             LineNr
-hi link GitGutterChangeDelete       LineNr
+" Generated with RNB (https://gist.github.com/romainl/5cd2f4ec222805f49eca)
