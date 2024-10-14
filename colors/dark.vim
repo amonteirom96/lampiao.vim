@@ -1,453 +1,224 @@
-" File:       hybrid.vim
-" Maintainer: Andrew Wong (w0ng)
-" URL:        https://github.com/w0ng/vim-hybrid
-" Modified:   27 Jan 2013 07:33 AM AEST
-" License:    MIT
-
-" Description:"{{{
-" ----------------------------------------------------------------------------
-" The default RGB colour palette is taken from Tomorrow-Night.vim:
-" https://github.com/chriskempson/vim-tomorrow-theme
+" Name:       paramount.vim
+" Version:    0.1.0
+" Maintainer: github.com/owickstrom
+" License:    The MIT License (MIT)
 "
-" The reduced RGB colour palette is taken from Codecademy's online editor:
-" https://www.codecademy.com/learn
+" A minimal colorscheme for Vim that only puts emphasis on the paramount.
 "
-" The syntax highlighting scheme is taken from jellybeans.vim:
-" https://github.com/nanotech/jellybeans.vim
+" Based on the pencil and off colorschemes:
 "
-" The is code taken from solarized.vim:
-" https://github.com/altercation/vim-colors-solarized
-
-"}}}
-" Requirements And Recommendations:"{{{
-" ----------------------------------------------------------------------------
-" Requirements
-"   - gVim 7.3+ on Linux, Mac and Windows.
-"   - Vim 7.3+ on Linux and Mac, using a terminal that supports 256 colours.
+" https://github.com/reedes/vim-colors-pencil
+" https://github.com/reedes/vim-colors-off
 "
-" Due to the limited 256 palette, colours in Vim and gVim will still be slightly
-" different.
-"
-" In order to have Vim use the same colours as gVim (the way this colour scheme
-" is intended), it is recommended that you define the basic 16 colours in your
-" terminal.
-"
-" For Linux users (rxvt-unicode, xterm):
-"
-" 1.  Add the default palette to ~/.Xresources:
-"
-"         https://gist.github.com/3278077
-"
-"     or alternatively, add the reduced contrast palette to ~/.Xresources:
-"
-"         https://gist.github.com/w0ng/16e33902508b4a0350ae
-"
-" 2.  Add to ~/.vimrc:
-"
-"         let g:hybrid_custom_term_colors = 1
-"         let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-"         colorscheme hybrid
-"
-" For OSX users (iTerm):
-"
-" 1.  Import the default colour preset into iTerm:
-"
-"         https://raw.githubusercontent.com/w0ng/dotfiles/master/iterm2/hybrid.itermcolors
-"
-"     or alternatively, import the reduced contrast color preset into iTerm:
-"
-"         https://raw.githubusercontent.com/w0ng/dotfiles/master/iterm2/hybrid-reduced-contrast.itermcolors
-"
-" 2.  Add to ~/.vimrc:
-"
-"         let g:hybrid_custom_term_colors = 1
-"         let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-"         colorscheme hybrid
-
-"}}}
-" Initialisation:"{{{
-" ----------------------------------------------------------------------------
-
+"""
 hi clear
 
-if exists("syntax_on")
-  syntax reset
+if exists('syntax on')
+    syntax reset
 endif
 
-let s:style = &background
+let g:colors_name='paramount'
 
-let g:colors_name = "hybrid"
+let s:black           = { "gui": "#000000", "cterm": "232" }
+let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
+let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
+let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
+let s:subtle_black    = { "gui": "#303030", "cterm": "236" }
+let s:light_black     = { "gui": "#262626", "cterm": "235" }
+let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
+let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
+let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
+let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
+let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
+let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
+let s:light_red       = { "gui": "#E32791", "cterm": "1"   }
+let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
+let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
+let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"   }
+let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
+let s:light_blue      = { "gui": "#b6d6fd", "cterm": "153" }
+let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
+let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
+let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
+let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
+let s:dark_purple     = { "gui": "#af5fd7", "cterm": "134" }
+let s:light_purple    = { "gui": "#a790d5", "cterm": "140" }
+let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
+let s:light_yellow    = { "gui": "#ffff87", "cterm": "228"   }
+let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
-"}}}
-" GUI And Cterm Palettes:"{{{
-" ----------------------------------------------------------------------------
+let s:background = &background
 
-let s:palette = {'gui' : {} , 'cterm' : {}}
-
-if exists("g:hybrid_reduced_contrast") && g:hybrid_reduced_contrast == 1
-  let s:gui_background = "#232c31"
-  let s:gui_selection  = "#425059"
-  let s:gui_line       = "#2d3c46"
-  let s:gui_comment    = "#6c7a80"
+if &background == "dark"
+  let s:bg              = s:black
+  let s:bg_subtle       = s:lighter_black
+  let s:bg_very_subtle  = s:subtle_black
+  let s:norm            = s:lighter_gray
+  let s:norm_subtle     = s:medium_gray
+  let s:purple          = s:light_purple
+  let s:cyan            = s:light_cyan
+  let s:green           = s:light_green
+  let s:red             = s:light_red
+  let s:visual          = s:light_purple
+  let s:yellow          = s:light_yellow
 else
-  let s:gui_background = "#1d1f21"
-  let s:gui_selection  = "#373b41"
-  let s:gui_line       = "#282a2e"
-  let s:gui_comment    = "#707880"
+  let s:bg              = s:actual_white
+  let s:bg_subtle       = s:light_gray
+  let s:bg_very_subtle  = s:lightest_gray
+  let s:norm            = s:light_black
+  let s:norm_subtle     = s:medium_gray
+  let s:purple          = s:dark_purple
+  let s:cyan            = s:dark_cyan
+  let s:green           = s:dark_green
+  let s:red             = s:dark_red
+  let s:visual          = s:dark_purple
+  let s:yellow          = s:dark_yellow
 endif
 
-let s:palette.gui.background = { 'dark' : s:gui_background , 'light' : "#e4e4e4" }
-let s:palette.gui.foreground = { 'dark' : "#c5c8c6"        , 'light' : "#000000" }
-let s:palette.gui.selection  = { 'dark' : s:gui_selection  , 'light' : "#bcbcbc" }
-let s:palette.gui.line       = { 'dark' : s:gui_line       , 'light' : "#d0d0d0" }
-let s:palette.gui.comment    = { 'dark' : s:gui_comment    , 'light' : "#5f5f5f" }
-let s:palette.gui.red        = { 'dark' : "#cc6666"        , 'light' : "#5f0000" }
-let s:palette.gui.orange     = { 'dark' : "#de935f"        , 'light' : "#875f00" }
-let s:palette.gui.yellow     = { 'dark' : "#f0c674"        , 'light' : "#5f5f00" }
-let s:palette.gui.green      = { 'dark' : "#b5bd68"        , 'light' : "#005f00" }
-let s:palette.gui.aqua       = { 'dark' : "#8abeb7"        , 'light' : "#005f5f" }
-let s:palette.gui.blue       = { 'dark' : "#81a2be"        , 'light' : "#00005f" }
-let s:palette.gui.purple     = { 'dark' : "#b294bb"        , 'light' : "#5f005f" }
-let s:palette.gui.window     = { 'dark' : "#303030"        , 'light' : "#9e9e9e" }
-let s:palette.gui.darkcolumn = { 'dark' : "#1c1c1c"        , 'light' : "#808080" }
-let s:palette.gui.addbg      = { 'dark' : "#5F875F"        , 'light' : "#d7ffd7" }
-let s:palette.gui.addfg      = { 'dark' : "#d7ffaf"        , 'light' : "#005f00" }
-let s:palette.gui.changebg   = { 'dark' : "#5F5F87"        , 'light' : "#d7d7ff" }
-let s:palette.gui.changefg   = { 'dark' : "#d7d7ff"        , 'light' : "#5f005f" }
-let s:palette.gui.delbg      = { 'dark' : "#cc6666"        , 'light' : "#ffd7d7" }
-let s:palette.gui.darkblue   = { 'dark' : "#00005f"        , 'light' : "#d7ffd7" }
-let s:palette.gui.darkcyan   = { 'dark' : "#005f5f"        , 'light' : "#005f00" }
-let s:palette.gui.darkred    = { 'dark' : "#5f0000"        , 'light' : "#d7d7ff" }
-let s:palette.gui.darkpurple = { 'dark' : "#5f005f"        , 'light' : "#5f005f" }
-
-if exists("g:hybrid_custom_term_colors") && g:hybrid_custom_term_colors == 1
-  let s:cterm_foreground = "15"  " White
-  let s:cterm_selection  = "8"   " DarkGrey
-  let s:cterm_line       = "0"   " Black
-  let s:cterm_comment    = "7"   " LightGrey
-  let s:cterm_red        = "9"   " LightRed
-  let s:cterm_orange     = "3"   " DarkYellow
-  let s:cterm_yellow     = "11"  " LightYellow
-  let s:cterm_green      = "10"  " LightGreen
-  let s:cterm_aqua       = "14"  " LightCyan
-  let s:cterm_blue       = "12"  " LightBlue
-  let s:cterm_purple     = "13"  " LightMagenta
-  let s:cterm_delbg      = "9"   " LightRed
-else
-  let s:cterm_foreground = "250"
-  let s:cterm_selection  = "237"
-  let s:cterm_line       = "235"
-  let s:cterm_comment    = "243"
-  let s:cterm_red        = "167"
-  let s:cterm_orange     = "173"
-  let s:cterm_yellow     = "221"
-  let s:cterm_green      = "143"
-  let s:cterm_aqua       = "109"
-  let s:cterm_blue       = "110"
-  let s:cterm_purple     = "139"
-  let s:cterm_delbg      = "167"
-endif
-
-let s:palette.cterm.background = { 'dark' : "234"              , 'light' : "254" }
-let s:palette.cterm.foreground = { 'dark' : s:cterm_foreground , 'light' : "16"  }
-let s:palette.cterm.window     = { 'dark' : "236"              , 'light' : "247" }
-let s:palette.cterm.selection  = { 'dark' : s:cterm_selection  , 'light' : "250" }
-let s:palette.cterm.line       = { 'dark' : s:cterm_line       , 'light' : "252" }
-let s:palette.cterm.comment    = { 'dark' : s:cterm_comment    , 'light' : "59"  }
-let s:palette.cterm.red        = { 'dark' : s:cterm_red        , 'light' : "52"  }
-let s:palette.cterm.orange     = { 'dark' : s:cterm_orange     , 'light' : "94"  }
-let s:palette.cterm.yellow     = { 'dark' : s:cterm_yellow     , 'light' : "58"  }
-let s:palette.cterm.green      = { 'dark' : s:cterm_green      , 'light' : "22"  }
-let s:palette.cterm.aqua       = { 'dark' : s:cterm_aqua       , 'light' : "23"  }
-let s:palette.cterm.blue       = { 'dark' : s:cterm_blue       , 'light' : "17"  }
-let s:palette.cterm.purple     = { 'dark' : s:cterm_purple     , 'light' : "53"  }
-let s:palette.cterm.darkcolumn = { 'dark' : "234"              , 'light' : "244" }
-let s:palette.cterm.addbg      = { 'dark' : "65"               , 'light' : "194" }
-let s:palette.cterm.addfg      = { 'dark' : "193"              , 'light' : "22"  }
-let s:palette.cterm.changebg   = { 'dark' : "60"               , 'light' : "189" }
-let s:palette.cterm.changefg   = { 'dark' : "189"              , 'light' : "53"  }
-let s:palette.cterm.delbg      = { 'dark' : s:cterm_delbg      , 'light' : "224" }
-let s:palette.cterm.darkblue   = { 'dark' : "17"               , 'light' : "194" }
-let s:palette.cterm.darkcyan   = { 'dark' : "24"               , 'light' : "22"  }
-let s:palette.cterm.darkred    = { 'dark' : "52"               , 'light' : "189" }
-let s:palette.cterm.darkpurple = { 'dark' : "53"               , 'light' : "53"  }
-
-"}}}
-" Formatting Options:"{{{
-" ----------------------------------------------------------------------------
-let s:none   = "NONE"
-let s:t_none = "NONE"
-let s:n      = "NONE"
-let s:c      = ",undercurl"
-let s:r      = ",reverse"
-let s:s      = ",standout"
-let s:b      = ",bold"
-let s:u      = ",underline"
-let s:i      = ",italic"
-
-"}}}
-" Highlighting Primitives:"{{{
-" ----------------------------------------------------------------------------
-function! s:build_prim(hi_elem, field)
-  " Given a:hi_elem = bg, a:field = comment
-  let l:vname = "s:" . a:hi_elem . "_" . a:field " s:bg_comment
-  let l:gui_assign = "gui".a:hi_elem."=".s:palette.gui[a:field][s:style] " guibg=...
-  let l:cterm_assign = "cterm".a:hi_elem."=".s:palette.cterm[a:field][s:style] " ctermbg=...
-  exe "let " . l:vname . " = ' " . l:gui_assign . " " . l:cterm_assign . "'"
+" https://github.com/noahfrederick/vim-hemisu/
+function! s:h(group, style)
+  execute "highlight" a:group
+    \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
+    \ "guibg="   (has_key(a:style, "bg")    ? a:style.bg.gui   : "NONE")
+    \ "guisp="   (has_key(a:style, "sp")    ? a:style.sp.gui   : "NONE")
+    \ "gui="     (has_key(a:style, "gui")   ? a:style.gui      : "NONE")
+    \ "ctermfg=" (has_key(a:style, "fg")    ? a:style.fg.cterm : "NONE")
+    \ "ctermbg=" (has_key(a:style, "bg")    ? a:style.bg.cterm : "NONE")
+    \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-let s:bg_none = ' guibg=NONE ctermbg=NONE'
-call s:build_prim('bg', 'foreground')
-call s:build_prim('bg', 'background')
-call s:build_prim('bg', 'selection')
-call s:build_prim('bg', 'line')
-call s:build_prim('bg', 'comment')
-call s:build_prim('bg', 'red')
-call s:build_prim('bg', 'orange')
-call s:build_prim('bg', 'yellow')
-call s:build_prim('bg', 'green')
-call s:build_prim('bg', 'aqua')
-call s:build_prim('bg', 'blue')
-call s:build_prim('bg', 'purple')
-call s:build_prim('bg', 'window')
-call s:build_prim('bg', 'darkcolumn')
-call s:build_prim('bg', 'addbg')
-call s:build_prim('bg', 'addfg')
-call s:build_prim('bg', 'changebg')
-call s:build_prim('bg', 'changefg')
-call s:build_prim('bg', 'delbg')
-call s:build_prim('bg', 'darkblue')
-call s:build_prim('bg', 'darkcyan')
-call s:build_prim('bg', 'darkred')
-call s:build_prim('bg', 'darkpurple')
+call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
 
-let s:fg_none = ' guifg=NONE ctermfg=NONE'
-call s:build_prim('fg', 'foreground')
-call s:build_prim('fg', 'background')
-call s:build_prim('fg', 'selection')
-call s:build_prim('fg', 'line')
-call s:build_prim('fg', 'comment')
-call s:build_prim('fg', 'red')
-call s:build_prim('fg', 'orange')
-call s:build_prim('fg', 'yellow')
-call s:build_prim('fg', 'green')
-call s:build_prim('fg', 'aqua')
-call s:build_prim('fg', 'blue')
-call s:build_prim('fg', 'purple')
-call s:build_prim('fg', 'window')
-call s:build_prim('fg', 'darkcolumn')
-call s:build_prim('fg', 'addbg')
-call s:build_prim('fg', 'addfg')
-call s:build_prim('fg', 'changebg')
-call s:build_prim('fg', 'changefg')
-call s:build_prim('fg', 'darkblue')
-call s:build_prim('fg', 'darkcyan')
-call s:build_prim('fg', 'darkred')
-call s:build_prim('fg', 'darkpurple')
-
-exe "let s:fmt_none = ' gui=NONE".          " cterm=NONE".          " term=NONE"        ."'"
-exe "let s:fmt_bold = ' gui=NONE".s:b.      " cterm=NONE".s:b.      " term=NONE".s:b    ."'"
-exe "let s:fmt_bldi = ' gui=NONE".s:b.      " cterm=NONE".s:b.      " term=NONE".s:b    ."'"
-exe "let s:fmt_undr = ' gui=NONE".s:u.      " cterm=NONE".s:u.      " term=NONE".s:u    ."'"
-exe "let s:fmt_undb = ' gui=NONE".s:u.s:b.  " cterm=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
-exe "let s:fmt_undi = ' gui=NONE".s:u.      " cterm=NONE".s:u.      " term=NONE".s:u    ."'"
-exe "let s:fmt_curl = ' gui=NONE".s:c.      " cterm=NONE".s:c.      " term=NONE".s:c    ."'"
-exe "let s:fmt_ital = ' gui=NONE".s:i.      " cterm=NONE".s:i.      " term=NONE".s:i    ."'"
-exe "let s:fmt_stnd = ' gui=NONE".s:s.      " cterm=NONE".s:s.      " term=NONE".s:s    ."'"
-exe "let s:fmt_revr = ' gui=NONE".s:r.      " cterm=NONE".s:r.      " term=NONE".s:r    ."'"
-exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
-
-exe "let s:sp_none       = ' guisp=". s:none                            ."'"
-exe "let s:sp_foreground = ' guisp=". s:palette.gui.foreground[s:style] ."'"
-exe "let s:sp_background = ' guisp=". s:palette.gui.background[s:style] ."'"
-exe "let s:sp_selection  = ' guisp=". s:palette.gui.selection[s:style]  ."'"
-exe "let s:sp_line       = ' guisp=". s:palette.gui.line[s:style]       ."'"
-exe "let s:sp_comment    = ' guisp=". s:palette.gui.comment[s:style]    ."'"
-exe "let s:sp_red        = ' guisp=". s:palette.gui.red[s:style]        ."'"
-exe "let s:sp_orange     = ' guisp=". s:palette.gui.orange[s:style]     ."'"
-exe "let s:sp_yellow     = ' guisp=". s:palette.gui.yellow[s:style]     ."'"
-exe "let s:sp_green      = ' guisp=". s:palette.gui.green[s:style]      ."'"
-exe "let s:sp_aqua       = ' guisp=". s:palette.gui.aqua[s:style]       ."'"
-exe "let s:sp_blue       = ' guisp=". s:palette.gui.blue[s:style]       ."'"
-exe "let s:sp_purple     = ' guisp=". s:palette.gui.purple[s:style]     ."'"
-exe "let s:sp_window     = ' guisp=". s:palette.gui.window[s:style]     ."'"
-exe "let s:sp_addbg      = ' guisp=". s:palette.gui.addbg[s:style]      ."'"
-exe "let s:sp_addfg      = ' guisp=". s:palette.gui.addfg[s:style]      ."'"
-exe "let s:sp_changebg   = ' guisp=". s:palette.gui.changebg[s:style]   ."'"
-exe "let s:sp_changefg   = ' guisp=". s:palette.gui.changefg[s:style]   ."'"
-exe "let s:sp_darkblue   = ' guisp=". s:palette.gui.darkblue[s:style]   ."'"
-exe "let s:sp_darkcyan   = ' guisp=". s:palette.gui.darkcyan[s:style]   ."'"
-exe "let s:sp_darkred    = ' guisp=". s:palette.gui.darkred[s:style]    ."'"
-exe "let s:sp_darkpurple = ' guisp=". s:palette.gui.darkpurple[s:style] ."'"
-
-"}}}
-" Vim Highlighting: (see :help highlight-groups)"{{{
-" ----------------------------------------------------------------------------
-exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
-"   Conceal"
-"   Cursor"
-"   CursorIM"
-exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! Directory"     .s:fg_blue        .s:bg_none        .s:fmt_none
-exe "hi! DiffAdd"       .s:fg_addfg       .s:bg_addbg       .s:fmt_none
-exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
-exe "hi! DiffDelete"    .s:fg_background  .s:bg_delbg       .s:fmt_none
-exe "hi! DiffText"      .s:fg_background  .s:bg_blue        .s:fmt_none
-exe "hi! ErrorMsg"      .s:fg_background  .s:bg_red         .s:fmt_stnd
-exe "hi! VertSplit"     .s:fg_window      .s:bg_none        .s:fmt_none
-exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
-exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-"   Incsearch"
-exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! MatchParen"    .s:fg_background  .s:bg_changebg    .s:fmt_none
-exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! MoreMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! NonText"       .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! Pmenu"         .s:fg_foreground  .s:bg_selection   .s:fmt_none
-exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
-"   PmenuSbar"
-"   PmenuThumb"
-exe "hi! Question"      .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
-exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! SpellCap"      .s:fg_blue        .s:bg_darkblue    .s:fmt_undr
-exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_darkcyan    .s:fmt_undr
-exe "hi! SpellBad"      .s:fg_red         .s:bg_darkred     .s:fmt_undr
-exe "hi! SpellRare"     .s:fg_purple      .s:bg_darkpurple  .s:fmt_undr
-exe "hi! StatusLine"    .s:fg_comment     .s:bg_background  .s:fmt_revr
-exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
-exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
-"   TabLineFill"
-"   TabLineSel"
-exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
-"   VisualNos"
-exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
-" FIXME LongLineWarning to use variables instead of hardcoding
-hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NONE        ctermbg=NONE        cterm=underline
-"   WildMenu"
-
-" Use defined custom background colour for terminal Vim.
-if !has('gui_running') && exists("g:hybrid_custom_term_colors") && g:hybrid_custom_term_colors == 1
-  let s:bg_normal = s:bg_none
-else
-  let s:bg_normal = s:bg_background
+" restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
+if &background != s:background
+   execute "set background=" . s:background
 endif
-exe "hi! Normal"        .s:fg_foreground  .s:bg_normal      .s:fmt_none
 
-"}}}
-" Generic Syntax Highlighting: (see :help group-name)"{{{
-" ----------------------------------------------------------------------------
-exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
+call s:h("Cursor",        {"bg": s:purple, "fg": s:norm })
+call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
 
-exe "hi! Constant"        .s:fg_red         .s:bg_none        .s:fmt_none
-exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
-"   Character"
-"   Number"
-"   Boolean"
-"   Float"
+call s:h("Constant",      {"fg": s:purple})
+hi! link Character        Constant
+hi! link Number           Constant
+hi! link Boolean          Constant
+hi! link Float            Constant
+hi! link String           Constant
 
-exe "hi! Identifier"      .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_yellow      .s:bg_none        .s:fmt_none
+"call s:h("Identifier",    {"fg": s:dark_blue})
+hi! link Identifier       Normal
+hi! link Function         Identifier
 
-exe "hi! Statement"       .s:fg_blue        .s:bg_none        .s:fmt_none
-"   Conditional"
-"   Repeat"
-"   Label"
-exe "hi! Operator"        .s:fg_aqua        .s:bg_none        .s:fmt_none
-"   Keyword"
-"   Exception"
+call s:h("Statement",     {"fg": s:norm_subtle})
+hi! link Conditonal       Statement
+hi! link Repeat           Statement
+hi! link Label            Statement
+hi! link Keyword          Statement
+hi! link Exception        Statement
 
-exe "hi! PreProc"         .s:fg_aqua        .s:bg_none        .s:fmt_none
-"   Include"
-"   Define"
-"   Macro"
-"   PreCondit"
+call s:h("Operator",      {"fg": s:norm, "cterm": "bold", "gui": "bold"})
 
-exe "hi! Type"            .s:fg_orange      .s:bg_none        .s:fmt_none
-"   StorageClass"
-exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
-"   Typedef"
+call s:h("PreProc",     {"fg": s:norm_subtle})
+hi! link Include          PreProc
+hi! link Define           PreProc
+hi! link Macro            PreProc
+hi! link PreCondit        PreProc
 
-exe "hi! Special"         .s:fg_green       .s:bg_none        .s:fmt_none
-"   SpecialChar"
-"   Tag"
-"   Delimiter"
-"   SpecialComment"
-"   Debug"
-"
-exe "hi! Underlined"      .s:fg_blue        .s:bg_none        .s:fmt_none
+call s:h("Type",          {"fg": s:norm})
+hi! link StorageClass     Type
+hi! link Structure        Type
+hi! link Typedef          Type
 
-exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
+call s:h("Special",       {"fg": s:norm_subtle, "gui": "italic"})
+hi! link SpecialChar      Special
+hi! link Tag              Special
+hi! link Delimiter        Special
+hi! link SpecialComment   Special
+hi! link Debug            Special
 
-exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
+call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
+call s:h("Ignore",        {"fg": s:bg})
+call s:h("Error",         {"fg": s:actual_white, "bg": s:red, "cterm": "bold"})
+call s:h("Todo",          {"fg": s:purple, "gui": "underline", "cterm": "underline"})
+call s:h("SpecialKey",    {"fg": s:light_green})
+call s:h("NonText",       {"fg": s:medium_gray})
+call s:h("Directory",     {"fg": s:dark_blue})
+call s:h("ErrorMsg",      {"fg": s:red})
+call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
+call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
+call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
+hi! link ModeMsg MoreMsg
+call s:h("LineNr",        {"fg": s:bg_subtle})
+call s:h("CursorLineNr",  {"fg": s:purple, "bg": s:bg_very_subtle})
+call s:h("Question",      {"fg": s:red})
+call s:h("StatusLine",    {"bg": s:bg_very_subtle})
+call s:h("StatusLineNC",  {"bg": s:bg_very_subtle, "fg": s:medium_gray})
+call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
+call s:h("Title",         {"fg": s:dark_blue})
+call s:h("Visual",        {"fg": s:norm, "bg": s:visual})
+call s:h("VisualNOS",     {"bg": s:bg_subtle})
+call s:h("WarningMsg",    {"fg": s:yellow})
+call s:h("WildMenu",      {"fg": s:bg, "bg": s:norm})
+call s:h("Folded",        {"fg": s:medium_gray})
+call s:h("FoldColumn",    {"fg": s:bg_subtle})
+call s:h("DiffAdd",       {"fg": s:green})
+call s:h("DiffDelete",    {"fg": s:red})
+call s:h("DiffChange",    {"fg": s:dark_yellow})
+call s:h("DiffText",      {"fg": s:dark_blue})
+call s:h("SignColumn",    {"fg": s:light_green})
 
-exe "hi! Todo"            .s:fg_addfg       .s:bg_none        .s:fmt_none
 
-" Quickfix window highlighting
-exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
-"   qfFileName"
-"   qfLineNr"
-"   qfError"
+if has("gui_running")
+  call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
+  call s:h("SpellCap",    {"gui": "underline", "sp": s:light_green})
+  call s:h("SpellRare",   {"gui": "underline", "sp": s:pink})
+  call s:h("SpellLocal",  {"gui": "underline", "sp": s:dark_green})
+else
+  call s:h("SpellBad",    {"cterm": "underline", "fg": s:red})
+  call s:h("SpellCap",    {"cterm": "underline", "fg": s:light_green})
+  call s:h("SpellRare",   {"cterm": "underline", "fg": s:pink})
+  call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
+endif
 
-"}}}
-" Diff Syntax Highlighting:"{{{
-" ----------------------------------------------------------------------------
-" Diff
-"   diffOldFile
-"   diffNewFile
-"   diffFile
-"   diffOnly
-"   diffIdentical
-"   diffDiffer
-"   diffBDiffer
-"   diffIsA
-"   diffNoEOL
-"   diffCommon
-hi! link diffRemoved Constant
-"   diffChanged
-hi! link diffAdded Special
-"   diffLine
-"   diffSubname
-"   diffComment
+call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_subtle})
+call s:h("PmenuSel",      {"fg": s:norm, "bg": s:purple})
+call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
+call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
+call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
+call s:h("TabLineSel",    {"fg": s:purple, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
+call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
+call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
+call s:h("CursorLine",    {"bg": s:bg_very_subtle})
+call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
-"}}}
-"
-" This is needed for some reason: {{{
+call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
+call s:h("qfLineNr",      {"fg": s:medium_gray})
 
-let &background = s:style
+call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH2",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH3",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 
-" }}}
-" Legal:"{{{
-" ----------------------------------------------------------------------------
-" Copyright (c) 2011 Ethan Schoonover
-" Copyright (c) 2009-2012 NanoTech
-" Copyright (c) 2012 w0ng
-"
-" Permission is hereby granted, free of charge, to any per‐
-" son obtaining a copy of this software and associated doc‐
-" umentation files (the “Software”), to deal in the Soft‐
-" ware without restriction, including without limitation
-" the rights to use, copy, modify, merge, publish, distrib‐
-" ute, sublicense, and/or sell copies of the Software, and
-" to permit persons to whom the Software is furnished to do
-" so, subject to the following conditions:
-"
-" The above copyright notice and this permission notice
-" shall be included in all copies or substantial portions
-" of the Software.
-"
-" THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY
-" KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-" THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICU‐
-" LAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-" DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CON‐
-" TRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON‐
-" NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-" THE SOFTWARE.
+" Synatastic
+call s:h("SyntasticWarningSign",    {"fg": s:yellow})
+call s:h("SyntasticWarning",        {"bg": s:yellow, "fg": s:black, "gui": "bold", "cterm": "bold"})
+call s:h("SyntasticErrorSign",      {"fg": s:red})
+call s:h("SyntasticError",          {"bg": s:red, "fg": s:white, "gui": "bold", "cterm": "bold"})
 
-" }}}
+" Neomake
+hi link NeomakeWarningSign	SyntasticWarningSign
+hi link NeomakeErrorSign	SyntasticErrorSign
+
+" ALE
+hi link ALEWarningSign	SyntasticWarningSign
+hi link ALEErrorSign	SyntasticErrorSign
+
+" Signify, git-gutter
+hi link SignifySignAdd              LineNr
+hi link SignifySignDelete           LineNr
+hi link SignifySignChange           LineNr
+hi link GitGutterAdd                LineNr
+hi link GitGutterDelete             LineNr
+hi link GitGutterChange             LineNr
+hi link GitGutterChangeDelete       LineNr
