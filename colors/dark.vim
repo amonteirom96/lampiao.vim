@@ -1,398 +1,383 @@
-"AUTHOR: Alessandro Yorba
-"SCRIPT: https://github.com/AlessandroYorba/Sierra
+" 
 "
-"UPDATED: Fri Aug 12, 2022
-"CHANGES: Organized colors in groups, revised terminal_ansi_colors
+" ███████╗██████╗  █████╗  ██████╗███████╗ ██████╗ █████╗ ███╗   ███╗██████╗
+" ██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝██╔══██╗████╗ ████║██╔══██╗
+" ███████╗██████╔╝███████║██║     █████╗  ██║     ███████║██╔████╔██║██████╔╝
+" ╚════██║██╔═══╝ ██╔══██║██║     ██╔══╝  ██║     ██╔══██║██║╚██╔╝██║██╔═══╝
+" ███████║██║     ██║  ██║╚██████╗███████╗╚██████╗██║  ██║██║ ╚═╝ ██║██║
+" ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝
 "
-"SUPPORT:
-" 256 color terminals, Gui versions of vim, and Termguicolors versions of vim
+"                 Vim colors for the final frontier
 "
-"INSTALL LOCATION:
-"Unix users, place sierra.vim in ~/.vim/colors
-"Windows users, place sierra.vim in ~\vimfiles\colors
+" by Jared Gorski
+" https://github.com/jaredgorski/spacecamp
 
-"From your .vimrc add one of the following options
-" colorscheme sierra
-"
+scriptencoding utf-8
+
 set background=dark
+hi clear
 
-highlight clear
 if exists("syntax_on")
-	syntax reset
+  syntax reset
 endif
 
-let g:colors_name="sierra"
+let g:colors_name="spacecamp"
 
-"DARKER GREY BACKGROUND
-if !exists("g:sierra_Sunset")
-	let g:sierra_Sunset = 0
+" ==========================
+" Highlighting Function
+" ==========================
+"  >> (inspired by https://github.com/tomasiser/vim-code-dark and https://github.com/chriskempson/base16-vim)
+fun! <sid>hi(group, fg, bg, attr)
+  if !empty(a:fg)
+    exec "hi " . a:group . " guifg=" . a:fg.gui . " ctermfg=" .  a:fg.cterm256
+  endif
+  if !empty(a:bg)
+    exec "hi " . a:group . " guibg=" . a:bg.gui . " ctermbg=" .  a:bg.cterm256
+  endif
+  if a:attr != ""
+    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+  endif
+endfun
+
+" ==========================
+" Color Variables
+" ==========================
+let s:spaceBlack = {'gui': '#121212', 'cterm256': '233'}
+let s:spaceBlack2 = {'gui': '#262626', 'cterm256': '235'}
+let s:spaceGray1 = {'gui': '#3E3D32', 'cterm256': '237'}
+let s:spaceGray2 = {'gui': '#49483E', 'cterm256': '239'}
+let s:spaceGray3 = {'gui': '#6B6B6B', 'cterm256': '242'}
+let s:spaceGray4 = {'gui': '#B0B0B0', 'cterm256': '249'}
+let s:spaceSteel = {'gui': '#DEDEDE', 'cterm256': '253'}
+let s:spaceWhite = {'gui': '#EEEEEE', 'cterm256': '255'}
+let s:spaceViolet = {'gui': '#CF73E6', 'cterm256': '170'}
+let s:spaceBlue = {'gui': '#91AADF', 'cterm256': '110'}
+let s:spaceBlue2 = {'gui': '#B7CBF4', 'cterm256': '111'}
+let s:spaceGreen = {'gui': '#57BA37', 'cterm256': '71'}
+let s:spaceGoo = {'gui': '#D8FA3B', 'cterm256': '191'}
+let s:spaceGold = {'gui': '#F0D50C', 'cterm256': '220'}
+let s:spaceOrange = {'gui': '#F66100', 'cterm256': '202'}
+let s:spaceRed = {'gui': '#821A1A', 'cterm256': '1'}
+let s:spaceRed2 = {'gui': '#FF0000', 'cterm256': '196'}
+let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
+
+" ==========================
+" Definitions
+" ==========================
+"    <sid>hi(GROUP, FOREGROUND, BACKGROUND, ATTRIBUTE)
+
+" Editor
+call <sid>hi('ColorColumn', s:none, s:spaceGray1, 'none')
+call <sid>hi('Cursor', s:spaceBlack, s:spaceSteel, 'none')
+call <sid>hi('CursorColumn', s:none, s:spaceGray1, 'none')
+call <sid>hi('CursorLine', s:none, s:spaceGray1, 'none')
+call <sid>hi('CursorLineNr', s:spaceSteel, s:spaceGray1, 'none')
+call <sid>hi('Directory', s:spaceBlue, s:spaceBlack, 'none')
+call <sid>hi('FoldColumn', s:none, s:spaceGray1, 'none')
+call <sid>hi('Folded', s:spaceGray3, s:none, 'none')
+call <sid>hi('IncSearch', s:spaceBlack, s:spaceBlue2, 'none')
+call <sid>hi('LineNr', s:spaceGray3, s:spaceBlack2, 'none')
+call <sid>hi('MatchParen', s:spaceWhite, s:spaceGray1, 'none')
+call <sid>hi('Normal', s:spaceWhite, s:spaceBlack, 'none')
+call <sid>hi('Pmenu', s:none, s:spaceBlack2, 'none')
+call <sid>hi('PmenuSel', s:none, s:spaceGray2, 'none')
+call <sid>hi('Search', s:spaceBlack, s:spaceBlue, 'none')
+call <sid>hi('SignColumn', s:none, s:spaceBlack2, 'none')
+call <sid>hi('StatusLine', s:spaceBlack, s:spaceSteel, 'none')
+call <sid>hi('StatusLineNC', s:spaceGray3, s:spaceBlack2, 'none')
+call <sid>hi('VertSplit', s:spaceGray3, s:spaceGray3, 'none')
+call <sid>hi('Visual', s:none, s:spaceGray2, 'none')
+call <sid>hi('TabLine', s:spaceSteel, s:spaceGray2, 'none')
+call <sid>hi('TabLineFill', s:spaceBlack, s:spaceBlack, 'none')
+
+" General
+call <sid>hi('Boolean', s:spaceGoo, s:none, 'none')
+call <sid>hi('Character', s:spaceGoo, s:none, 'none')
+call <sid>hi('Comment', s:spaceGray3, s:none, 'none')
+call <sid>hi('Conditional', s:spaceViolet, s:none, 'none')
+call <sid>hi('Constant', s:spaceOrange, s:none, 'none')
+call <sid>hi('Define', s:spaceViolet, s:none, 'none')
+call <sid>hi('DiffAdd', s:spaceBlack, s:spaceGreen, 'none')
+call <sid>hi('DiffChange', s:spaceBlack, s:spaceGold, 'none')
+call <sid>hi('DiffDelete', s:spaceWhite, s:spaceRed, 'none')
+call <sid>hi('DiffText', s:spaceGray1, s:spaceBlue, 'none')
+call <sid>hi('ErrorMsg', s:spaceWhite, s:spaceRed, 'none')
+call <sid>hi('Float', s:spaceGoo, s:none, 'none')
+call <sid>hi('Function', s:spaceBlue, s:none, 'none')
+call <sid>hi('Identifier', s:spaceGold, s:none, 'none')
+call <sid>hi('Keyword', s:spaceGold, s:none, 'none')
+call <sid>hi('Label', s:spaceGreen, s:none, 'none')
+call <sid>hi('NonText', s:spaceGray1, s:spaceBlack, 'none')
+call <sid>hi('Number', s:spaceGoo, s:none, 'none')
+call <sid>hi('Operator', s:spaceViolet, s:none, 'none')
+call <sid>hi('PreProc', s:spaceViolet, s:none, 'none')
+call <sid>hi('Special', s:spaceWhite, s:none, 'none')
+call <sid>hi('SpecialKey', s:spaceGray1, s:spaceBlack, 'none')
+call <sid>hi('SpellBad', s:spaceRed2, s:none, 'italic,undercurl')
+call <sid>hi('SpellCap', s:spaceBlue, s:none, 'italic,undercurl')
+call <sid>hi('SpellLocal', s:spaceOrange, s:none, 'undercurl')
+call <sid>hi('Statement', s:spaceViolet, s:none, 'none')
+call <sid>hi('StorageClass', s:spaceGold, s:none, 'none')
+call <sid>hi('String', s:spaceGreen, s:none, 'none')
+call <sid>hi('Tag', s:spaceGold, s:none, 'none')
+call <sid>hi('Title', s:none, s:none, 'bold')
+call <sid>hi('Todo', s:spaceGray3, s:none, 'inverse,bold')
+call <sid>hi('Type', s:none, s:none, 'none')
+call <sid>hi('Underlined', s:none, s:none, 'underline')
+call <sid>hi('WarningMsg', s:spaceWhite, s:spaceRed, 'none')
+
+" Diff Mode
+if &diff
+  call <sid>hi('DiffAdd', s:spaceBlack, s:spaceGreen, 'none')
+  call <sid>hi('DiffChange', s:spaceBlack, s:spaceGold, 'none')
+  call <sid>hi('DiffDelete', s:spaceRed2, s:spaceRed, 'none')
+  call <sid>hi('DiffText', s:spaceGray1, s:spaceBlue, 'none')
+else
+  call <sid>hi('DiffAdd', s:spaceGreen, s:none, 'none')
+  call <sid>hi('DiffChange', s:spaceGold, s:none, 'none')
+  call <sid>hi('DiffDelete', s:spaceRed2, s:none, 'none')
+  call <sid>hi('DiffText', s:spaceSteel, s:spaceBlue, 'none')
 endif
 
-"DARKER GREY BACKGROUND
-if !exists("g:sierra_Twilight")
-	let g:sierra_Twilight = 0
-endif
+" ------------
+" Languages
+" ------------
 
-"ALMOST BLACK BACKGROUND
-if !exists("g:sierra_Midnight")
-	let g:sierra_Midnight = 0
-endif
+" C
+call <sid>hi('cConstant', s:spaceOrange, s:none, 'none')
+call <sid>hi('cFormat', s:spaceSteel, s:none, 'none')
+call <sid>hi('cMulti', s:spaceViolet, s:none, 'none')
+call <sid>hi('cNumbers', s:spaceGoo, s:none, 'none')
+call <sid>hi('cOperator', s:spaceViolet, s:none, 'none')
+call <sid>hi('cSpecial', s:spaceGoo, s:none, 'none')
+call <sid>hi('cSpecialCharacter', s:spaceGoo, s:none, 'none')
+call <sid>hi('cStatement', s:spaceViolet, s:none, 'none')
+call <sid>hi('cStorageClass', s:spaceGold, s:none, 'none')
+call <sid>hi('cString', s:spaceGreen, s:none, 'none')
+call <sid>hi('cStructure', s:spaceGold, s:none, 'none')
+call <sid>hi('cType', s:spaceBlue, s:none, 'none')
 
-"BLACK BACKGROUND
-if !exists("g:sierra_Pitch")
-	let g:sierra_Pitch = 0
-endif
+" C++
+call <sid>hi('cppConstant', s:spaceOrange, s:none, 'none')
+call <sid>hi('cppFormat', s:spaceSteel, s:none, 'none')
+call <sid>hi('cppMulti', s:spaceViolet, s:none, 'none')
+call <sid>hi('cppNumbers', s:spaceGoo, s:none, 'none')
+call <sid>hi('cppOperator', s:spaceViolet, s:none, 'none')
+call <sid>hi('cppSpecial', s:spaceGoo, s:none, 'none')
+call <sid>hi('cppSpecialCharacter', s:spaceGoo, s:none, 'none')
+call <sid>hi('cppStatement', s:spaceViolet, s:none, 'none')
+call <sid>hi('cppStorageClass', s:spaceGold, s:none, 'none')
+call <sid>hi('cppString', s:spaceGreen, s:none, 'none')
+call <sid>hi('cppStructure', s:spaceGold, s:none, 'none')
+call <sid>hi('cppType', s:spaceBlue, s:none, 'none')
 
-"REMOVE BLOCK MATCHPARENS - ADDS UNDERLINE
-if !exists("g:sierra_Nevada")
-	let g:sierra_Nevada = 0
-endif
+" CSS
+call <sid>hi('cssAttr', s:spaceViolet, s:none, 'none')
+call <sid>hi('cssAttrRegion', s:spaceViolet, s:none, 'none')
+call <sid>hi('cssBraces', s:spaceWhite, s:none, 'none')
+call <sid>hi('cssBrowserPrefix', s:spaceSteel, s:none, 'none')
+call <sid>hi('cssClassName', s:spaceBlue2, s:none, 'none')
+call <sid>hi('cssClassNameDot', s:spaceSteel, s:none, 'none')
+call <sid>hi('cssClassSelectorDot', s:spaceSteel, s:none, 'none')
+call <sid>hi('cssColor', s:spaceSteel, s:none, 'none')
+call <sid>hi('cssCommonAttr', s:spaceViolet, s:none, 'none')
+call <sid>hi('cssCustomProperty', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssDefinition', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssFunction', s:spaceSteel, s:none, 'none')
+call <sid>hi('cssFunctionName', s:spaceBlue, s:none, 'none')
+call <sid>hi('cssIdentifier', s:spaceBlue2, s:none, 'none')
+call <sid>hi('cssImportant', s:spaceOrange, s:none, 'none')
+call <sid>hi('cssInclude', s:spaceSteel, s:none, 'none')
+call <sid>hi('cssMedia', s:spaceGoo, s:none, 'none')
+call <sid>hi('cssMediaBlock', s:spaceGoo, s:none, 'none')
+call <sid>hi('cssProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssGeneratedContentProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssTextProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssAnimationProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssUIProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssTransformProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssTransitionProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssPrintProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssPositioningProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssBoxProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssFontDescriptorProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssFlexibleBoxProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssBorderOutlineProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssBackgroundProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssMarginProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssListProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssTableProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssFontProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssPaddingProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssDimensionProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssRenderProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssColorProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssGeneratedContentProp', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssPropDefinition', s:spaceGray4, s:none, 'none')
+call <sid>hi('cssPseudoClass', s:spaceGold, s:none, 'none')
+call <sid>hi('cssPseudoClassId', s:spaceGold, s:none, 'none')
+call <sid>hi('cssPseudoClassLang', s:spaceGold, s:none, 'none')
+call <sid>hi('cssSelectorOperator', s:spaceSteel, s:none, 'none')
+call <sid>hi('cssTagName', s:spaceBlue2, s:none, 'none')
+call <sid>hi('cssURL', s:spaceGold, s:none, 'none')
+call <sid>hi('cssUnitDecorators', s:spaceViolet, s:none, 'none')
+call <sid>hi('cssUnits', s:spaceViolet, s:none, 'none')
+call <sid>hi('cssValueLength', s:spaceBlue, s:none, 'none')
+call <sid>hi('cssValueNumber', s:spaceBlue, s:none, 'none')
+call <sid>hi('cssValueKeyword', s:spaceGreen, s:none, 'none')
+call <sid>hi('cssVendor', s:spaceSteel, s:none, 'none')
 
-"TERMINAL COLORS
-let g:terminal_ansi_colors = [
-	\ '#262626',
-	\ '#D75F5F',
-	\ '#5F8787',
-	\ '#DFAF5F',
-	\ '#ae8687',
-	\ '#5F87AF',
-	\ '#AF8787',
-	\ '#87AFAF',
-	\ '#BFBFBF',
-	\ '#3a3a3a',
-	\ '#D75F5F',
-	\ '#5F8787',
-	\ '#DFAF5F',
-	\ '#AF8787',
-	\ '#87AFAF',
-	\ '#E5E5E5',]
+" HTML
+call <sid>hi('htmlArg', s:spaceViolet, s:none, 'none')
+call <sid>hi('htmlEndTag', s:spaceSteel, s:none, 'none')
+call <sid>hi('htmlSpecialChar', s:spaceGoo, s:none, 'none')
+call <sid>hi('htmlSpecialTagName', s:spaceBlue2, s:none, 'none')
+call <sid>hi('htmlTag', s:spaceSteel, s:none, 'none')
+call <sid>hi('htmlTagName', s:spaceBlue2, s:none, 'none')
+
+" JavaScript
+call <sid>hi('javaScript', s:spaceWhite, s:none, 'none')
+call <sid>hi('javaScriptFunction', s:spaceGold, s:none, 'none')
+call <sid>hi('javaScriptIdentifier', s:spaceBlue, s:none, 'none')
+call <sid>hi('javaScriptMember', s:spaceSteel, s:none, 'none')
+call <sid>hi('javaScriptNull', s:spaceGoo, s:none, 'none')
+call <sid>hi('javaScriptNumber', s:spaceGoo, s:none, 'none')
+call <sid>hi('javaScriptNumber', s:spaceGoo, s:none, 'none')
+call <sid>hi('javaScriptParens', s:spaceWhite, s:none, 'none')
+call <sid>hi('javaScriptSpecial', s:spaceGoo, s:none, 'none')
+call <sid>hi('javaScriptStringS', s:spaceGreen, s:none, 'none')
+call <sid>hi('javascriptArrayMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptArrayStaticMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptArrowFunc', s:spaceGold, s:none, 'none')
+call <sid>hi('javascriptAsyncFuncKeyword', s:spaceGold, s:none, 'none')
+call <sid>hi('javascriptAwaitFuncKeyword', s:spaceGold, s:none, 'none')
+call <sid>hi('javascriptBraces', s:spaceWhite, s:none, 'none')
+call <sid>hi('javascriptBrackets', s:spaceWhite, s:none, 'none')
+call <sid>hi('javascriptCacheMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptClassExtends', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptClassKeyword', s:spaceGold, s:none, 'none')
+call <sid>hi('javascriptClassName', s:spaceBlue, s:none, 'none')
+call <sid>hi('javascriptClassSuperName', s:spaceBlue, s:none, 'none')
+call <sid>hi('javascriptDOMElemAttrs', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptDOMEventMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptDOMNodeMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptDOMStorageMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptDateMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptDefault', s:spaceGold, s:none, 'none')
+call <sid>hi('javascriptDocNamedParamType', s:spaceGray4, s:none, 'none')
+call <sid>hi('javascriptDocNotation', s:spaceGray4, s:none, 'none')
+call <sid>hi('javascriptDocParamName', s:spaceGray4, s:none, 'none')
+call <sid>hi('javascriptDocParamType', s:spaceGray4, s:none, 'none')
+call <sid>hi('javascriptDocTags', s:spaceGray4, s:none, 'none')
+call <sid>hi('javascriptEndColons', s:spaceWhite, s:none, 'none')
+call <sid>hi('javascriptExport', s:spaceViolet, s:none, 'none')
+call <sid>hi('javascriptHeadersMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptIdentifierName', s:spaceBlue, s:none, 'none')
+call <sid>hi('javascriptImport', s:spaceViolet, s:none, 'none')
+call <sid>hi('javascriptLabel', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptLogicSymbols', s:spaceViolet, s:none, 'none')
+call <sid>hi('javascriptMathStaticMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptObjectLabel', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptOperator', s:spaceViolet, s:none, 'none')
+call <sid>hi('javascriptPropertyName', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptStringMethod', s:spaceSteel, s:none, 'none')
+call <sid>hi('javascriptVariable', s:spaceWhite, s:none, 'none')
+call <sid>hi('javascriptYield', s:spaceGold, s:none, 'none')
+call <sid>hi('jsArrowFunction', s:spaceGold, s:none, 'none')
+call <sid>hi('jsClassDefinition', s:spaceBlue, s:none, 'none')
+call <sid>hi('jsClassKeyword', s:spaceGold, s:none, 'none')
+call <sid>hi('jsDecorator', s:spaceGoo, s:none, 'none')
+call <sid>hi('jsDestructuringBlock', s:spaceSteel, s:none, 'none')
+call <sid>hi('jsExportDefault', s:spaceGold, s:none, 'none')
+call <sid>hi('jsExtendsKeyword', s:spaceSteel, s:none, 'none')
+call <sid>hi('jsFuncArgs', s:spaceSteel, s:none, 'none')
+call <sid>hi('jsFuncCall', s:spaceBlue, s:none, 'none')
+call <sid>hi('jsFunction', s:spaceGold, s:none, 'none')
+call <sid>hi('jsGlobalObjects', s:spaceOrange, s:none, 'none')
+call <sid>hi('jsModuleKeyword', s:spaceSteel, s:none, 'none')
+call <sid>hi('jsNull', s:spaceGoo, s:none, 'none')
+call <sid>hi('jsObjectBraces', s:spaceWhite, s:none, 'none')
+call <sid>hi('jsObjectKey', s:spaceSteel, s:none, 'none')
+call <sid>hi('jsObjectStringKey', s:spaceGreen, s:none, 'none')
+call <sid>hi('jsRegexpString', s:spaceGoo, s:none, 'none')
+call <sid>hi('jsReturn', s:spaceViolet, s:none, 'none')
+call <sid>hi('jsSpecial', s:spaceGoo, s:none, 'none')
+call <sid>hi('jsSuper', s:spaceOrange, s:none, 'none')
+call <sid>hi('jsTemplateBraces', s:spaceSteel, s:none, 'none')
+call <sid>hi('jsTemplateString', s:spaceGreen, s:none, 'none')
+call <sid>hi('jsThis', s:spaceBlue, s:none, 'none')
+call <sid>hi('jsVariableDef', s:spaceWhite, s:none, 'none')
+
+" JSX
+call <sid>hi('jsxAttrib', s:spaceViolet, s:none, 'none')
+call <sid>hi('jsxAttributeBraces', s:spaceWhite, s:none, 'none')
+call <sid>hi('jsxCloseString', s:spaceBlue2, s:none, 'none')
+call <sid>hi('jsxCloseTag', s:spaceSteel, s:none, 'none')
+call <sid>hi('jsxString', s:spaceGreen, s:none, 'none')
+call <sid>hi('jsxTag', s:spaceSteel, s:none, 'none')
+call <sid>hi('jsxTagName', s:spaceBlue2, s:none, 'none')
+
+" Ruby
+call <sid>hi('rubyBlockParameter', s:spaceBlue, s:none, 'none')
+call <sid>hi('rubyClass', s:spaceViolet, s:none, 'none')
+call <sid>hi('rubyClassVariable', s:spaceWhite, s:none, 'none')
+call <sid>hi('rubyConstant', s:spaceOrange, s:none, 'none')
+call <sid>hi('rubyControl', s:spaceViolet, s:none, 'none')
+call <sid>hi('rubyEscape', s:spaceGoo, s:none, 'none')
+call <sid>hi('rubyException', s:spaceViolet, s:none, 'none')
+call <sid>hi('rubyFunction', s:spaceBlue, s:none, 'none')
+call <sid>hi('rubyGlobalVariable', s:spaceWhite, s:none, 'none')
+call <sid>hi('rubyInclude', s:spaceViolet, s:none, 'none')
+call <sid>hi('rubyInstanceVariable', s:spaceWhite, s:none, 'none')
+call <sid>hi('rubyInterpolationDelimiter', s:none, s:none, 'none')
+call <sid>hi('rubyOperator', s:spaceViolet, s:none, 'none')
+call <sid>hi('rubyPseudoVariable', s:spaceWhite, s:none, 'none')
+call <sid>hi('rubyRegexp', s:spaceGreen, s:none, 'none')
+call <sid>hi('rubyRegexpDelimiter', s:spaceGreen, s:none, 'none')
+call <sid>hi('rubyStringDelimiter', s:spaceGreen, s:none, 'none')
+call <sid>hi('rubySymbol', s:spaceGoo, s:none, 'none')
+
+" Ruby (Embedded)
+call <sid>hi('erubyComment', s:spaceGray3, s:none, 'none')
+call <sid>hi('erubyDelimiter', s:none, s:none, 'none')
+call <sid>hi('erubyRailsMethod', s:spaceOrange, s:none, 'none')
+
+" Ruby on Rails
+call <sid>hi('rubyRailsARAssociationMethod', s:spaceOrange, s:none, 'none')
+call <sid>hi('rubyRailsARMethod', s:spaceOrange, s:none, 'none')
+call <sid>hi('rubyRailsMethod', s:spaceOrange, s:none, 'none')
+call <sid>hi('rubyRailsRenderMethod', s:spaceOrange, s:none, 'none')
+call <sid>hi('rubyRailsUserClass', s:spaceOrange, s:none, 'none')
+
+" XML
+call <sid>hi('xmlAttrib', s:spaceViolet, s:none, 'none')
+call <sid>hi('xmlEndTag', s:spaceSteel, s:none, 'none')
+call <sid>hi('xmlTag', s:spaceSteel, s:none, 'none')
+call <sid>hi('xmlTagName', s:spaceBlue2, s:none, 'none')
+
+" YAML
+call <sid>hi('yamlAlias', s:spaceWhite, s:none, 'none')
+call <sid>hi('yamlAnchor', s:spaceWhite, s:none, 'none')
+call <sid>hi('yamlDocumentHeader', s:spaceGreen, s:none, 'none')
+call <sid>hi('yamlKey', s:spaceGold, s:none, 'none')
 
 
-"CYAN:
-highlight! Cyan guifg=#87afaf guibg=NONE gui=NONE ctermfg=109 ctermbg=NONE cterm=NONE
-highlight! link FoldColumn Cyan
-highlight! link cssTagName Cyan
-highlight! link vimUserFunc Cyan
-highlight! link Function Cyan
-highlight! link vimFunction Cyan
-highlight! link Identifier Cyan
-highlight! link vimAutoEventList Cyan
 
-"CYAN_REVERSE:
-highlight! Cyan_Reverse guifg=#87afaf guibg=NONE gui=reverse ctermfg=109 ctermbg=NONE cterm=reverse
-highlight! link DiffAdd Cyan_Reverse
-highlight! link DiffText Cyan_Reverse
-highlight! link diffAdded Cyan_Reverse
+" ------------
+" Plugins
+" ------------
 
-"CYAN_DARK:
-highlight! Cyan_Dark guifg=#5f8787 guibg=NONE gui=NONE ctermfg=66 ctermbg=NONE cterm=NONE
+" todo.txt
+call <sid>hi('TodoContext', s:spaceOrange, s:none, 'none')
+call <sid>hi('TodoDate', s:spaceBlue, s:none, 'none')
+call <sid>hi('TodoDone', s:spaceGray3, s:none, 'none')
+call <sid>hi('TodoPriorityA', s:spaceGoo, s:none, 'none')
+call <sid>hi('TodoPriorityB', s:spaceGreen, s:none, 'none')
+call <sid>hi('TodoPriorityC', s:spaceGold, s:none, 'none')
+call <sid>hi('TodoProject', s:spaceViolet, s:none, 'none')
 
-"CYAN_DARK_REVERSE:
-highlight! Cyan_Dark_Reverse guifg=#5f8787 guibg=NONE gui=reverse ctermfg=66 ctermbg=NONE cterm=reverse
-highlight! link DiffChange Cyan_Dark_Reverse
-
-"RED:
-highlight! Red guifg=#d75f5f guibg=NONE gui=NONE ctermfg=167 ctermbg=NONE cterm=NONE
-highlight! link htmlEndTag Red
-highlight! link htmlTag Red
-highlight! link htmlItalic Red
-highlight! link htmlStatement Red
-highlight! link vimAutoCmdSfxList Red
-highlight! link PreProc Red
-highlight! link cssClassName Red
-highlight! link cssIdentifier Red
-highlight! link Title Red
-highlight! link WarningMsg Red
-highlight! link diffBDiffer Red
-highlight! link diffCommon Red
-highlight! link diffDiffer Red
-highlight! link diffIdentical Red
-highlight! link diffIsA Red
-highlight! link diffNoEOL Red
-highlight! link diffOnly Red
-highlight! link netrwExe Red
-
-"RED_REVERSE:
-highlight! Red_Reverse guifg=#d75f5f guibg=NONE gui=reverse ctermfg=167 ctermbg=NONE cterm=reverse
-highlight! link Error Red_Reverse
-highlight! link ErrorMsg Red_Reverse
-
-highlight! Red_Dark guifg=#af5f5f guibg=NONE gui=NONE ctermfg=131 ctermbg=NONE cterm=NONE
-highlight! link Label Red_Dark
-highlight! link Constant Red_Dark
-
-highlight! Red_Medium guifg=#d78787 guibg=NONE gui=NONE ctermfg=174 ctermbg=NONE cterm=NONE
-highlight! link htmlArg Red_Medium
-highlight! link Number Red_Medium
-highlight! link Type Red_Medium
-
-highlight! Red_Light guifg=#dfafaf guibg=NONE gui=NONE ctermfg=181 ctermbg=NONE cterm=NONE
-highlight! link String Red_Light
-
-highlight! Red_Dark_Reverse guifg=#af5f5f guibg=NONE gui=reverse ctermfg=131 ctermbg=NONE cterm=reverse
-highlight! link DiffDelete Red_Dark_Reverse
-highlight! link diffChanged Red_Dark_Reverse
-highlight! link diffFile Red_Dark_Reverse
-highlight! link diffIndexLine Red_Dark_Reverse
-highlight! link diffRemoved Red_Dark_Reverse
-
-"PURPLE:
-highlight! Purple guifg=#af8787 guibg=NONE gui=NONE ctermfg=138 ctermbg=NONE cterm=NONE
-highlight! link Special Purple
-highlight! link vimCmdSep Purple
-highlight! link Directory Purple
-
-highlight! Purple_Dark guifg=#875f5f guibg=NONE gui=NONE ctermfg=95 ctermbg=NONE cterm=NONE
-
-"GREY:
-highlight! Grey guifg=#a8a8a8 guibg=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
-highlight! link Operator Grey
-highlight! link Statement Grey
-highlight! link StorageClass Grey
-highlight! link Conditional Grey
-
-highlight! Grey_Reverse guifg=#767676 guibg=NONE gui=reverse ctermfg=243 ctermbg=NONE cterm=reverse
-highlight! link SpecialComment Grey_Reverse
-highlight! link VimCommentTitle Grey_Reverse
-highlight! link vimCommentTitle Grey_Reverse
-
-highlight! Grey_Light_Reverse guifg=#c6c6c6 guibg=NONE gui=reverse ctermfg=251 ctermbg=NONE cterm=reverse
-highlight! link WildMenu Grey_Light_Reverse
-highlight! link Visual Grey_Light_Reverse
-highlight! link Search Grey_Light_Reverse
-
-
-"ORANGE:
-highlight! Orange guifg=#dfaf5f guibg=NONE gui=NONE ctermfg=179 ctermbg=NONE cterm=NONE
-highlight! link MoreMsg Orange
-highlight! link Question Orange
-
-"TODO:
-highlight Underlined guifg=#dfaf87 guibg=NONE gui=NONE ctermfg=180 ctermbg=NONE cterm=NONE
-highlight MatchParen guifg=#eeeeee guibg=#875f5f gui=NONE ctermfg=255 ctermbg=95 cterm=NONE
-highlight ModeMsg guifg=#dfdfdf guibg=NONE gui=NONE ctermfg=188 ctermbg=NONE cterm=NONE
-highlight Todo guifg=#eeeeee guibg=#1c1c1c gui=reverse ctermfg=255 ctermbg=234 cterm=reverse
-highlight SignColumn guifg=#87af87 guibg=NONE gui=NONE ctermfg=108 ctermbg=NONE cterm=NONE
-
-"DEFAULT UI
-if 1
-	"COLORS
-	highlight Normal guifg=#d0d0d0 guibg=#262626 gui=NONE ctermfg=252 ctermbg=236 cterm=NONE
-	highlight Comment guifg=#626262 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
-
-	"WINDOW UI
-	highlight StatusLine guifg=#eeeeee guibg=#262626 gui=NONE ctermfg=255 ctermbg=235 cterm=NONE
-	highlight StatusLineNC guifg=#6c6c6c guibg=#262626 gui=NONE ctermfg=242 ctermbg=235 cterm=NONE
-	highlight StatusLineTerm guifg=#eeeeee guibg=#262626 gui=NONE ctermfg=255 ctermbg=235 cterm=NONE
-	highlight StatusLineTermNC guifg=#6c6c6c guibg=#262626 gui=NONE ctermfg=242 ctermbg=235 cterm=NONE
-
-	highlight Pmenu guifg=#6c6c6c guibg=#3a3a3a gui=NONE ctermfg=242 ctermbg=237 cterm=NONE
-	highlight PmenuSel guifg=#eeeeee guibg=#3a3a3a gui=NONE ctermfg=255 ctermbg=237 cterm=NONE
-	highlight PmenuSbar guifg=#303030 guibg=#3a3a3a gui=NONE ctermfg=236 ctermbg=237 cterm=NONE
-	highlight PmenuThumb guifg=#303030 guibg=#3a3a3a gui=NONE ctermfg=236 ctermbg=237 cterm=NONE
-
-	highlight TabLine guifg=#6c6c6c guibg=#262626 gui=NONE ctermfg=242 ctermbg=235 cterm=NONE
-	highlight TabLineSel guifg=#eeeeee guibg=#262626 gui=NONE ctermfg=255 ctermbg=235 cterm=NONE
-	highlight TabLineFill guifg=NONE guibg=#262626 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-
-	highlight CursorLineNR guifg=#9e9e9e guibg=#262626 gui=NONE ctermfg=247 ctermbg=235 cterm=NONE
-	highlight CursorLine guifg=NONE guibg=#3a3a3a gui=NONE ctermfg=NONE ctermbg=237 cterm=NONE
-	highlight CursorColumn guifg=NONE guibg=#3a3a3a gui=NONE ctermfg=NONE ctermbg=237 cterm=NONE
-	highlight ColorColumn guifg=NONE guibg=#3a3a3a gui=NONE ctermfg=NONE ctermbg=237 cterm=NONE
-	highlight Folded guifg=#6c6c6c guibg=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
-
-	highlight VertSplit guifg=#3a3a3a guibg=#303030 gui=NONE ctermfg=237 ctermbg=236 cterm=NONE
-	highlight LineNr guifg=#4e4e4e guibg=#262626 gui=NONE ctermfg=239 ctermbg=235 cterm=NONE
-	highlight NonText guifg=#3a3a3a guibg=NONE gui=NONE ctermfg=237 ctermbg=NONE cterm=NONE
-	highlight SpecialKey guifg=#3a3a3a guibg=NONE gui=NONE ctermfg=237 ctermbg=NONE cterm=NONE
-
-	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
-	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
-	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
-	highlight SpellRare guifg=#ff8700 guibg=NONE gui=undercurl ctermfg=208 ctermbg=NONE cterm=undercurl
-
-	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-	highlight Cursor guifg=#000000 guibg=#ffffff gui=NONE ctermfg=16 ctermbg=231 cterm=NONE
-endif
-
-if g:sierra_Sunset
-	"COLORS
-	highlight Normal guifg=#d0d0d0 guibg=#262626 gui=NONE ctermfg=252 ctermbg=235 cterm=NONE
-	highlight Comment guifg=#585858 guibg=NONE gui=NONE ctermfg=240 ctermbg=NONE cterm=NONE
-
-	"WINDOW UI
-	highlight StatusLine guifg=#eeeeee guibg=#1c1c1c gui=NONE ctermfg=255 ctermbg=234 cterm=NONE
-	highlight StatusLineNC guifg=#6c6c6c guibg=#1c1c1c gui=NONE ctermfg=242 ctermbg=234 cterm=NONE
-	highlight StatusLineTerm guifg=#eeeeee guibg=#1c1c1c gui=NONE ctermfg=255 ctermbg=234 cterm=NONE
-	highlight StatusLineTermNC guifg=#6c6c6c guibg=#1c1c1c gui=NONE ctermfg=242 ctermbg=234 cterm=NONE
-
-	highlight Pmenu guifg=#6c6c6c guibg=#303030 gui=NONE ctermfg=242 ctermbg=236 cterm=NONE
-	highlight PmenuSel guifg=#eeeeee guibg=#303030 gui=NONE ctermfg=255 ctermbg=236 cterm=NONE
-	highlight PmenuSbar guifg=#303030 guibg=#303030 gui=NONE ctermfg=236 ctermbg=236 cterm=NONE
-	highlight PmenuThumb guifg=#303030 guibg=#303030 gui=NONE ctermfg=236 ctermbg=236 cterm=NONE
-	highlight TabLine guifg=#6c6c6c guibg=#1c1c1c gui=NONE ctermfg=242 ctermbg=234 cterm=NONE
-	highlight TabLineSel guifg=#eeeeee guibg=#1c1c1c gui=NONE ctermfg=255 ctermbg=234 cterm=NONE
-	highlight TabLineFill guifg=NONE guibg=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
-
-	highlight CursorLineNR guifg=#9e9e9e guibg=#1c1c1c gui=NONE ctermfg=247 ctermbg=234 cterm=NONE
-	highlight CursorLine guifg=NONE guibg=#303030 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
-	highlight CursorColumn guifg=NONE guibg=#303030 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
-	highlight ColorColumn guifg=NONE guibg=#303030 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
-	highlight Folded guifg=#6c6c6c guibg=NONE gui=NONE ctermfg=242 ctermbg=NONE cterm=NONE
-	highlight VertSplit guifg=#3a3a3a guibg=#262626 gui=NONE ctermfg=237 ctermbg=235 cterm=NONE
-	highlight LineNr guifg=#4e4e4e guibg=#1c1c1c gui=NONE ctermfg=239 ctermbg=234 cterm=NONE
-	highlight NonText guifg=#3a3a3a guibg=NONE gui=NONE ctermfg=237 ctermbg=NONE cterm=NONE
-	highlight SpecialKey guifg=#3a3a3a guibg=NONE gui=NONE ctermfg=237 ctermbg=NONE cterm=NONE
-
-	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
-	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
-	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
-	highlight SpellRare guifg=#ff8700 guibg=NONE gui=undercurl ctermfg=208 ctermbg=NONE cterm=undercurl
-
-	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-	highlight Cursor guifg=#000000 guibg=#ffffff gui=NONE ctermfg=16 ctermbg=231 cterm=NONE
-endif
-
-"DARKER GRAY BACKGROUND
-if g:sierra_Twilight
-	"COLORS
-	highlight Normal guifg=#d0d0d0 guibg=#1c1c1c gui=NONE ctermfg=252 ctermbg=234 cterm=NONE
-	highlight Comment guifg=#4e4e4e guibg=NONE gui=NONE ctermfg=239 ctermbg=NONE cterm=NONE
-
-	"WINDOW UI
-	highlight StatusLine guifg=#eeeeee guibg=#121212 gui=NONE ctermfg=255 ctermbg=233 cterm=NONE
-	highlight StatusLineNC guifg=#626262 guibg=#121212 gui=NONE ctermfg=241 ctermbg=233 cterm=NONE
-	highlight StatusLineTerm guifg=#eeeeee guibg=#121212 gui=NONE ctermfg=255 ctermbg=233 cterm=NONE
-	highlight StatusLineTermNC guifg=#626262 guibg=#121212 gui=NONE ctermfg=241 ctermbg=233 cterm=NONE
-
-	highlight Pmenu guifg=#626262 guibg=#262626 gui=NONE ctermfg=241 ctermbg=235 cterm=NONE
-	highlight PmenuSel guifg=#eeeeee guibg=#262626 gui=NONE ctermfg=255 ctermbg=235 cterm=NONE
-	highlight PmenuSbar guifg=#262626 guibg=#262626 gui=NONE ctermfg=235 ctermbg=235 cterm=NONE
-	highlight PmenuThumb guifg=#262626 guibg=#262626 gui=NONE ctermfg=235 ctermbg=235 cterm=NONE
-	highlight TabLine guifg=#626262 guibg=#121212 gui=NONE ctermfg=241 ctermbg=233 cterm=NONE
-	highlight TabLineSel guifg=#eeeeee guibg=#121212 gui=NONE ctermfg=255 ctermbg=233 cterm=NONE
-	highlight TabLineFill guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=233 cterm=NONE
-
-	highlight CursorLineNR guifg=#9e9e9e guibg=#121212 gui=NONE ctermfg=247 ctermbg=233 cterm=NONE
-	highlight CursorLine guifg=NONE guibg=#262626 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-	highlight CursorColumn guifg=NONE guibg=#262626 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-	highlight ColorColumn guifg=NONE guibg=#262626 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-	highlight Folded guifg=#626262 guibg=NONE gui=NONE ctermfg=241 ctermbg=NONE cterm=NONE
-	highlight VertSplit guifg=#303030 guibg=#1c1c1c gui=NONE ctermfg=236 ctermbg=234 cterm=NONE
-	highlight LineNr guifg=#4e4e4e guibg=#121212 gui=NONE ctermfg=239 ctermbg=233 cterm=NONE
-	highlight NonText guifg=#303030 guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE
-	highlight SpecialKey guifg=#303030 guibg=NONE gui=NONE ctermfg=236 ctermbg=NONE cterm=NONE
-
-	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
-	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
-	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
-	highlight SpellRare guifg=#ff8700 guibg=NONE gui=undercurl ctermfg=208 ctermbg=NONE cterm=undercurl
-
-	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-	highlight Cursor guifg=#000000 guibg=#ffffff gui=NONE ctermfg=16 ctermbg=231 cterm=NONE
-endif
-
-"ALMOST BLACK BACKGROUND
-if g:sierra_Midnight
-	"COLORS
-	highlight Normal guifg=#d0d0d0 guibg=#121212 gui=NONE ctermfg=252 ctermbg=233 cterm=NONE
-	highlight Comment guifg=#4e4e4e guibg=NONE gui=NONE ctermfg=239 ctermbg=NONE cterm=NONE
-
-	"WINDOW UI
-	highlight StatusLine guifg=#eeeeee guibg=#1c1c1c gui=none ctermfg=255 ctermbg=234 cterm=none
-	highlight StatusLineNC guifg=#585858 guibg=#1c1c1c gui=none ctermfg=240 ctermbg=234 cterm=none
-	highlight StatusLineTerm guifg=#eeeeee guibg=#1c1c1c gui=none ctermfg=255 ctermbg=234 cterm=none
-	highlight StatusLineTermNC guifg=#585858 guibg=#1c1c1c gui=none ctermfg=240 ctermbg=234 cterm=none
-
-	highlight Pmenu guifg=#585858 guibg=#1c1c1c gui=none ctermfg=240 ctermbg=234 cterm=none
-	highlight PmenuSel guifg=#eeeeee guibg=#1c1c1c gui=none ctermfg=255 ctermbg=234 cterm=none
-	highlight PmenuSbar guifg=#1c1c1c guibg=#1c1c1c gui=NONE ctermfg=234 ctermbg=234 cterm=NONE
-	highlight PmenuThumb guifg=#1c1c1c guibg=#1c1c1c gui=NONE ctermfg=234 ctermbg=234 cterm=NONE
-	highlight TabLine guifg=#585858 guibg=#1c1c1c gui=none ctermfg=240 ctermbg=234 cterm=none
-	highlight TabLineSel guifg=#eeeeee guibg=#1c1c1c gui=none ctermfg=255 ctermbg=234 cterm=none
-	highlight TabLineFill guifg=NONE guibg=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
-
-	highlight CursorLineNR guifg=#9e9e9e guibg=#1c1c1c gui=NONE ctermfg=247 ctermbg=234 cterm=NONE
-	highlight CursorLine guifg=NONE guibg=#080808 gui=NONE ctermfg=NONE ctermbg=232 cterm=NONE
-	highlight CursorColumn guifg=NONE guibg=#080808 gui=NONE ctermfg=NONE ctermbg=232 cterm=NONE
-	highlight ColorColumn guifg=NONE guibg=#080808 gui=NONE ctermfg=NONE ctermbg=232 cterm=NONE
-	highlight Folded guifg=#585858 guibg=NONE gui=NONE ctermfg=240 ctermbg=NONE cterm=NONE
-	highlight VertSplit guifg=#262626 guibg=#121212 gui=NONE ctermfg=235 ctermbg=233 cterm=NONE
-	highlight LineNr guifg=#4e4e4e guibg=#1c1c1c gui=none ctermfg=239 ctermbg=234 cterm=none
-	highlight NonText guifg=#262626 guibg=NONE gui=NONE ctermfg=235 ctermbg=NONE cterm=NONE
-	highlight SpecialKey guifg=#262626 guibg=NONE gui=NONE ctermfg=235 ctermbg=NONE cterm=NONE
-
-	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
-	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
-	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
-	highlight SpellRare guifg=#ff8700 guibg=NONE gui=undercurl ctermfg=208 ctermbg=NONE cterm=undercurl
-
-	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-	highlight Cursor guifg=#000000 guibg=#ffffff gui=NONE ctermfg=16 ctermbg=231 cterm=NONE
-endif
-
-"BLACK BACKGROUND
-if g:sierra_Pitch
-	"COLORS
-	highlight Normal guifg=#d0d0d0 guibg=#080808 gui=NONE ctermfg=252 ctermbg=232 cterm=NONE
-	highlight Comment guifg=#4e4e4e guibg=NONE gui=NONE ctermfg=239 ctermbg=NONE cterm=NONE
-
-	"WINDOW UI
-	highlight StatusLine guifg=#eeeeee guibg=#121212 gui=NONE ctermfg=255 ctermbg=233 cterm=NONE
-	highlight StatusLineNC guifg=#4e4e4e guibg=#121212 gui=NONE ctermfg=239 ctermbg=233 cterm=NONE
-	highlight StatusLineTerm guifg=#eeeeee guibg=#121212 gui=NONE ctermfg=255 ctermbg=233 cterm=NONE
-	highlight StatusLineTermNC guifg=#4e4e4e guibg=#121212 gui=NONE ctermfg=239 ctermbg=233 cterm=NONE
-
-	highlight Pmenu guifg=#4e4e4e guibg=#121212 gui=NONE ctermfg=239 ctermbg=233 cterm=NONE
-	highlight PmenuSel guifg=#eeeeee guibg=#121212 gui=NONE ctermfg=255 ctermbg=233 cterm=NONE
-	highlight PmenuSbar guifg=#121212 guibg=#121212 gui=NONE ctermfg=233 ctermbg=233 cterm=NONE
-	highlight PmenuThumb guifg=#121212 guibg=#121212 gui=NONE ctermfg=233 ctermbg=233 cterm=NONE
-	highlight TabLine guifg=#4e4e4e guibg=#121212 gui=NONE ctermfg=239 ctermbg=233 cterm=NONE
-	highlight TabLineSel guifg=#eeeeee guibg=#121212 gui=NONE ctermfg=255 ctermbg=233 cterm=NONE
-	highlight TabLineFill guifg=NONE guibg=#121212 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-
-	highlight CursorLineNR guifg=#9e9e9e guibg=#121212 gui=NONE ctermfg=247 ctermbg=233 cterm=NONE
-	highlight CursorLine guifg=NONE guibg=#000000 gui=NONE ctermfg=NONE ctermbg=16 cterm=NONE
-	highlight CursorColumn guifg=NONE guibg=#000000 gui=NONE ctermfg=NONE ctermbg=16 cterm=NONE
-	highlight ColorColumn guifg=NONE guibg=#000000 gui=NONE ctermfg=NONE ctermbg=16 cterm=NONE
-	highlight Folded guifg=#4e4e4e guibg=NONE gui=NONE ctermfg=239 ctermbg=NONE cterm=NONE
-	highlight VertSplit guifg=#1c1c1c guibg=#080808 gui=NONE ctermfg=234 ctermbg=232 cterm=NONE
-	highlight LineNr guifg=#4e4e4e guibg=#121212 gui=NONE ctermfg=239 ctermbg=233 cterm=NONE
-	highlight NonText guifg=#1c1c1c guibg=NONE gui=NONE ctermfg=234 ctermbg=NONE cterm=NONE
-	highlight SpecialKey guifg=#1c1c1c guibg=NONE gui=NONE ctermfg=234 ctermbg=NONE cterm=NONE
-
-	highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
-	highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl
-	highlight SpellCap guifg=#87afff guibg=NONE gui=undercurl ctermfg=111 ctermbg=NONE cterm=undercurl
-	highlight SpellRare guifg=#ff8700 guibg=NONE gui=undercurl ctermfg=208 ctermbg=NONE cterm=undercurl
-
-	highlight VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-	highlight Cursor guifg=#000000 guibg=#ffffff gui=NONE ctermfg=16 ctermbg=231 cterm=NONE
-endif
-
-"REMOVE BLOCK MATCHPARENS - ADDS UNDERLINE
-if g:sierra_Nevada
-	"WINDOW UI
-	highlight MatchParen guifg=#ffffff guibg=#000000 gui=underline ctermfg=231 ctermbg=16 cterm=underline
-endif
-
-"LICENSE:
-"Copyright (c) 2020 Alessandro Yorba
-"
-"Permission is hereby granted, free of charge, to any person obtaining a copy
-"of this software and associated documentation files (the "Software"), to deal
-"in the Software without restriction, including without limitation the rights
-"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-"copies of the Software, and to permit persons to whom the Software is
-"furnished to do so, subject to the following conditions:
-"
-"The above copyright notice and this permission notice shall be included in
-"all copies or substantial portions of the Software.
-"
-"THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-"THE SOFTWARE.
+" Buftabline
+call <sid>hi('BufTabLineActive', s:spaceSteel, s:spaceGray2, 'none')
+call <sid>hi('BufTabLineCurrent', s:spaceBlack, s:spaceGray4, 'none')
+call <sid>hi('BufTabLineFill', s:spaceBlack, s:spaceBlack, 'none')
+call <sid>hi('BufTabLineHidden', s:spaceGray3, s:spaceBlack2, 'none')
