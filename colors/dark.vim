@@ -1,92 +1,372 @@
-let g:molokai_original = 1
+"
+"
+"        ┌─┐┌─┐┌─┐┌┐ ┌─┐┬  ┬
+"        ├┤ │ ││ ┬├┴┐├┤ │  │
+"        └  └─┘└─┘└─┘└─┘┴─┘┴─┘
+"
+"
+" by Jared Gorski
+" https://github.com/jaredgorski/fogbell
 
-runtime colors/molokai.vim
+scriptencoding utf-8
 
-let g:colors_name="molokayo"
+set background=dark
+hi clear
 
-if !exists("g:molokayo#high_contrast#comments")
-    let g:molokayo#high_contrast#comments = 0
+if exists("syntax_on")
+  syntax reset
 endif
-if !exists("g:molokayo#focus_variant")
-    let g:molokayo#focus_variant = 0
-endif
 
-hi! Normal guibg=#202020 guifg=#ffffff ctermbg=234 ctermfg=15
-if g:molokayo#focus_variant == 1
-    hi! NonText guibg=bg guifg=#303030 ctermbg=bg ctermfg=233
+let g:colors_name="fogbell"
+
+" ==========================
+" Highlighting Function
+" ==========================
+"  >> (inspired by https://github.com/tomasiser/vim-code-dark and https://github.com/chriskempson/base16-vim)
+fun! <sid>hi(group, fg, bg, attr)
+  if !empty(a:fg)
+    exec "hi " . a:group . " guifg=" . a:fg.gui . " ctermfg=" .  a:fg.cterm256
+  endif
+  if !empty(a:bg)
+    exec "hi " . a:group . " guibg=" . a:bg.gui . " ctermbg=" .  a:bg.cterm256
+  endif
+  if a:attr != ""
+    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+  endif
+endfun
+
+" ==========================
+" Color Variables
+" ==========================
+let s:voidBlack = {'gui': '#121212', 'cterm256': '233'}
+let s:voidBlack2 = {'gui': '#262626', 'cterm256': '235'}
+let s:voidGray1 = {'gui': '#3E3D32', 'cterm256': '237'}
+let s:voidGray2 = {'gui': '#49483E', 'cterm256': '239'}
+let s:voidGray3 = {'gui': '#6B6B6B', 'cterm256': '242'}
+let s:voidGray4 = {'gui': '#B0B0B0', 'cterm256': '249'}
+let s:voidSteel = {'gui': '#D0D0D0', 'cterm256': '252'}
+let s:voidBlue = {'gui': '#699B9B', 'cterm256': '109'}
+let s:voidGreen = {'gui': '#569F7A', 'cterm256': '72'}
+let s:voidGold = {'gui': '#8E700B', 'cterm256': '136'}
+let s:voidRed = {'gui': '#821A1A', 'cterm256': '1'}
+let s:voidRed2 = {'gui': '#FF0000', 'cterm256': '196'}
+let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
+
+" ==========================
+" Definitions
+" ==========================
+"    <sid>hi(GROUP, FOREGROUND, BACKGROUND, ATTRIBUTE)
+
+" Editor
+call <sid>hi('ColorColumn', s:none, s:voidGray1, 'none')
+call <sid>hi('Cursor', s:voidBlack, s:voidSteel, 'none')
+call <sid>hi('CursorColumn', s:none, s:voidGray1, 'none')
+call <sid>hi('CursorLine', s:none, s:voidGray1, 'none')
+call <sid>hi('CursorLineNr', s:voidSteel, s:voidGray1, 'none')
+call <sid>hi('Directory', s:voidSteel, s:voidBlack, 'none')
+call <sid>hi('FoldColumn', s:none, s:voidBlack2, 'none')
+call <sid>hi('Folded', s:voidGray3, s:none, 'none')
+call <sid>hi('IncSearch', s:voidBlack, s:voidGold, 'none')
+call <sid>hi('LineNr', s:voidGray3, s:voidBlack2, 'none')
+call <sid>hi('MatchParen', s:voidSteel, s:voidGray3, 'none')
+call <sid>hi('Normal', s:voidSteel, s:voidBlack, 'none')
+call <sid>hi('Pmenu', s:none, s:voidBlack2, 'none')
+call <sid>hi('PmenuSel', s:none, s:voidGray2, 'none')
+call <sid>hi('Search', s:voidBlack, s:voidGold, 'none')
+call <sid>hi('SignColumn', s:none, s:voidBlack2, 'none')
+call <sid>hi('StatusLine', s:voidBlack, s:voidSteel, 'none')
+call <sid>hi('StatusLineNC', s:voidGray3, s:voidBlack2, 'none')
+call <sid>hi('VertSplit', s:voidBlack, s:voidGray3, 'none')
+call <sid>hi('Visual', s:none, s:voidGray2, 'none')
+
+" General
+call <sid>hi('Boolean', s:voidSteel, s:none, 'none')
+call <sid>hi('Character', s:voidSteel, s:none, 'none')
+call <sid>hi('Comment', s:voidGray3, s:none, 'none')
+call <sid>hi('Conditional', s:voidSteel, s:none, 'none')
+call <sid>hi('Constant', s:voidSteel, s:none, 'none')
+call <sid>hi('Define', s:voidSteel, s:none, 'none')
+call <sid>hi('DiffAdd', s:voidBlack, s:voidGreen, 'none')
+call <sid>hi('DiffChange', s:voidBlack, s:voidGold, 'none')
+call <sid>hi('DiffDelete', s:voidSteel, s:voidRed, 'none')
+call <sid>hi('DiffText', s:voidGray1, s:voidBlue, 'none')
+call <sid>hi('ErrorMsg', s:voidSteel, s:voidRed, 'none')
+call <sid>hi('Float', s:voidSteel, s:none, 'none')
+call <sid>hi('Function', s:voidSteel, s:none, 'none')
+call <sid>hi('Identifier', s:voidSteel, s:none, 'none')
+call <sid>hi('Keyword', s:voidSteel, s:none, 'none')
+call <sid>hi('Label', s:voidSteel, s:none, 'none')
+call <sid>hi('NonText', s:voidGray3, s:none, 'none')
+call <sid>hi('Number', s:voidSteel, s:none, 'none')
+call <sid>hi('Operator', s:voidSteel, s:none, 'none')
+call <sid>hi('PreProc', s:voidSteel, s:none, 'none')
+call <sid>hi('Special', s:voidSteel, s:none, 'none')
+call <sid>hi('SpecialKey', s:voidSteel, s:none, 'none')
+call <sid>hi('SpellBad', s:voidRed2, s:none, 'italic,undercurl')
+call <sid>hi('SpellCap', s:voidSteel, s:none, 'italic,undercurl')
+call <sid>hi('SpellLocal', s:voidSteel, s:none, 'undercurl')
+call <sid>hi('Statement', s:voidSteel, s:none, 'none')
+call <sid>hi('StorageClass', s:voidSteel, s:none, 'none')
+call <sid>hi('String', s:voidSteel, s:none, 'none')
+call <sid>hi('Tag', s:voidSteel, s:none, 'none')
+call <sid>hi('Title', s:none, s:none, 'bold')
+call <sid>hi('Todo', s:voidGray3, s:none, 'inverse,bold')
+call <sid>hi('Type', s:none, s:none, 'none')
+call <sid>hi('Underlined', s:none, s:none, 'underline')
+call <sid>hi('WarningMsg', s:voidSteel, s:voidRed, 'none')
+
+" Diff Mode
+if &diff
+  call <sid>hi('DiffAdd', s:voidBlack, s:voidGreen, 'none')
+  call <sid>hi('DiffChange', s:voidBlack, s:voidGold, 'none')
+  call <sid>hi('DiffDelete', s:voidRed2, s:voidRed, 'none')
+  call <sid>hi('DiffText', s:voidGray1, s:voidBlue, 'none')
 else
-    hi! link NonText Delimiter
-endif
-hi! link EndOfBuffer NonText
-hi! Ignore guibg=bg guifg=#303030 ctermbg=bg ctermbg=233
-hi! Special guibg=bg guifg=#66d0ef ctermbg=bg ctermfg=81 gui=italic cterm=italic
-hi! Conceal guifg=#f92672 guibg=bg cterm=bold ctermfg=198 ctermbg=bg
-hi! Search guifg=#000000 guibg=#ffcc00 gui=bold cterm=bold ctermfg=0 ctermbg=220
-hi! Identifier guifg=#ffb700 ctermfg=214
-hi! link Directory SpecialChar
-hi! PreProc guibg=bg guifg=#2ee252 ctermbg=bg ctermfg=41
-hi! PreCondit guibg=bg guifg=#2ee252 ctermbg=bg ctermfg=41
-hi! Title guibg=bg guifg=#ef7511 ctermbg=bg ctermfg=208
-hi! ColorColumn guibg=#1e1e1e ctermbg=233
-hi! Error guibg=#990023 guifg=#ffca00 ctermbg=160 ctermfg=214
-hi! TabLineFill guibg=#202020 guifg=#141414 ctermbg=234 ctermfg=233
-hi! TabLineSel guibg=#141414 guifg=#ffb700 ctermbg=233 ctermfg=214 cterm=bold gui=bold
-hi! TabLine guibg=#141414 guifg=#404040 ctermbg=233 ctermfg=238
-
-if g:molokayo#high_contrast#comments == 1
-    hi! Comment guibg=bg guifg=#A6A185 ctermbg=bg ctermfg=248
+  call <sid>hi('DiffAdd', s:voidGreen, s:none, 'none')
+  call <sid>hi('DiffChange', s:voidGold, s:none, 'none')
+  call <sid>hi('DiffDelete', s:voidRed2, s:none, 'none')
+  call <sid>hi('DiffText', s:voidSteel, s:voidBlue, 'none')
 endif
 
-" Folds:
-if g:molokayo#focus_variant == 1
-    hi! FoldColumn guibg=bg guifg=#303030 ctermbg=236 ctermfg=238
-else
-    hi! FoldColumn guibg=#282828 guifg=#505050 ctermbg=236 ctermfg=244
-endif
-hi! Folded guibg=#252525 guifg=#808080 ctermbg=235 ctermfg=244
+" ------------
+" Languages
+" ------------
 
-" Cursor:
-hi! Cursor guibg=#f92672 guifg=#ffffff gui=bold cterm=bold ctermbg=197 ctermfg=15
-hi! CursorInsert guibg=#0077ff guifg=#ffffff ctermbg=39  ctermfg=15
-hi! CursorVisual guibg=#2077ff guifg=#ffffff ctermbg=38 ctermfg=15
-hi! CursorReplace guibg=#ff2000 guifg=#ffffff ctermbg=196 ctermfg=15
-set guicursor=
-            \a:block-blinkon0,
-            \i:blinkwait200-blinkoff150-blinkon200-CursorInsert,
-            \r:CursorReplace,
-            \v:CursorVisual,
-            \c:ver30-blinkon300-CursorInsert
-" Split:
-hi! VertSplit guibg=#151515 guifg=#151515 ctermbg=233  ctermfg=233
-" Statuline:
-hi! StatusLine guibg=#151515 guifg=#ffffff gui=None cterm=None ctermbg=233 ctermfg=15
-hi! StatusLineNC guibg=#252525 guifg=#808080 gui=None cterm=None ctermbg=235 ctermfg=244
-hi! Wildmenu guibg=#f92672 guifg=#ffffff gui=bold cterm=bold ctermbg=199 ctermfg=15
-hi! SLSpecial guibg=#151515 guifg=#66d0ef ctermbg=233 ctermfg=81
-hi! SLDelim guibg=#151515 guifg=#808080 ctermbg=233 ctermfg=244
-hi! SLNumber guibg=#151515 guifg=#ae81ff ctermbg=233 ctermfg=141
-hi! SLDirectory guibg=#151515 guifg=#f92672 gui=bold cterm=bold ctermbg=233 ctermfg=197
-hi! SLIdentifier guibg=#151515 guifg=#ffb700 gui=bold cterm=bold ctermbg=233i ctermfg=214
-hi! SLCharacter guibg=#151515 guifg=#e6db74 ctermbg=233 ctermfg=227
-hi! SLConstant guibg=#151515 guifg=#ae81ff ctermbg=233 ctermfg=141
-hi! SLType guibg=#151515 guifg=#66d9ae gui=bold cterm=bold ctermbg=233 ctermfg=81
-hi! SLFunction guibg=#151515 guifg=#a6e2e2 ctermbg=233 ctermfg=153
-hi! SLSpellBad guibg=#151515 gui=undercurl guisp=#ff0000 cterm=underline ctermbg=233
-hi! SLVCS guibg=#151515 guifg=#ff5000 gui=italic cterm=italic ctermbg=233 ctermfg=202
-" Completion:
-hi! link PMenu SLDelim
-hi! link PMenuSel WildMenu
+" C
+call <sid>hi('cConstant', s:voidSteel, s:none, 'none')
+call <sid>hi('cFormat', s:voidSteel, s:none, 'none')
+call <sid>hi('cMulti', s:voidSteel, s:none, 'none')
+call <sid>hi('cNumbers', s:voidSteel, s:none, 'none')
+call <sid>hi('cOperator', s:voidSteel, s:none, 'none')
+call <sid>hi('cSpecial', s:voidSteel, s:none, 'none')
+call <sid>hi('cSpecialCharacter', s:voidSteel, s:none, 'none')
+call <sid>hi('cStatement', s:voidSteel, s:none, 'none')
+call <sid>hi('cStorageClass', s:voidSteel, s:none, 'none')
+call <sid>hi('cString', s:voidSteel, s:none, 'none')
+call <sid>hi('cStructure', s:voidSteel, s:none, 'none')
+call <sid>hi('cType', s:voidSteel, s:none, 'none')
 
-" vim-buftabline support
-hi! link BufTabLineFill StatusLine
-hi! link BufTabLineCurrent SLIdentifier
-hi! link BufTabLineActive SLCharacter
-hi! link BufTabLineHidden SLType
+" C++
+call <sid>hi('cppConstant', s:voidSteel, s:none, 'none')
+call <sid>hi('cppFormat', s:voidSteel, s:none, 'none')
+call <sid>hi('cppMulti', s:voidSteel, s:none, 'none')
+call <sid>hi('cppNumbers', s:voidSteel, s:none, 'none')
+call <sid>hi('cppOperator', s:voidSteel, s:none, 'none')
+call <sid>hi('cppSpecial', s:voidSteel, s:none, 'none')
+call <sid>hi('cppSpecialCharacter', s:voidSteel, s:none, 'none')
+call <sid>hi('cppStatement', s:voidSteel, s:none, 'none')
+call <sid>hi('cppStorageClass', s:voidSteel, s:none, 'none')
+call <sid>hi('cppString', s:voidSteel, s:none, 'none')
+call <sid>hi('cppStructure', s:voidSteel, s:none, 'none')
+call <sid>hi('cppType', s:voidSteel, s:none, 'none')
 
-" ctrlp support
-hi! link CtrlPMatch Search
-hi! link CtrlPLinePre Operator
-hi! link CtrlPPrtCursor Cursor
-hi! link CtrlPMode1 SLType
-hi! link CtrlPMode2 SLSpecial
-hi! link CtrlPStats SLFunction
+" CSS
+call <sid>hi('cssAttr', s:voidSteel, s:none, 'none')
+call <sid>hi('cssAttrRegion', s:voidSteel, s:none, 'none')
+call <sid>hi('cssBraces', s:voidSteel, s:none, 'none')
+call <sid>hi('cssBrowserPrefix', s:voidSteel, s:none, 'none')
+call <sid>hi('cssClassName', s:voidSteel, s:none, 'none')
+call <sid>hi('cssClassNameDot', s:voidSteel, s:none, 'none')
+call <sid>hi('cssClassSelectorDot', s:voidSteel, s:none, 'none')
+call <sid>hi('cssColor', s:voidSteel, s:none, 'none')
+call <sid>hi('cssCommonAttr', s:voidSteel, s:none, 'none')
+call <sid>hi('cssCustomProperty', s:voidSteel, s:none, 'none')
+call <sid>hi('cssDefinition', s:voidSteel, s:none, 'none')
+call <sid>hi('cssFunction', s:voidSteel, s:none, 'none')
+call <sid>hi('cssFunctionName', s:voidSteel, s:none, 'none')
+call <sid>hi('cssIdentifier', s:voidSteel, s:none, 'none')
+call <sid>hi('cssImportant', s:voidSteel, s:none, 'none')
+call <sid>hi('cssInclude', s:voidSteel, s:none, 'none')
+call <sid>hi('cssMedia', s:voidSteel, s:none, 'none')
+call <sid>hi('cssMediaBlock', s:voidSteel, s:none, 'none')
+call <sid>hi('cssProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssGeneratedContentProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssTextProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssAnimationProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssUIProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssTransformProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssTransitionProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssPrintProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssPositioningProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssBoxProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssFontDescriptorProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssFlexibleBoxProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssBorderOutlineProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssBackgroundProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssMarginProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssListProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssTableProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssFontProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssPaddingProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssDimensionProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssRenderProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssColorProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssGeneratedContentProp', s:voidSteel, s:none, 'none')
+call <sid>hi('cssPropDefinition', s:voidSteel, s:none, 'none')
+call <sid>hi('cssPseudoClass', s:voidSteel, s:none, 'none')
+call <sid>hi('cssPseudoClassId', s:voidSteel, s:none, 'none')
+call <sid>hi('cssPseudoClassLang', s:voidSteel, s:none, 'none')
+call <sid>hi('cssSelectorOperator', s:voidSteel, s:none, 'none')
+call <sid>hi('cssTagName', s:voidSteel, s:none, 'none')
+call <sid>hi('cssURL', s:voidSteel, s:none, 'none')
+call <sid>hi('cssUnitDecorators', s:voidSteel, s:none, 'none')
+call <sid>hi('cssUnits', s:voidSteel, s:none, 'none')
+call <sid>hi('cssValueLength', s:voidSteel, s:none, 'none')
+call <sid>hi('cssValueNumber', s:voidSteel, s:none, 'none')
+call <sid>hi('cssValueKeyword', s:voidSteel, s:none, 'none')
+call <sid>hi('cssVendor', s:voidSteel, s:none, 'none')
+
+" HTML
+call <sid>hi('htmlArg', s:voidSteel, s:none, 'none')
+call <sid>hi('htmlEndTag', s:voidSteel, s:none, 'none')
+call <sid>hi('htmlSpecialChar', s:voidSteel, s:none, 'none')
+call <sid>hi('htmlSpecialTagName', s:voidSteel, s:none, 'none')
+call <sid>hi('htmlTag', s:voidSteel, s:none, 'none')
+call <sid>hi('htmlTagName', s:voidSteel, s:none, 'none')
+
+" JavaScript
+call <sid>hi('javaScript', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptFunction', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptIdentifier', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptMember', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptNull', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptNumber', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptNumber', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptParens', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptSpecial', s:voidSteel, s:none, 'none')
+call <sid>hi('javaScriptStringS', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptArrayMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptArrayStaticMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptArrowFunc', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptAsyncFuncKeyword', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptAwaitFuncKeyword', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptBraces', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptBrackets', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptCacheMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptClassExtends', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptClassKeyword', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptClassName', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptClassSuperName', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptDOMElemAttrs', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptDOMEventMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptDOMNodeMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptDOMStorageMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptDateMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptDefault', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptDocNamedParamType', s:voidGray4, s:none, 'none')
+call <sid>hi('javascriptDocNotation', s:voidGray4, s:none, 'none')
+call <sid>hi('javascriptDocParamName', s:voidGray4, s:none, 'none')
+call <sid>hi('javascriptDocParamType', s:voidGray4, s:none, 'none')
+call <sid>hi('javascriptDocTags', s:voidGray4, s:none, 'none')
+call <sid>hi('javascriptEndColons', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptExport', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptHeadersMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptIdentifierName', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptImport', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptLabel', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptLogicSymbols', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptMathStaticMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptObjectLabel', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptOperator', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptPropertyName', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptStringMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptVariable', s:voidSteel, s:none, 'none')
+call <sid>hi('javascriptYield', s:voidSteel, s:none, 'none')
+call <sid>hi('jsArrowFunction', s:voidSteel, s:none, 'none')
+call <sid>hi('jsClassDefinition', s:voidSteel, s:none, 'none')
+call <sid>hi('jsClassKeyword', s:voidSteel, s:none, 'none')
+call <sid>hi('jsDecorator', s:voidSteel, s:none, 'none')
+call <sid>hi('jsDestructuringBlock', s:voidSteel, s:none, 'none')
+call <sid>hi('jsExportDefault', s:voidSteel, s:none, 'none')
+call <sid>hi('jsExtendsKeyword', s:voidSteel, s:none, 'none')
+call <sid>hi('jsFuncArgs', s:voidSteel, s:none, 'none')
+call <sid>hi('jsFuncCall', s:voidSteel, s:none, 'none')
+call <sid>hi('jsFunction', s:voidSteel, s:none, 'none')
+call <sid>hi('jsGlobalObjects', s:voidSteel, s:none, 'none')
+call <sid>hi('jsModuleKeyword', s:voidSteel, s:none, 'none')
+call <sid>hi('jsNull', s:voidSteel, s:none, 'none')
+call <sid>hi('jsObjectBraces', s:voidSteel, s:none, 'none')
+call <sid>hi('jsObjectKey', s:voidSteel, s:none, 'none')
+call <sid>hi('jsObjectStringKey', s:voidSteel, s:none, 'none')
+call <sid>hi('jsRegexpString', s:voidSteel, s:none, 'none')
+call <sid>hi('jsReturn', s:voidSteel, s:none, 'none')
+call <sid>hi('jsSpecial', s:voidSteel, s:none, 'none')
+call <sid>hi('jsSuper', s:voidSteel, s:none, 'none')
+call <sid>hi('jsTemplateBraces', s:voidSteel, s:none, 'none')
+call <sid>hi('jsTemplateString', s:voidSteel, s:none, 'none')
+call <sid>hi('jsThis', s:voidSteel, s:none, 'none')
+call <sid>hi('jsVariableDef', s:voidSteel, s:none, 'none')
+
+" JSX
+call <sid>hi('jsxAttrib', s:voidSteel, s:none, 'none')
+call <sid>hi('jsxAttributeBraces', s:voidSteel, s:none, 'none')
+call <sid>hi('jsxCloseString', s:voidSteel, s:none, 'none')
+call <sid>hi('jsxCloseTag', s:voidSteel, s:none, 'none')
+call <sid>hi('jsxString', s:voidSteel, s:none, 'none')
+call <sid>hi('jsxTag', s:voidSteel, s:none, 'none')
+call <sid>hi('jsxTagName', s:voidSteel, s:none, 'none')
+
+" Ruby
+call <sid>hi('rubyBlockParameter', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyClass', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyClassVariable', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyConstant', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyControl', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyEscape', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyException', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyFunction', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyGlobalVariable', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyInclude', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyInstanceVariable', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyInterpolationDelimiter', s:none, s:none, 'none')
+call <sid>hi('rubyOperator', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyPseudoVariable', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyRegexp', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyRegexpDelimiter', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyStringDelimiter', s:voidSteel, s:none, 'none')
+call <sid>hi('rubySymbol', s:voidSteel, s:none, 'none')
+
+" Ruby (Embedded)
+call <sid>hi('erubyComment', s:voidGray3, s:none, 'none')
+call <sid>hi('erubyDelimiter', s:none, s:none, 'none')
+call <sid>hi('erubyRailsMethod', s:voidSteel, s:none, 'none')
+
+" Ruby on Rails
+call <sid>hi('rubyRailsARAssociationMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyRailsARMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyRailsMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyRailsRenderMethod', s:voidSteel, s:none, 'none')
+call <sid>hi('rubyRailsUserClass', s:voidSteel, s:none, 'none')
+
+" XML
+call <sid>hi('xmlAttrib', s:voidSteel, s:none, 'none')
+call <sid>hi('xmlEndTag', s:voidSteel, s:none, 'none')
+call <sid>hi('xmlTag', s:voidSteel, s:none, 'none')
+call <sid>hi('xmlTagName', s:voidSteel, s:none, 'none')
+
+" YAML
+call <sid>hi('yamlAlias', s:voidSteel, s:none, 'none')
+call <sid>hi('yamlAnchor', s:voidSteel, s:none, 'none')
+call <sid>hi('yamlDocumentHeader', s:voidSteel, s:none, 'none')
+call <sid>hi('yamlKey', s:voidSteel, s:none, 'none')
+
+
+
+" ------------
+" Plugins
+" ------------
+
+" todo.txt
+call <sid>hi('TodoContext', s:voidSteel, s:none, 'none')
+call <sid>hi('TodoDate', s:voidSteel, s:none, 'none')
+call <sid>hi('TodoDone', s:voidGray3, s:none, 'none')
+call <sid>hi('TodoPriorityA', s:voidSteel, s:none, 'none')
+call <sid>hi('TodoPriorityB', s:voidSteel, s:none, 'none')
+call <sid>hi('TodoPriorityC', s:voidSteel, s:none, 'none')
+call <sid>hi('TodoProject', s:voidSteel, s:none, 'none')
+
+" Buftabline
+call <sid>hi('BufTabLineActive', s:voidSteel, s:voidGray2, 'none')
+call <sid>hi('BufTabLineCurrent', s:voidBlack, s:voidGray4, 'none')
+call <sid>hi('BufTabLineFill', s:voidBlack, s:voidBlack, 'none')
+call <sid>hi('BufTabLineHidden', s:voidGray3, s:voidBlack2, 'none')
