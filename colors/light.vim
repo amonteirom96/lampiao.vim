@@ -7,16 +7,16 @@ endif
 set background=light
 let g:colors_name = "gruber_light"
 
-" Cores ajustadas para fundo claro
-let s:black  = ["#e4e4e4", "254"]  " Invertido com o branco
-let s:blue   = ["#005f87", "24"]   " Azul mais escuro
-let s:brown  = ["#875f00", "94"]   " Marrom mais escuro
-let s:cyan   = ["#008787", "30"]   " Ciano mais escuro
+" Definindo cores
+let s:black  = ["#2E2E2E", "235"]  " Preto escuro
+let s:blue   = ["#005f87", "24"]   " Azul
+let s:brown  = ["#875f00", "94"]   " Marrom
+let s:cyan   = ["#008787", "30"]   " Ciano
 let s:gray   = ["#d0d0d0", "250"]  " Cinza claro
-let s:green  = ["#5faf5f", "65"]   " Verde mais suave
-let s:red    = ["#d75f5f", "167"]  " Vermelho mais claro
-let s:white  = ["#1c1c1c", "234"]  " Invertido com o preto
-let s:yellow = ["#af8700", "136"]  " Amarelo suave"
+let s:green  = ["#5faf5f", "65"]   " Verde
+let s:red    = ["#d75f5f", "167"]  " Vermelho
+let s:white  = ["#f8f8f8", "255"]  " Branco claro
+let s:yellow = ["#af8700", "136"]  " Amarelo
 
 let s:bold      = "bold"
 let s:italic    = "italic"
