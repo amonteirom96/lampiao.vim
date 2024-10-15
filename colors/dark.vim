@@ -287,7 +287,7 @@ hi! link jsxComponentName       Statement
 hi! link jsxTagName             Statement
 hi! link jsxCloseString         Noise
 
-hi! link LazyDimmed Comment
+" hi! link LazyDimmed Comment
 
 hi! link jsonBoolean          Boolean
 hi! link jsonEscape           Operator
