@@ -61,12 +61,12 @@ hi MatchWord         guifg=#C00000 guibg=#F0C8BE gui=bold
 hi Delimiter         guifg=#8F8F8F
 hi Ignore            guifg=#707065 guibg=NONE
 hi Conceal           guibg=#F8F8F3 
-hi NonText           guifg=#D0D0D0               gui=NONE
-hi SpecialKey        guifg=#D0D0D0 guibg=NONE
+hi NonText           guifg=#444444               gui=NONE
+hi SpecialKey        guifg=#444444 guibg=NONE
 hi Special           guifg=#8040B0               gui=bold
-hi SpecialComment    guifg=#D0D0D0               gui=bold
+hi SpecialComment    guifg=#444444               gui=bold
 
-hi EndOfBuffer       guifg=#D0D0D0               gui=NONE
+hi EndOfBuffer       guifg=#444444               gui=NONE
 
 hi Tag               guifg=#8c32b4               gui=italic
 hi Title             guifg=#E04000               gui=bold
