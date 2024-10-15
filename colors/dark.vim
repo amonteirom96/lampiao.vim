@@ -8,22 +8,22 @@ set background=dark
 let g:colors_name="dark"
 
 " Geral
-hi Normal       guifg=#dcdcdc     guibg=#1e1e1e
-hi NormalFloat  guifg=#dcdcdc     guibg=#1e1e1e
-hi Cursor       guifg=#1e1e1e     guibg=#dcdcdc
-hi CursorLine   guibg=#2d2d2d
-hi VertSplit    guifg=#3e3e42    guibg=#1e1e1e
+hi Normal       guifg=#d4d4d4     guibg=#1e1e1e
+hi NormalFloat  guifg=#d4d4d4     guibg=#1e1e1e
+hi Cursor       guifg=#1e1e1e     guibg=#d4d4d4
+hi CursorLine   guibg=#3a3d41
+hi VertSplit    guifg=#3e3e42     guibg=#1e1e1e
 hi Folded       guifg=#9b9b9b     guibg=#2d2d30
-hi FoldColumn   guifg=#dcdcdc     guibg=#1e1e1e
+hi FoldColumn   guifg=#d4d4d4     guibg=#1e1e1e
 hi LineNr       guifg=#858585     guibg=#1e1e1e
-hi StatusLine   guifg=#dcdcdc     guibg=#2d2d30
-hi StatusLineNC guifg=#3e3e42    guibg=#1e1e1e
+hi StatusLine   guifg=#d4d4d4     guibg=#2d2d30
+hi StatusLineNC guifg=#3e3e42     guibg=#1e1e1e
 hi IncSearch    guifg=#1e1e1e     guibg=#569cd6
 hi Search       guifg=#1e1e1e     guibg=#569cd6
 hi Directory    guifg=#d7ba7d
 hi Special      guifg=#d7ba7d
-hi Visual       ctermfg=0 ctermbg=15 guibg=#264f78
-hi PmenuSel     cterm=underline,reverse guifg=#569cd6 guibg=#1e1e1e blend=0
+hi Visual       guibg=#264f78
+hi PmenuSel     guifg=#d4d4d4     guibg=#0078d4
 
 " TODO
 hi TodoBgTODO   gui=bold guifg=#FFFFFF     guibg=#6a9955
@@ -50,34 +50,34 @@ hi DiagnosticFloatingHint    guifg=#9cdcfe     guibg=#1e1e1e
 hi link TelescopeSelection CursorLine
 
 " Realce de mensagens e buscas
-hi MoreMsg      guifg=#dcdcdc
-hi ModeMsg      guifg=#dcdcdc
-hi Question     guifg=#dcdcdc
+hi MoreMsg      guifg=#d4d4d4
+hi ModeMsg      guifg=#d4d4d4
+hi Question     guifg=#d4d4d4
 
 " Comentários e código
-hi Statement    cterm=NONE gui=NONE guifg=#569cd6
-hi Comment      guifg=#608b4e     gui=italic
+hi Statement    guifg=#569cd6
+hi Comment      guifg=#6a9955     gui=italic
 hi link Keyword Statement
 hi Function     guifg=#dcdcaa
-hi Identifier   guifg=#9cdcfe " Alterado com base no JSON
-hi Constant     guifg=#4FC1FF " Cor para constantes e enums
+hi Identifier   guifg=#9cdcfe
+hi Constant     guifg=#569cd6
 hi Type         guifg=#4ec9b0
 hi String       guifg=#ce9178
 hi Number       guifg=#b5cea8
-hi Operator     guifg=#C586C0 " Cor para palavras-chave especiais e operadores
+hi Operator     guifg=#d4d4d4
 
 " HTML Tags
-hi htmlTag      guifg=#dcdcaa
+hi htmlTag      guifg=#569cd6
 hi htmlTagName  guifg=#569cd6
 
 " Expressões regulares
-hi SpecialChar  guifg=#CE9178
-hi Delimiter    guifg=#CE9178
+hi SpecialChar  guifg=#ce9178
+hi Delimiter    guifg=#ce9178
 
 " Escapes
-hi SpecialKey   guifg=#D7BA7D
+hi SpecialKey   guifg=#d7ba7d
 
 " Números e literais
-hi Number       guifg=#B5CEA8
-hi Label        guifg=#C8C8C8
-hi Character    guifg=#569CD6
+hi Number       guifg=#b5cea8
+hi Label        guifg=#c8c8c8
+hi Character    guifg=#569cd6
