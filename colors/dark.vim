@@ -1,17 +1,8 @@
-" ============================================================================
-" MEH - a dark Vim colorscheme
-" Best on truecolor, but with rudimentary 256-color support.
-" ============================================================================
-
 hi clear
 if exists('syntax_on') | syntax reset | endif
 
 let g:colors_name = 'meh'
 set background=dark
-
-" ============================================================================
-" My colors
-" ============================================================================
 
 hi! dkoBgAlt            guibg=#24252a               ctermbg=236
 hi! dkoBgLight          guibg=#303135               ctermbg=237
@@ -45,10 +36,6 @@ hi dkoStatusGood        guibg=#242531
 hi! dkoStatusGood       guibg=#242531 guifg=#77aa88
 hi! dkoStatusError      guibg=#242531 guifg=#cc4444
 hi! dkoStatusInfo       guibg=#242531 guifg=fg
-
-" ============================================================================
-" Vim base
-" ============================================================================
 
 hi! Normal              guibg=#202022 guifg=#bbbbbb           ctermbg=235   ctermfg=250
 
@@ -102,10 +89,6 @@ hi! link Directory      Identifier
 hi! link Include        Normal
 hi! link Keyword        Normal
 
-" ============================================================================
-" My colors
-" ============================================================================
-
 " JavaDoc
 hi! link dkoJavaDocTag  SpecialComment
 hi! link dkoJavaDocType SpecialComment
@@ -114,10 +97,6 @@ hi! link dkoJavaDocKey  SpecialComment
 " Signs
 hi! link dkoSignAdded   DiffAdd
 hi! link dkoSignRemoved DiffDelete
-
-" ============================================================================
-" Line backgrounds
-" ============================================================================
 
 " fg is thin line
 hi! VertSplit           guibg=#262631 guifg=#262631 ctermbg=237 ctermfg=237
@@ -132,10 +111,6 @@ hi! link CursorColumn   dkoBgAlt
 " current line
 hi! link CursorLine     dkoBgAlt
 
-" ============================================================================
-" Popup menu
-" ============================================================================
-
 " want guifg=#666666 for borders, but not on text
 " waiting for https://github.com/neovim/neovim/issues/15551
 hi! Pmenu               guibg=bg
@@ -147,16 +122,8 @@ hi! PmenuThumb          guibg=#505055
 
 hi! link WildMenu       PmenuThumb
 
-" ============================================================================
-" Neovim float
-" ============================================================================
-
 hi! FloatBorder guibg=bg guifg=#666666
 hi! NormalFloat guibg=bg guifg=fg
-
-" ============================================================================
-" Status and tab line
-" ============================================================================
 
 " Statusline uses fg as bg
 hi! link StatusLineNC   dkoStatusNC
@@ -165,23 +132,11 @@ hi! link TabLine        dkoStatus
 hi! link TabLineFill    dkoStatus
 hi! link TabLineSel     dkoStatus
 
-" ============================================================================
-" Statusline Symbols
-" ============================================================================
-
 hi! dkoLineImportant    guibg=#ddaa66 guifg=#303033
 hi! link dkoLineModeReplace       dkoLineImportant
 hi! link dkoLineNeomakeRunning    dkoLineImportant
 
-" ============================================================================
-" Neomake
-" ============================================================================
-
 hi! link NeomakeStatusGood      dkoStatusGood
-
-" ============================================================================
-" Sign column
-" ============================================================================
 
 " kshenoy/vim-signature
 hi! link SignatureMarkText        dkoLineImportant
@@ -189,10 +144,6 @@ hi! link SignatureMarkText        dkoLineImportant
 " showmarks
 hi! link ShowMarksHLl             dkoLineImportant
 hi! link ShowMarksHLu             dkoLineImportant
-
-" ============================================================================
-" Diagnostic
-" ============================================================================
 
 hi! link DiagnosticOk     dkoTextGood
 hi! link DiagnosticError  Error
@@ -203,10 +154,6 @@ hi! DiagnosticInfo        guibg=NONE guifg=NONE
 
 hi! link DiagnosticSignHint dkoTextInfo
 hi! link DiagnosticSignInfo dkoTextInfo
-
-" ============================================================================
-" Plugin provided signs
-" ============================================================================
 
 " ghillb/cybu.nvim
 hi! link CybuFocus  dkoWarningText
@@ -241,17 +188,9 @@ hi! ParenMatch        guibg=#994433 guifg=#ddddcc gui=NONE
 hi! link YankyPut    IncSearch
 hi! link YankyYanked IncSearch
 
-" ============================================================================
-" CSS
-" ============================================================================
-
 hi! link cssTagName     Delimiter
 hi! link cssProp        StorageClass
 hi! link lessVariable   Identifier
-
-" ============================================================================
-" Diff
-" ============================================================================
 
 hi! link diffFile       Normal
 hi! link diffIndexLine  Normal
@@ -261,17 +200,9 @@ hi! link diffNewFile    Normal
 hi! link diffAdded      DiffAdd
 hi! link diffRemoved    DiffDelete
 
-" ============================================================================
-" Git (committia)
-" ============================================================================
-
 hi! link gitKeyword         Identifier
 hi! link gitDate            String
 hi! link gitHash            Normal
-
-" ============================================================================
-" git-messenger
-" ============================================================================
 
 " Header such as 'Commit:', 'Author:'
 hi link gitmessengerHeader        Title
@@ -289,15 +220,7 @@ hi link gitmessengerPopupNormal   dkoPopup
 " color as gitmessengerPopupNormal.
 hi link gitmessengerEndOfBuffer   dkoPopupBlank
 
-" ============================================================================
-" vim-indentguides
-" ============================================================================
-
 hi! IndentGuidesOdd   guibg=#252527
-
-" ============================================================================
-" JavaScript
-" ============================================================================
 
 hi! link jsBuiltins           Identifier
 
@@ -364,30 +287,14 @@ hi! link jsxComponentName       Statement
 hi! link jsxTagName             Statement
 hi! link jsxCloseString         Noise
 
-" ============================================================================
-" Lazy.nvim
-" ============================================================================
-
 hi! link LazyDimmed Comment
-
-" ============================================================================
-" JSON
-" ============================================================================
 
 hi! link jsonBoolean          Boolean
 hi! link jsonEscape           Operator
 
-" ============================================================================
-" Markdown
-" ============================================================================
-
 hi! link markdownCode               Identifier
 hi! link markdownLinkDelimiter      Noise
 hi! link markdownLinkTextDelimiter  Noise
-
-" ============================================================================
-" PHP
-" ============================================================================
 
 hi! link phpClass             Identifier
 hi! link phpType              Normal
@@ -398,16 +305,8 @@ hi! link phpInclude           Statement
 hi! link phpMemberSelector    Noise
 hi! link phpVarSelector       Type
 
-" ============================================================================
-" Python
-" ============================================================================
-
 hi! link pythonQuotes         Noise
 hi! link pythonTripleQuotes   Noise
-
-" ============================================================================
-" Ruby
-" ============================================================================
 
 hi! link rubyInterpolation    PreProc
 hi! link rubyRegexp           dkoRegex
@@ -415,17 +314,9 @@ hi! link rubyRegexp           dkoRegex
 hi! link rubyRegexpSpecial    dkoRegex
 hi! link rubyStringDelimiter  Noise
 
-" ============================================================================
-" Sh
-" ============================================================================
-
 hi! link shCommandSub         Function
 " token: '-f' and '--flag'
 hi! link shOption             Normal
-
-" ============================================================================
-" Typescript - yats.vim
-" ============================================================================
 
 hi! link typescriptAbstract                Operator
 hi! link typescriptAccessibilityModifier   StorageClass
@@ -442,22 +333,9 @@ hi! link typescriptTypeReference           Normal
 hi! link typescriptVariable                StorageClass
 hi! link tsxRegion                         String
 
-" ============================================================================
-" vim-plug
-" ============================================================================
-
 hi! link plug1                Normal
 hi! link plug2                dkoDecorations
 hi! link plugDash             dkoDecorations
-hi! link plugSha              SpecialComment
-
-" ============================================================================
-" VimL
-" ============================================================================
-
-" ----------------------------------------------------------------------------
-" Highlighting
-" ----------------------------------------------------------------------------
 
 " the word 'highlight' or 'hi'
 hi! link vimHighlight         Normal
@@ -468,10 +346,6 @@ hi! link vimHiLink            String
 hi! link vimHiGroup           Normal
 " Don't highlight this one or it will override vim-css-colors
 "hi! link vimHiGuiFgBg  Normal
-
-" ----------------------------------------------------------------------------
-" Lang
-" ----------------------------------------------------------------------------
 
 hi! link vimCommentTitle      SpecialComment
 hi! link vimCommentString     Identifier
@@ -496,10 +370,6 @@ hi! link vimString            String
 hi! link vimSyntax            Normal
 hi! link vimSynType           Normal
 
-" ============================================================================
-" vim help
-" ============================================================================
-
 hi! link helpExample          String
 hi! link helpHeadline         Title
 hi! link helpOption           Identifier
@@ -507,33 +377,17 @@ hi! link helpSectionDelim     Ignore
 hi! link helpSpecial          dkoRegex
 hi! link helpWarning          dkoWarningText
 
-" ============================================================================
-" yaml
-" ============================================================================
-
 hi! link yamlBool             Boolean
-
-" ============================================================================
-" zsh
-" ============================================================================
 
 hi! link zshCommands          Identifier
 hi! link zshOperator          Operator
 hi! link zshOptStart          Identifier
 hi! link zshOption            Normal
 
-" ============================================================================
-" coc
-" ============================================================================
-
 hi! link CocErrorSign       Error
 hi! link CocWarningSign     dkoTextWarn
 hi! link CocInfoSign        dkoTextInfo
 hi! link CocHintSign        dkoTextInfo
-
-" ============================================================================
-" QuickFix
-" ============================================================================
 
 hi! qfError                                 guifg=#772222
 hi! link QuickFixLine dkoBgLight
@@ -541,15 +395,8 @@ hi! link qfFileName   SpecialComment
 hi! link qfLineNr     Comment
 hi! link qfSeparator  dkoDecorations
 
-" ============================================================================
-" netrw
-" ============================================================================
-
 hi link netrwTreeBar  dkoDecorations
 hi link netrwClassify Delimiter
 hi link netrwExe      Normal
 
-" ============================================================================
-" telescope
-" ============================================================================
 hi! link TelescopeBorder FloatBorder
