@@ -1,257 +1,555 @@
-set background=dark
+" ============================================================================
+" MEH - a dark Vim colorscheme
+" Best on truecolor, but with rudimentary 256-color support.
+" ============================================================================
+
 hi clear
-if exists("syntax_on")
-  syntax reset
-endif
-if !exists("termguicolors")
-  set termguicolors
-endif
-let g:colors_name="atlas"
+if exists('syntax_on') | syntax reset | endif
 
+let g:colors_name = 'meh'
+set background=dark
 
-let Italic = ""
-if exists('g:atlas_italic')
-  let Italic = "italic"
-endif
-let g:atlas_italic = get(g:, 'atlas_italic', 0)
+" ============================================================================
+" My colors
+" ============================================================================
 
-let Bold = ""
-if exists('g:atlas_bold')
-  let Bold = "bold"
-endif
+hi! dkoBgAlt            guibg=#24252a               ctermbg=236
+hi! dkoBgLight          guibg=#303135               ctermbg=237
+hi! dkoTextLight                      guifg=#dddddd ctermfg=253
+hi! dkoTextGood                       guifg=#77aa88
+hi! dkoTextWarn                       guifg=#ddaa66
+hi! dkoTextInfo                       guifg=#505a71
 
-let g:atlas_bold = get(g:, 'atlas_bold', 0)
-hi ColorColumn guifg=NONE ctermfg=NONE guibg=#323232 ctermbg=236 gui=NONE cterm=NONE
-hi CursorColumn guifg=NONE ctermfg=NONE guibg=#323232 ctermbg=236 gui=NONE cterm=NONE
-hi CursorLine guifg=NONE ctermfg=NONE guibg=#323232 ctermbg=236 gui=NONE cterm=NONE
-hi CursorLineNr guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Directory guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi DiffAdd guifg=NONE ctermfg=NONE guibg=#c0c0c0 ctermbg=238 gui=NONE cterm=NONE
-hi DiffChange guifg=NONE ctermfg=NONE guibg=#c0c0c0 ctermbg=239 gui=NONE cterm=NONE
-hi DiffDelete guifg=#c0c0c0 ctermfg=203 guibg=#c0c0c0 ctermbg=237 gui=NONE cterm=NONE
-hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
-hi ErrorMsg guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
-hi VertSplit guifg=#212121 ctermfg=235 guibg=#212121 ctermbg=235 gui=NONE cterm=NONE
-hi Folded guifg=#666666 ctermfg=242 guibg=#1d1d1d ctermbg=234 gui=NONE cterm=NONE
-hi FoldColumn guifg=#666666 ctermfg=242 guibg=#1d1d1d ctermbg=234 gui=NONE cterm=NONE
-hi SignColumn guifg=#999999 ctermfg=246 guibg=#212121 ctermbg=235 gui=NONE cterm=NONE
-hi IncSearch guifg=#212121 ctermfg=235 guibg=#ffffff ctermbg=15 gui=NONE cterm=NONE
-hi LineNr guifg=#444444 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi MatchParen guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
-hi NonText guifg=#444444 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Normal guifg=#c0c0c0 ctermfg=255 guibg=#212121 ctermbg=235 gui=NONE cterm=NONE
-hi PMenu guifg=#212121 ctermfg=235 guibg=#d0d0d0 ctermbg=81 gui=NONE cterm=NONE
-hi PMenuSel guifg=#c0c0c0 ctermfg=235 guibg=#666666 ctermbg=185 gui=NONE cterm=NONE
-hi PmenuSbar guifg=#c0c0c0 ctermfg=180 guibg=#c0c0c0 ctermbg=180 gui=NONE cterm=NONE
-hi PmenuThumb guifg=#c0c0c0 ctermfg=215 guibg=#c0c0c0 ctermbg=215 gui=NONE cterm=NONE
-hi Question guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Search guifg=#ffffff ctermfg=15 guibg=NONE ctermbg=NONE gui=underline,Bold cterm=underline,Bold
-hi SpecialKey guifg=#444444 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi SpellBad guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi SpellLocal guifg=#c0c0c0 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi SpellCap guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi SpellRare guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi StatusLine guifg=#444444 ctermfg=234 guibg=NONE ctermbg=242 gui=Bold cterm=Bold
-hi StatusLineNC guifg=#444444 ctermfg=246 guibg=NONE ctermbg=238 gui=NONE cterm=NONE
-hi TabLine guifg=#999999 ctermfg=246 guibg=#444444 ctermbg=238 gui=NONE cterm=NONE
-hi TabLineFill guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=238 gui=NONE cterm=NONE
-hi TabLineSel guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
-hi Title guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
-hi Visual guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=0 gui=NONE cterm=NONE
-hi VisualNOS guifg=NONE ctermfg=NONE guibg=#444444 ctermbg=0 gui=NONE cterm=NONE
-hi WarningMsg guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi WildMenu guifg=#212121 ctermfg=235 guibg=#c0c0c0 ctermbg=185 gui=Bold cterm=Bold
-hi Comment guifg=#666666 ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Constant guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi String guifg=#c0c0c0 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Character guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Boolean guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Number guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Float guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Identifier guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Function guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Statement guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Conditional guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Operator guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Exception guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi PreProc guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Type guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Special guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Underlined guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=underline cterm=underline
-hi Error guifg=#f43753 ctermfg=255 guibg=NONE ctermbg=203 gui=NONE cterm=NONE
-hi Todo guifg=#ffc24b ctermfg=203 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
-hi cssVendor guifg=#c0c0c0 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssTagName guifg=#c0c0c0 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssAttrComma guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssBackgroundProp guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssBorderProp guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssBoxProp guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssDimensionProp guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssFontProp guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssPositioningProp guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssTextProp guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssValueLength guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssValueInteger guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssValueNumber guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssIdentifier guifg=#c0c0c0 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssIncludeKeyword guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssImportant guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssClassName guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssClassNameDot guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssProp guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssAttr guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssUnitDecorators guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssNoise guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi diffRemoved guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi diffChanged guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi diffAdded guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi diffSubname guifg=#c0c0c0 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi elmDelimiter guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi elmOperator guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi FugitiveblameHash guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi FugitiveblameUncommitted guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi FugitiveblameTime guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi FugitiveblameNotCommittedYet guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi gitcommitBranch guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi gitcommitDiscardedType guifg=#c0c0c0 ctermfg=160 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi gitcommitSelectedType guifg=#c0c0c0 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi gitcommitHeader guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi gitcommitUntrackedFile guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi gitcommitDiscardedFile guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi gitcommitSelectedFile guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi helpHyperTextEntry guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi helpHeadline guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi helpSectionDelim guifg=#666666 ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi helpNote guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptOperator guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptBraces guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptNull guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsonEscape guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsonNumber guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsonBraces guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsonNull guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsonBoolean guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsonKeywordMatch guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsonQuote guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsonNoise guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownH1 guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
-hi markdownHeadingRule guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
-hi markdownHeadingDelimiter guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
-hi markdownListMarker guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownBlockquote guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownRule guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownLinkText guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownLinkTextDelimiter guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownLinkDelimiter guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownIdDeclaration guifg=#c0c0c0 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownAutomaticLink guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownUrl guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownUrlTitle guifg=#c0c0c0 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownUrlDelimiter guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownUrlTitleDelimiter guifg=#c0c0c0 ctermfg=58 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownCodeDelimiter guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownCode guifg=#c0c0c0 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownEscape guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi markdownError guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NERDTreeHelp guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NERDTreeHelpKey guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NERDTreeHelpCommand guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NERDTreeHelpTitle guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NERDTreeUp guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NERDTreeCWD guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NERDTreeOpenable guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NERDTreeClosable guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi pugJavascriptOutputChar guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi GitGutterAdd guifg=#5af78d ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi GitGutterChange guifg=#ffc24b ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi GitGutterDelete guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi GitGutterChangeDelete guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptOpSymbols guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptParens guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptDocTags guifg=#c0c0c0 ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptDocSeeTag guifg=#c0c0c0 ctermfg=66 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptBrowserObjects guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptDOMObjects guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javaScriptFuncArg guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsParensIfElse guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsObjectKey guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsArrowFunction guifg=#c0c0c0 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsFunctionKey guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsFuncName guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsObjectFuncName guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsNull guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsObjectColon guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsParens guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsFuncParens guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsFuncArgs guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsSpecial guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsTemplateBraces guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsGlobalObjects guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsGlobalNodeObjects guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsImport guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsExport guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsExportDefault guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsExportDefaultGroup guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi jsFrom guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plug2 guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugH2 guifg=#c0c0c0 ctermfg=81 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
-hi plugBracket guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugNumber guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugDash guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugStar guifg=#c0c0c0 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugMessage guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugName guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugUpdate guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugEdge guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugSha guifg=#c0c0c0 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi plugNotLoaded guifg=#c0c0c0 ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi link SignifySignAdd GitGutterAdd
-hi link SignifySignDelete GitGutterDelete
-hi link SignifySignDeleteFirstLine SignifySignDelete
-hi link SignifySignChange GitGutterChange
-hi link SignifySignChangeDelete GitGutterChangeDelete
-hi stylusVariable guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi stylusClass guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi stylusClassChar guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi stylusId guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi stylusIdChar guifg=#c0c0c0 ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi cssVisualVal guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi stylusImport guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi vimCommentString guifg=#c0c0c0 ctermfg=58 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi vimCommentTitle guifg=#c0c0c0 ctermfg=66 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi vimError guifg=#c0c0c0 ctermfg=255 guibg=#c0c0c0 ctermbg=203 gui=NONE cterm=NONE
-hi xmlNamespace guifg=#c0c0c0 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi xmlAttribPunct guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi xmlProcessingDelim guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptOpSymbol guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptDocNotation guifg=#c0c0c0 ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptDocNamedParamType guifg=#c0c0c0 ctermfg=66 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptDocParamName guifg=#c0c0c0 ctermfg=58 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptDocParamType guifg=#c0c0c0 ctermfg=66 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptTemplateSB guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptRepeat guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptObjectLabelColon guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptObjectMethodName guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi javascriptFuncName guifg=#c0c0c0 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi yamlFlowString guifg=#c0c0c0 ctermfg=180 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi yamlFlowStringDelimiter guifg=#c0c0c0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi yamlKeyValueDelimiter guifg=#c0c0c0 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi! dkoPopup            guibg=#2a2a2f guifg=#ccc0c0
+hi! dkoPopupBlank       guibg=#2a2a2f guifg=#2a2a2f
 
-let g:terminal_color_foreground = "#212121"
-let g:terminal_color_background = "#c0c0c0"
-let g:terminal_color_0 = "#212121"
-let g:terminal_color_1 = "#c0c0c0"
-let g:terminal_color_2 = "#c0c0c0"
-let g:terminal_color_3 = "#c0c0c0"
-let g:terminal_color_4 = "#c0c0c0"
-let g:terminal_color_5 = "#c0c0c0"
-let g:terminal_color_6 = "#c0c0c0"
-let g:terminal_color_7 = "#c0c0c0"
-let g:terminal_color_8 = "#1d1d1d"
-let g:terminal_color_9 = "#c0c0c0"
-let g:terminal_color_10 = "#c0c0c0"
-let g:terminal_color_11 = "#c0c0c0"
-let g:terminal_color_12 = "#c0c0c0"
-let g:terminal_color_13 = "#c0c0c0"
-let g:terminal_color_14 = "#c0c0c0"
-let g:terminal_color_15 = "#ffffff"
+hi! dkoDecorations                    guifg=#505a6a
+hi! dkoRegex                          guifg=#cc99cc
+hi! dkoReturn                         guifg=#cc8877 gui=italic
+hi! dkoQuote                          guifg=#77aa88 gui=italic
+hi! dkoType                           guifg=#60687a gui=italic
+hi! link dkoWarningText dkoTextWarn
+hi dkoWarningText       guibg=#2c2b2a               gui=bold
+hi! dkoNormalKey                      guifg=#ccccbb
+
+hi! dkoStatus           guibg=#30313c guifg=#bbbbbb gui=NONE  ctermbg=237
+hi! dkoStatusNC         guibg=#262631 guifg=#666666 gui=NONE  ctermbg=235
+hi! dkoStatusKey        guibg=#40404c
+hi! dkoStatusValue      guibg=#50505c
+hi! dkoStatusItem       guibg=#242531
+hi! dkoStatusTransient  guibg=#505a71 guifg=fg
+
+hi! link dkoStatusGood  dkoTextGood
+hi dkoStatusGood        guibg=#242531
+
+hi! dkoStatusGood       guibg=#242531 guifg=#77aa88
+hi! dkoStatusError      guibg=#242531 guifg=#cc4444
+hi! dkoStatusInfo       guibg=#242531 guifg=fg
+
+" ============================================================================
+" Vim base
+" ============================================================================
+
+hi! Normal              guibg=#202022 guifg=#bbbbbb           ctermbg=235   ctermfg=250
+
+hi! Boolean                           guifg=#cccccc gui=italic
+hi! Comment                           guifg=#70788a gui=italic              ctermfg=240
+hi! Constant                          guifg=NONE    gui=italic
+hi! Delimiter                         guifg=#cc99cc                       ctermfg=139
+hi! DiffAdd             guibg=#2a332a guifg=#668844           ctermbg=235 ctermfg=22
+hi! DiffChange          guibg=#2c2b2a guifg=#7f6030           ctermbg=235 ctermfg=94
+hi! DiffDelete          guibg=#4a2a2a guifg=#aa6666           ctermbg=235 ctermfg=52
+hi! DiffText            guibg=#4a2a2a
+hi! Error               guibg=NONE    guifg=#ee6666           ctermbg=NONE ctermfg=160
+hi! Function                          guifg=NONE
+hi! link Identifier dkoTextLight
+hi! Ignore                            guifg=#40485a
+hi! IncSearch           guibg=#dd77cc guifg=bg      gui=NONE  ctermbg=219   ctermfg=235
+hi! link Label dkoTextLight
+hi! LspInlayHint                      guifg=#bb8866 gui=italic
+hi! MoreMsg                           guifg=#aa6666
+hi! Noise                             guifg=#888888                         ctermfg=243
+hi! NonText                           guifg=#334455
+hi! Number                            guifg=#ee7777                         ctermfg=208
+hi! Operator                          guifg=#888888
+hi! link PreProc dkoTextLight
+hi! Question                          guifg=#88aabb
+hi! Search              guibg=#dd99ff guifg=bg                ctermbg=219   ctermfg=bg
+hi! SpellBad                                                  ctermbg=NONE
+hi! SpellCap                                                  ctermbg=NONE
+hi! SpellRare                                                 ctermbg=NONE
+hi! Special                           guifg=#dd7766                         ctermfg=172
+hi! SpecialComment                    guifg=#707a8a gui=NONE
+hi! SpecialKey                        guifg=#772222
+hi! Statement                         guifg=#777777 gui=NONE                ctermfg=245
+hi! StorageClass                      guifg=#777777
+hi! String                            guifg=#88aabb                         ctermfg=110
+hi! link Title dkoTextLight
+hi! Todo                guibg=#303033 guifg=#ddaa66 gui=bold
+hi! Type                              guifg=#dddddd gui=NONE  ctermfg=253
+hi! Underlined                        guifg=#88aaee gui=underline           ctermfg=110
+hi! Visual              guibg=#afa08f guifg=#1f1f1f
+hi! WarningMsg                        guifg=#ccaa88
+hi! Whitespace          guibg=#1c1c1c guifg=#40485a gui=bold
+hi! Folded              guibg=#24252a guifg=#88aabb           ctermbg=236   ctermfg=110
+hi! TabLineSel          guifg=#cc8877
+hi! link TabLine Folded
+hi! link TabLineFill dkoBgAlt
+
+hi! link Character      Normal
+hi! link Conditional    Normal
+hi! link Directory      Identifier
+hi! link Include        Normal
+hi! link Keyword        Normal
+
+" ============================================================================
+" My colors
+" ============================================================================
+
+" JavaDoc
+hi! link dkoJavaDocTag  SpecialComment
+hi! link dkoJavaDocType SpecialComment
+hi! link dkoJavaDocKey  SpecialComment
+
+" Signs
+hi! link dkoSignAdded   DiffAdd
+hi! link dkoSignRemoved DiffDelete
+
+" ============================================================================
+" Line backgrounds
+" ============================================================================
+
+" fg is thin line
+hi! VertSplit           guibg=#262631 guifg=#262631 ctermbg=237 ctermfg=237
+hi! LineNr              guibg=#222226 guifg=#404044 ctermbg=235 ctermfg=238
+hi! CursorLineNr        guibg=#303033 guifg=#a0a0aa ctermbg=238 ctermfg=245
+hi! link FoldColumn     LineNr
+hi! link SignColumn     LineNr
+
+hi! link ColorColumn    dkoBgAlt
+hi! link CursorColumn   dkoBgAlt
+
+" current line
+hi! link CursorLine     dkoBgAlt
+
+" ============================================================================
+" Popup menu
+" ============================================================================
+
+" want guifg=#666666 for borders, but not on text
+" waiting for https://github.com/neovim/neovim/issues/15551
+hi! Pmenu               guibg=bg
+
+hi! PmenuSel            guibg=#404044
+" popup menu scrollbar
+hi! link PmenuSbar      PmenuSel
+hi! PmenuThumb          guibg=#505055
+
+hi! link WildMenu       PmenuThumb
+
+" ============================================================================
+" Neovim float
+" ============================================================================
+
+hi! FloatBorder guibg=bg guifg=#666666
+hi! NormalFloat guibg=bg guifg=fg
+
+" ============================================================================
+" Status and tab line
+" ============================================================================
+
+" Statusline uses fg as bg
+hi! link StatusLineNC   dkoStatusNC
+hi! link StatusLine     dkoStatus
+hi! link TabLine        dkoStatus
+hi! link TabLineFill    dkoStatus
+hi! link TabLineSel     dkoStatus
+
+" ============================================================================
+" Statusline Symbols
+" ============================================================================
+
+hi! dkoLineImportant    guibg=#ddaa66 guifg=#303033
+hi! link dkoLineModeReplace       dkoLineImportant
+hi! link dkoLineNeomakeRunning    dkoLineImportant
+
+" ============================================================================
+" Neomake
+" ============================================================================
+
+hi! link NeomakeStatusGood      dkoStatusGood
+
+" ============================================================================
+" Sign column
+" ============================================================================
+
+" kshenoy/vim-signature
+hi! link SignatureMarkText        dkoLineImportant
+
+" showmarks
+hi! link ShowMarksHLl             dkoLineImportant
+hi! link ShowMarksHLu             dkoLineImportant
+
+" ============================================================================
+" Diagnostic
+" ============================================================================
+
+hi! link DiagnosticOk     dkoTextGood
+hi! link DiagnosticError  Error
+hi! link DiagnosticWarn   dkoTextWarn
+
+hi! DiagnosticHint        guibg=NONE guifg=NONE
+hi! DiagnosticInfo        guibg=NONE guifg=NONE
+
+hi! link DiagnosticSignHint dkoTextInfo
+hi! link DiagnosticSignInfo dkoTextInfo
+
+" ============================================================================
+" Plugin provided signs
+" ============================================================================
+
+" ghillb/cybu.nvim
+hi! link CybuFocus  dkoWarningText
+
+" w0rp/ale
+"hi! link ALEErrorSign             Error
+" tomtom/quickfixsigns_vim
+hi! link QuickFixSignsDiffAdd     dkoSignAdded
+hi! link QuickFixSignsDiffChange  DiffChange
+hi! link QuickFixSignsDiffDelete  dkoSignRemoved
+" airblade/vim-gitgutter
+hi! link GitGutterAdd             dkoSignAdded
+hi! link GitGutterChange          DiffChange
+hi! link GitGutterChangeDelete    DiffChange
+hi! link GitGutterDelete          dkoSignRemoved
+" mhinz/vim-signify
+hi! link SignifySignAdd           dkoSignAdded
+hi! link SignifySignChange        DiffChange
+hi! link SignifySignChangeDelete  DiffChange
+hi! link SignifySignDelete        dkoSignRemoved
+" chrisbra/changesPlugin
+hi! link ChangesSignTextAdd       dkoSignAdded
+hi! link ChangesSignTextCh        DiffChange
+hi! link ChangesSignTextDel       dkoSignRemoved
+
+" the head in <head></head>
+hi! MatchParen        guibg=#225588 guifg=#ddddcc           ctermbg=18 ctermfg=fg
+" the <> in <head>
+hi! ParenMatch        guibg=#994433 guifg=#ddddcc gui=NONE
+
+" gbprod/yanky.nvim
+hi! link YankyPut    IncSearch
+hi! link YankyYanked IncSearch
+
+" ============================================================================
+" CSS
+" ============================================================================
+
+hi! link cssTagName     Delimiter
+hi! link cssProp        StorageClass
+hi! link lessVariable   Identifier
+
+" ============================================================================
+" Diff
+" ============================================================================
+
+hi! link diffFile       Normal
+hi! link diffIndexLine  Normal
+hi! link diffLine       Normal
+hi! link diffNewFile    Normal
+
+hi! link diffAdded      DiffAdd
+hi! link diffRemoved    DiffDelete
+
+" ============================================================================
+" Git (committia)
+" ============================================================================
+
+hi! link gitKeyword         Identifier
+hi! link gitDate            String
+hi! link gitHash            Normal
+
+" ============================================================================
+" git-messenger
+" ============================================================================
+
+" Header such as 'Commit:', 'Author:'
+hi link gitmessengerHeader        Title
+
+" Commit hash at 'Commit:' header
+hi link gitmessengerHash          dkoPopup
+
+" History number at 'History:' header
+hi link gitmessengerHistory       dkoPopup
+
+" Normal color. This color is the most important
+hi link gitmessengerPopupNormal   dkoPopup
+
+" Color of 'end of buffer'. To hide '~' in popup window, I recommend to use the same background
+" color as gitmessengerPopupNormal.
+hi link gitmessengerEndOfBuffer   dkoPopupBlank
+
+" ============================================================================
+" vim-indentguides
+" ============================================================================
+
+hi! IndentGuidesOdd   guibg=#252527
+
+" ============================================================================
+" JavaScript
+" ============================================================================
+
+hi! link jsBuiltins           Identifier
+
+hi! link jsRegexpCharClass    dkoRegex
+hi! link jsRegexpString       dkoRegex
+
+hi! link jsGlobalObjects      Normal
+hi! link jsGlobalNodeObjects  dkoNormalKey
+hi! link jsFuncArgOperator    Operator
+hi! link jsExport             StorageClass
+hi! link jsImport             jsExport
+hi! link jsFrom               jsExport
+hi! link jsModuleKeyword      String
+hi! link jsNull               Constant
+hi! link jsReturn             dkoReturn
+hi! link jsSuper              dkoQuote
+"hi! link jsStorageClass       Statement
+hi! link jsTemplateBraces     dkoRegex
+hi! link jsThis               Identifier
+"hi! link jsVariableDef        Identifier
+
+" group {Event} e
+" token Event
+hi! link jsDocType            dkoJavaDocType
+hi! link jsDocTypeNoParam     dkoJavaDocType
+" token { }
+hi! link jsDocTypeBrackets    dkoDecorations
+
+hi! link jsDocTags            dkoJavaDocTag
+hi! link jsDocParam           dkoJavaDocKey
+
+" group 'class InlineEditors extends Component'
+hi! link jsClassDefinition    Identifier
+hi! link jsClassKeyword       Identifier
+hi! link jsExtendsKeyword     Identifier
+
+" group 'editorInstances = {};'
+hi! link jsClassProperty      Normal
+
+" token 'componentWillMount'
+hi! link jsClassFuncName      Normal
+
+hi! link jsArrowFunction      Delimiter
+
+hi! link jsFuncCall           Function
+hi! link jsFuncArgs           Identifier
+
+hi! link jsBracket            Identifier
+hi! link jsSpreadExpression   Identifier
+hi! link jsDestructuringBlock dkoNormalKey
+
+hi! link jsObject             Identifier
+hi! link jsObjectKey          dkoNormalKey
+hi! link jsObjectKeyComputed  String
+hi! link jsObjectProp         Normal
+
+hi! link jsxAttrib              dkoNormalKey
+hi! link jsxAttributeBraces     Noise
+hi! link jsxEqual               Noise
+hi! link jsxBraces              Noise
+
+hi! link jsxOpenPunct           Noise
+hi! link jsxComponentName       Statement
+hi! link jsxTagName             Statement
+hi! link jsxCloseString         Noise
+
+" ============================================================================
+" Lazy.nvim
+" ============================================================================
+
+hi! link LazyDimmed Comment
+
+" ============================================================================
+" JSON
+" ============================================================================
+
+hi! link jsonBoolean          Boolean
+hi! link jsonEscape           Operator
+
+" ============================================================================
+" Markdown
+" ============================================================================
+
+hi! link markdownCode               Identifier
+hi! link markdownLinkDelimiter      Noise
+hi! link markdownLinkTextDelimiter  Noise
+
+" ============================================================================
+" PHP
+" ============================================================================
+
+hi! link phpClass             Identifier
+hi! link phpType              Normal
+hi! link phpDocTags           dkoJavaDocTag
+hi! link phpDocParam          dkoJavaDocType
+hi! link phpDocIdentifier     dkoJavaDocKey
+hi! link phpInclude           Statement
+hi! link phpMemberSelector    Noise
+hi! link phpVarSelector       Type
+
+" ============================================================================
+" Python
+" ============================================================================
+
+hi! link pythonQuotes         Noise
+hi! link pythonTripleQuotes   Noise
+
+" ============================================================================
+" Ruby
+" ============================================================================
+
+hi! link rubyInterpolation    PreProc
+hi! link rubyRegexp           dkoRegex
+" rubyRegexpSpecial is not always part of rubyRegexp
+hi! link rubyRegexpSpecial    dkoRegex
+hi! link rubyStringDelimiter  Noise
+
+" ============================================================================
+" Sh
+" ============================================================================
+
+hi! link shCommandSub         Function
+" token: '-f' and '--flag'
+hi! link shOption             Normal
+
+" ============================================================================
+" Typescript - yats.vim
+" ============================================================================
+
+hi! link typescriptAbstract                Operator
+hi! link typescriptAccessibilityModifier   StorageClass
+hi! link typescriptClassKeyword            Normal
+hi! link typescriptClassName               Label
+hi! link typescriptExport                  StorageClass
+hi! link typescriptImport                  typescriptExport
+hi! link typescriptCastKeyword             StorageClass
+hi! link typescriptParens                  Noise
+hi! link typescriptPredefinedType          dkoType
+hi! link typescriptObjectType              dkoType
+hi! link typescriptTemplateSB              dkoRegex
+hi! link typescriptTypeReference           Normal
+hi! link typescriptVariable                StorageClass
+hi! link tsxRegion                         String
+
+" ============================================================================
+" vim-plug
+" ============================================================================
+
+hi! link plug1                Normal
+hi! link plug2                dkoDecorations
+hi! link plugDash             dkoDecorations
+hi! link plugSha              SpecialComment
+
+" ============================================================================
+" VimL
+" ============================================================================
+
+" ----------------------------------------------------------------------------
+" Highlighting
+" ----------------------------------------------------------------------------
+
+" the word 'highlight' or 'hi'
+hi! link vimHighlight         Normal
+" the word 'clear'
+" First thing after 'hi'
+hi! link vimGroup             Normal
+hi! link vimHiLink            String
+hi! link vimHiGroup           Normal
+" Don't highlight this one or it will override vim-css-colors
+"hi! link vimHiGuiFgBg  Normal
+
+" ----------------------------------------------------------------------------
+" Lang
+" ----------------------------------------------------------------------------
+
+hi! link vimCommentTitle      SpecialComment
+hi! link vimCommentString     Identifier
+hi! link vimContinue          dkoDecorations
+hi! link vimOption            Normal
+" token '=utf-8' but broken on things like '=dark'
+hi! link vimSet               String
+hi! link vimSetEqual          String
+" group
+" e.g. has()
+hi! link vimFunc              Normal
+hi! link vimFuncName          Normal
+" token 'ThisFunction' in 'dko#ThisFunction()'
+"hi          link vimUserFunc    String
+" the word 'let'
+hi! link vimLet               Normal
+" '=' in let x = y
+" parens
+hi! link vimParenSep          dkoDecorations
+hi! link vimString            String
+" the word 'syntax'
+hi! link vimSyntax            Normal
+hi! link vimSynType           Normal
+
+" ============================================================================
+" vim help
+" ============================================================================
+
+hi! link helpExample          String
+hi! link helpHeadline         Title
+hi! link helpOption           Identifier
+hi! link helpSectionDelim     Ignore
+hi! link helpSpecial          dkoRegex
+hi! link helpWarning          dkoWarningText
+
+" ============================================================================
+" yaml
+" ============================================================================
+
+hi! link yamlBool             Boolean
+
+" ============================================================================
+" zsh
+" ============================================================================
+
+hi! link zshCommands          Identifier
+hi! link zshOperator          Operator
+hi! link zshOptStart          Identifier
+hi! link zshOption            Normal
+
+" ============================================================================
+" coc
+" ============================================================================
+
+hi! link CocErrorSign       Error
+hi! link CocWarningSign     dkoTextWarn
+hi! link CocInfoSign        dkoTextInfo
+hi! link CocHintSign        dkoTextInfo
+
+" ============================================================================
+" QuickFix
+" ============================================================================
+
+hi! qfError                                 guifg=#772222
+hi! link QuickFixLine dkoBgLight
+hi! link qfFileName   SpecialComment
+hi! link qfLineNr     Comment
+hi! link qfSeparator  dkoDecorations
+
+" ============================================================================
+" netrw
+" ============================================================================
+
+hi link netrwTreeBar  dkoDecorations
+hi link netrwClassify Delimiter
+hi link netrwExe      Normal
+
+" ============================================================================
+" telescope
+" ============================================================================
+hi! link TelescopeBorder FloatBorder
