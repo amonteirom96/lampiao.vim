@@ -1,9 +1,3 @@
-" Vim color scheme
-"
-" Name:       monochrome.vim
-" Maintainer: Xavier Noria <fxn@hashref.com>
-" License:    MIT
-
 set background=dark
 
 hi clear
@@ -11,244 +5,111 @@ if exists('syntax_on')
    syntax reset
 endif
 
-let g:colors_name = 'monochrome'
+let g:colors_name = 'phoenix'
 
-let s:white  = ['White', 15]
-let s:black  = ['#0e1111', 16]
-let s:bgray  = ['#181818', 233]
-let s:lgray  = ['LightGray', 255]
-let s:cgray  = ['#737373', 243]
-let s:dgray  = ['DarkGray', 248]
-let s:sblue  = ['#778899', 67]
-let s:yellow = ['Yellow', 226]
-let s:red    = ['#b6403a', 160]
-let s:green  = ['#478226', 28]
-
-let s:default_fg = s:lgray
-let s:default_bg = s:black
-
-let s:italic    = 'italic'
-let s:bold      = 'bold'
-let s:underline = 'underline'
-let s:none      = 'NONE'
-
-let s:default_lst = []
-let s:default_str = ''
-
-if !exists("g:monochrome_italic_comments")
-  let g:monochrome_italic_comments = 0
+if exists("g:phoenix_acc")
+  let s:accent = g:phoenix_acc
+else
+  let s:accent = ""
 endif
-let s:comment_attr = g:monochrome_italic_comments ? s:italic : s:none
 
-function! s:hi(...)
-    let group = a:1
-    let fg    = get(a:, 2, s:default_fg)
-    let bg    = get(a:, 3, s:default_bg)
-    let attr  = get(a:, 4, s:default_str)
+if exists("g:phoenix_bg")
+  let s:background = g:phoenix_bg
+else
+  let s:background = ""
+endif
 
-    let cmd = ['hi', group]
+if exists("g:phoenix_invert_match_paren")
+  let s:invert_match_paren = 1
+else
+  let s:invert_match_paren = 0
+endif
 
-    if fg != s:default_lst
-        call add(cmd, 'guifg='.fg[0])
-        call add(cmd, 'ctermfg='.fg[1])
-    endif
+hi Normal                     guifg=#CCCCCC guibg=#191919 gui=NONE      ctermfg=250
+hi NonText                    guifg=#6A6A6A guibg=NONE    gui=NONE      ctermfg=008
+hi Comment                    guifg=#555555 guibg=NONE    gui=NONE      ctermfg=243
+hi Constant                   guifg=#40BDFF guibg=NONE    gui=NONE      ctermfg=039
+hi Directory                  guifg=#40BDFF guibg=NONE    gui=NONE      ctermfg=039
+hi Identifier                 guifg=#787878 guibg=NONE    gui=NONE      ctermfg=246
+hi PreProc                    guifg=#787878 guibg=NONE    gui=NONE      ctermfg=246
+hi Special                    guifg=#EFEFEF guibg=NONE    gui=NONE      ctermfg=255
+hi Statement                  guifg=#CCCCCC guibg=NONE    gui=NONE      ctermfg=250
+hi Title                      guifg=#CCCCCC guibg=NONE    gui=bold      ctermfg=250
+hi Type                       guifg=#64B2DB guibg=NONE    gui=NONE      ctermfg=039
+hi SpecialKey                 guifg=#40BDFF guibg=NONE    gui=NONE      ctermfg=039
+hi Conditional                guifg=#64B2DB guibg=NONE    gui=NONE      ctermfg=039
+hi Operator                   guifg=#AAAAAA guibg=NONE    gui=NONE      ctermfg=246
+hi Exception                  guifg=#64B2DB guibg=NONE    gui=NONE      ctermfg=039
+hi Label                      guifg=#64B2DB guibg=NONE    gui=NONE      ctermfg=039
+hi Repeat                     guifg=#64B2DB guibg=NONE    gui=NONE      ctermfg=039
+hi Keyword                    guifg=#64B2DB guibg=NONE    gui=NONE      ctermfg=039
+hi String                     guifg=#5697B8 guibg=NONE    gui=NONE      ctermfg=039
+hi Character                  guifg=#40BDFF guibg=NONE    gui=NONE      ctermfg=039
+hi Boolean                    guifg=#40BDFF guibg=NONE    gui=NONE      ctermfg=039
+hi Number                     guifg=#40BDFF guibg=NONE    gui=NONE      ctermfg=039
+hi Function                   guifg=#EFEFEF guibg=NONE    gui=NONE      ctermfg=255
+hi Underlined                 guifg=#CCCCCC guibg=NONE    gui=underline ctermfg=250
 
-    if bg != s:default_lst && bg != s:default_bg
-        call add(cmd, 'guibg='.bg[0])
-        call add(cmd, 'ctermbg='.bg[1])
-    endif
+hi Cursor                     guifg=#6A6A6A guibg=#EFEFEF gui=NONE      ctermfg=008   ctermbg=255
+hi CursorIM                   guifg=#191919 guibg=#CCCCCC gui=NONE      ctermfg=008   ctermbg=255
+hi CursorColumn               guifg=NONE    guibg=#292929 gui=NONE      ctermfg=NONE  ctermbg=008     cterm=NONE
+hi CursorLine                 guifg=NONE    guibg=#292929 gui=NONE      ctermfg=NONE  ctermbg=008     cterm=NONE
+hi Visual                     guifg=#EFEFEF guibg=#515151 gui=NONE      ctermfg=255   ctermbg=008
+hi VisualNOS                  guifg=#EFEFEF guibg=#515151 gui=NONE      ctermfg=255   ctermbg=008
+hi IncSearch                  guifg=#EFEFEF guibg=#64B2DB gui=NONE      ctermfg=255   ctermbg=039
+hi MatchParen                 guifg=#191919 guibg=#40BDFF gui=NONE      ctermfg=235   ctermbg=039
+if s:invert_match_paren
+  hi MatchParen               guifg=#40BDFF guibg=NONE    gui=NONE      ctermfg=039   ctermbg=NONE
+endif
+hi Search                     guifg=#EFEFEF guibg=#40BDFF gui=NONE      ctermfg=255   ctermbg=039
+hi Error                      guifg=#FF3D23 guibg=NONE    gui=bold      ctermfg=009   ctermbg=NONE
+hi Todo                       guifg=#DEDD5A guibg=NONE    gui=bold      ctermfg=226   ctermbg=NONE
 
-    if attr != s:default_str
-        call add(cmd, 'gui='.attr)
-        call add(cmd, 'cterm='.attr)
-    endif
+hi Question                   guifg=#64B2DB guibg=NONE    gui=NONE      ctermfg=039   ctermbg=NONE
+hi ErrorMsg                   guifg=#FF3D23 guibg=NONE    gui=bold      ctermfg=009   ctermbg=NONE    cterm=bold
+hi MoreMsg                    guifg=#87BF19 guibg=NONE    gui=NONE      ctermfg=002   ctermbg=NONE
+hi WarningMsg                 guifg=#DEDD5A guibg=NONE    gui=NONE      ctermfg=226   ctermbg=NONE
 
-    exec join(cmd, ' ')
-endfunction
+hi ColorColumn                guifg=#CCCCCC guibg=#292929 gui=bold      ctermfg=250   ctermbg=008
+hi Pmenu                      guifg=#EFEFEF guibg=#191919 gui=NONE      ctermfg=255   ctermbg=000
+hi PmenuSel                   guifg=#EFEFEF guibg=#40BDFF gui=NONE      ctermfg=255   ctermbg=039
+hi PmenuThumb                 guifg=#EFEFEF guibg=#40BDFF gui=NONE      ctermfg=255   ctermbg=039
+hi StatusLine                 guifg=#CCCCCC guibg=NONE    gui=NONE      ctermfg=000   ctermbg=250
+hi StatusLineNC               guifg=#555555 guibg=NONE    gui=NONE      ctermfg=000   ctermbg=246
+hi CursorLineNr               guifg=#DDDDDD guibg=#191919 gui=bold      ctermfg=255   ctermbg=NONE    cterm=bold
+hi TabLine                    guifg=#CCCCCC guibg=NONE    gui=NONE      ctermfg=250   ctermbg=NONE    cterm=NONE
+hi TabLineFill                guifg=#CCCCCC guibg=NONE    gui=NONE      ctermfg=250   ctermbg=NONE    cterm=NONE
+hi FoldColumn                 guifg=#191919 guibg=#40BDFF gui=NONE      ctermfg=235   ctermbg=039
+hi Folded                     guifg=#191919 guibg=#40BDFF gui=NONE      ctermfg=235   ctermbg=039
+hi LineNr                     guifg=#6A6A6A guibg=#191919 gui=NONE      ctermfg=245   ctermbg=NONE
+hi SignColumn                 guifg=#EFEFEF guibg=NONE    gui=NONE      ctermfg=255   ctermbg=NONE
+hi VertSplit                  guifg=#555555 guibg=NONE    gui=NONE      ctermfg=000   ctermbg=246
+hi WildMenu                   guifg=#191919 guibg=#40BDFF gui=NONE      ctermfg=235   ctermbg=039
+hi OverLength                 guifg=NONE    guibg=#20272F gui=NONE      ctermfg=NONE  ctermbg=018
+hi DiffAdd                    guifg=#87BF19 guibg=NONE    gui=bold      ctermfg=002
+hi DiffChange                 guifg=#DEDD5A guibg=NONE    gui=bold      ctermfg=226
+hi DiffDelete                 guifg=#FF3D23 guibg=NONE    gui=bold      ctermfg=009
+hi DiffText                   guifg=#CCCCCC guibg=NONE    gui=bold      ctermfg=250
+hi GitGutterAddDefault        guifg=#87BF19 guibg=NONE    gui=NONE      ctermfg=002
+hi GitGutterChangeDefault     guifg=#DEDD5A guibg=NONE    gui=NONE      ctermfg=226
+hi GitGutterDeleteDefault     guifg=#FF3D23 guibg=NONE    gui=NONE      ctermfg=009
 
+hi SpellBad                   guisp=#FF3D23 guibg=NONE    gui=undercurl  ctermfg=255  ctermbg=009   cterm=underline
+hi SpellCap                   guisp=#87BF19 guibg=NONE    gui=undercurl  ctermfg=255  ctermbg=002   cterm=underline
+hi SpellLocal                 guisp=#DEDD5A guibg=NONE    gui=undercurl  ctermfg=255  ctermbg=226   cterm=underline
+hi SpellRare                  guisp=#DEDD5A guibg=NONE    gui=undercurl  ctermfg=255  ctermbg=226   cterm=underline
 
-"
-" --- Vim interface ------------------------------------------------------------
-"
+hi helpSpecial                guifg=#CCCCCC guibg=NONE    gui=NONE      ctermfg=250
+hi helpHyperTextJump          guifg=#40BDFF guibg=NONE    gui=underline ctermfg=039
+hi helpNote                   guifg=#CCCCCC guibg=NONE    gui=NONE      ctermfg=250
 
-call s:hi('Normal')
-call s:hi('Cursor', s:black, s:lgray)
-call s:hi('CursorLine', s:default_lst, s:bgray, s:none)
-call s:hi('CursorLineNr', s:white, s:default_bg, s:bold)
-call s:hi('ColorColumn', s:default_fg, s:bgray)
-call s:hi('Search', s:white, s:sblue)
-call s:hi('Visual', s:white, s:sblue)
-call s:hi('ErrorMsg', s:white, s:red)
+hi link                       markdownLinkText            PreProc
+hi link                       markdownHeadingDelimiter    Number
+hi link                       markdownHeader              Number
+hi link                       markdownInlineCode          PreProc
+hi link                       markdownFencedCodeBlock     PreProc
+hi link                       markdownCodeBlock           PreProc
 
-" Tildes at the bottom of a buffer, etc.
-call s:hi('NonText', s:dgray)
-
-" Folding.
-call s:hi('FoldColumn', s:dgray)
-call s:hi('Folded')
-
-" Line numbers gutter.
-call s:hi('LineNr', s:dgray)
-
-" Small arrow used for tabs.
-call s:hi('SpecialKey', s:sblue, s:default_bg, s:bold)
-
-" File browsers.
-call s:hi('Directory', s:white, s:default_bg, s:bold)
-
-" Help.
-call s:hi('helpSpecial')
-call s:hi('helpHyperTextJump', s:sblue, s:default_bg, s:underline)
-call s:hi('helpNote')
-
-" Popup menu.
-call s:hi('Pmenu', s:white, s:sblue)
-call s:hi('PmenuSel', s:sblue, s:white)
-
-" Notes.
-call s:hi('Todo', s:black, s:yellow, s:bold)
-
-" Signs.
-call s:hi('SignColumn')
-
-"
-" --- Programming languages ----------------------------------------------------
-"
-
-call s:hi('Statement', s:white, s:default_bg, s:bold)
-call s:hi('PreProc', s:white, s:default_bg, s:bold)
-call s:hi('String', s:sblue)
-call s:hi('Comment', s:cgray, s:default_bg, s:comment_attr)
-call s:hi('Constant')
-call s:hi('Type', s:white, s:default_bg, s:bold)
-call s:hi('Function', s:white)
-call s:hi('Identifier')
-call s:hi('Special')
-call s:hi('MatchParen', s:lgray, s:black, s:underline)
-
-
-"
-" --- VimL ---------------------------------------------------------------------
-"
-
-call s:hi('vimOption')
-call s:hi('vimGroup')
-call s:hi('vimHiClear')
-call s:hi('vimHiGroup')
-call s:hi('vimHiAttrib')
-call s:hi('vimHiGui')
-call s:hi('vimHiGuiFgBg')
-call s:hi('vimHiCTerm')
-call s:hi('vimHiCTermFgBg')
-call s:hi('vimSynType')
-hi link vimCommentTitle Comment
-
-
-"
-" --- Ruby ---------------------------------------------------------------------
-"
-
-call s:hi('rubyConstant')
-call s:hi('rubySharpBang', s:cgray)
-call s:hi('rubySymbol', s:sblue)
-call s:hi('rubyStringDelimiter', s:sblue)
-call s:hi('rubyStringEscape', s:sblue)
-call s:hi('rubyRegexpEscape', s:sblue)
-call s:hi('rubyRegexpAnchor', s:sblue)
-call s:hi('rubyRegexpSpecial', s:sblue)
-
-
-"
-" --- Elixir -------------------------------------------------------------------
-"
-
-call s:hi('elixirAlias', s:default_fg, s:default_bg, s:none)
-call s:hi('elixirDelimiter', s:sblue)
-call s:hi('elixirSelf', s:default_fg, s:default_bg, s:none)
-
-" For ||, ->, etc.
-call s:hi('elixirOperator')
-
-" Module attributes like @doc or @type.
-hi link elixirVariable Statement
-
-" While rendered as comments in other languages, docstrings are strings,
-" experimental.
-hi link elixirDocString String
-hi link elixirDocTest String
-hi link elixirStringDelimiter String
-
-
-"
-" --- Perl ---------------------------------------------------------------------
-"
-
-call s:hi('perlSharpBang', s:cgray)
-call s:hi('perlStringStartEnd', s:sblue)
-call s:hi('perlStringEscape', s:sblue)
-call s:hi('perlMatchStartEnd', s:sblue)
-
-
-"
-" --- Python -------------------------------------------------------------------
-"
-
-call s:hi('pythonEscape', s:sblue)
-
-
-"
-" --- JavaScript ---------------------------------------------------------------
-"
-
-call s:hi('javaScriptFunction', s:white, s:default_bg, s:bold)
-
-
-"
-" --- Diffs --------------------------------------------------------------------
-"
-
-call s:hi('diffFile', s:cgray)
-call s:hi('diffNewFile', s:cgray)
-call s:hi('diffIndexLine', s:cgray)
-call s:hi('diffLine', s:cgray)
-call s:hi('diffSubname', s:cgray)
-call s:hi('diffAdded', s:white, s:green)
-call s:hi('diffRemoved', s:white, s:red)
-
-
-"
-" --- Markdown -----------------------------------------------------------------
-"
-
-call s:hi('Title', s:white, s:default_bg, s:bold)
-call s:hi('markdownHeadingDelimiter', s:white, s:default_bg, s:bold)
-call s:hi('markdownHeadingRule', s:white, s:default_bg, s:bold)
-call s:hi('markdownLinkText', s:sblue, s:default_bg, s:underline)
-
-
-"
-" --- vim-fugitive -------------------------------------------------------------
-"
-
-call s:hi('gitcommitComment', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitOnBranch', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitBranch', s:sblue, s:default_bg, s:none)
-call s:hi('gitcommitHeader', s:white, s:default_bg, s:bold)
-call s:hi('gitcommitSelected', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitDiscarded', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitSelectedType', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitDiscardedType', s:default_fg, s:default_bg, s:none)
-
-
-"
-" --- NeoMake ------------------------------------------------------------------
-"
-
-call s:hi('NeomakeMessageSign')
-call s:hi('NeomakeWarningSign', s:sblue)
-call s:hi('NeomakeErrorSign', s:yellow)
-call s:hi('NeomakeInfoSign')
-call s:hi('NeomakeError', s:yellow)
-call s:hi('NeomakeInfo', s:default_fg, s:default_bg, s:bold)
-call s:hi('NeomakeMessage')
-call s:hi('NeomakeWarning', s:yellow)
+let g:phoenix_acc = ""
+let g:phoenix_bg = ""
+let g:phoenix_invert_match_paren = 0
