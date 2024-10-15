@@ -1,640 +1,555 @@
-" vim: set foldmethod=marker foldlevel=1 :
-" {{{ Preamble & vars
-"
-" Author:   Cormac Relf <web@cormacrelf.net>
-"
-" Note:     Based on github's syntax highlighting theme as of 2018.
-"           Originally based on https://github.com/endel/vim-github-colorscheme,
-"           but none of that code remains.
-"
-" Usage:    colorscheme github
-"           " optional, if you use airline
-"           let g:airline_theme = "github"
+" ============================================================================
+" MEH - a dark Vim colorscheme
+" Best on truecolor, but with rudimentary 256-color support.
+" ============================================================================
 
 hi clear
-if exists("syntax_on")
-    syntax reset
-endif
-
-if !exists("g:github_colors_extra_functions")
-  let g:github_colors_extra_functions = 1
-endif
-
-if !exists("g:github_colors_soft")
-  let g:github_colors_soft = 0
-endif
-
-if !exists("g:github_colors_block_diffmark")
-  let g:github_colors_block_diffmark = 0
-endif
-
-let colors_name = "github"
-
-let s:is_dark=(&background == 'dark')
-
-" Helper functions {{{
-" from vim-gotham
-
-function! s:Highlight(args)
-  exec 'highlight ' . join(a:args, ' ')
-endfunction
-
-function! s:AddGroundValues(accumulator, ground, color)
-  let new_list = a:accumulator
-  for [where, value] in items(a:color)
-    call add(new_list, where . a:ground . '=' . value)
-  endfor
-
-  return new_list
-endfunction
-
-function! s:Col(group, fg_name, ...)
-  " ... = optional bg_name
-
-  let pieces = [a:group]
-
-  if a:fg_name !=# ''
-    let pieces = s:AddGroundValues(pieces, 'fg', s:colors[a:fg_name])
-  endif
-
-  if a:0 > 0 && a:1 !=# ''
-    let pieces = s:AddGroundValues(pieces, 'bg', s:colors[a:1])
-  endif
-
-  call s:Clear(a:group)
-  call s:Highlight(pieces)
-endfunction
-
-function! s:Attr(group, attr)
-  let l:attrs = [a:group, 'term=' . a:attr, 'cterm=' . a:attr, 'gui=' . a:attr]
-  call s:Highlight(l:attrs)
-endfunction
-
-function! s:Spell(group, attr)
-  let l:attrs = [a:group, 'guisp=' . s:colors[a:attr].gui ]
-  call s:Highlight(l:attrs)
-endfunction
-
-
-function! s:Clear(group)
-  exec 'highlight clear ' . a:group
-endfunction
-
-" }}}
-" }}}
-
-" Colors {{{
-
-let s:lib = {}    " to build s:colors from, not to be used directly
-let s:colors = {} " the 'stable API' you can access through s:Col
-
-" color docs
-" --light mode --------------- dark mode
-"   base0 = dark text fg     | lightest text fg
-"   base1 = dark solid       | light solid
-"   base2 = comment
-"   base3 = darker gutter fg
-"   base4 = normal gutter fg
-"   grey0 = ui grey darker   | ui grey lighter
-"   grey1 = ui grey medium   | ui grey medium
-"   grey2 = ui grey bright   | ui grey dark
-"   gutter = linenr bg
-"   overlay = overlay background
-"   bg = bg
-"   visualblue = for visual selections
-"   lightblue  = for folds
-
-let s:lib.numDarkest = { 'gui': '#76787b', 'cterm': 243 }
-let s:lib.numMedium  = { 'gui': '#979797', 'cterm': 246 }
-let s:lib.numLighter = { 'gui': '#babbbc', 'cterm': 250 }
-let s:lib.c8d1db     = { 'gui': '#C8D1DB', 'cterm': 252 }
-let s:lib.d7dce1     = { 'gui': '#d7dce1', 'cterm': 253 }
-let s:lib.dde2e7     = { 'gui': '#C8CED6', 'cterm': 254 }
-let s:lib.e0e7ef     = { 'gui': '#e0e7ef', 'cterm': 254 }
-let s:lib.ebeced     = { 'gui': '#ebeced', 'cterm': 255 }
-let s:lib.eceef1     = { 'gui': '#ECEEF1', 'cterm': 255 }
-let s:lib.eaeff4     = { 'gui': '#eaeff4', 'cterm': 255 }
-let s:lib.f1f2f3     = { 'gui': '#f1f2f4', 'cterm': 255 }
-let s:lib.f6f8fa     = { 'gui': '#f6f8fa', 'cterm': 255 } " github inline code block bg
-let s:lib.fafbfc     = { 'gui': '#fafbfc', 'cterm': 255 } " github generic light
-let s:lib.white      = { 'gui': '#ffffff', 'cterm': 231 }
-let s:lib.base0      = { 'gui': '#24292e', 'cterm': 235 } " github text fg
-let s:lib.base05     = { 'gui': '#2b3137', 'cterm': 238 } " lightened from 0
-let s:lib.base05     = { 'gui': '#2d343a', 'cterm': 238 } " lightened from 0
-let s:lib.base1      = { 'gui': '#41484f', 'cterm': 238 } " lightened from 0
-let s:lib.base2      = { 'gui': '#6a737d', 'cterm': 243 } " github comment
-let s:lib.base3      = s:lib.numDarkest
-
-let s:lib.darktext     = [
-      \{ 'gui': '#fafbfc', 'cterm': 255 },
-      \{ 'gui': '#d2d4d6', 'cterm': 254 },
-      \{ 'gui': '#abaeb1', 'cterm': 251 },
-      \{ 'gui': '#868a8e', 'cterm': 251 },
-      \{ 'gui': '#63686c', 'cterm': 251 },
-      \{ 'gui': '#42474c', 'cterm': 251 },
-      \s:lib.base0
-      \]
-
-" actual colorful colors {{{
-let s:colors.red            = { 'gui': '#d73a49', 'cterm': 167 } " github syntax
-let s:colors.darkred        = { 'gui': '#b31d28', 'cterm': 124 } " github syntax
-let s:colors.purple         = { 'gui': '#6f42c1', 'cterm': 91  } " github syntax
-let s:colors.darkpurple     = { 'gui': '#45267d', 'cterm': 237 } " ^- darkened
-let s:colors.yellow         = { 'gui': '#ffffc5', 'cterm': 230 } " github search
-let s:colors.green          = { 'gui': '#22863a', 'cterm': 29  } " github syntax (html)
-let s:colors.boldgreen      = { 'gui': '#3ebc5c', 'cterm': 29  } " ^
-let s:colors.orange         = { 'gui': '#e36209', 'cterm': 166 } " github syntax
-let s:colors.boldorange     = { 'gui': '#f18338', 'cterm': 166 } " ^
-let s:colors.lightgreen_nr  = { 'gui': '#cdffd8', 'cterm': 85  } " github diff
-let s:colors.lightgreen     = { 'gui': '#e6ffed', 'cterm': 85  } " github diff
-let s:colors.lightred_nr    = { 'gui': '#ffdce0', 'cterm': 167 } " github diff
-let s:colors.lightred       = { 'gui': '#ffeef0', 'cterm': 167 } " github diff
-let s:colors.lightorange_nr = { 'gui': '#fff5b1', 'cterm': 229 } " github selected line number column
-let s:colors.lightorange    = { 'gui': '#fffbdd', 'cterm': 230 } " github selected line
-let s:colors.difftext       = { 'gui': '#f2e496', 'cterm': 222 } " ^- darkened
-let s:colors.darkblue       = { 'gui': '#032f62', 'cterm': 17  } " ^- darkened
-let s:colors.blue           = { 'gui': '#005cc5', 'cterm': 26  } " github syntax
-let s:colors.blue0          = { 'gui': '#669cc2', 'cterm': 153 }
-let s:colors.blue1          = { 'gui': '#c1daec', 'cterm': 153 }
-let s:colors.blue2          = { 'gui': '#e4effb', 'cterm': 153 }
-let s:colors.blue3          = { 'gui': '#bde0fb', 'cterm': 153 }
-let s:colors.blue4          = { 'gui': '#f1f8ff', 'cterm': 153 } " github diff folds
-let s:colors.errorred       = { 'gui': '#b74951', 'cterm': 167 } " from darkred
-
-let s:darklib = {}
-let s:darklib.blues = ['#5295d4', '#4c81b5', '#456e98', '#3d5c7b', '#354a60', '#2d3846', '#23282d']
-
-let s:dcolors = {}
-let s:dcolors.red            = { 'gui': '#f16636', 'cterm': 167 }
-let s:dcolors.blue           = { 'gui': '#4dacfd', 'cterm': 167 }
-let s:dcolors.purple         = { 'gui': '#a280e2', 'cterm': 91  }
-let s:dcolors.purple         = { 'gui': '#a887e6', 'cterm': 91  }
-let s:dcolors.darkpurple     = { 'gui': '#8b71c1', 'cterm': 91  }
-let s:dcolors.darkblue       = { 'gui': '#aacce4', 'cterm': 167 }
-let s:dcolors.darkblue       = s:colors.blue1
-let s:dcolors.blue0          = { 'gui': s:darklib.blues[2], 'cterm': 153 }
-let s:dcolors.blue1          = { 'gui': s:darklib.blues[5], 'cterm': 153 }
-let s:dcolors.blue2          = { 'gui': s:darklib.blues[4], 'cterm': 153 }
-let s:dcolors.blue3          = { 'gui': s:darklib.blues[5], 'cterm': 153 }
-let s:dcolors.lightorange    = { 'gui': '#49443e', 'cterm': 150 }
-let s:dcolors.difftext       = { 'gui': '#87663b', 'cterm': 150 }
-let s:dcolors.lightorange_nr = { 'gui': '#6f6456', 'cterm': 150 }
-let s:dcolors.lightgreen_nr  = { 'gui': '#5d8c6f', 'cterm': 85  } " github diff
-let s:dcolors.lightgreen     = { 'gui': '#374843', 'cterm': 85  } " github diff
-let s:dcolors.lightred_nr    = { 'gui': '#8b6c73', 'cterm': 167 } " github diff
-let s:dcolors.lightred       = { 'gui': '#443e44', 'cterm': 167 } " github diff
-let s:dcolors.overlay        = { 'gui': '#353a3f', 'cterm': 123 }
-let s:dcolors.yellow         = { 'gui': '#595322', 'cterm': 230 } " github search
-let s:dcolors.green          = { 'gui': '#59b36f', 'cterm': 29  } " github syntax (html)
-
-" }}}
-
-if s:is_dark 
-  for pkey in keys(s:dcolors)
-    let s:colors[pkey] = s:dcolors[pkey]
-  endfor
-  " base0 is now darkest
-  let s:colors.base0        = s:lib.darktext[0]
-  let s:colors.base1        = s:lib.darktext[1]
-  let s:colors.base2        = s:lib.darktext[2]
-  let s:colors.base3        = s:lib.darktext[3]
-  let s:colors.base4        = s:lib.numDarkest
-
-  let s:colors.grey0        = s:lib.base3
-  let s:colors.grey1        = s:lib.base2
-  let s:colors.grey2        = s:lib.base1
-
-  let s:colors.uisplit      = s:lib.base2
-  let s:colors.bg           = s:lib.base0
-  let s:colors.fg           = s:lib.fafbfc
-  let s:colors.gutter       = s:lib.base05
-  let s:colors.endofbuf     = s:lib.base05
-  let s:colors.gutterfg     = s:colors.base2
-  let s:colors.lightblue    = s:dcolors.blue1
-  let s:colors.visualblue   = s:dcolors.blue2
-else
-  let s:colors.base0          = s:lib.base0
-  let s:colors.base1          = s:lib.base1
-  let s:colors.base2          = s:lib.base2
-  let s:colors.base3          = s:lib.base3
-  let s:colors.fg             = s:colors.base0
-  let s:colors.gutterfg       = s:colors.base3
-
-  if g:github_colors_soft == 0
-      let s:colors.grey0      = s:lib.dde2e7
-      let s:colors.grey1      = s:lib.eceef1
-      let s:colors.grey2      = s:lib.f6f8fa
-      let s:colors.overlay    = s:lib.f6f8fa
-      let s:colors.gutter     = s:lib.fafbfc
-      let s:colors.endofbuf   = s:colors.gutter " same
-      let s:colors.bg         = s:lib.white
-      let s:colors.base4      = s:lib.numLighter
-      let s:colors.visualblue = s:colors.blue2
-      let s:colors.lightblue  = s:colors.blue4
-  else
-      let s:colors.grey0      = s:lib.c8d1db
-      let s:colors.grey1      = s:lib.dde2e7
-      let s:colors.grey2      = s:lib.e0e7ef
-      let s:colors.gutter     = s:lib.eaeff4
-      let s:colors.endofbuf   = s:colors.gutter " same
-      let s:colors.bg         = s:lib.f6f8fa
-      let s:colors.overlay    = s:lib.white
-      let s:colors.base4      = s:lib.numMedium
-      let s:colors.visualblue = s:colors.blue1
-      let s:colors.lightblue  = s:colors.blue2
-  endif
-  let s:colors.uisplit        = s:colors.grey1
-endif
-
-" named groups to link to {{{
-call s:Col('ghBackground', 'bg')
-call s:Col('ghBlack', 'base0')
-call s:Col('ghBase0', 'base0')
-call s:Col('ghBase1', 'base1')
-call s:Col('ghBase2', 'base2')
-call s:Col('ghBase3', 'base3')
-call s:Col('ghBase4', 'base4')
-call s:Col('ghGrey0', 'grey0')
-call s:Col('ghGrey1', 'grey1')
-call s:Col('ghGrey2', 'grey2')
-call s:Col('ghGreen', 'green')
-call s:Col('ghBlue', 'blue')
-call s:Col('ghBlue2', 'blue2')
-call s:Col('ghBlue3', 'blue3')
-call s:Col('ghBlue4', 'blue4')
-call s:Col('ghDarkBlue', 'darkblue')
-call s:Col('ghRed', 'red')
-call s:Col('ghDarkRed', 'darkred')
-call s:Col('ghPurple', 'purple')
-call s:Col('ghDarkPurple', 'darkpurple')
-call s:Col('ghOrange', 'orange')
-call s:Col('ghLightOrange', 'lightorange')
-call s:Col('ghYellow', 'yellow')
-call s:Col('ghLightRed', 'lightred')
-call s:Col('ghOver', 'overlay')
-call s:Col('ghUISplit', 'uisplit')
-" }}}
-
-" }}}
-
-" UI colors {{{
-
-call s:Col('Normal', 'fg', 'bg')
-call s:Col('Cursor', 'bg', 'fg')    " only if vim gets to render cursor
-call s:Col('Visual', '', 'visualblue')
-call s:Col('VisualNOS', '', 'lightblue')
-call s:Col('Search', '', 'yellow') | call s:Attr('Search', 'bold')
-call s:Col('Whitespace', 'base4', 'bg')   " listchars spaces, tab, ...
-call s:Col('NonText',    'base4', 'bg')   " listchars eol
-call s:Col('SpecialKey', 'base4', 'bg')
-call s:Col('Conceal',    'red')
-
-call s:Col('MatchParen', 'darkblue', 'blue3')
-" | call s:Attr('MatchParen', 'bold')
-call s:Col('WarningMsg', 'orange')
-call s:Col('ErrorMsg', 'errorred')
-" TODO: fix error in light mode
-call s:Col('Error', 'gutterfg', 'errorred')
-call s:Col('Title', 'base1')
-call s:Attr('Title', 'bold')
-
-call s:Col('VertSplit',    'uisplit', 'uisplit')
-call s:Col('LineNr',       'base4',  'gutter')
-hi! link     SignColumn       LineNr
-call s:Col('EndOfBuffer',  'base4',  'endofbuf')
-call s:Col('ColorColumn',  '',       'grey2')
-
-call s:Col('CursorLineNR', 'gutterfg',  'lightorange_nr')
-call s:Col('CursorLine',   '',       'lightorange')
-call s:Col('CursorColumn', '',       'lightorange')
-
-call s:Col('QuickFixLine', '', 'blue3') | call s:Attr('QuickFixLine', 'bold')
-call s:Col('qfLineNr', 'gutterfg', 'gutter')
-
-call s:Col('Folded',     'gutterfg', 'lightblue')
-call s:Col('FoldColumn', 'blue0', 'gutter')
-
-call s:Col('StatusLine',      'grey2', 'base0')
-call s:Col('StatusLineNC',    'gutterfg', 'grey1')
-" statusline determines inactive wildmenu entries too
-call s:Col('WildMenu', 'grey2', 'blue')
-
-call s:Col('airlineN1',       'grey1', 'base0')
-call s:Col('airlineN2',       'grey1', 'base1')
-call s:Col('airlineN3',       'base0',  'grey1')
-call s:Col('airlineInsert1',  'grey1', 'blue')
-call s:Col('airlineInsert2',  'grey1', 'darkblue')
-call s:Col('airlineVisual1',  'grey1', 'purple')
-call s:Col('airlineVisual2',  'grey1', 'darkpurple')
-call s:Col('airlineReplace1', 'grey1', 'red')
-call s:Col('airlineReplace2', 'grey1', 'darkred')
-
-call s:Col('Pmenu',      'base3', 'overlay')
-call s:Col('PmenuSel',   'overlay',  'blue') | call s:Attr('PmenuSel', 'bold')
-call s:Col('PmenuSbar',  '',      'grey2')
-call s:Col('PmenuThumb', '',      'grey0')
-
-
-" hit enter to continue
-call s:Col('Question', 'green')
-
-call s:Col('TabLine',     'base1', 'grey1') | call s:Attr('TabLine', 'none')
-call s:Col('TabLineFill', 'base0', 'base0') | call s:Attr('TabLineFill', 'none')
-call s:Col('TabLineFill', 'grey0', 'grey0') | call s:Attr('TabLineFill', 'none')
-call s:Col('TabLineSel',  'base1'         ) | call s:Attr('TabLineSel', 'bold')
-
-call s:Col('DiffAdd',    '', 'lightgreen')
-call s:Col('DiffDelete', 'base4', 'lightred') | call s:Attr('DiffDelete', 'none')
-call s:Col('DiffChange', '', 'lightorange')
-call s:Col('DiffText',   '', 'difftext')
-
-" nvim :terminal mode
-if has('nvim')
-  let g:terminal_color_0 = s:colors.base4.gui
-  let g:terminal_color_8 = s:colors.base3.gui
-
-  let g:terminal_color_1 = s:colors.red.gui
-  let g:terminal_color_9 = s:colors.darkred.gui
-
-  let g:terminal_color_2 = s:colors.boldgreen.gui
-  let g:terminal_color_10 = s:colors.green.gui
-
-  let g:terminal_color_3 = s:colors.boldorange.gui
-  let g:terminal_color_11 = s:colors.orange.gui
-
-  let g:terminal_color_4 = s:colors.blue.gui
-  let g:terminal_color_12 = s:colors.darkblue.gui
-
-  let g:terminal_color_5 = s:colors.purple.gui
-  let g:terminal_color_13 = s:colors.darkpurple.gui
-
-  " should be "cyan", but this is good enough
-  let g:terminal_color_6 = s:colors.blue.gui
-  let g:terminal_color_14 = s:colors.darkblue.gui
-
-  let g:terminal_color_7 = s:colors.base1.gui
-  let g:terminal_color_15 = s:colors.base0.gui
-endif
-
-" Park this for later
-" https://terminal.sexy/#9vj6JCkuKCousx0oL4tF7Y1LAy9iRSZ9XL32yNHbNztB1zpJPrxc8YM4AFzFb0LBMuD73eLn
-" let @k = "\<c-w>l:so $VIM_INIT\<cr>:bd!\<cr>:vspl\<cr>:term\<cr>Afish\<cr>colortest.sh\<cr>ls\<cr>\<esc>\<c-w>h"
-
-" }}}
-
-" {{{ Syntax highlighting
-
-call s:Clear('Ignore') | call s:Col('Ignore', 'base4', 'bg')
-call s:Col('Identifier', 'blue')
-call s:Col('PreProc', 'red')
-call s:Col('Macro', 'blue')
-call s:Col('Define', 'purple')
-call s:Col('Comment', 'base2')
-call s:Col('Constant', 'blue')
-call s:Col('String', 'darkblue')
-call s:Col('Function', 'purple')
-call s:Col('Statement', 'red')
-call s:Col('Type', 'red')
-call s:Col('Todo', 'purple') | call s:Attr('Todo', 'underline')
-call s:Col('Special', 'purple')
-call s:Col('SpecialComment', 'base0')
-call s:Col('Label', 'base0')
-call s:Col('StorageClass', 'red')
-call s:Col('Structure', 'red')
-
-" Particular Languages {{{
-
-hi link cDefine Define
-
-" html
-" xml doesn't recognise xmlEndTag->xmlTagName, so colour it all green
-call s:Col('xmlTag', 'green')
-call s:Col('xmlEndTag', 'green')
-call s:Col('xmlTagName', 'green')
-call s:Col('xmlAttrib', 'purple')
-
-call s:Col('htmlTag', 'base0')
-hi link htmlEndTag  htmlTag
-hi link htmlTagN    htmlTag
-hi link htmlTagName xmlTagName
-hi link htmlArg     xmlAttrib
-hi link htmlLink    Underlined
-
-" vim-jsx-pretty
-hi link jsxTag htmlTag
-hi link jsxCloseTag jsxTag
-hi link jsxCloseString jsxTag
-hi link jsxAttrib xmlAttrib
-hi link jsxEqual Operator
-hi link jsxTagName htmlTagName
-call s:Col('jsxComponentName', 'blue')
-" TODO: maybe make extra italics an option
-" call s:Attr('jsxComponentName', 'italic')
-" call s:Col('jsxAttrib', 'purple')
-" call s:Attr('jsxAttrib', 'italic')
-
-" toml
-hi link tomlTable ghPurple
-hi link tomlKey   ghBlack
+if exists('syntax_on') | syntax reset | endif
+
+let g:colors_name = 'meh'
+set background=dark
+
+" ============================================================================
+" My colors
+" ============================================================================
+
+hi! dkoBgAlt            guibg=#24252a               ctermbg=236
+hi! dkoBgLight          guibg=#303135               ctermbg=237
+hi! dkoTextLight                      guifg=#dddddd ctermfg=253
+hi! dkoTextGood                       guifg=#77aa88
+hi! dkoTextWarn                       guifg=#ddaa66
+hi! dkoTextInfo                       guifg=#505a71
+
+hi! dkoPopup            guibg=#2a2a2f guifg=#ccc0c0
+hi! dkoPopupBlank       guibg=#2a2a2f guifg=#2a2a2f
+
+hi! dkoDecorations                    guifg=#505a6a
+hi! dkoRegex                          guifg=#cc99cc
+hi! dkoReturn                         guifg=#cc8877 gui=italic
+hi! dkoQuote                          guifg=#77aa88 gui=italic
+hi! dkoType                           guifg=#60687a gui=italic
+hi! link dkoWarningText dkoTextWarn
+hi dkoWarningText       guibg=#2c2b2a               gui=bold
+hi! dkoNormalKey                      guifg=#ccccbb
+
+hi! dkoStatus           guibg=#30313c guifg=#bbbbbb gui=NONE  ctermbg=237
+hi! dkoStatusNC         guibg=#262631 guifg=#666666 gui=NONE  ctermbg=235
+hi! dkoStatusKey        guibg=#40404c
+hi! dkoStatusValue      guibg=#50505c
+hi! dkoStatusItem       guibg=#242531
+hi! dkoStatusTransient  guibg=#505a71 guifg=fg
+
+hi! link dkoStatusGood  dkoTextGood
+hi dkoStatusGood        guibg=#242531
+
+hi! dkoStatusGood       guibg=#242531 guifg=#77aa88
+hi! dkoStatusError      guibg=#242531 guifg=#cc4444
+hi! dkoStatusInfo       guibg=#242531 guifg=fg
+
+" ============================================================================
+" Vim base
+" ============================================================================
+
+hi! Normal              guibg=#202022 guifg=#bbbbbb           ctermbg=235   ctermfg=250
+
+hi! Boolean                           guifg=#cccccc gui=italic
+hi! Comment                           guifg=#70788a gui=italic              ctermfg=240
+hi! Constant                          guifg=NONE    gui=italic
+hi! Delimiter                         guifg=#cc99cc                       ctermfg=139
+hi! DiffAdd             guibg=#2a332a guifg=#668844           ctermbg=235 ctermfg=22
+hi! DiffChange          guibg=#2c2b2a guifg=#7f6030           ctermbg=235 ctermfg=94
+hi! DiffDelete          guibg=#4a2a2a guifg=#aa6666           ctermbg=235 ctermfg=52
+hi! DiffText            guibg=#4a2a2a
+hi! Error               guibg=NONE    guifg=#ee6666           ctermbg=NONE ctermfg=160
+hi! Function                          guifg=NONE
+hi! link Identifier dkoTextLight
+hi! Ignore                            guifg=#40485a
+hi! IncSearch           guibg=#dd77cc guifg=bg      gui=NONE  ctermbg=219   ctermfg=235
+hi! link Label dkoTextLight
+hi! LspInlayHint                      guifg=#bb8866 gui=italic
+hi! MoreMsg                           guifg=#aa6666
+hi! Noise                             guifg=#888888                         ctermfg=243
+hi! NonText                           guifg=#334455
+hi! Number                            guifg=#ee7777                         ctermfg=208
+hi! Operator                          guifg=#888888
+hi! link PreProc dkoTextLight
+hi! Question                          guifg=#88aabb
+hi! Search              guibg=#dd99ff guifg=bg                ctermbg=219   ctermfg=bg
+hi! SpellBad                                                  ctermbg=NONE
+hi! SpellCap                                                  ctermbg=NONE
+hi! SpellRare                                                 ctermbg=NONE
+hi! Special                           guifg=#dd7766                         ctermfg=172
+hi! SpecialComment                    guifg=#707a8a gui=NONE
+hi! SpecialKey                        guifg=#772222
+hi! Statement                         guifg=#777777 gui=NONE                ctermfg=245
+hi! StorageClass                      guifg=#777777
+hi! String                            guifg=#88aabb                         ctermfg=110
+hi! link Title dkoTextLight
+hi! Todo                guibg=#303033 guifg=#ddaa66 gui=bold
+hi! Type                              guifg=#dddddd gui=NONE  ctermfg=253
+hi! Underlined                        guifg=#88aaee gui=underline           ctermfg=110
+hi! Visual              guibg=#afa08f guifg=#1f1f1f
+hi! WarningMsg                        guifg=#ccaa88
+hi! Whitespace          guibg=#1c1c1c guifg=#40485a gui=bold
+hi! Folded              guibg=#24252a guifg=#88aabb           ctermbg=236   ctermfg=110
+hi! TabLineSel          guifg=#cc8877
+hi! link TabLine Folded
+hi! link TabLineFill dkoBgAlt
+
+hi! link Character      Normal
+hi! link Conditional    Normal
+hi! link Directory      Identifier
+hi! link Include        Normal
+hi! link Keyword        Normal
+
+" ============================================================================
+" My colors
+" ============================================================================
+
+" JavaDoc
+hi! link dkoJavaDocTag  SpecialComment
+hi! link dkoJavaDocType SpecialComment
+hi! link dkoJavaDocKey  SpecialComment
+
+" Signs
+hi! link dkoSignAdded   DiffAdd
+hi! link dkoSignRemoved DiffDelete
+
+" ============================================================================
+" Line backgrounds
+" ============================================================================
+
+" fg is thin line
+hi! VertSplit           guibg=#262631 guifg=#262631 ctermbg=237 ctermfg=237
+hi! LineNr              guibg=#222226 guifg=#404044 ctermbg=235 ctermfg=238
+hi! CursorLineNr        guibg=#303033 guifg=#a0a0aa ctermbg=238 ctermfg=245
+hi! link FoldColumn     LineNr
+hi! link SignColumn     LineNr
+
+hi! link ColorColumn    dkoBgAlt
+hi! link CursorColumn   dkoBgAlt
+
+" current line
+hi! link CursorLine     dkoBgAlt
+
+" ============================================================================
+" Popup menu
+" ============================================================================
+
+" want guifg=#666666 for borders, but not on text
+" waiting for https://github.com/neovim/neovim/issues/15551
+hi! Pmenu               guibg=bg
+
+hi! PmenuSel            guibg=#404044
+" popup menu scrollbar
+hi! link PmenuSbar      PmenuSel
+hi! PmenuThumb          guibg=#505055
+
+hi! link WildMenu       PmenuThumb
+
+" ============================================================================
+" Neovim float
+" ============================================================================
+
+hi! FloatBorder guibg=bg guifg=#666666
+hi! NormalFloat guibg=bg guifg=fg
+
+" ============================================================================
+" Status and tab line
+" ============================================================================
+
+" Statusline uses fg as bg
+hi! link StatusLineNC   dkoStatusNC
+hi! link StatusLine     dkoStatus
+hi! link TabLine        dkoStatus
+hi! link TabLineFill    dkoStatus
+hi! link TabLineSel     dkoStatus
+
+" ============================================================================
+" Statusline Symbols
+" ============================================================================
+
+hi! dkoLineImportant    guibg=#ddaa66 guifg=#303033
+hi! link dkoLineModeReplace       dkoLineImportant
+hi! link dkoLineNeomakeRunning    dkoLineImportant
+
+" ============================================================================
+" Neomake
+" ============================================================================
+
+hi! link NeomakeStatusGood      dkoStatusGood
+
+" ============================================================================
+" Sign column
+" ============================================================================
+
+" kshenoy/vim-signature
+hi! link SignatureMarkText        dkoLineImportant
+
+" showmarks
+hi! link ShowMarksHLl             dkoLineImportant
+hi! link ShowMarksHLu             dkoLineImportant
+
+" ============================================================================
+" Diagnostic
+" ============================================================================
+
+hi! link DiagnosticOk     dkoTextGood
+hi! link DiagnosticError  Error
+hi! link DiagnosticWarn   dkoTextWarn
+
+hi! DiagnosticHint        guibg=NONE guifg=NONE
+hi! DiagnosticInfo        guibg=NONE guifg=NONE
+
+hi! link DiagnosticSignHint dkoTextInfo
+hi! link DiagnosticSignInfo dkoTextInfo
+
+" ============================================================================
+" Plugin provided signs
+" ============================================================================
+
+" ghillb/cybu.nvim
+hi! link CybuFocus  dkoWarningText
+
+" w0rp/ale
+"hi! link ALEErrorSign             Error
+" tomtom/quickfixsigns_vim
+hi! link QuickFixSignsDiffAdd     dkoSignAdded
+hi! link QuickFixSignsDiffChange  DiffChange
+hi! link QuickFixSignsDiffDelete  dkoSignRemoved
+" airblade/vim-gitgutter
+hi! link GitGutterAdd             dkoSignAdded
+hi! link GitGutterChange          DiffChange
+hi! link GitGutterChangeDelete    DiffChange
+hi! link GitGutterDelete          dkoSignRemoved
+" mhinz/vim-signify
+hi! link SignifySignAdd           dkoSignAdded
+hi! link SignifySignChange        DiffChange
+hi! link SignifySignChangeDelete  DiffChange
+hi! link SignifySignDelete        dkoSignRemoved
+" chrisbra/changesPlugin
+hi! link ChangesSignTextAdd       dkoSignAdded
+hi! link ChangesSignTextCh        DiffChange
+hi! link ChangesSignTextDel       dkoSignRemoved
+
+" the head in <head></head>
+hi! MatchParen        guibg=#225588 guifg=#ddddcc           ctermbg=18 ctermfg=fg
+" the <> in <head>
+hi! ParenMatch        guibg=#994433 guifg=#ddddcc gui=NONE
+
+" gbprod/yanky.nvim
+hi! link YankyPut    IncSearch
+hi! link YankyYanked IncSearch
+
+" ============================================================================
+" CSS
+" ============================================================================
+
+hi! link cssTagName     Delimiter
+hi! link cssProp        StorageClass
+hi! link lessVariable   Identifier
+
+" ============================================================================
+" Diff
+" ============================================================================
+
+hi! link diffFile       Normal
+hi! link diffIndexLine  Normal
+hi! link diffLine       Normal
+hi! link diffNewFile    Normal
+
+hi! link diffAdded      DiffAdd
+hi! link diffRemoved    DiffDelete
+
+" ============================================================================
+" Git (committia)
+" ============================================================================
+
+hi! link gitKeyword         Identifier
+hi! link gitDate            String
+hi! link gitHash            Normal
+
+" ============================================================================
+" git-messenger
+" ============================================================================
+
+" Header such as 'Commit:', 'Author:'
+hi link gitmessengerHeader        Title
+
+" Commit hash at 'Commit:' header
+hi link gitmessengerHash          dkoPopup
+
+" History number at 'History:' header
+hi link gitmessengerHistory       dkoPopup
+
+" Normal color. This color is the most important
+hi link gitmessengerPopupNormal   dkoPopup
+
+" Color of 'end of buffer'. To hide '~' in popup window, I recommend to use the same background
+" color as gitmessengerPopupNormal.
+hi link gitmessengerEndOfBuffer   dkoPopupBlank
+
+" ============================================================================
+" vim-indentguides
+" ============================================================================
+
+hi! IndentGuidesOdd   guibg=#252527
+
+" ============================================================================
+" JavaScript
+" ============================================================================
+
+hi! link jsBuiltins           Identifier
+
+hi! link jsRegexpCharClass    dkoRegex
+hi! link jsRegexpString       dkoRegex
+
+hi! link jsGlobalObjects      Normal
+hi! link jsGlobalNodeObjects  dkoNormalKey
+hi! link jsFuncArgOperator    Operator
+hi! link jsExport             StorageClass
+hi! link jsImport             jsExport
+hi! link jsFrom               jsExport
+hi! link jsModuleKeyword      String
+hi! link jsNull               Constant
+hi! link jsReturn             dkoReturn
+hi! link jsSuper              dkoQuote
+"hi! link jsStorageClass       Statement
+hi! link jsTemplateBraces     dkoRegex
+hi! link jsThis               Identifier
+"hi! link jsVariableDef        Identifier
+
+" group {Event} e
+" token Event
+hi! link jsDocType            dkoJavaDocType
+hi! link jsDocTypeNoParam     dkoJavaDocType
+" token { }
+hi! link jsDocTypeBrackets    dkoDecorations
+
+hi! link jsDocTags            dkoJavaDocTag
+hi! link jsDocParam           dkoJavaDocKey
+
+" group 'class InlineEditors extends Component'
+hi! link jsClassDefinition    Identifier
+hi! link jsClassKeyword       Identifier
+hi! link jsExtendsKeyword     Identifier
+
+" group 'editorInstances = {};'
+hi! link jsClassProperty      Normal
+
+" token 'componentWillMount'
+hi! link jsClassFuncName      Normal
+
+hi! link jsArrowFunction      Delimiter
+
+hi! link jsFuncCall           Function
+hi! link jsFuncArgs           Identifier
+
+hi! link jsBracket            Identifier
+hi! link jsSpreadExpression   Identifier
+hi! link jsDestructuringBlock dkoNormalKey
+
+hi! link jsObject             Identifier
+hi! link jsObjectKey          dkoNormalKey
+hi! link jsObjectKeyComputed  String
+hi! link jsObjectProp         Normal
+
+hi! link jsxAttrib              dkoNormalKey
+hi! link jsxAttributeBraces     Noise
+hi! link jsxEqual               Noise
+hi! link jsxBraces              Noise
+
+hi! link jsxOpenPunct           Noise
+hi! link jsxComponentName       Statement
+hi! link jsxTagName             Statement
+hi! link jsxCloseString         Noise
+
+" ============================================================================
+" Lazy.nvim
+" ============================================================================
+
+hi! link LazyDimmed Comment
+
+" ============================================================================
+" JSON
+" ============================================================================
+
+hi! link jsonBoolean          Boolean
+hi! link jsonEscape           Operator
+
+" ============================================================================
+" Markdown
+" ============================================================================
+
+hi! link markdownCode               Identifier
+hi! link markdownLinkDelimiter      Noise
+hi! link markdownLinkTextDelimiter  Noise
+
+" ============================================================================
+" PHP
+" ============================================================================
+
+hi! link phpClass             Identifier
+hi! link phpType              Normal
+hi! link phpDocTags           dkoJavaDocTag
+hi! link phpDocParam          dkoJavaDocType
+hi! link phpDocIdentifier     dkoJavaDocKey
+hi! link phpInclude           Statement
+hi! link phpMemberSelector    Noise
+hi! link phpVarSelector       Type
+
+" ============================================================================
+" Python
+" ============================================================================
+
+hi! link pythonQuotes         Noise
+hi! link pythonTripleQuotes   Noise
+
+" ============================================================================
+" Ruby
+" ============================================================================
+
+hi! link rubyInterpolation    PreProc
+hi! link rubyRegexp           dkoRegex
+" rubyRegexpSpecial is not always part of rubyRegexp
+hi! link rubyRegexpSpecial    dkoRegex
+hi! link rubyStringDelimiter  Noise
+
+" ============================================================================
+" Sh
+" ============================================================================
+
+hi! link shCommandSub         Function
+" token: '-f' and '--flag'
+hi! link shOption             Normal
+
+" ============================================================================
+" Typescript - yats.vim
+" ============================================================================
+
+hi! link typescriptAbstract                Operator
+hi! link typescriptAccessibilityModifier   StorageClass
+hi! link typescriptClassKeyword            Normal
+hi! link typescriptClassName               Label
+hi! link typescriptExport                  StorageClass
+hi! link typescriptImport                  typescriptExport
+hi! link typescriptCastKeyword             StorageClass
+hi! link typescriptParens                  Noise
+hi! link typescriptPredefinedType          dkoType
+hi! link typescriptObjectType              dkoType
+hi! link typescriptTemplateSB              dkoRegex
+hi! link typescriptTypeReference           Normal
+hi! link typescriptVariable                StorageClass
+hi! link tsxRegion                         String
+
+" ============================================================================
+" vim-plug
+" ============================================================================
+
+hi! link plug1                Normal
+hi! link plug2                dkoDecorations
+hi! link plugDash             dkoDecorations
+hi! link plugSha              SpecialComment
+
+" ============================================================================
+" VimL
+" ============================================================================
+
+" ----------------------------------------------------------------------------
+" Highlighting
+" ----------------------------------------------------------------------------
+
+" the word 'highlight' or 'hi'
+hi! link vimHighlight         Normal
+" the word 'clear'
+" First thing after 'hi'
+hi! link vimGroup             Normal
+hi! link vimHiLink            String
+hi! link vimHiGroup           Normal
+" Don't highlight this one or it will override vim-css-colors
+"hi! link vimHiGuiFgBg  Normal
+
+" ----------------------------------------------------------------------------
+" Lang
+" ----------------------------------------------------------------------------
+
+hi! link vimCommentTitle      SpecialComment
+hi! link vimCommentString     Identifier
+hi! link vimContinue          dkoDecorations
+hi! link vimOption            Normal
+" token '=utf-8' but broken on things like '=dark'
+hi! link vimSet               String
+hi! link vimSetEqual          String
+" group
+" e.g. has()
+hi! link vimFunc              Normal
+hi! link vimFuncName          Normal
+" token 'ThisFunction' in 'dko#ThisFunction()'
+"hi          link vimUserFunc    String
+" the word 'let'
+hi! link vimLet               Normal
+" '=' in let x = y
+" parens
+hi! link vimParenSep          dkoDecorations
+hi! link vimString            String
+" the word 'syntax'
+hi! link vimSyntax            Normal
+hi! link vimSynType           Normal
+
+" ============================================================================
+" vim help
+" ============================================================================
+
+hi! link helpExample          String
+hi! link helpHeadline         Title
+hi! link helpOption           Identifier
+hi! link helpSectionDelim     Ignore
+hi! link helpSpecial          dkoRegex
+hi! link helpWarning          dkoWarningText
+
+" ============================================================================
 " yaml
-hi link yamlBlockMappingKey ghGreen
+" ============================================================================
 
-if g:github_colors_extra_functions == 1
-  " in C, functions are blue!
-  au FileType c syntax match ghBlueFunc /\w\+\s*(/me=e-1,he=e-1
-  highlight def link ghBlueFunc Identifier
-  au FileType typescript syntax match ghPurpleFunc /\w\+\s*(/me=e-1,he=e-1
-  au FileType javascript syntax match ghPurpleFunc /\w\+\s*(/me=e-1,he=e-1
-  highlight def link ghPurpleFunc Function
-endif
+hi! link yamlBool             Boolean
 
-call s:Col('ghNormalNoBg', 'fg', '')
+" ============================================================================
+" zsh
+" ============================================================================
 
-" vimL
-hi link vimHiTerm      ghBlack
-hi link vimHiGroup     ghOrange
-hi link vimUserFunc    ghPurple
-hi link vimCommand     Statement
-hi link vimNotFunc     Statement
-hi link vimGroup       Statement
-hi link vimHighlight   Identifier
-hi link vimAutoCmd     Identifier
-hi link vimAutoEvent   Identifier
-hi link vimSyntax      Identifier
-hi link vimSynType     Identifier
-hi link vimMap         Identifier
-hi link vimOption      Identifier
-hi link vimUserCommand Identifier
-hi link vimAugroupKey  Identifier
-hi link vimParenSep    Delimiter
+hi! link zshCommands          Identifier
+hi! link zshOperator          Operator
+hi! link zshOptStart          Identifier
+hi! link zshOption            Normal
 
-hi link Delimiter         ghNormalNoBg
-hi link SpecialComment    Comment
-hi link Character         Number
-hi link CursorIM          Cursor
-hi link cppSTL            Function
-hi link cppSTLType        Type
-hi link shDeref           Identifier
-hi link shVariable        Function
-hi link perlSharpBang     Special
-hi link schemeFunc        Statement
+" ============================================================================
+" coc
+" ============================================================================
 
-" typescript
-hi link typescriptBraces  ghBlack
-hi link typescriptBraces  ghBlack
-hi link typescriptParens  ghBlack
+hi! link CocErrorSign       Error
+hi! link CocWarningSign     dkoTextWarn
+hi! link CocInfoSign        dkoTextInfo
+hi! link CocHintSign        dkoTextInfo
 
-" ruby
-hi link rubySharpBang     Special
-hi link rubyDefine        PreProc
-hi link rubyClass         PreProc
-hi link rubyConstant      Define
-hi link rubyInclude       PreProc
+" ============================================================================
+" QuickFix
+" ============================================================================
 
-" python
-hi link pythonBuiltin     Identifier
+hi! qfError                                 guifg=#772222
+hi! link QuickFixLine dkoBgLight
+hi! link qfFileName   SpecialComment
+hi! link qfLineNr     Comment
+hi! link qfSeparator  dkoDecorations
 
-" fatih/vim-go
-" you can enable more highlights from :h go-syntax
-hi link goConstants       Constant
-hi link goFunctionCall    Identifier
+" ============================================================================
+" netrw
+" ============================================================================
 
-" rust
-hi link rustModPath       Define
-hi link rustIdentifier    Function
-hi link rustAttribute     ghBase0
-hi link rustDerive        rustAttribute
-hi link rustDeriveTrait   ghDarkPurple
-hi link rustCommentLineDoc ghBase2
+hi link netrwTreeBar  dkoDecorations
+hi link netrwClassify Delimiter
+hi link netrwExe      Normal
 
-" neovimhaskell/haskell-vim
-hi link haskellIdentifier Function
-hi link haskellType       Identifier
-
-" diff (language)
-call s:Col('diffFile',      'base0',    'grey2')
-call s:Col('diffNewFile',   'base0',    'grey2')
-call s:Col('diffIndexLine', 'darkblue', 'grey2')
-call s:Col('diffLine',      'base2',    'lightblue')
-call s:Col('diffSubname',   'darkblue', 'lightblue')
-call s:Col('diffAdded',     'green',    'lightgreen')
-call s:Col('diffRemoved',   'red',      'lightred')
-
-" vim-pandoc-syntax
-call s:Col('pandocAtxStart', 'base4')
-call s:Col('pandocOperator', 'red')
-call s:Col('pandocDelimitedCodeBlock', 'darkpurple')
-call s:Col('pandocNoFormatted', 'base0', 'gutter')
-call s:Col('pandocPCite', 'purple')
-call s:Col('pandocCitekey', 'purple')
-
-" tex
-call s:Col('texMath', 'blue')
-call s:Col('texStatement', 'red')
-call s:Col('texType', 'purple')
-hi link texSection Title
-
-" plain builtin markdown
-hi link htmlH Title
-hi link markdownListMarker pandocOperator
-hi link markdownCode pandocDelimitedCodeBlock
-hi link markdownRule Title
-hi link markdownHeadingDelimiter pandocAtxStart
-
-" clojure
-hi link clojureDefine Type
-hi link clojureKeyword Identifier
-hi link clojureMacro ghPurple
-
-" }}}
-
-" Plugin Support {{{
-
-" GitGutter
-if g:github_colors_block_diffmark == 0
-  call s:Col('GitGutterAdd',          'green', 'gutter')
-  call s:Col('GitGutterChange',       'orange', 'gutter')
-  call s:Col('GitGutterDelete',       'darkred', 'gutter')
-  call s:Col('GitGutterChangeDelete', 'orange', 'gutter')
-else
-  call s:Col('GitGutterAdd',          'gutterfg', 'lightgreen_nr')
-  call s:Col('GitGutterChange',       'gutterfg', 'lightorange_nr')
-  call s:Col('GitGutterDelete',       'gutterfg', 'lightred_nr')
-  call s:Col('GitGutterChangeDelete', 'red', 'lightorange_nr')
-endif
-
-" NERDTree
-hi link NERDTreeDir       ghBlue
-hi link NERDTreeCWD       ghRed
-hi link NERDTreeExecFile  ghPurple
-hi link NERDTreeFile      ghDarkBlue
-
-" Startify
-call s:Clear('Directory') " somehow it's linked to 'Blue' + bold?
-hi link Directory         ghBlue
-hi link StartifyPath      ghBlue
-hi link StartifyHeader    ghBlue
-
-call s:Col('ghSneak', 'bg', 'purple')
-call s:Col('ghOverBg', '',  'overlay')
-" vim-sneak
-hi link Sneak             ghSneak
-hi link SneakScope        ghOverBg
-hi link sneakLabel        ghSneak
-
-" fzf
-" + means the selected one
-let g:fzf_colors = {
-  \ 'fg':      ['fg', 'Comment'],
-  \ 'bg':      ['fg', 'ghOver'],
-  \ 'hl':      ['fg', 'ghBlue'],
-  \ 'fg+':     ['fg', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine'],
-  \ 'hl+':     ['fg', 'ghBlue'],
-  \ 'info':    ['fg', 'ghRed'],
-  \ 'border':  ['fg', 'ghGrey1'],
-  \ 'prompt':  ['fg', 'ghBlue'],
-  \ 'pointer': ['fg', 'ghRed'],
-  \ 'marker':  ['fg', 'ghPurple'],
-  \ 'spinner': ['fg', 'ghDarkBlue'],
-  \ 'header':  ['fg', 'ghDarkBlue'] }
-
-" Coc
-call s:Col('CocHighlightText', '', 'gutter')
-
-call s:Col('CocErrorSign', 'gutter', 'errorred')
-call s:Attr('CocErrorSign', 'bold')
-call s:Col('CocErrorHighlight', '', 'lightred')
-call s:Attr('CocErrorHighlight', 'underline')
-
-call s:Col('CocWarningHighlight', '', 'lightorange')
-call s:Attr('CocWarningHighlight', 'underline')
-call s:Col('CocWarningSign', 'orange', 'gutter')
-
-call s:Col('CocInfoSign', 'blue', 'gutter')
-call s:Col('CocInfoHighlight', '', 'lightblue')
-
-call s:Col('CocHintSign', 'base4', 'gutter')
-
-" }}}
-
-" {{{ Spelling
-
-if has("spell")
-  call s:Col('SpellBad', 'red')
-  call s:Attr('SpellBad', 'undercurl')
-  call s:Spell('SpellBad', 'red')
-  call s:Col('SpellCap', 'green')
-  call s:Attr('SpellCap', 'undercurl')
-  call s:Spell('SpellCap', 'green')
-  call s:Col('SpellLocal', 'purple')
-  call s:Attr('SpellLocal', 'undercurl')
-  call s:Spell('SpellLocal', 'yellow')
-  call s:Col('SpellRare', 'purple')
-  call s:Attr('SpellRare', 'undercurl')
-  call s:Spell('SpellRare', 'purple')
-endif
-
-" }}}
-
-" }}}
+" ============================================================================
+" telescope
+" ============================================================================
+hi! link TelescopeBorder FloatBorder
