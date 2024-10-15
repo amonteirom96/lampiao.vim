@@ -1,356 +1,141 @@
-" Pink Moon Theme
-
+" rdark-terminal2 - vim color scheme
+"
+" Modified: Radu-Sebastian Marinescu
+" Last Change: 2014 Jul 16
+" Version: 0.3
+"
+" Based on rdark-terminal of Lukas Grässlin
+" (http://www.vim.org/scripts/script.php?script_id=3202)
+" which ported the rdark colorscheme for 256 colors.
+" (http://www.vim.org/scripts/script.php?script_id=1732)
+"
+" Info: rdark-terminal2 enhances visibility for CursorLine, Type, Special,
+" ColorColumn and IncSearch
+"
 hi clear
+let colors_name="rdark-terminal2"
 
-if exists('syntax_on')
-  syntax reset
-endif
+hi clear CursorLine
+hi CursorLine ctermbg=234
 
-let g:colors_name = "pink-moon"
-set background=dark
+hi Normal term=NONE cterm=NONE ctermbg=NONE ctermfg=252
+hi Underlined term=underline cterm=underline ctermbg=NONE ctermfg=111
+hi Ignore term=NONE cterm=NONE ctermbg=NONE ctermfg=16
+hi Error term=reverse cterm=NONE ctermbg=160 ctermfg=255
+hi Todo term=NONE cterm=NONE ctermbg=16 ctermfg=215
+hi Number term=NONE cterm=NONE ctermbg=NONE ctermfg=113
+hi String term=NONE cterm=NONE ctermbg=NONE ctermfg=113
+hi Function term=NONE cterm=NONE ctermbg=NONE ctermfg=215
+hi SpecialKey term=bold cterm=NONE ctermbg=NONE ctermfg=196
+hi NonText term=bold cterm=NONE ctermbg=NONE ctermfg=236
+"hi MatchParen term=reverse cterm=NONE ctermbg=215 ctermfg=23
+hi MatchParen term=NONE cterm=NONE ctermbg=NONE ctermfg=166
+hi Comment term=bold cterm=NONE ctermbg=NONE ctermfg=245
+hi Constant term=underline cterm=NONE ctermbg=NONE ctermfg=113
+hi Special term=bold cterm=NONE ctermbg=NONE ctermfg=66
+hi Keyword term=NONE cterm=NONE ctermbg=NONE ctermfg=255
+hi Identifier term=underline cterm=NONE ctermbg=NONE ctermfg=252
+hi Statement term=bold cterm=NONE ctermbg=NONE ctermfg=74
+hi PreProc term=underline cterm=NONE ctermbg=NONE ctermfg=215
+hi Type term=underline cterm=NONE ctermbg=NONE ctermfg=108
+hi LineNr term=underline cterm=NONE ctermbg=NONE ctermfg=59
+hi ExtraWhitespace term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+"hi Visual term=reverse cterm=NONE ctermbg=90 ctermfg=255
 
-" dark theme background
-let s:newmoon = "2a2e38"
-" line number background, file explorer selection
-let s:halfmoon = "333C47"
-" file address background, visual selection
-let s:fullmoon = "434852"
+hi Pmenu term=NONE cterm=NONE ctermbg=16 ctermfg=250
+hi PmenuSel term=NONE cterm=NONE ctermbg=61 ctermfg=231
+hi PmenuSbar term=NONE cterm=NONE ctermbg=238 ctermfg=238
+hi PmenuThumb term=NONE cterm=NONE ctermbg=102 ctermfg=102
 
-let s:salmon = "D08785"
-let s:pink = "FCDBD9"
+hi StatusLine term=reverse,bold cterm=NONE ctermbg=250 ctermfg=0
+hi StatusLineNC term=reverse cterm=NONE ctermbg=240 ctermfg=16
+"hi VertSplit term=reverse cterm=NONE ctermbg=102 ctermfg=59
+hi VertSplit term=reverse cterm=NONE ctermbg=NONE ctermfg=59
+hi Directory term=bold cterm=NONE ctermbg=NONE ctermfg=231
+hi ErrorMsg term=NONE cterm=NONE ctermbg=196 ctermfg=231
+hi IncSearch term=reverse cterm=NONE ctermbg=226 ctermfg=23
+hi Search term=reverse cterm=NONE ctermbg=215 ctermfg=23
+hi MoreMsg term=bold cterm=bold ctermbg=NONE ctermfg=74
+hi ModeMsg term=bold cterm=bold ctermbg=NONE ctermfg=fg
+"hi TabLine term=underline cterm=underline ctermbg=16 ctermfg=102
+"hi TabLineSel term=bold cterm=NONE ctermbg=59 ctermfg=255
+"hi TabLineFill term=reverse cterm=NONE ctermbg=16 ctermfg=16
+hi TabLine term=underline cterm=NONE ctermbg=240 ctermfg=0
+hi TabLineSel term=bold cterm=NONE ctermbg=243 ctermfg=255
+hi TabLineFill term=reverse cterm=NONE ctermbg=240 ctermfg=16
+hi CursorColumn term=reverse cterm=NONE ctermbg=241 ctermfg=fg
+hi Cursor term=NONE cterm=NONE ctermbg=145 ctermfg=16
+hi cppSTLType term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi cssUIProp term=NONE cterm=NONE ctermbg=NONE ctermfg=188
+hi vimAutoEvent term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi cParen term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi cBracket term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi cNumbers term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi phpPropertySelectorInString term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi Question term=NONE cterm=NONE ctermbg=NONE ctermfg=113
+hi Title term=bold cterm=bold ctermbg=NONE ctermfg=215
+hi VisualNOS term=bold,underline cterm=bold,underline ctermbg=NONE ctermfg=fg
+hi WarningMsg term=NONE cterm=NONE ctermbg=NONE ctermfg=196
+hi WildMenu term=NONE cterm=NONE ctermbg=233 ctermfg=255
+"hi Folded term=NONE cterm=NONE ctermbg=NONE ctermfg=188
+hi Folded term=NONE cterm=NONE ctermbg=NONE ctermfg=26
+hi FoldColumn term=NONE cterm=NONE ctermbg=NONE ctermfg=26
+hi phpSemicolon term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi phpFunctions term=NONE cterm=NONE ctermbg=NONE ctermfg=188
+hi phpParent term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi javaScriptBraces term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi javaScriptOperator term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi htmlTag term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi htmlTagName term=NONE cterm=NONE ctermbg=NONE ctermfg=145
+hi cCppBracket term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi cBlock term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi htmlTitle term=NONE cterm=NONE ctermbg=NONE ctermfg=113
+hi cUserCont term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi lCursor term=NONE cterm=NONE ctermbg=145 ctermfg=16
+hi cssPseudoClassId term=NONE cterm=NONE ctermbg=NONE ctermfg=255
+hi cssBraces term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi cssIdentifier term=NONE cterm=NONE ctermbg=NONE ctermfg=215
+hi cssTagName term=NONE cterm=NONE ctermbg=NONE ctermfg=215
+hi cMulti term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi ICursor term=NONE cterm=NONE ctermbg=145 ctermfg=fg
+hi DiffAdd term=bold cterm=NONE ctermbg=NONE ctermfg=113
+hi DiffChange term=bold cterm=NONE ctermbg=NONE ctermfg=fg
+hi DiffDelete term=bold cterm=bold ctermbg=NONE ctermfg=215
+hi DiffText term=reverse cterm=NONE ctermbg=NONE ctermfg=fg
+hi SignColumn term=NONE cterm=NONE ctermbg=16 ctermfg=51
+hi SpellBad term=reverse cterm=undercurl ctermbg=NONE ctermfg=196
+hi SpellCap term=reverse cterm=undercurl ctermbg=NONE ctermfg=21
+hi SpellRare term=reverse cterm=undercurl ctermbg=NONE ctermfg=201
+hi SpellLocal term=underline cterm=undercurl ctermbg=NONE ctermfg=51
+hi htmlSpecialTagName term=NONE cterm=NONE ctermbg=NONE ctermfg=145
+hi htmlArg term=NONE cterm=NONE ctermbg=NONE ctermfg=188
+hi cBitField term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi cssSelectorOp term=NONE cterm=NONE ctermbg=NONE ctermfg=255
+hi pythonFunction term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi cNumbersCom term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi vimFuncName term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi phpRegionDelimiter term=NONE cterm=NONE ctermbg=NONE ctermfg=139
+hi phpPropertySelector term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi cCppParen term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
+hi phpOperator term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi phpArrayPair term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi phpAssignByRef term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi phpRelation term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi phpMemberSelector term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi phpUnknownSelector term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi phpVarSelector term=NONE cterm=NONE ctermbg=NONE ctermfg=145
+hi htmlEndTag term=NONE cterm=NONE ctermbg=NONE ctermfg=102
+hi vimFold term=NONE cterm=NONE ctermbg=NONE ctermfg=fg
 
-let s:deep_sea_blue = "6d7b8b"
-let s:teal = "6F98B3"
-" let s:sea_blue = 9DB1C7
-let s:shallow_blue = "a6b8cc"
+"Sat's todo conf
+hi satTodoNew term=underline cterm=NONE ctermbg=NONE ctermfg=fg
+hi satTodoDone term=bold cterm=NONE ctermbg=NONE ctermfg=196
+hi satComment term=bold cterm=NONE ctermbg=NONE ctermfg=245
+hi satTitle term=reverse cterm=NONE ctermbg=102 ctermfg=59
 
-let s:yellow = "FDF8CE"
-let s:starlight = "F0FDFF"
-
-let s:cliquot = "FFd17f"
-
-" There are colors for Neovim's terminal emulator
-if has("nvim")
-  let g:terminal_color_0 = "#252932"
-  let g:terminal_color_1 = "#9dd6f4"
-  let g:terminal_color_2 = "#6E7B87"
-  let g:terminal_color_3 = "#5F7C99"
-  let g:terminal_color_4 = "#edd98f"
-  let g:terminal_color_5 = "#f8f8f2"
-  let g:terminal_color_6 = "#9dd6f4"
-  let g:terminal_color_7 = "#f8f8f2"
-  let g:terminal_color_8 = "#edd98f"
-  let g:terminal_color_9 = "#608DAB"
-  let g:terminal_color_10 = "#f8f8f2"
-  let g:terminal_color_11 = "#9dd6f4"
-  let g:terminal_color_12 = "#608DAB"
-  let g:terminal_color_13 = "#5673BE" 
-  let g:terminal_color_14 = "#5673BE"
-  let g:terminal_color_15 = "#5673BE"
-  let g:terminal_color_16 ="#333C47"
-  let g:terminal_color_background="#333C47"
-  let g:terminal_color_foreground="#eee"
-endif
-
-" Terminal color definitions
-
-" dark theme background: 25,25,25 
-let s:cterm00 = "00"
-
-" comments, inactive vim window text: 128, 167, 140
-let s:cterm03 = "02"
-
-" puts, parameters, and method calls: 248,248,242
-let s:cterm05 = "07"
-
-" light theme background
-let s:cterm07 = "15"
-
-" instance variables, Python defs (and maybe if / elses): 236, 105, 32
-let s:cterm08 = "11"
-
-" class names, object names, while, end, template variables: 236, 215, 149
-let s:cterm0A = "11"
-
-" Ruby strings: 161,215,242
-let s:cterm0B = "12"
-
-" hex colors: 115, 228, 246
-let s:cterm0C = "14"
-
-" method names in definitions: 247,197,39
-let s:cterm0D = "03"
-
-" ruby def: 236, 105, 32
-let s:cterm0E = "09"
-
-
-if exists('base16colorspace') && base16colorspace == "256"
-  let s:cterm01 = "18"
-  let s:cterm02 = "19"
-  let s:cterm04 = "20"
-  let s:cterm06 = "21"
-  let s:cterm09 = "16"
-  let s:cterm0F = "17"
-else
-  " Vim inactive window name background
-  let s:cterm01 = "08"
-
-  " Light background markdown text color plus
-  " Vim window borders and active widnow background
-  let s:cterm02 = "08"
-
-  " Active vim window name (text)
-  let s:cterm04 = "03"
-
-  " vim borders in light mode"
-  let s:cterm06 = "00"
-
-  " integer: 115, 228, 246
-  let s:cterm09 = "14"
-
-  " backticks in markdown, probably some other stuff
-  let s:cterm0F = "03"
-endif
+"Minibuff Explorer"
+hi MBEVisibleNormal term=NONE cterm=NONE ctermbg=NONE ctermfg=166
+hi MBEVisibleChanged term=NONE cterm=NONE ctermbg=NONE ctermfg=166
 
 
-" Highlighting function
-fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)
-  if a:guifg != ""
-    exec "hi " . a:group . " guifg=#" . s:gui(a:guifg)
-  endif
-  if a:guibg != ""
-    exec "hi " . a:group . " guibg=#" . s:gui(a:guibg)
-  endif
-  if a:ctermfg != ""
-    exec "hi " . a:group . " ctermfg=" . s:cterm(a:ctermfg)
-  endif
-  if a:ctermbg != ""
-    exec "hi " . a:group . " ctermbg=" . s:cterm(a:ctermbg)
-  endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
-  endif
-endfun
-
-" Return GUI color for light/dark variants
-fun s:gui(color)
-  if &background == "dark"
-    return a:color
-  endif
-
-  if a:color == s:newmoon
-    return s:cliquot
-  elseif a:color == s:halfmoon
-    return s:shallow_blue
-  elseif a:color == s:fullmoon
-    return s:starlight
-  elseif a:color == s:shallow_blue
-    return s:pink
-  elseif a:color == s:pink
-    return s:shallow_blue
-  elseif a:color == s:starlight
-    return s:fullmoon
-  elseif a:color == s:shallow_blue
-    return s:halfmoon
-  elseif a:color == s:cliquot
-    return s:newmoon
-  endif
-
-  return a:color
-endfun
-
-" Return terminal color for light/dark variants
-fun s:cterm(color)
-  if &background == "dark"
-    return a:color
-  endif
-
-  if a:color == s:cterm00
-    return s:cterm07
-  elseif a:color == s:cterm01
-    return s:cterm06
-  elseif a:color == s:cterm02
-    return s:cterm05
-  elseif a:color == s:cterm03
-    return s:cterm04
-  elseif a:color == s:cterm04
-    return s:cterm03
-  elseif a:color == s:cterm05
-    return s:cterm02
-  elseif a:color == s:cterm06
-    return s:cterm01
-  elseif a:color == s:cterm07
-    return s:cterm00
-  endif
-
-  return a:color
-endfun
-
-" Vim editor colors
-call <sid>hi("Bold",          "", "", "", "", "bold")
-call <sid>hi("Debug",         s:salmon, "", s:cterm08, "", "")
-call <sid>hi("Directory",     s:pink, "", s:cterm0D, "", "")
-call <sid>hi("ErrorMsg",      s:salmon, s:newmoon, s:cterm08, s:cterm00, "")
-call <sid>hi("Exception",     s:salmon, "", s:cterm08, "", "")
-call <sid>hi("FoldColumn",    "", s:halfmoon, "", s:cterm01, "")
-call <sid>hi("Folded",        s:shallow_blue, s:halfmoon, s:cterm03, s:cterm01, "")
-call <sid>hi("IncSearch",     s:halfmoon, s:teal, s:cterm01, s:cterm09, "none")
-call <sid>hi("Italic",        "", "", "", "", "none")
-call <sid>hi("Macro",         s:salmon, "", s:cterm08, "", "")
-call <sid>hi("MatchParen",    s:newmoon, s:shallow_blue, s:cterm00, s:cterm03,  "")
-call <sid>hi("ModeMsg",       s:yellow, "", s:cterm0B, "", "")
-call <sid>hi("MoreMsg",       s:yellow, "", s:cterm0B, "", "")
-call <sid>hi("Question",      s:teal, "", s:cterm09, "", "")
-call <sid>hi("Search",        s:shallow_blue, s:pink, s:cterm03, s:cterm0A,  "")
-call <sid>hi("SpecialKey",    s:shallow_blue, "", s:cterm03, "", "")
-call <sid>hi("TooLong",       s:salmon, "", s:cterm08, "", "")
-call <sid>hi("Underlined",    s:salmon, "", s:cterm08, "", "")
-call <sid>hi("Visual",        "", s:fullmoon, "", s:cterm02, "")
-call <sid>hi("VisualNOS",     s:salmon, "", s:cterm08, "", "")
-call <sid>hi("WarningMsg",    s:salmon, "", s:cterm08, "", "")
-call <sid>hi("WildMenu",      s:salmon, "", s:cterm08, "", "")
-call <sid>hi("Title",         s:pink, "", s:cterm0D, "", "none")
-call <sid>hi("Conceal",       s:pink, s:newmoon, s:cterm0D, s:cterm00, "")
-call <sid>hi("Cursor",        s:newmoon, s:starlight, s:cterm00, s:cterm05, "")
-call <sid>hi("NonText",       s:shallow_blue, "", s:cterm03, "", "")
-call <sid>hi("Normal",        s:starlight, s:newmoon, s:cterm05, s:cterm00, "")
-call <sid>hi("LineNr",        s:shallow_blue, s:halfmoon, s:cterm03, s:cterm01, "")
-call <sid>hi("SignColumn",    s:shallow_blue, s:halfmoon, s:cterm03, s:cterm01, "")
-call <sid>hi("SpecialKey",    s:shallow_blue, "", s:cterm03, "", "")
-call <sid>hi("StatusLine",    s:pink, s:fullmoon, s:cterm04, s:cterm02, "none")
-call <sid>hi("StatusLineNC",  s:shallow_blue, s:halfmoon, s:cterm03, s:cterm01, "none")
-call <sid>hi("VertSplit",     s:fullmoon, s:fullmoon, s:cterm02, s:cterm02, "none")
-call <sid>hi("ColorColumn",   "", s:halfmoon, "", s:cterm01, "none")
-call <sid>hi("CursorColumn",  "", s:halfmoon, "", s:cterm01, "none")
-call <sid>hi("CursorLine",    "", s:halfmoon, "", s:cterm01, "none")
-call <sid>hi("CursorLineNr",  s:pink, s:fullmoon, s:cterm03, s:cterm01, "")
-call <sid>hi("PMenu",         s:pink, s:halfmoon, s:cterm04, s:cterm01, "none")
-call <sid>hi("PMenuSel",      s:halfmoon, s:pink, s:cterm01, s:cterm04, "")
-call <sid>hi("TabLine",       s:shallow_blue, s:halfmoon, s:cterm03, s:cterm01, "none")
-call <sid>hi("TabLineFill",   s:shallow_blue, s:halfmoon, s:cterm03, s:cterm01, "none")
-call <sid>hi("TabLineSel",    s:yellow, s:halfmoon, s:cterm0B, s:cterm01, "none")
-
-" Standard syntax highlighting
-call <sid>hi("Boolean",      s:teal, "", s:cterm09, "", "")
-call <sid>hi("Character",    s:salmon, "", s:cterm08, "", "")
-call <sid>hi("Comment",      s:deep_sea_blue, "", s:cterm03, "", "")
-call <sid>hi("Conditional",  s:teal, "", s:cterm0E, "", "")
-call <sid>hi("Constant",     s:salmon, "", s:cterm09, "", "")
-call <sid>hi("Define",       s:teal, "", s:cterm0E, "", "none")
-call <sid>hi("Delimiter",    s:starlight, "", s:cterm0F, "", "")
-call <sid>hi("Float",        s:teal, "", s:cterm09, "", "")
-call <sid>hi("Function",     s:pink, "", s:cterm0D, "", "")
-call <sid>hi("Identifier",   s:salmon, "", s:cterm08, "", "none")
-call <sid>hi("Include",      s:pink, "", s:cterm0D, "", "")
-call <sid>hi("Keyword",      s:salmon, "", s:cterm0E, "", "")
-call <sid>hi("Label",        s:pink, "", s:cterm0A, "", "")
-call <sid>hi("Number",       s:shallow_blue, "", s:cterm09, "", "")
-call <sid>hi("Operator",     s:salmon, "", s:cterm05, "", "none")
-call <sid>hi("PreProc",      s:pink, "", s:cterm0A, "", "")
-call <sid>hi("Repeat",       s:pink, "", s:cterm0A, "", "")
-call <sid>hi("Special",      s:cliquot, "", s:cterm0C, "", "")
-call <sid>hi("SpecialChar",  s:cliquot, "", s:cterm0F, "", "")
-call <sid>hi("Statement",    s:teal, "", s:cterm08, "", "")
-call <sid>hi("StorageClass", s:pink, "", s:cterm0A, "", "")
-call <sid>hi("String",       s:yellow, "", s:cterm0B, "", "")
-call <sid>hi("Structure",    s:teal, "", s:cterm0E, "", "")
-call <sid>hi("Tag",          s:pink, "", s:cterm0A, "", "")
-call <sid>hi("Todo",         s:pink, s:halfmoon, s:cterm0A, s:cterm01, "")
-call <sid>hi("Type",         s:teal, "", s:cterm09, "", "none")
-call <sid>hi("Typedef",      s:pink, "", s:cterm0A, "", "")
-
-" Spelling highlighting
-call <sid>hi("SpellBad",     "", s:newmoon, "", s:cterm00, "undercurl")
-call <sid>hi("SpellLocal",   "", s:newmoon, "", s:cterm00, "undercurl")
-call <sid>hi("SpellCap",     "", s:newmoon, "", s:cterm00, "undercurl")
-call <sid>hi("SpellRare",    "", s:newmoon, "", s:cterm00, "undercurl")
-
-" Additional diff highlighting
-call <sid>hi("DiffAdd",      s:yellow, s:newmoon, s:cterm0B, s:cterm00, "")
-call <sid>hi("DiffChange",   s:pink, s:newmoon, s:cterm0D, s:cterm00, "")
-call <sid>hi("DiffDelete",   s:salmon, s:newmoon, s:cterm08, s:cterm00, "")
-call <sid>hi("DiffText",     s:pink, s:newmoon, s:cterm0D, s:cterm00, "")
-call <sid>hi("DiffAdded",    s:yellow, s:newmoon, s:cterm0B, s:cterm00, "")
-call <sid>hi("DiffFile",     s:salmon, s:newmoon, s:cterm08, s:cterm00, "")
-call <sid>hi("DiffNewFile",  s:yellow, s:newmoon, s:cterm0B, s:cterm00, "")
-call <sid>hi("DiffLine",     s:pink, s:newmoon, s:cterm0D, s:cterm00, "")
-call <sid>hi("DiffRemoved",  s:salmon, s:newmoon, s:cterm08, s:cterm00, "")
-
-" Ruby highlighting
-call <sid>hi("rubyAttribute",               s:pink, "", s:cterm0D, "", "")
-call <sid>hi("rubyConstant",                s:pink, "", s:cterm0A, "", "")
-call <sid>hi("rubyInterpolation",           s:pink, "", s:cterm0B, "", "")
-call <sid>hi("rubyInterpolationDelimiter",  s:teal, "", s:cterm0F, "", "")
-call <sid>hi("rubyRegexp",                  s:yellow, "", s:cterm0C, "", "")
-call <sid>hi("rubySymbol",                  s:salmon, "", s:cterm0B, "", "")
-call <sid>hi("rubyStringDelimiter",         s:yellow, "", s:cterm0B, "", "")
-
-" PHP highlighting
-call <sid>hi("phpMemberSelector",  s:starlight, "", s:cterm05, "", "")
-call <sid>hi("phpComparison",      s:starlight, "", s:cterm05, "", "")
-call <sid>hi("phpParent",          s:starlight, "", s:cterm05, "", "")
-
-" HTML highlighting
-call <sid>hi("htmlBold",    s:pink, "", s:cterm0A, "", "")
-call <sid>hi("htmlItalic",  s:teal, "", s:cterm0E, "", "")
-call <sid>hi("htmlEndTag",  s:starlight, "", s:cterm05, "", "")
-call <sid>hi("htmlTag",     s:starlight, "", s:cterm05, "", "")
-
-" CSS highlighting
-call <sid>hi("cssBraces",      s:starlight, "", s:cterm05, "", "")
-call <sid>hi("cssClassName",   s:salmon, "", s:cterm0E, "", "")
-call <sid>hi("cssClassNameDot",   s:salmon, "", s:cterm0E, "", "")
-call <sid>hi("cssPseudoClassId",   s:salmon, "", s:cterm0E, "", "")
-call <sid>hi("cssTagName",   s:salmon, "", s:cterm0E, "", "")
-call <sid>hi("cssColor",       s:yellow, "", s:cterm0C, "", "")
-
-" SASS highlighting
-call <sid>hi("sassidChar",     s:salmon, "", s:cterm08, "", "")
-call <sid>hi("sassClassChar",  s:teal, "", s:cterm09, "", "")
-call <sid>hi("sassInclude",    s:teal, "", s:cterm0E, "", "")
-call <sid>hi("sassMixing",     s:teal, "", s:cterm0E, "", "")
-call <sid>hi("sassMixinName",  s:pink, "", s:cterm0D, "", "")
-
-" JavaScript highlighting
-call <sid>hi("javaScript",        s:starlight, "", s:cterm05, "", "")
-call <sid>hi("javaScriptBraces",  s:starlight, "", s:cterm05, "", "")
-call <sid>hi("javaScriptNumber",  s:teal, "", s:cterm09, "", "")
-
-" Python highlighting
-call <sid>hi("pythonOperator",  s:teal, "", s:cterm0E, "", "")
-call <sid>hi("pythonRepeat",    s:teal, "", s:cterm0E, "", "")
-
-" Markdown highlighting
-call <sid>hi("markdownCode",              s:yellow, "", s:cterm0B, "", "")
-call <sid>hi("markdownError",             s:starlight, s:newmoon, s:cterm05, s:cterm00, "")
-call <sid>hi("markdownCodeBlock",         s:yellow, "", s:cterm0B, "", "")
-call <sid>hi("markdownHeadingDelimiter",  s:pink, "", s:cterm0D, "", "")
-
-" Git highlighting
-call <sid>hi("gitCommitOverflow",  s:salmon, "", s:cterm08, "", "")
-call <sid>hi("gitCommitSummary",   s:yellow, "", s:cterm0B, "", "")
-  
-" GitGutter highlighting
-call <sid>hi("GitGutterAdd",     s:yellow, s:halfmoon, s:cterm0B, s:cterm01, "")
-call <sid>hi("GitGutterChange",  s:pink, s:halfmoon, s:cterm0D, s:cterm01, "")
-call <sid>hi("GitGutterDelete",  s:salmon, s:halfmoon, s:cterm08, s:cterm01, "")
-call <sid>hi("GitGutterChangeDelete",  s:teal, s:halfmoon, s:cterm0E, s:cterm01, "")
-
-" Signify highlighting
-call <sid>hi("SignifySignAdd",     s:yellow, s:halfmoon, s:cterm0B, s:cterm01, "")
-call <sid>hi("SignifySignChange",  s:pink, s:halfmoon, s:cterm0D, s:cterm01, "")
-call <sid>hi("SignifySignDelete",  s:salmon, s:halfmoon, s:cterm08, s:cterm01, "")
-
-" NERDTree highlighting
-call <sid>hi("NERDTreeDirSlash",  s:pink, "", s:cterm0D, "", "")
-call <sid>hi("NERDTreeExecFile",  s:starlight, "", s:cterm05, "", "")
-
-" Remove functions
-delf <sid>hi
-delf <sid>gui
-delf <sid>cterm
-
-" Remove color variables
-unlet s:newmoon s:halfmoon s:fullmoon s:shallow_blue  s:pink  s:starlight  s:cliquot  s:salmon  s:teal  s:yellow
-unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:cterm07 s:cterm08 s:cterm09 s:cterm0A s:cterm0B s:cterm0C s:cterm0D s:cterm0E s:cterm0F
+hi ColorColumn ctermbg=235
