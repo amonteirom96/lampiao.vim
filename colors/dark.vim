@@ -1,254 +1,189 @@
-" Vim color scheme
-"
-" Name:       monochrome.vim
-" Maintainer: Xavier Noria <fxn@hashref.com>
-" License:    MIT
+" Name: No Frils Dark Colorscheme
+" Author: robertmeta (on Github)
+" URL: https://github.com/robertmeta/nofrils
+" (see this url for latest release & screenshots)
+" License: OSI approved MIT license
+
+hi clear
+if exists("syntax_on")
+    syntax reset
+endif
+
+let g:colors_name = "nofrils-dark"
+
+if !exists("g:nofrils_strbackgrounds")
+    let g:nofrils_strbackgrounds = 0
+endif
+if !exists("g:nofrils_heavycomments")
+    let g:nofrils_heavycomments = 0
+endif
+if !exists("g:nofrils_heavylinenumbers")
+    let g:nofrils_heavylinenumbers = 0
+endif
 
 set background=dark
 
-hi clear
-if exists('syntax_on')
-   syntax reset
-endif
+" Baseline
+hi Normal term=NONE cterm=NONE ctermfg=255 ctermbg=235 gui=NONE guifg=#eeeeee guibg=#262626
 
-let g:colors_name = 'monochrome'
+" Faded
+hi ColorColumn term=NONE cterm=NONE ctermfg=NONE ctermbg=236 gui=NONE guifg=NONE guibg=#303030
+hi Comment term=NONE cterm=NONE ctermfg=242 ctermbg=NONE gui=NONE guifg=#6C6C6C guibg=NONE
+hi FoldColumn term=NONE cterm=NONE ctermfg=242 ctermbg=NONE gui=NONE guifg=#6C6C6C guibg=NONE
+hi Folded term=NONE cterm=NONE ctermfg=242 ctermbg=NONE gui=NONE guifg=#6C6C6C guibg=NONE
+hi LineNr term=NONE cterm=NONE ctermfg=8 ctermbg=bg gui=NONE guifg=#808080 guibg=bg
+hi NonText term=NONE cterm=NONE ctermfg=242 ctermbg=NONE gui=NONE guifg=#6C6C6C guibg=NONE
+hi SignColumn term=NONE cterm=NONE ctermfg=242 ctermbg=NONE gui=NONE guifg=#6C6C6C guibg=NONE
+hi SpecialComment term=NONE cterm=NONE ctermfg=242 ctermbg=NONE gui=NONE guifg=#6C6C6C guibg=NONE
+hi SpecialKey term=NONE cterm=NONE ctermfg=242 ctermbg=NONE gui=NONE guifg=#6C6C6C guibg=NONE
+hi StatusLineNC term=NONE cterm=NONE ctermfg=fg ctermbg=242 gui=NONE guifg=fg guibg=#6C6C6C
+hi VertSplit term=NONE cterm=NONE ctermfg=black ctermbg=242 gui=NONE guifg=black guibg=#6C6C6C
 
-let s:white  = ['White', 15]
-let s:black  = ['#0e1111', 16]
-let s:bgray  = ['#181818', 233]
-let s:lgray  = ['LightGray', 255]
-let s:cgray  = ['#737373', 243]
-let s:dgray  = ['DarkGray', 248]
-let s:sblue  = ['#778899', 67]
-let s:yellow = ['Yellow', 226]
-let s:red    = ['#b6403a', 160]
-let s:green  = ['#478226', 28]
+" Highlighted
+hi CursorColumn term=NONE cterm=NONE ctermfg=NONE ctermbg=236 gui=NONE guifg=NONE guibg=#303030
+hi CursorIM term=NONE cterm=NONE ctermfg=black ctermbg=4 gui=NONE guifg=black guibg=#00FFFF
+hi CursorLineNr term=NONE cterm=NONE ctermfg=NONE ctermbg=black gui=NONE guifg=NONE guibg=black
+hi CursorLine term=NONE cterm=NONE ctermfg=NONE ctermbg=236 gui=NONE guifg=NONE guibg=#303030
+hi Cursor term=NONE cterm=NONE ctermfg=black ctermbg=4 gui=NONE guifg=black guibg=#00FFFF
+hi Directory term=NONE cterm=NONE ctermfg=69 ctermbg=NONE gui=NONE guifg=#5F87FF guibg=NONE
+hi ErrorMsg term=NONE cterm=NONE ctermfg=fg ctermbg=52 gui=NONE guifg=fg guibg=#5F0000
+hi Error term=NONE cterm=NONE ctermfg=fg ctermbg=52 gui=NONE guifg=fg guibg=#5F0000
+hi IncSearch term=NONE cterm=NONE ctermfg=black ctermbg=green gui=NONE guifg=black guibg=green
+hi MatchParen term=NONE cterm=NONE ctermfg=15 ctermbg=4 gui=NONE guifg=#ffffff guibg=#000080
+hi ModeMsg term=NONE cterm=NONE ctermfg=69 ctermbg=NONE gui=NONE guifg=#5F87FF guibg=NONE
+hi MoreMsg term=NONE cterm=NONE ctermfg=69 ctermbg=NONE gui=NONE guifg=#5F87FF guibg=NONE
+hi PmenuSel term=NONE cterm=NONE ctermfg=black ctermbg=13 gui=NONE guifg=black guibg=#FF00FF
+hi Question term=NONE cterm=NONE ctermfg=69 ctermbg=NONE gui=NONE guifg=#5F87FF guibg=NONE
+hi Search term=NONE cterm=NONE ctermfg=black ctermbg=6 gui=NONE guifg=black guibg=#00CDCD
+hi StatusLine term=NONE cterm=NONE ctermfg=black ctermbg=fg gui=NONE guifg=black guibg=fg
+hi Todo term=NONE cterm=NONE ctermfg=10 ctermbg=NONE gui=NONE guifg=#00FF00 guibg=black
+hi WarningMsg term=NONE cterm=NONE ctermfg=fg ctermbg=52 gui=NONE guifg=fg guibg=#5F0000
+hi WildMenu term=NONE cterm=NONE ctermfg=fg ctermbg=black gui=NONE guifg=fg guibg=black
 
-let s:default_fg = s:lgray
-let s:default_bg = s:black
+" Reversed
+hi PmenuSbar term=reverse cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
+hi Pmenu term=reverse cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
+hi PmenuThumb term=reverse cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
+hi TabLineSel term=reverse cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
+hi Visual term=reverse cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
+hi VisualNOS term=reverse,underline cterm=reverse,underline ctermfg=NONE ctermbg=NONE gui=reverse,underline guifg=NONE guibg=NONE
 
-let s:italic    = 'italic'
-let s:bold      = 'bold'
-let s:underline = 'underline'
-let s:none      = 'NONE'
+" Diff
+hi DiffAdd term=NONE cterm=NONE ctermfg=2 ctermbg=NONE gui=NONE guifg=#008000 guibg=NONE
+hi DiffChange term=NONE cterm=NONE ctermfg=3 ctermbg=NONE gui=NONE guifg=#808000 guibg=NONE
+hi DiffDelete term=NONE cterm=NONE ctermfg=1 ctermbg=NONE gui=NONE guifg=#800000 guibg=NONE
+hi DiffText term=NONE cterm=NONE ctermfg=4 ctermbg=NONE gui=NONE guifg=#000080 guibg=NONE
 
-let s:default_lst = []
-let s:default_str = ''
+" Spell
+hi SpellBad term=underline cterm=underline ctermfg=13 ctermbg=NONE gui=underline guifg=#FF00FF guibg=NONE
+hi SpellCap term=underline cterm=underline ctermfg=13 ctermbg=NONE gui=underline guifg=#FF00FF guibg=NONE
+hi SpellLocal term=underline cterm=underline ctermfg=13 ctermbg=NONE gui=underline guifg=#FF00FF guibg=NONE
+hi SpellRare term=underline cterm=underline ctermfg=13 ctermbg=NONE gui=underline guifg=#FF00FF guibg=NONE
 
-if !exists("g:monochrome_italic_comments")
-  let g:monochrome_italic_comments = 0
-endif
-let s:comment_attr = g:monochrome_italic_comments ? s:italic : s:none
+" Vim Features
+hi Menu term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Scrollbar term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi TabLineFill term=NONE cterm=NONE ctermfg=fg ctermbg=242 gui=NONE guifg=fg guibg=#6C6C6C
+hi TabLine term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Tooltip term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
-function! s:hi(...)
-    let group = a:1
-    let fg    = get(a:, 2, s:default_fg)
-    let bg    = get(a:, 3, s:default_bg)
-    let attr  = get(a:, 4, s:default_str)
+" Syntax Highlighting (or lack of)
+hi Boolean term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Character term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Conceal term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Conditional term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Constant term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Debug term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Define term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Delimiter term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Directive term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Exception term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Float term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Format term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Function term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Identifier term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Ignore term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Include term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Keyword term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Label term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Macro term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Number term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Operator term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi PreCondit term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi PreProc term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Repeat term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi SpecialChar term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Special term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Statement term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi StorageClass term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi String term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Structure term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Tag term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Title term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Typedef term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Type term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi Underlined term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
-    let cmd = ['hi', group]
+" Sneak
+hi SneakLabelMask term=NONE cterm=NONE ctermfg=black ctermbg=195 gui=NONE guifg=black guibg=#d7ffff
+hi SneakTarget term=NONE cterm=NONE ctermfg=black ctermbg=195 gui=NONE guifg=black guibg=#d7ffff
+hi SneakLabelTarget term=NONE cterm=NONE ctermfg=black ctermbg=183 gui=NONE guifg=black guibg=#d7afff
+hi SneakScope term=NONE cterm=NONE ctermfg=black ctermbg=183 gui=NONE guifg=black guibg=#d7afff
 
-    if fg != s:default_lst
-        call add(cmd, 'guifg='.fg[0])
-        call add(cmd, 'ctermfg='.fg[1])
-    endif
+" Helper Functions
+function! NofrilsFocusComments()
+    hi Comment term=NONE cterm=NONE ctermfg=255 ctermbg=235 gui=NONE guifg=#eeeeee guibg=#262626
+    hi Normal term=NONE cterm=NONE ctermfg=242 ctermbg=235 gui=NONE guifg=#eeeeee guibg=#262626
+    hi LineNr term=NONE cterm=NONE ctermfg=8 ctermbg=bg gui=NONE guifg=#808080 guibg=bg
+    hi Character term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+    hi String term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
-    if bg != s:default_lst && bg != s:default_bg
-        call add(cmd, 'guibg='.bg[0])
-        call add(cmd, 'ctermbg='.bg[1])
-    endif
-
-    if attr != s:default_str
-        call add(cmd, 'gui='.attr)
-        call add(cmd, 'cterm='.attr)
-    endif
-
-    exec join(cmd, ' ')
+    if g:nofrils_heavycomments
+        hi Comment term=NONE cterm=NONE ctermfg=135 ctermbg=NONE gui=NONE guifg=#AF5FFF guibg=NONE
+    end
 endfunction
 
+function! NofrilsFocusCode()
+    hi Comment term=NONE cterm=NONE ctermfg=242 ctermbg=235 gui=NONE guifg=#eeeeee guibg=#262626
+    hi Normal term=NONE cterm=NONE ctermfg=255 ctermbg=235 gui=NONE guifg=#eeeeee guibg=#262626
+    hi LineNr term=NONE cterm=NONE ctermfg=8 ctermbg=bg gui=NONE guifg=#808080 guibg=bg
+    hi Character term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+    hi String term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
-"
-" --- Vim interface ------------------------------------------------------------
-"
+    if g:nofrils_strbackgrounds
+        hi Character term=NONE cterm=NONE ctermfg=NONE ctermbg=233 gui=NONE guifg=NONE guibg=#121212
+        hi String term=NONE cterm=NONE ctermfg=NONE ctermbg=233 gui=NONE guifg=NONE guibg=#121212
+    end
+endfunction
 
-call s:hi('Normal')
-call s:hi('Cursor', s:black, s:lgray)
-call s:hi('CursorLine', s:default_lst, s:bgray, s:none)
-call s:hi('CursorLineNr', s:white, s:default_bg, s:bold)
-call s:hi('ColorColumn', s:default_fg, s:bgray)
-call s:hi('Search', s:white, s:sblue)
-call s:hi('Visual', s:white, s:sblue)
-call s:hi('ErrorMsg', s:white, s:red)
+function! NofrilsNormal()
+    hi Comment term=NONE cterm=NONE ctermfg=242 ctermbg=NONE gui=NONE guifg=#6C6C6C guibg=NONE
+    hi Normal term=NONE cterm=NONE ctermfg=255 ctermbg=235 gui=NONE guifg=#eeeeee guibg=#262626
+    hi LineNr term=NONE cterm=NONE ctermfg=8 ctermbg=bg gui=NONE guifg=#808080 guibg=bg
+    hi Character term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+    hi String term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
-" Tildes at the bottom of a buffer, etc.
-call s:hi('NonText', s:dgray)
+    " Optional Syntax Features
+    if g:nofrils_strbackgrounds
+        hi Character term=NONE cterm=NONE ctermfg=NONE ctermbg=233 gui=NONE guifg=NONE guibg=#121212
+        hi String term=NONE cterm=NONE ctermfg=NONE ctermbg=233 gui=NONE guifg=NONE guibg=#121212
+    end
+    if g:nofrils_heavycomments
+        hi Comment term=NONE cterm=NONE ctermfg=135 ctermbg=NONE gui=NONE guifg=#AF5FFF guibg=NONE
+    end
+    if g:nofrils_heavylinenumbers
+        hi LineNr term=NONE cterm=NONE ctermfg=135 ctermbg=NONE gui=NONE guifg=#AF5FFF guibg=NONE
+    end
+endfunction
 
-" Folding.
-call s:hi('FoldColumn', s:dgray)
-call s:hi('Folded')
+" Command mappings
+command! NofrilsDark :colo nofrils-dark
+command! NofrilsLight :colo nofrils-light
+command! NofrilsSepia :colo nofrils-sepia
+command! NofrilsAcme :colo nofrils-acme
+command! NofrilsFocusNormal :call NofrilsNormal()
+command! NofrilsFocusCode :call NofrilsFocusCode()
+command! NofrilsFocusComments :call NofrilsFocusComments()
 
-" Line numbers gutter.
-call s:hi('LineNr', s:dgray)
-
-" Small arrow used for tabs.
-call s:hi('SpecialKey', s:sblue, s:default_bg, s:bold)
-
-" File browsers.
-call s:hi('Directory', s:white, s:default_bg, s:bold)
-
-" Help.
-call s:hi('helpSpecial')
-call s:hi('helpHyperTextJump', s:sblue, s:default_bg, s:underline)
-call s:hi('helpNote')
-
-" Popup menu.
-call s:hi('Pmenu', s:white, s:sblue)
-call s:hi('PmenuSel', s:sblue, s:white)
-
-" Notes.
-call s:hi('Todo', s:black, s:yellow, s:bold)
-
-" Signs.
-call s:hi('SignColumn')
-
-"
-" --- Programming languages ----------------------------------------------------
-"
-
-call s:hi('Statement', s:white, s:default_bg, s:bold)
-call s:hi('PreProc', s:white, s:default_bg, s:bold)
-call s:hi('String', s:sblue)
-call s:hi('Comment', s:cgray, s:default_bg, s:comment_attr)
-call s:hi('Constant')
-call s:hi('Type', s:white, s:default_bg, s:bold)
-call s:hi('Function', s:white)
-call s:hi('Identifier')
-call s:hi('Special')
-call s:hi('MatchParen', s:lgray, s:black, s:underline)
-
-
-"
-" --- VimL ---------------------------------------------------------------------
-"
-
-call s:hi('vimOption')
-call s:hi('vimGroup')
-call s:hi('vimHiClear')
-call s:hi('vimHiGroup')
-call s:hi('vimHiAttrib')
-call s:hi('vimHiGui')
-call s:hi('vimHiGuiFgBg')
-call s:hi('vimHiCTerm')
-call s:hi('vimHiCTermFgBg')
-call s:hi('vimSynType')
-hi link vimCommentTitle Comment
-
-
-"
-" --- Ruby ---------------------------------------------------------------------
-"
-
-call s:hi('rubyConstant')
-call s:hi('rubySharpBang', s:cgray)
-call s:hi('rubySymbol', s:sblue)
-call s:hi('rubyStringDelimiter', s:sblue)
-call s:hi('rubyStringEscape', s:sblue)
-call s:hi('rubyRegexpEscape', s:sblue)
-call s:hi('rubyRegexpAnchor', s:sblue)
-call s:hi('rubyRegexpSpecial', s:sblue)
-
-
-"
-" --- Elixir -------------------------------------------------------------------
-"
-
-call s:hi('elixirAlias', s:default_fg, s:default_bg, s:none)
-call s:hi('elixirDelimiter', s:sblue)
-call s:hi('elixirSelf', s:default_fg, s:default_bg, s:none)
-
-" For ||, ->, etc.
-call s:hi('elixirOperator')
-
-" Module attributes like @doc or @type.
-hi link elixirVariable Statement
-
-" While rendered as comments in other languages, docstrings are strings,
-" experimental.
-hi link elixirDocString String
-hi link elixirDocTest String
-hi link elixirStringDelimiter String
-
-
-"
-" --- Perl ---------------------------------------------------------------------
-"
-
-call s:hi('perlSharpBang', s:cgray)
-call s:hi('perlStringStartEnd', s:sblue)
-call s:hi('perlStringEscape', s:sblue)
-call s:hi('perlMatchStartEnd', s:sblue)
-
-
-"
-" --- Python -------------------------------------------------------------------
-"
-
-call s:hi('pythonEscape', s:sblue)
-
-
-"
-" --- JavaScript ---------------------------------------------------------------
-"
-
-call s:hi('javaScriptFunction', s:white, s:default_bg, s:bold)
-
-
-"
-" --- Diffs --------------------------------------------------------------------
-"
-
-call s:hi('diffFile', s:cgray)
-call s:hi('diffNewFile', s:cgray)
-call s:hi('diffIndexLine', s:cgray)
-call s:hi('diffLine', s:cgray)
-call s:hi('diffSubname', s:cgray)
-call s:hi('diffAdded', s:white, s:green)
-call s:hi('diffRemoved', s:white, s:red)
-
-
-"
-" --- Markdown -----------------------------------------------------------------
-"
-
-call s:hi('Title', s:white, s:default_bg, s:bold)
-call s:hi('markdownHeadingDelimiter', s:white, s:default_bg, s:bold)
-call s:hi('markdownHeadingRule', s:white, s:default_bg, s:bold)
-call s:hi('markdownLinkText', s:sblue, s:default_bg, s:underline)
-
-
-"
-" --- vim-fugitive -------------------------------------------------------------
-"
-
-call s:hi('gitcommitComment', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitOnBranch', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitBranch', s:sblue, s:default_bg, s:none)
-call s:hi('gitcommitHeader', s:white, s:default_bg, s:bold)
-call s:hi('gitcommitSelected', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitDiscarded', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitSelectedType', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitDiscardedType', s:default_fg, s:default_bg, s:none)
-
-
-"
-" --- NeoMake ------------------------------------------------------------------
-"
-
-call s:hi('NeomakeMessageSign')
-call s:hi('NeomakeWarningSign', s:sblue)
-call s:hi('NeomakeErrorSign', s:yellow)
-call s:hi('NeomakeInfoSign')
-call s:hi('NeomakeError', s:yellow)
-call s:hi('NeomakeInfo', s:default_fg, s:default_bg, s:bold)
-call s:hi('NeomakeMessage')
-call s:hi('NeomakeWarning', s:yellow)
+" Setup normal settings
+call NofrilsNormal()
