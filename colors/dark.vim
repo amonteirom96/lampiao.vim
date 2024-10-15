@@ -1,243 +1,325 @@
-" carbonized-dark, a vim colourscheme by nightsense
-"
-" generated with a theme template adapted from
-" base16-vim (https://github.com/chriskempson/base16-vim)
-" by Chris Kempson (http://chriskempson.com)
+" 'flattened_dark.vim' -- Vim color scheme.
+" Maintainer:   Romain Lafourcade (romainlafourcade@gmail.com)
+" Description:  Dark Solarized, without the bullshit.
 
-
-"=== SET COLOUR VARIABLES =====================================================
-
-" GUI colours
-let s:g0 = '2b2b2b'
-let s:g1 = '3b3b37'
-let s:g2 = '75756e'
-let s:g3 = '8a8a81'
-let s:g4 = '9e9e95'
-let s:g5 = 'b5b5aa'
-let s:g6 = 'f0f0e1'
-let s:g7 = 'fffff0'
-let s:g8 = 'bf5858'
-let s:g9 = 'b56f45'
-let s:gA = 'ab8e38'
-let s:gB = '508a50'
-let s:gC = '458a8a'
-let s:gD = '557b9e'
-let s:gE = '8b6a9e'
-let s:gF = 'ab6a7a'
-
-" terminal colours
-let s:t0 = '00'
-let s:t3 = '08'
-let s:t5 = '07'
-let s:t7 = '15'
-let s:t8 = '01'
-let s:tA = '03'
-let s:tB = '02'
-let s:tC = '06'
-let s:tD = '04'
-let s:tE = '05'
-let s:t1 = '10'
-let s:t2 = '11'
-let s:t4 = '12'
-let s:t6 = '13'
-let s:t9 = '09'
-let s:tF = '14'
-
-" neovim colours
-if has('nvim')
-  let g:terminal_color_0 =  '#2b2b2b'
-  let g:terminal_color_1 =  '#bf5858'
-  let g:terminal_color_2 =  '#508a50'
-  let g:terminal_color_3 =  '#ab8e38'
-  let g:terminal_color_4 =  '#557b9e'
-  let g:terminal_color_5 =  '#8b6a9e'
-  let g:terminal_color_6 =  '#458a8a'
-  let g:terminal_color_7 =  '#b5b5aa'
-  let g:terminal_color_8 =  '#8a8a81'
-  let g:terminal_color_9 =  '#b56f45'
-  let g:terminal_color_10 = '#3b3b37'
-  let g:terminal_color_11 = '#75756e'
-  let g:terminal_color_12 = '#9e9e95'
-  let g:terminal_color_13 = '#f0f0e1'
-  let g:terminal_color_14 = '#ab6a7a'
-  let g:terminal_color_15 = '#fffff0'
-endif
-
-
-"=== OTHER PREPARATION ========================================================
-
-" run theme-setting script if using terminal vim
-if filereadable(expand('~/.nightshell/carbonized-dark'))
-  if !has('gui_running')
-    execute 'silent !/bin/sh $HOME/.nightshell/carbonized-dark'
-  endif
-endif
-
-" clear old theme
 hi clear
-syntax reset
 
-" set new theme
+if exists('syntax_on')
+  syntax reset
+endif
+
+let colors_name = 'flattened_dark'
+
+hi  Normal                                  ctermfg=12  ctermbg=8  guifg=#839496  guibg=#002b36  gui=NONE
+
 set background=dark
-augroup NightsenseThemeSet
-   autocmd!
-   autocmd CursorMoved * execute 'if !exists("colors_name") |
-         \ colorscheme carbonized-dark | endif'
-augroup END
-let colors_name = 'carbonized-dark'
 
-" highlighting function
-fun! <sid>h(x, gf, gb, cf, cb, a, s)
-  if a:gf != '' | exe 'hi ' . a:x . ' guifg=#'  . a:gf                  | endif
-  if a:gb != '' | exe 'hi ' . a:x . ' guibg=#'  . a:gb                  | endif
-  if a:cf != '' | exe 'hi ' . a:x . ' ctermfg=' . a:cf                  | endif
-  if a:cb != '' | exe 'hi ' . a:x . ' ctermbg=' . a:cb                  | endif
-  if a:a  != '' | exe 'hi ' . a:x . ' gui='     . a:a . ' cterm=' . a:a | endif
-  if a:s  != '' | exe 'hi ' . a:x . ' guisp=#'  . a:s                   | endif
-endfun
+hi  ColorColumn                             cterm=NONE  ctermbg=0  guibg=#073642  gui=NONE
+hi  Comment                                 cterm=NONE  ctermfg=10  guifg=#586e75  gui=italic
+hi  ConId                                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  Conceal                                 cterm=NONE  ctermfg=4  ctermbg=8  guifg=#268bd2  guibg=#002b36  gui=NONE
+hi  Constant                                cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  Cursor                                  cterm=NONE  ctermfg=8  ctermbg=12  guifg=#002b36  guibg=#839496  gui=NONE
+hi  CursorColumn                            cterm=NONE  ctermbg=0  guibg=#073642  gui=NONE
+hi  CursorLine                              cterm=NONE  ctermbg=0  guibg=#073642  guisp=#93a1a1  gui=NONE
+hi  CursorLineNr                            cterm=NONE ctermfg=3  guifg=#b58900  gui=NONE
+hi  DiffAdd                                 cterm=NONE  ctermfg=2  ctermbg=0  guifg=#719e07  guibg=#073642  guisp=#719e07  gui=NONE
+hi  DiffChange                              cterm=NONE  ctermfg=3  ctermbg=0  guifg=#b58900  guibg=#073642  guisp=#b58900  gui=NONE
+hi  DiffDelete                              cterm=NONE  ctermfg=1  ctermbg=0  guifg=#dc322f  guibg=#073642  gui=NONE
+hi  DiffText                                cterm=NONE  ctermfg=4  ctermbg=0  guifg=#268bd2  guibg=#073642  guisp=#268bd2  gui=NONE
+hi  Directory                               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  Error                                   cterm=NONE  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=#002b36  gui=NONE
+hi  ErrorMsg                                cterm=reverse  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=NONE gui=reverse
+hi  FoldColumn                              cterm=NONE  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  gui=NONE
+hi  Folded                                  cterm=NONE,underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#002b36  gui=NONE
+hi  HelpExample                             cterm=NONE  ctermfg=14  guifg=#93a1a1  gui=NONE
+hi  Identifier                              cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  IncSearch                               cterm=standout  ctermfg=9  guifg=#cb4b16  gui=standout
+hi  LineNr                                  cterm=NONE  ctermfg=10  ctermbg=0  guifg=#586e75  guibg=#073642  gui=NONE
+hi  MatchParen                              cterm=NONE  ctermfg=1  ctermbg=10  guifg=#dc322f  guibg=#586e75  gui=NONE
+hi  ModeMsg                                 cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  MoreMsg                                 cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  NonText                                 cterm=NONE  ctermfg=11  guifg=#657b83  gui=NONE
+hi  Pmenu                                   cterm=reverse  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  gui=reverse
+hi  PmenuSbar                               cterm=reverse  ctermfg=7  ctermbg=12  guifg=#eee8d5  guibg=#839496  gui=reverse
+hi  PmenuSel                                cterm=reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  gui=reverse
+hi  PmenuThumb                              cterm=reverse  ctermfg=12  ctermbg=8  guifg=#839496  guibg=#002b36  gui=reverse
+hi  PreProc                                 cterm=NONE  ctermfg=1  guifg=#cb4b16  gui=NONE
+hi  Question                                cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  Search                                  cterm=reverse  ctermfg=3 ctermbg=NONE  guifg=#b58900  guibg=NONE  gui=reverse
+hi  SignColumn                              cterm=NONE  ctermfg=12  ctermbg=NONE  guifg=#839496  guibg=NONE  gui=NONE
+hi  Special                                 cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
+hi  SpecialKey                              cterm=NONE  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=NONE
+hi  SpellBad                                cterm=undercurl  ctermfg=NONE  ctermbg=NONE  guisp=#dc322f  gui=undercurl
+hi  SpellCap                                cterm=undercurl  ctermfg=NONE  ctermbg=NONE  guisp=#6c71c4  gui=undercurl
+hi  SpellLocal                              cterm=undercurl  ctermfg=NONE  ctermbg=NONE  guisp=#b58900  gui=undercurl
+hi  SpellRare                               cterm=undercurl  ctermfg=NONE  ctermbg=NONE  guisp=#2aa198  gui=undercurl
+hi  Statement                               cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+hi  StatusLine                              cterm=reverse  ctermfg=14  ctermbg=0  guifg=#93a1a1  guibg=#073642  gui=reverse
+hi  StatusLineNC                            cterm=reverse  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=reverse
+hi  TabLine                                 cterm=underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#839496  gui=underline
+hi  TabLineFill                             cterm=underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#839496  gui=underline
+hi  TabLineSel                              cterm=underline,reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  guisp=#839496  gui=underline,reverse
+hi  Title                                   cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  Todo                                    cterm=bold  ctermfg=5  ctermbg=8  guifg=#d33682  guibg=NONE  gui=bold
+hi  Type                                    cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  Underlined                              cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  VarId                                   cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  VertSplit                               cterm=NONE  ctermfg=11  ctermbg=11  guifg=#657b83  guibg=#657b83  gui=NONE
+hi  Visual                                  cterm=reverse  ctermfg=10  ctermbg=8  guifg=#586e75  guibg=#002b36  gui=reverse
+hi  VisualNOS                               cterm=reverse  ctermbg=0  ctermbg=NONE  guibg=#073642  guifg=NONE  gui=reverse
+hi  WarningMsg                              cterm=NONE  ctermfg=9  guifg=#dc322f  gui=NONE
+hi  WildMenu                                cterm=reverse  ctermfg=7  ctermbg=0  guifg=#eee8d5  guibg=#073642 gui=reverse
 
+hi  cPreCondit                              cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
 
-"=== BASIC HIGHLIGHTING =======================================================
+hi  gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+hi  gitcommitComment                        cterm=NONE  ctermfg=10  guifg=#586e75  gui=italic
+hi  gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
+hi  gitcommitDiscardedType                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
+hi  gitcommitFile                           cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
+hi  gitcommitHeader                         cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+hi  gitcommitOnBranch                       cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+hi  gitcommitSelectedFile                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+hi  gitcommitSelectedType                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+hi  gitcommitUnmerged                       cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+hi  gitcommitUnmergedFile                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  gitcommitUntrackedFile                  cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
 
-" cursor + status line + selected tab
-cal <sid>h('Cursor'           , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
-cal <sid>h('StatusLine'       , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
-cal <sid>h('StatusLineTerm'   , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
-cal <sid>h('TabLineSel'       , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
-cal <sid>h('TermCursor'       , s:g0 , s:g9 , s:t0 , s:t9 , 'none'      , ''  )
+hi  helpHyperTextEntry                      cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+hi  helpHyperTextJump                       cterm=underline  ctermfg=4  guifg=#268bd2  gui=underline
+hi  helpNote                                cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+hi  helpOption                              cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  helpVim                                 cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
 
-" line numbers
-cal <sid>h('CursorLineNr'     , s:g0 , s:g3 , s:t0 , s:t3 , 'none'      , ''  )
-cal <sid>h('LineNr'           , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+hi  hsImport                                cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+hi  hsImportLabel                           cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  hsModuleName                            cterm=underline  ctermfg=2  guifg=#719e07  gui=underline
+hi  hsNiceOperator                          cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  hsStatement                             cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  hsString                                cterm=NONE  ctermfg=11  guifg=#657b83  gui=NONE
+hi  hsStructure                             cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  hsType                                  cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  hsTypedef                               cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  hsVarSym                                cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  hs_DeclareFunction                      cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  hs_OpFunctionName                       cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  hs_hlFunctionName                       cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
 
-" basic text
-cal <sid>h('Bold'             , ''   , ''   , ''   , ''   , 'bold'      , ''  )
-cal <sid>h('Directory'        , s:g5 , ''   , s:t5 , ''   , 'bold'      , ''  )
-cal <sid>h('Italic'           , ''   , ''   , ''   , ''   , 'italic'    , ''  )
-cal <sid>h('Normal'           , s:g5 , s:g0 , s:t5 , s:t0 , 'none'      , ''  )
-cal <sid>h('Underlined'       , s:g5 , ''   , s:t5 , ''   , 'underline' , ''  )
+hi  htmlArg                                 cterm=NONE  ctermfg=11  guifg=#657b83  gui=NONE
+hi  htmlEndTag                              cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+hi  htmlSpecialTagName                      cterm=NONE  ctermfg=4  guifg=#268bd2  gui=italic
+hi  htmlTag                                 cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+hi  htmlTagN                                cterm=NONE  ctermfg=14  guifg=#93a1a1  gui=NONE
+hi  htmlTagName                             cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
 
-" commented-out text
-cal <sid>h('Comment'          , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
-cal <sid>h('Conceal'          , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
-cal <sid>h('EndOfBuffer'      , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
-cal <sid>h('Ignore'           , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
-cal <sid>h('NonText'          , s:g3 , ''   , s:t3 , ''   , 'none'      , ''  )
+hi  javaScript                              cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
 
-" highlighted background
-cal <sid>h('ColorColumn'      , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
-cal <sid>h('CursorColumn'     , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
-cal <sid>h('CursorLine'       , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
-cal <sid>h('QuickFixLine'     , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
-cal <sid>h('StatusLineNC'     , s:g5 , s:g1 , s:t5 , s:t1 , 'none'      , ''  )
-cal <sid>h('StatusLineTermNC' , s:g5 , s:g1 , s:t5 , s:t1 , 'none'      , ''  )
-cal <sid>h('TabLineFill'      , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
-cal <sid>h('TermCursorNC'     , ''   , s:g1 , ''   , s:t1 , 'none'      , ''  )
+hi  pandocBlockQuote                        cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocBlockQuoteLeader1                 cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocBlockQuoteLeader2                 cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
+hi  pandocBlockQuoteLeader3                 cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  pandocBlockQuoteLeader4                 cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
+hi  pandocBlockQuoteLeader5                 cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
+hi  pandocBlockQuoteLeader6                 cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+hi  pandocCitation                          cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+hi  pandocCitationDelim                     cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+hi  pandocCitationID                        cterm=underline  ctermfg=5  guifg=#d33682  gui=underline
+hi  pandocCitationRef                       cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+hi  pandocComment                           cterm=NONE  ctermfg=10  guifg=#586e75  gui=italic
+hi  pandocDefinitionBlock                   cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocDefinitionIndctr                  cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocDefinitionTerm                    cterm=standout  ctermfg=13  guifg=#6c71c4  gui=standout
+hi  pandocEmphasis                          cterm=NONE  ctermfg=12  guifg=#839496  gui=italic
+hi  pandocEmphasisDefinition                cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=italic
+hi  pandocEmphasisHeading                   cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocEmphasisNested                    cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
+hi  pandocEmphasisNestedDefinition          cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocEmphasisNestedHeading             cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocEmphasisNestedTable               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocEmphasisTable                     cterm=NONE  ctermfg=4  guifg=#268bd2  gui=italic
+hi  pandocEscapePair                        cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
+hi  pandocFootnote                          cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+hi  pandocFootnoteDefLink                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
+hi  pandocFootnoteInline                    cterm=NONE,underline  ctermfg=2  guifg=#719e07  gui=NONE,underline
+hi  pandocFootnoteLink                      cterm=underline  ctermfg=2  guifg=#719e07  gui=underline
+hi  pandocHeading                           cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocHeadingMarker                     cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  pandocImageCaption                      cterm=NONE,underline  ctermfg=13  guifg=#6c71c4  gui=NONE,underline
+hi  pandocLinkDefinition                    cterm=underline  ctermfg=6  guifg=#2aa198  guisp=#657b83  gui=underline
+hi  pandocLinkDefinitionID                  cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocLinkDelim                         cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+hi  pandocLinkLabel                         cterm=underline  ctermfg=4  guifg=#268bd2  gui=underline
+hi  pandocLinkText                          cterm=NONE,underline  ctermfg=4  guifg=#268bd2  gui=NONE,underline
+hi  pandocLinkTitle                         cterm=underline  ctermfg=11  guifg=#657b83  gui=underline
+hi  pandocLinkTitleDelim                    cterm=underline  ctermfg=10  guifg=#586e75  guisp=#657b83  gui=underline
+hi  pandocLinkURL                           cterm=underline  ctermfg=11  guifg=#657b83  gui=underline
+hi  pandocListMarker                        cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
+hi  pandocListReference                     cterm=underline  ctermfg=5  guifg=#d33682  gui=underline
+hi  pandocMetadata                          cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocMetadataDelim                     cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+hi  pandocMetadataKey                       cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocNonBreakingSpace                  cterm=reverse  ctermfg=1  ctermbg=NONE  guifg=#dc322f  guibg=NONE  gui=reverse
+hi  pandocRule                              cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocRuleLine                          cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocStrikeout                         cterm=reverse  ctermfg=10  ctermbg=NONE  guibg=NONE  guifg=#586e75  gui=reverse
+hi  pandocStrikeoutDefinition               cterm=reverse  ctermfg=13  ctermbg=NONE  guibg=NONE  guifg=#6c71c4  gui=reverse
+hi  pandocStrikeoutHeading                  cterm=reverse  ctermfg=9  ctermbg=NONE  guibg=NONE  guifg=#cb4b16  gui=reverse
+hi  pandocStrikeoutTable                    cterm=reverse  ctermfg=4  ctermbg=NONE  guibg=NONE  guifg=#268bd2  gui=reverse
+hi  pandocStrongEmphasis                    cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
+hi  pandocStrongEmphasisDefinition          cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocStrongEmphasisEmphasis            cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
+hi  pandocStrongEmphasisEmphasisDefinition  cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocStrongEmphasisEmphasisHeading     cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocStrongEmphasisEmphasisTable       cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocStrongEmphasisHeading             cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocStrongEmphasisNested              cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
+hi  pandocStrongEmphasisNestedDefinition    cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocStrongEmphasisNestedHeading       cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocStrongEmphasisNestedTable         cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocStrongEmphasisTable               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocStyleDelim                        cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
+hi  pandocSubscript                         cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocSubscriptDefinition               cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocSubscriptHeading                  cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocSubscriptTable                    cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocSuperscript                       cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocSuperscriptDefinition             cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocSuperscriptHeading                cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocSuperscriptTable                  cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocTable                             cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocTableStructure                    cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocTableZebraDark                    cterm=NONE  ctermfg=4  ctermbg=0  guifg=#268bd2  guibg=#073642  gui=NONE
+hi  pandocTableZebraLight                   cterm=NONE  ctermfg=4  ctermbg=8  guifg=#268bd2  guibg=#002b36  gui=NONE
+hi  pandocTitleBlock                        cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocTitleBlockTitle                   cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocTitleComment                      cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  pandocVerbatimBlock                     cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  pandocVerbatimInline                    cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  pandocVerbatimInlineDefinition          cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  pandocVerbatimInlineHeading             cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
+hi  pandocVerbatimInlineTable               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
 
-" muted text on highlighted background
-cal <sid>h('DiffChange'       , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
-cal <sid>h('FoldColumn'       , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
-cal <sid>h('Folded'           , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
-cal <sid>h('SignColumn'       , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
-cal <sid>h('TabLine'          , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
-cal <sid>h('VisualNOS'        , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
+hi  perlHereDoc                             cterm=NONE  ctermfg=14  ctermbg=8  guifg=#93a1a1  guibg=#002b36  gui=NONE
+hi  perlStatementFileDesc                   cterm=NONE  ctermfg=6  ctermbg=8  guifg=#2aa198  guibg=#002b36  gui=NONE
+hi  perlVarPlain                            cterm=NONE  ctermfg=3  ctermbg=8  guifg=#b58900  guibg=#002b36  gui=NONE
 
-" strongly highlighted background
-cal <sid>h('MatchParen'       , s:g6 , s:g2 , s:t6 , s:t2 , 'none'      , ''  )
-cal <sid>h('Pmenu'            , s:g6 , s:g2 , s:t6 , s:t2 , 'none'      , ''  )
-cal <sid>h('Visual'           , s:g6 , s:g2 , s:t6 , s:t2 , 'none'      , ''  )
+hi  rubyDefine                              cterm=NONE  ctermfg=14  ctermbg=8  guifg=#93a1a1  guibg=#002b36  gui=NONE
 
-" selected menu item
-cal <sid>h('PmenuSel'         , s:g0 , s:g5 , s:t0 , s:t5 , 'none'      , ''  )
-cal <sid>h('WildMenu'         , s:g0 , s:g6 , s:t0 , s:t6 , 'none'      , ''  )
+hi  texMathMatcher                          cterm=NONE  ctermfg=3  ctermbg=8  guifg=#b58900  guibg=#002b36  gui=NONE
+hi  texMathZoneX                            cterm=NONE  ctermfg=3  ctermbg=8  guifg=#b58900  guibg=#002b36  gui=NONE
+hi  texRefLabel                             cterm=NONE  ctermfg=3  ctermbg=8  guifg=#b58900  guibg=#002b36  gui=NONE
+hi  texStatement                            cterm=NONE  ctermfg=6  ctermbg=8  guifg=#2aa198  guibg=#002b36  gui=NONE
 
-" solid lines
-cal <sid>h('PmenuSbar'        , s:g1 , s:g1 , s:t1 , s:t1 , 'none'      , ''  )
-cal <sid>h('PmenuThumb'       , s:g4 , s:g4 , s:t4 , s:t4 , 'none'      , ''  )
-cal <sid>h('VertSplit'        , s:g2 , s:g2 , s:t2 , s:t2 , 'none'      , ''  )
+hi  vimCmdSep                               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  vimCommand                              cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  vimCommentString                        cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
+hi  vimGroup                                cterm=NONE,underline  ctermfg=4  guifg=#268bd2  gui=NONE,underline
+hi  vimHiGroup                              cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  vimHiLink                               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi  vimIsCommand                            cterm=NONE  ctermfg=11  guifg=#657b83  gui=NONE
+hi  vimSynMtchOpt                           cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
+hi  vimSynType                              cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
 
+hi link Boolean                             Constant
+hi link Character                           Constant
+hi link Conditional                         Statement
+hi link Debug                               Special
+hi link Define                              PreProc
+hi link Delimiter                           Special
+hi link Exception                           Statement
+hi link Float                               Number
+hi link Function                            Identifier
+hi link HelpCommand                         Statement
+hi link Include                             PreProc
+hi link Keyword                             Statement
+hi link Label                               Statement
+hi link Macro                               PreProc
+hi link Number                              Constant
+hi link Operator                            Statement
+hi link PreCondit                           PreProc
+hi link Repeat                              Statement
+hi link SpecialChar                         Special
+hi link SpecialComment                      Special
+hi link StorageClass                        Type
+hi link String                              Constant
+hi link Structure                           Type
+hi link SyntasticError                      SpellBad
+hi link SyntasticErrorSign                  Error
+hi link SyntasticStyleErrorLine             SyntasticErrorLine
+hi link SyntasticStyleErrorSign             SyntasticErrorSign
+hi link SyntasticStyleWarningLine           SyntasticWarningLine
+hi link SyntasticStyleWarningSign           SyntasticWarningSign
+hi link SyntasticWarning                    SpellCap
+hi link SyntasticWarningSign                Todo
+hi link Tag                                 Special
+hi link Typedef                             Type
 
-"=== ALERT/SYNTAX HIGHLIGHTING ================================================
+hi link diffAdded                           Statement
+hi link diffBDiffer                         WarningMsg
+hi link diffCommon                          WarningMsg
+hi link diffDiffer                          WarningMsg
+hi link diffIdentical                       WarningMsg
+hi link diffIsA                             WarningMsg
+hi link diffLine                            Identifier
+hi link diffNoEOL                           WarningMsg
+hi link diffOnly                            WarningMsg
+hi link diffRemoved                         WarningMsg
 
-" RED for warning elements
-cal <sid>h('DiffDelete'       , s:g8 , s:g0 , s:t8 , s:t0 , 'reverse'   , ''  )
-cal <sid>h('Error'            , s:g8 , s:g0 , s:t8 , s:t0 , 'reverse'   , ''  )
-cal <sid>h('ErrorMsg'         , s:g8 , s:g0 , s:t8 , s:t0 , 'none'      , ''  )
-cal <sid>h('SpellBad'         , ''   , ''   , s:t0 , s:t8 , 'undercurl' , s:g8)
-cal <sid>h('TooLong'          , s:g8 , ''   , s:t8 , ''   , 'none'      , ''  )
-cal <sid>h('WarningMsg'       , s:g8 , s:g0 , s:t8 , s:t0 , 'none'      , ''  )
+hi link gitcommitDiscarded                  gitcommitComment
+hi link gitcommitDiscardedArrow             gitcommitDiscardedFile
+hi link gitcommitNoBranch                   gitcommitBranch
+hi link gitcommitSelected                   gitcommitComment
+hi link gitcommitSelectedArrow              gitcommitSelectedFile
+hi link gitcommitUnmergedArrow              gitcommitUnmergedFile
+hi link gitcommitUntracked                  gitcommitComment
 
-" ORANGE for preliminary elements
-cal <sid>h('Define'           , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
-cal <sid>h('IncSearch'        , s:g9 , s:g0 , s:t9 , s:t0 , 'reverse'   , ''  )
-cal <sid>h('Include'          , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
-cal <sid>h('Macro'            , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
-cal <sid>h('PreCondit'        , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
-cal <sid>h('PreProc'          , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
-cal <sid>h('SpellCap'         , ''   , ''   , s:t0 , s:t9 , 'undercurl' , s:g9)
-cal <sid>h('Title'            , s:g9 , ''   , s:t9 , ''   , 'none'      , ''  )
+hi link helpSpecial                         Special
 
-" YELLOW for highlighted elements
-cal <sid>h('DiffText'         , s:gA , s:g0 , s:tA , s:t0 , 'reverse'   , ''  )
-cal <sid>h('Search'           , s:gA , s:g0 , s:tA , s:t0 , 'reverse'   , ''  )
-cal <sid>h('Todo'             , s:gA , s:g0 , s:tA , s:t0 , 'reverse'   , ''  )
+hi link hsDelimTypeExport                   Delimiter
+hi link hsImportParams                      Delimiter
+hi link hsModuleStartLabel                  hsStructure
+hi link hsModuleWhereLabel                  hsModuleStartLabel
+hi link htmlLink                            Function
 
-" GREEN for action elements
-cal <sid>h('Conditional'      , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('DiffAdd'          , s:gB , s:g0 , s:tB , s:t0 , 'reverse'   , ''  )
-cal <sid>h('Exception'        , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('Keyword'          , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('Label'            , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('ModeMsg'          , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('MoreMsg'          , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('Operator'         , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('Question'         , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('Repeat'           , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
-cal <sid>h('Statement'        , s:gB , ''   , s:tB , ''   , 'none'      , ''  )
+hi link lCursor                             Cursor
 
-" TEAL for object types
-cal <sid>h('SpellLocal'       , ''   , ''   , s:t0 , s:tC , 'undercurl' , s:gC)
-cal <sid>h('StorageClass'     , s:gC , ''   , s:tC , ''   , 'none'      , ''  )
-cal <sid>h('Structure'        , s:gC , ''   , s:tC , ''   , 'none'      , ''  )
-cal <sid>h('Type'             , s:gC , ''   , s:tC , ''   , 'none'      , ''  )
-cal <sid>h('Typedef'          , s:gC , ''   , s:tC , ''   , 'none'      , ''  )
+hi link pandocCodeBlock                     pandocVerbatimBlock
+hi link pandocCodeBlockDelim                pandocVerbatimBlock
+hi link pandocEscapedCharacter              pandocEscapePair
+hi link pandocLineBreak                     pandocEscapePair
+hi link pandocMetadataTitle                 pandocMetadata
+hi link pandocTableStructureEnd             pandocTableStructre
+hi link pandocTableStructureTop             pandocTableStructre
+hi link pandocVerbatimBlockDeep             pandocVerbatimBlock
 
-" BLUE for constants
-cal <sid>h('Boolean'          , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
-cal <sid>h('Character'        , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
-cal <sid>h('Constant'         , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
-cal <sid>h('Float'            , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
-cal <sid>h('Number'           , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
-cal <sid>h('String'           , s:gD , ''   , s:tD , ''   , 'none'      , ''  )
+hi link vimFunc                             Function
+hi link vimSet                              Normal
+hi link vimSetEqual                         Normal
+hi link vimUserFunc                         Function
+hi link vipmVar                             Identifier
 
-" PURPLE for special text
-cal <sid>h('Debug'            , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
-cal <sid>h('Delimiter'        , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
-cal <sid>h('Special'          , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
-cal <sid>h('SpecialChar'      , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
-cal <sid>h('SpecialComment'   , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
-cal <sid>h('SpecialKey'       , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
-cal <sid>h('SpellRare'        , ''   , ''   , s:t0 , s:tE , 'undercurl' , s:gE)
-cal <sid>h('Tag'              , s:gE , ''   , s:tE , ''   , 'none'      , ''  )
+hi clear SyntasticErrorLine
+hi clear SyntasticWarningLine
+hi clear helpLeadBlank
+hi clear helpNormal
+hi clear pandocTableStructre
 
-" PINK for object names
-cal <sid>h('Function'         , s:gF , ''   , s:tF , ''   , 'none'      , ''  )
-cal <sid>h('Identifier'       , s:gF , ''   , s:tF , ''   , 'none'      , ''  )
-
-
-"=== OPTIONS ==================================================================
-
-" disable highlighted CursorLineNr
-if exists('g:carbonized_dark_CursorLineNr')
-if g:carbonized_dark_CursorLineNr == 'off'
-cal <sid>h('CursorLineNr'     , s:g4 , s:g1 , s:t4 , s:t1 , 'none'      , ''  )
-endif
-endif
-
-" disable LineNr background altogether
-if exists('g:carbonized_dark_LineNr')
-if g:carbonized_dark_LineNr == 'off'
-cal <sid>h('CursorLineNr'     , s:g4 , s:g0 , s:t4 , s:t0 , 'none'      , ''  )
-cal <sid>h('LineNr'           , s:g4 , s:g0 , s:t4 , s:t0 , 'none'      , ''  )
-endif
+if has('nvim')
+  let g:terminal_color_0  = '#073642'
+  let g:terminal_color_1  = '#dc322f'
+  let g:terminal_color_2  = '#859900'
+  let g:terminal_color_3  = '#b58900'
+  let g:terminal_color_4  = '#268bd2'
+  let g:terminal_color_5  = '#d33682'
+  let g:terminal_color_6  = '#2aa198'
+  let g:terminal_color_7  = '#eee8d5'
+  let g:terminal_color_8  = '#002b36'
+  let g:terminal_color_9  = '#cb4b16'
+  let g:terminal_color_10 = '#586e75'
+  let g:terminal_color_11 = '#657b83'
+  let g:terminal_color_12 = '#839496'
+  let g:terminal_color_13 = '#6c71c4'
+  let g:terminal_color_14 = '#93a1a1'
+  let g:terminal_color_15 = '#fdf6e3'
 endif
