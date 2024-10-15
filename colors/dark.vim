@@ -1,161 +1,254 @@
-" VIM COLOR SCHEME
-" Maintainer: Karolis Koncevicius
-
-hi clear
-
-if exists('syntax_on')
-  syntax reset
-endif
-
-let g:colors_name='distilled'
+" Vim color scheme
+"
+" Name:       monochrome.vim
+" Maintainer: Xavier Noria <fxn@hashref.com>
+" License:    MIT
 
 set background=dark
 
-" colors ----------------------------------------------------------------------
+hi clear
+if exists('syntax_on')
+   syntax reset
+endif
 
-hi Cursor           ctermbg=7    ctermfg=NONE cterm=NONE           guibg=#e4e4dd  guifg=NONE     gui=NONE
+let g:colors_name = 'monochrome'
 
-hi Normal           ctermbg=0    ctermfg=7    cterm=NONE           guibg=#24364b  guifg=#e4e4dd  gui=NONE
-hi Title            ctermbg=NONE ctermfg=7    cterm=BOLDUNDERLINE  guibg=NONE     guifg=#e4e4dd  gui=BOLDUNDERLINE
-hi Comment          ctermbg=NONE ctermfg=8    cterm=NONE           guibg=NONE     guifg=#6194ba  gui=NONE
-hi SpecialComment   ctermbg=NONE ctermfg=12   cterm=NONE           guibg=NONE     guifg=#9fcce7  gui=NONE
-hi Todo             ctermbg=NONE ctermfg=4    cterm=BOLDUNDERLINE  guibg=NONE     guifg=#65baf5  gui=BOLDUNDERLINE
-hi Directory        ctermbg=NONE ctermfg=6    cterm=NONE           guibg=NONE     guifg=#69c5b4  gui=NONE
+let s:white  = ['White', 15]
+let s:black  = ['#0e1111', 16]
+let s:bgray  = ['#181818', 233]
+let s:lgray  = ['LightGray', 255]
+let s:cgray  = ['#737373', 243]
+let s:dgray  = ['DarkGray', 248]
+let s:sblue  = ['#778899', 67]
+let s:yellow = ['Yellow', 226]
+let s:red    = ['#b6403a', 160]
+let s:green  = ['#478226', 28]
 
-hi LineNr           ctermbg=NONE ctermfg=8    cterm=NONE           guibg=NONE     guifg=#6194ba  gui=NONE
-hi CursorLineNr     ctermbg=NONE ctermfg=8    cterm=NONE           guibg=NONE     guifg=#6194ba  gui=NONE
-hi ColorColumn      ctermbg=8    ctermfg=NONE cterm=NONE           guibg=#6194ba  guifg=NONE     gui=NONE
-hi SignColumn       ctermbg=8    ctermfg=NONE cterm=NONE           guibg=#6194ba  guifg=NONE     gui=NONE
+let s:default_fg = s:lgray
+let s:default_bg = s:black
 
-hi Folded           ctermbg=NONE ctermfg=4    cterm=NONE           guibg=NONE     guifg=#65baf5  gui=NONE
-hi FoldColumn       ctermbg=NONE ctermfg=4    cterm=NONE           guibg=NONE     guifg=#65baf5  gui=NONE
+let s:italic    = 'italic'
+let s:bold      = 'bold'
+let s:underline = 'underline'
+let s:none      = 'NONE'
 
-hi Underlined       ctermbg=NONE ctermfg=NONE cterm=UNDERLINE      guibg=NONE     guifg=NONE     gui=UNDERLINE
+let s:default_lst = []
+let s:default_str = ''
 
-hi Visual           ctermbg=NONE ctermfg=7    cterm=REVERSE        guibg=NONE     guifg=#e4e4dd  gui=REVERSE
-hi VisualNOS        ctermbg=NONE ctermfg=NONE cterm=UNDERLINE      guibg=NONE     guifg=NONE     gui=UNDERLINE
-hi MatchParen       ctermbg=NONE ctermfg=3    cterm=NONE           guibg=NONE     guifg=#ecb534  gui=NONE
-hi IncSearch        ctermbg=11   ctermfg=0    cterm=NONE           guibg=#dfc56d  guifg=#24364b  gui=NONE
-hi Search           ctermbg=11   ctermfg=0    cterm=NONE           guibg=#dfc56d  guifg=#24364b  gui=NONE
-hi CursorColumn     ctermbg=8    ctermfg=7    cterm=NONE           guibg=#6194ba  guifg=#e4e4dd  gui=NONE
-hi CursorLine       ctermbg=8    ctermfg=7    cterm=NONE           guibg=#6194ba  guifg=#e4e4dd  gui=NONE
+if !exists("g:monochrome_italic_comments")
+  let g:monochrome_italic_comments = 0
+endif
+let s:comment_attr = g:monochrome_italic_comments ? s:italic : s:none
 
-hi StatusLine       ctermbg=0    ctermfg=8    cterm=NONE           guibg=#24364b  guifg=#6194ba  gui=NONE
-hi StatusLineNC     ctermbg=0    ctermfg=8    cterm=NONE           guibg=#24364b  guifg=#6194ba  gui=NONE
-hi VertSplit        ctermbg=NONE ctermfg=8    cterm=NONE           guibg=NONE     guifg=#6194ba  gui=NONE
-hi WildMenu         ctermbg=12   ctermfg=0    cterm=NONE           guibg=#9fcce7  guifg=#24364b  gui=NONE
-hi ModeMsg          ctermbg=NONE ctermfg=4    cterm=NONE           guibg=NONE     guifg=#65baf5  gui=NONE
+function! s:hi(...)
+    let group = a:1
+    let fg    = get(a:, 2, s:default_fg)
+    let bg    = get(a:, 3, s:default_bg)
+    let attr  = get(a:, 4, s:default_str)
 
-hi DiffAdd          ctermbg=2    ctermfg=0    cterm=NONE           guibg=#88c563  guifg=#24364b  gui=NONE
-hi DiffDelete       ctermbg=1    ctermfg=0    cterm=NONE           guibg=#e76d6d  guifg=#24364b  gui=NONE
-hi DiffChange       ctermbg=0    ctermfg=3    cterm=UNDERLINE      guibg=#24364b  guifg=#ecb534  gui=UNDERLINE
-hi DiffText         ctermbg=3    ctermfg=0    cterm=NONE           guibg=#ecb534  guifg=#24364b  gui=NONE
+    let cmd = ['hi', group]
 
-hi Pmenu            ctermbg=7    ctermfg=0    cterm=NONE           guibg=#e4e4dd  guifg=#24364b  gui=NONE
-hi PmenuSel         ctermbg=0    ctermfg=12   cterm=REVERSE        guibg=#24364b  guifg=#9fcce7  gui=REVERSE
-hi PmenuSbar        ctermbg=7    ctermfg=NONE cterm=NONE           guibg=#e4e4dd  guifg=NONE     gui=NONE
-hi PmenuThumb       ctermbg=8    ctermfg=NONE cterm=NONE           guibg=#6194ba  guifg=NONE     gui=NONE
+    if fg != s:default_lst
+        call add(cmd, 'guifg='.fg[0])
+        call add(cmd, 'ctermfg='.fg[1])
+    endif
 
-hi SpellBad         ctermbg=NONE ctermfg=1    cterm=UNDERCURL      guibg=NONE     guifg=#e76d6d  gui=UNDERCURL
-hi SpellCap         ctermbg=NONE ctermfg=1    cterm=UNDERCURL      guibg=NONE     guifg=#e76d6d  gui=UNDERCURL
-hi SpellLocal       ctermbg=NONE ctermfg=9    cterm=UNDERCURL      guibg=NONE     guifg=#edbabf  gui=UNDERCURL
-hi SpellRare        ctermbg=NONE ctermfg=9    cterm=UNDERCURL      guibg=NONE     guifg=#edbabf  gui=UNDERCURL
+    if bg != s:default_lst && bg != s:default_bg
+        call add(cmd, 'guibg='.bg[0])
+        call add(cmd, 'ctermbg='.bg[1])
+    endif
 
-hi ErrorMsg         ctermbg=1    ctermfg=7    cterm=NONE           guibg=#e76d6d  guifg=#e4e4dd  gui=NONE
-hi WarningMsg       ctermbg=NONE ctermfg=1    cterm=NONE           guibg=NONE     guifg=#e76d6d  gui=NONE
-hi MoreMsg          ctermbg=NONE ctermfg=4    cterm=NONE           guibg=NONE     guifg=#65baf5  gui=NONE
-hi Question         ctermbg=NONE ctermfg=4    cterm=NONE           guibg=NONE     guifg=#65baf5  gui=NONE
+    if attr != s:default_str
+        call add(cmd, 'gui='.attr)
+        call add(cmd, 'cterm='.attr)
+    endif
 
-hi TabLine          ctermbg=8    ctermfg=0    cterm=NONE           guibg=#6194ba  guifg=#24364b  gui=NONE
-hi TabLineSel       ctermbg=0    ctermfg=12   cterm=REVERSE        guibg=#24364b  guifg=#9fcce7  gui=REVERSE
-hi TabLineFill      ctermbg=8    ctermfg=0    cterm=NONE           guibg=#6194ba  guifg=#24364b  gui=NONE
+    exec join(cmd, ' ')
+endfunction
 
-hi Error            ctermbg=NONE ctermfg=1    cterm=REVERSE        guibg=NONE     guifg=#e76d6d  gui=REVERSE
-hi Ignore           ctermbg=NONE ctermfg=NONE cterm=NONE           guibg=NONE     guifg=NONE     gui=NONE
 
-" Clear ------------------------------------------------------------------------
+"
+" --- Vim interface ------------------------------------------------------------
+"
 
-hi clear Number
-hi clear Character
-hi clear Statement
-hi clear Type
-hi clear Function
-hi clear PreProc
-hi clear Special
-hi clear Identifier
-hi clear Constant
-hi clear Boolean
-hi clear String
-hi clear Delimiter
-hi clear Conceal
+call s:hi('Normal')
+call s:hi('Cursor', s:black, s:lgray)
+call s:hi('CursorLine', s:default_lst, s:bgray, s:none)
+call s:hi('CursorLineNr', s:white, s:default_bg, s:bold)
+call s:hi('ColorColumn', s:default_fg, s:bgray)
+call s:hi('Search', s:white, s:sblue)
+call s:hi('Visual', s:white, s:sblue)
+call s:hi('ErrorMsg', s:white, s:red)
 
-" Links ------------------------------------------------------------------------
+" Tildes at the bottom of a buffer, etc.
+call s:hi('NonText', s:dgray)
 
-" R
-hi link rOKeyword  SpecialComment
-hi link rOTag      SpecialComment
-hi link rOTitleTag SpecialComment
-hi link rOExamples Comment
-hi link rOTitle    Comment
+" Folding.
+call s:hi('FoldColumn', s:dgray)
+call s:hi('Folded')
 
-" markdown
-hi link markdownHeadingDelimiter Title
-hi link markdownCodeDelimiter    SpecialComment
+" Line numbers gutter.
+call s:hi('LineNr', s:dgray)
 
-" rmarkdown
-hi link rmdCodeDelim       SpecialComment
-hi link rmdRChunkDelim     SpecialComment
-hi link rmdInlineDelim     SpecialComment
-hi link rmdYamlBlockDelim  SpecialComment
+" Small arrow used for tabs.
+call s:hi('SpecialKey', s:sblue, s:default_bg, s:bold)
 
-hi link SpecialChar        Normal
-hi link SpecialKey         SpecialComment
-hi link Conceal            SpecialComment
-hi link NonText            Comment
-hi link Whitespace         Comment
+" File browsers.
+call s:hi('Directory', s:white, s:default_bg, s:bold)
 
-" quick fix window
-hi link QuickFixLine       Visual
-hi link qfFileName         Directory
-hi link qfLineNr           Comment
-hi link qfSeparator        Comment
+" Help.
+call s:hi('helpSpecial')
+call s:hi('helpHyperTextJump', s:sblue, s:default_bg, s:underline)
+call s:hi('helpNote')
 
-" vim help
-hi link helpSectionDelim   Comment
-hi link helpHyperTextJump  Directory
-hi link helpExample        Comment
-hi link helpNote           Todo
-hi link helpHyperOption    SpecialComment
-hi link helpSpecial        SpecialComment
-hi link helpHyperTextEntry SpecialComment
-hi link helpCommand        SpecialComment
+" Popup menu.
+call s:hi('Pmenu', s:white, s:sblue)
+call s:hi('PmenuSel', s:sblue, s:white)
 
-" Plugins ----------------------------------------------------------------------
+" Notes.
+call s:hi('Todo', s:black, s:yellow, s:bold)
 
-" pandoc plugin
-au FileType rmarkdown hi link pandocDelimitedCodeBlockLanguage    SpecialComment
-au FileType rmarkdown hi link pandocDelimitedCodeBlock            SpecialComment
-au FileType rmarkdown hi link pandocDelimitedCodeBlockStart       SpecialComment
-au FileType rmarkdown hi link pandocDelimitedCodeBlockEnd         SpecialComment
-au FileType rmarkdown hi link pandocYAMLHeader                    SpecialComment
-au FileType rmarkdown hi link pandocAtxHeader                     Title
-au FileType rmarkdown hi link pandocAtxStart                      Title
+" Signs.
+call s:hi('SignColumn')
 
-" vim plug
-hi link plug1        Normal
-hi link plug2        SpecialComment
-hi link plugName     SpecialComment
-hi link plugBracket  Comment
-hi link plugDash     Comment
-hi link plugDeleted  WarningMsg
-hi plugInstall       ctermbg=0  ctermfg=2 cterm=NONE  guibg=#24364b  guifg=#88c563  gui=NONE
+"
+" --- Programming languages ----------------------------------------------------
+"
 
-" git-gutter
-hi GitGutterDelete            ctermbg=0  ctermfg=1 cterm=NONE        guibg=#24364b  guifg=#e76d6d  gui=NONE
-hi GitGutterAdd               ctermbg=0  ctermfg=2 cterm=NONE        guibg=#24364b  guifg=#88c563  gui=NONE
-hi GitGutterChange            ctermbg=0  ctermfg=3 cterm=NONE        guibg=#24364b  guifg=#ecb534  gui=NONE
-hi GitGutterChangeDelete      ctermbg=0  ctermfg=9 cterm=NONE        guibg=#24364b  guifg=#edbabf  gui=NONE
-hi GitGutterDeleteLine        ctermbg=1  ctermfg=0 cterm=NONE        guibg=#e76d6d  guifg=#24364b  gui=NONE
-hi GitGutterAddLine           ctermbg=2  ctermfg=0 cterm=NONE        guibg=#88c563  guifg=#24364b  gui=NONE
-hi GitGutterChangeLine        ctermbg=0  ctermfg=3 cterm=UNDERLINE   guibg=#24364b  guifg=#ecb534  gui=UNDERLINE
-hi GitGutterChangeDeleteLine  ctermbg=0  ctermfg=9 cterm=UNDERLINE   guibg=#24364b  guifg=#edbabf  gui=UNDERLINE
+call s:hi('Statement', s:white, s:default_bg, s:bold)
+call s:hi('PreProc', s:white, s:default_bg, s:bold)
+call s:hi('String', s:sblue)
+call s:hi('Comment', s:cgray, s:default_bg, s:comment_attr)
+call s:hi('Constant')
+call s:hi('Type', s:white, s:default_bg, s:bold)
+call s:hi('Function', s:white)
+call s:hi('Identifier')
+call s:hi('Special')
+call s:hi('MatchParen', s:lgray, s:black, s:underline)
+
+
+"
+" --- VimL ---------------------------------------------------------------------
+"
+
+call s:hi('vimOption')
+call s:hi('vimGroup')
+call s:hi('vimHiClear')
+call s:hi('vimHiGroup')
+call s:hi('vimHiAttrib')
+call s:hi('vimHiGui')
+call s:hi('vimHiGuiFgBg')
+call s:hi('vimHiCTerm')
+call s:hi('vimHiCTermFgBg')
+call s:hi('vimSynType')
+hi link vimCommentTitle Comment
+
+
+"
+" --- Ruby ---------------------------------------------------------------------
+"
+
+call s:hi('rubyConstant')
+call s:hi('rubySharpBang', s:cgray)
+call s:hi('rubySymbol', s:sblue)
+call s:hi('rubyStringDelimiter', s:sblue)
+call s:hi('rubyStringEscape', s:sblue)
+call s:hi('rubyRegexpEscape', s:sblue)
+call s:hi('rubyRegexpAnchor', s:sblue)
+call s:hi('rubyRegexpSpecial', s:sblue)
+
+
+"
+" --- Elixir -------------------------------------------------------------------
+"
+
+call s:hi('elixirAlias', s:default_fg, s:default_bg, s:none)
+call s:hi('elixirDelimiter', s:sblue)
+call s:hi('elixirSelf', s:default_fg, s:default_bg, s:none)
+
+" For ||, ->, etc.
+call s:hi('elixirOperator')
+
+" Module attributes like @doc or @type.
+hi link elixirVariable Statement
+
+" While rendered as comments in other languages, docstrings are strings,
+" experimental.
+hi link elixirDocString String
+hi link elixirDocTest String
+hi link elixirStringDelimiter String
+
+
+"
+" --- Perl ---------------------------------------------------------------------
+"
+
+call s:hi('perlSharpBang', s:cgray)
+call s:hi('perlStringStartEnd', s:sblue)
+call s:hi('perlStringEscape', s:sblue)
+call s:hi('perlMatchStartEnd', s:sblue)
+
+
+"
+" --- Python -------------------------------------------------------------------
+"
+
+call s:hi('pythonEscape', s:sblue)
+
+
+"
+" --- JavaScript ---------------------------------------------------------------
+"
+
+call s:hi('javaScriptFunction', s:white, s:default_bg, s:bold)
+
+
+"
+" --- Diffs --------------------------------------------------------------------
+"
+
+call s:hi('diffFile', s:cgray)
+call s:hi('diffNewFile', s:cgray)
+call s:hi('diffIndexLine', s:cgray)
+call s:hi('diffLine', s:cgray)
+call s:hi('diffSubname', s:cgray)
+call s:hi('diffAdded', s:white, s:green)
+call s:hi('diffRemoved', s:white, s:red)
+
+
+"
+" --- Markdown -----------------------------------------------------------------
+"
+
+call s:hi('Title', s:white, s:default_bg, s:bold)
+call s:hi('markdownHeadingDelimiter', s:white, s:default_bg, s:bold)
+call s:hi('markdownHeadingRule', s:white, s:default_bg, s:bold)
+call s:hi('markdownLinkText', s:sblue, s:default_bg, s:underline)
+
+
+"
+" --- vim-fugitive -------------------------------------------------------------
+"
+
+call s:hi('gitcommitComment', s:default_fg, s:default_bg, s:none)
+call s:hi('gitcommitOnBranch', s:default_fg, s:default_bg, s:none)
+call s:hi('gitcommitBranch', s:sblue, s:default_bg, s:none)
+call s:hi('gitcommitHeader', s:white, s:default_bg, s:bold)
+call s:hi('gitcommitSelected', s:default_fg, s:default_bg, s:none)
+call s:hi('gitcommitDiscarded', s:default_fg, s:default_bg, s:none)
+call s:hi('gitcommitSelectedType', s:default_fg, s:default_bg, s:none)
+call s:hi('gitcommitDiscardedType', s:default_fg, s:default_bg, s:none)
+
+
+"
+" --- NeoMake ------------------------------------------------------------------
+"
+
+call s:hi('NeomakeMessageSign')
+call s:hi('NeomakeWarningSign', s:sblue)
+call s:hi('NeomakeErrorSign', s:yellow)
+call s:hi('NeomakeInfoSign')
+call s:hi('NeomakeError', s:yellow)
+call s:hi('NeomakeInfo', s:default_fg, s:default_bg, s:bold)
+call s:hi('NeomakeMessage')
+call s:hi('NeomakeWarning', s:yellow)
