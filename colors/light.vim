@@ -479,10 +479,6 @@ hi Special                   ctermfg=231  ctermbg=NONE cterm=NONE
 hi SpecialChar               ctermfg=94   ctermbg=NONE cterm=NONE
 hi SpecialComment            ctermfg=188               cterm=bold
 hi SpecialKey                ctermfg=242  ctermbg=NONE cterm=NONE
-hi SpellBad                  ctermul=160               cterm=undercurl
-hi SpellCap                  ctermul=25                cterm=undercurl
-hi SpellLocal                ctermul=28                cterm=undercurl
-hi SpellRare                 ctermul=67                cterm=undercurl
 hi StartifyBracket           ctermfg=182  ctermbg=NONE
 hi StartifyFile              ctermfg=26   ctermbg=NONE
 hi StartifyFooter            ctermfg=102  ctermbg=NONE
