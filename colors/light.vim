@@ -107,6 +107,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   let g:indentLine_color_term = 252
   let g:limelight_conceal_guifg = '#8a99a6'
   let g:limelight_conceal_ctermfg = 246
+  hi! link NormalFloat Pmenu
   hi! link Terminal Normal
   hi! link TabLine StatusLineNC
   hi! link TabLineFill StatusLineNC
