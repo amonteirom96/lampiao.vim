@@ -70,10 +70,10 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi SignColumn guifg=#52555c guibg=NONE gui=NONE cterm=NONE
   hi Signify guifg=#4484d1 guibg=NONE gui=NONE cterm=NONE
   hi Ignore guifg=#52555c guibg=NONE gui=NONE cterm=NONE
-  hi Pmenu guifg=#ffffff guibg=#34353b gui=NONE cterm=NONE
-  hi PmenuSbar guifg=#34353b guibg=#34353b gui=NONE cterm=NONE
-  hi PmenuSel guifg=#ffffff guibg=#0f5bca gui=NONE cterm=NONE
-  hi PmenuThumb guifg=#43454b guibg=#43454b gui=NONE cterm=NONE
+  hi Pmenu guifg=#ffffff guibg=#1f1f24 gui=NONE cterm=NONE
+  hi PmenuSbar guifg=#34353b guibg=#1f1f24 gui=NONE cterm=NONE
+  hi PmenuSel guifg=#ffffff guibg=#1f1f24 gui=NONE cterm=NONE
+  hi PmenuThumb guifg=#43454b guibg=#1f1f24 gui=NONE cterm=NONE
   hi ErrorMsg guifg=#ff8a7a guibg=NONE gui=NONE cterm=NONE
   hi ModeMsg guifg=#838991 guibg=NONE gui=NONE cterm=NONE
   hi MoreMsg guifg=#ff85b8 guibg=NONE gui=NONE cterm=NONE
