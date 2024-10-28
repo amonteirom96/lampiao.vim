@@ -103,6 +103,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi SpellCap guifg=NONE guibg=NONE gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
   hi SpellLocal guifg=NONE guibg=NONE gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
   hi SpellRare guifg=NONE guibg=NONE gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
+  hi! link SignifySignAdd NvimDarkGreen
+  hi! link SignifySignChange NvimDarkCyan
+  hi! link SignifySignDelete NvimDarkRed
   let g:indentLine_color_gui  = '#cdcdcd'
   let g:indentLine_color_term = 252
   let g:limelight_conceal_guifg = '#8a99a6'
