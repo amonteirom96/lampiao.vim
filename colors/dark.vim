@@ -107,6 +107,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi Title guifg=#ffffff guibg=NONE gui=bold cterm=bold
   hi Todo guifg=#aeb7c0 guibg=NONE gui=bold cterm=bold
   hi Underlined guifg=#6bdfff guibg=NONE gui=underline cterm=underline
+  hi GitSignsAdd guifg=#50fa7b guibg=NONE
+  hi GitSignsChange guifg=#8be9fd guibg=NONE
+  hi GitSignsDelete guifg=#ff5555 guibg=NONE
   hi SpellBad guifg=NONE guibg=NONE gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
   hi SpellCap guifg=NONE guibg=NONE gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
   hi SpellLocal guifg=NONE guibg=NONE gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
@@ -115,9 +118,6 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   let g:indentLine_color_term = 240
   let g:limelight_conceal_guifg = '#838991'
   let g:limelight_conceal_ctermfg = 102
-  hi! link SignifySignAdd NvimLightGreen
-  hi! link SignifySignChange NvimLightCyan
-  hi! link SignifySignDelete NvimLightRed
   hi! link NormalFloat Pmenu
   hi! link Terminal Normal
   hi! link TabLine StatusLineNC
