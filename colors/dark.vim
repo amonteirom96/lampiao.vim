@@ -115,6 +115,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   let g:indentLine_color_term = 240
   let g:limelight_conceal_guifg = '#838991'
   let g:limelight_conceal_ctermfg = 102
+  hi! link SignifySignAdd NvimLightGreen
+  hi! link SignifySignChange NvimLightCyan
+  hi! link SignifySignDelete NvimLightRed
   hi! link NormalFloat Pmenu
   hi! link Terminal Normal
   hi! link TabLine StatusLineNC
