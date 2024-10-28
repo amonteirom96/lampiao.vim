@@ -99,8 +99,8 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi Title guifg=#000000 guibg=NONE gui=bold cterm=bold
   hi Todo guifg=#5c6873 guibg=NONE gui=bold cterm=bold
   hi! link GitSignsAdd DiagnosticInfo
-  hi! link GitSignsChange PmenuSel
-  hi! link GitSignsDelete String
+  hi! link GitSignsChange DiagnosticWarn
+  hi! link GitSignsDelete DiagnosticError
   hi Underlined guifg=#0058a1 guibg=NONE gui=underline cterm=underline
   hi SpellBad guifg=NONE guibg=NONE gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
   hi SpellCap guifg=NONE guibg=NONE gui=undercurl ctermfg=NONE ctermbg=NONE cterm=undercurl
